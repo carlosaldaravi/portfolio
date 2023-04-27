@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import AvatarSwitch from "./avatar-switch";
+import SVG from './svg';
 
 const ContentRoleCard = ({ role }) => {
   const [cardHovered, setCardHovered] = useState(false);
@@ -18,7 +19,9 @@ const ContentRoleCard = ({ role }) => {
     <Link
       href={role.to}
       onMouseEnter={onMouseEnterHandler}
+      onTouchStart={onMouseEnterHandler}
       onMouseLeave={onMouseLeaveHandler}
+      onTouchEnd={onMouseLeaveHandler}
     >
       <li className="rounded-2xl bg-gray-800 px-8 py-10">
         <AvatarSwitch src={role.avatar} scale={cardHovered} />
@@ -30,7 +33,7 @@ const ContentRoleCard = ({ role }) => {
           {role.rrss.map((rs) => (
             <li key={rs.name} onClick={(e) => rrssHandler(e, rs.url)}>
               <span className="sr-only">{rs.name}</span>
-              {rs.svg}
+              <SVG type={rs.name} />
             </li>
           ))}
         </ul>
