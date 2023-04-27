@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import AvatarSwitch from "./avatar-switch";
-import SVG from './svg';
+import SVG from "./svg";
 
 const ContentRoleCard = ({ role }) => {
   const [cardHovered, setCardHovered] = useState(false);
@@ -23,7 +23,11 @@ const ContentRoleCard = ({ role }) => {
       onMouseLeave={onMouseLeaveHandler}
       onTouchEnd={onMouseLeaveHandler}
     >
-      <li className="rounded-2xl bg-gray-800 px-8 py-10">
+      <li
+        className={`rounded-2xl px-8 py-10 ${
+          cardHovered ? "bg-gray-700" : "bg-gray-800"
+        }`}
+      >
         <AvatarSwitch src={role.avatar} scale={cardHovered} />
         <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">
           {role.name}
