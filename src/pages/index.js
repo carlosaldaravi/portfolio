@@ -1,6 +1,6 @@
 // pages/index.js
 import Head from "next/head";
-import InfoCard from "../components/info-card";
+import RoleCard from "../components/role-card";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
                 Bienvenido, descubre los dos mundos que me apasionan la programación web y el kitesurf.
               </p>
             </div>
-            <InfoCard />
+            <RoleCard />
           </div>
         </div>
       </main>

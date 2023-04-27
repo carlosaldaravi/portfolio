@@ -1,15 +1,12 @@
-import Avatar from "./avatar";
-import Link from "next/link";
 import AvatarSwitch from "./avatar-switch";
+import ContentRoleCard from "./content-role-card";
 
-const InfoCard = () => {
-  const people = [
+const RoleCard = () => {
+  const roles = [
     {
       name: "Fullstack Developer",
-      role: "Fullstack Developer",
       to: "/developer",
-      // avatar: <Avatar src="/yo-dev.png" alt="avatar" />,
-      avatar: <AvatarSwitch src="/yo-dev.png" alt="avatar" />,
+      avatar: "/yo-dev.png",
       rrss: [
         {
           name: "Twitter",
@@ -47,10 +44,8 @@ const InfoCard = () => {
     },
     {
       name: "Kitesurfer",
-      role: "Kitesurfer",
       to: "/kitesurf",
-      // avatar: <Avatar src="/yo-kite.png" alt="avatar" />,
-      avatar: <AvatarSwitch src="/yo-kite.png" alt="avatar" />,
+      avatar: "/yo-kite.png",
       rrss: [
         {
           name: "Instagram",
@@ -84,42 +79,16 @@ const InfoCard = () => {
     },
   ];
 
-  const rrssHandle = (e, url) => {
-    e.preventDefault();
-    window.open(url, "_blank", "noreferrer");
-  };
-  // hover:scale-110 transform transition-transform duration-500 ease-in-out
-
   return (
     <ul
       role="list"
       className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-8"
     >
-      {people.map((person) => (
-        <Link href={person.to} key={person.role}>
-          <li className="rounded-2xl bg-gray-800 px-8 py-10">
-            <div className="">
-              <div className="flex justify-center">
-              {person.avatar}
-              </div>
-            </div>
-            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">
-              {person.name}
-            </h3>
-            {/* <p className="text-sm leading-6 text-gray-400">{person.role}</p> */}
-            <ul role="list" className="mt-6 flex justify-center gap-x-6">
-              {person.rrss.map((rs) => (
-                <li key={rs.name} onClick={(e) => rrssHandle(e, rs.url)}>
-                  <span className="sr-only">{rs.name}</span>
-                  {rs.svg}
-                </li>
-              ))}
-            </ul>
-          </li>
-        </Link>
+      {roles.map((role) => (
+        <ContentRoleCard key={role.name} role={role} />
       ))}
     </ul>
   );
 };
 
-export default InfoCard;
+export default RoleCard;
