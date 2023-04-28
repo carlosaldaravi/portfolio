@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import AvatarSwitch from "./avatar-switch";
 import SVG from "./svg";
+import classes from "./content-role-card.module.css"
 
 const ContentRoleCard = ({ role }) => {
   const [cardHovered, setCardHovered] = useState(false);
@@ -24,12 +25,14 @@ const ContentRoleCard = ({ role }) => {
       onTouchEnd={onMouseLeaveHandler}
     >
       <li
-        className={`rounded-2xl px-8 py-10 ${
-          cardHovered ? "bg-gray-700" : "bg-gray-800"
+        className={`rounded-2xl px-8 py-10 transform transition duration-300 ${
+          cardHovered ? `bg-gray-700 shadow-lg shadow-slate-300 ${classes.shadow3D}` : "bg-gray-800"
         }`}
       >
         <AvatarSwitch src={role.avatar} scale={cardHovered} />
-        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">
+        <h3 className={`mt-6 font-semibold leading-7 tracking-tight text-white ${
+          cardHovered ? "text-xl" : "text-base"
+        }`}>
           {role.name}
         </h3>
         {/* <p className="text-sm leading-6 text-gray-400">{role.role}</p> */}
