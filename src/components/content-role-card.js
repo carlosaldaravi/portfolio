@@ -29,7 +29,7 @@ const ContentRoleCard = ({ role }) => {
           cardHovered ? `bg-gray-700 shadow-lg shadow-slate-300 ${classes.shadow3D}` : "bg-gray-800"
         }`}
       >
-        <AvatarSwitch src={role.avatar} hover={cardHovered} />
+        <AvatarSwitch src={role.avatar} customClass={role.customClass} hover={cardHovered} />
         <h3 className={`mt-6 font-semibold leading-7 tracking-tight ${classes.text} ${
           cardHovered ? `text-2xl text-white` : "text-base text-gray-400"
         }`}>

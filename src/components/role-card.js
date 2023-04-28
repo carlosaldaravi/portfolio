@@ -6,6 +6,7 @@ const RoleCard = () => {
       name: "Fullstack Developer",
       to: "/developer",
       avatar: "/yo-dev.png",
+      customClass: 'image-dev',
       rrss: [
         {
           name: "Twitter",
@@ -21,6 +22,7 @@ const RoleCard = () => {
       name: "Kitesurfer",
       to: "/kitesurf",
       avatar: "/yo-kite.png",
+      customClass: 'image-kite',
       rrss: [
         {
           name: "Instagram",
