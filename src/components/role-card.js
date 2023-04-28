@@ -1,4 +1,3 @@
-import AvatarSwitch from "./avatar-switch";
 import ContentRoleCard from "./content-role-card";
 
 const RoleCard = () => {
