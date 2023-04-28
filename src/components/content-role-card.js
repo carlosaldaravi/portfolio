@@ -25,13 +25,13 @@ const ContentRoleCard = ({ role }) => {
       onTouchEnd={onMouseLeaveHandler}
     >
       <li
-        className={`rounded-2xl px-8 py-10 transform transition duration-300 ${
+        className={`rounded-2xl px-8 py-10 transform transition duration-700 ${
           cardHovered ? `bg-gray-700 shadow-lg shadow-slate-300 ${classes.shadow3D}` : "bg-gray-800"
         }`}
       >
-        <AvatarSwitch src={role.avatar} scale={cardHovered} />
-        <h3 className={`mt-6 font-semibold leading-7 tracking-tight text-white ${
-          cardHovered ? "text-xl" : "text-base"
+        <AvatarSwitch src={role.avatar} hover={cardHovered} />
+        <h3 className={`mt-6 font-semibold leading-7 tracking-tight ${classes.text} ${
+          cardHovered ? `text-2xl text-white` : "text-base text-gray-400"
         }`}>
           {role.name}
         </h3>
@@ -40,7 +40,7 @@ const ContentRoleCard = ({ role }) => {
           {role.rrss.map((rs) => (
             <li key={rs.name} onClick={(e) => rrssHandler(e, rs.url)}>
               <span className="sr-only">{rs.name}</span>
-              <SVG type={rs.name} />
+              <SVG type={rs.name} hover={cardHovered} />
             </li>
           ))}
         </ul>
