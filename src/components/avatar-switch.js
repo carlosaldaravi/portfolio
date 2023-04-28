@@ -12,7 +12,7 @@ const AvatarSwitch = ({ src, customClass, hover }) => {
         ></div>
         <div className="absolute inset-0 z-10 flex items-center justify-center">
           <div
-            className={`rounded-full overflow-hidden transition duration-500 ease-in-out w-48 origin-bottom ${
+            className={`rounded-full overflow-hidden transition duration-1000 ease-in-out w-48 origin-bottom ${
               hover ? "scale-125 h-56" : "h-48"
             }`}
           >

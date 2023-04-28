@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       blur: {
+        xxs: '1px',
         xs: '2px',
       }
     },
