@@ -3,7 +3,7 @@ const SVG = ({ type, hover }) => {
     return (
       <svg
         className={`h-5 w-5 transition duration-1000 ease-in-out ${
-          hover ? "blur-none" : "blur-xs"
+          hover ? "blur-none" : "blur-xxs"
         }`}
         aria-hidden="true"
         fill={`${hover ? "white" : "gray"}`}
@@ -17,7 +17,7 @@ const SVG = ({ type, hover }) => {
     return (
       <svg
         className={`h-5 w-5 transition duration-1000 ease-in-out ${
-          hover ? "blur-none" : "blur-xs"
+          hover ? "blur-none" : "blur-xxs"
         }`}
         aria-hidden="true"
         fill={`${hover ? "white" : "gray"}`}
@@ -35,7 +35,7 @@ const SVG = ({ type, hover }) => {
     return (
       <svg
         className={`h-5 w-5 transition duration-1000 ease-in-out ${
-          hover ? "blur-none" : "blur-xs"
+          hover ? "blur-none" : "blur-xxs"
         }`}
         aria-hidden="true"
         fill={`${hover ? "white" : "gray"}`}
@@ -49,7 +49,7 @@ const SVG = ({ type, hover }) => {
     return (
       <svg
         className={`h-5 w-5 transition duration-1000 ease-in-out ${
-          hover ? "blur-none" : "blur-xs"
+          hover ? "blur-none" : "blur-xxs"
         }`}
         aria-hidden="true"
         fill={`${hover ? "white" : "gray"}`}
