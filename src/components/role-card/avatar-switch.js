@@ -19,6 +19,7 @@ const AvatarSwitch = ({ src, customClass, hover }) => {
             <Image
               src={src}
               alt="avatar"
+              priority={true}
               width={1200}
               height={1600}
               object-fit="cover"
