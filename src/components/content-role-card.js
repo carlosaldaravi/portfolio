@@ -30,7 +30,7 @@ const ContentRoleCard = ({ role }) => {
         }`}
       >
         <AvatarSwitch src={role.avatar} customClass={role.customClass} hover={cardHovered} />
-        <h3 className={`mt-6 font-semibold leading-7 tracking-tight ${classes.text} ${
+        <h3 className={`mt-6 font-semibold leading-7 tracking-normal ${classes.text} ${
           cardHovered ? `text-2xl text-white` : "text-base text-gray-400"
         }`}>
           {role.name}
