@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import AvatarSwitch from "./avatar-switch";
-import SVG from "./svg";
+import SVG from "../svg";
 import classes from "./content-role-card.module.css"
 
 const ContentRoleCard = ({ role }) => {

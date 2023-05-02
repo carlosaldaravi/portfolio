@@ -1,5 +1,5 @@
 import Image from "next/image";
-import classes from "./avatar-swtich.module.css";
+import classes from "./avatar-switch.module.css";
 
 const AvatarSwitch = ({ src, customClass, hover }) => {
   return (
