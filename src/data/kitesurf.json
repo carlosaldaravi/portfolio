@@ -1,0 +1,86 @@
+[
+    {
+        "date": "03/09/2018",
+        "kite": "Rebel",
+        "size": "9m",
+        "hangtime": "> 30 segundos",
+        "spot": "Tarifa",
+        "wind": "25 - 40",
+        "description": {
+            "es": "En la competición de la SKL mientras navegaba realicé mi primera volada",
+            "en": "While I was kiting in the SKL competition I did my first massive hangtime"
+        },
+        "img": "https://source.unsplash.com/random/200x200?sig=1",
+        "url": ""
+    },
+    {
+        "date": "12/03/2019",
+        "kite": "Rebel",
+        "size": "9m",
+        "hangtime": "31 segundos",
+        "spot": "Tarifa",
+        "wind": "13 - 20",
+        "description": {
+            "es": "Esta vez en mi casa",
+            "en": "This time in my home spot"
+        },
+        "img": "https://source.unsplash.com/random/200x200?sig=1",
+        "url": ""
+    },
+    {
+        "date": "02/06/2019",
+        "kite": "Rebel",
+        "size": "9m",
+        "hangtime": "21 segundos",
+        "spot": "Fuerteventura",
+        "wind": "10 - 17",
+        "description": {
+            "es": "Esta vez en mi casa",
+            "en": "This time in my home spot"
+        },
+        "img": "https://source.unsplash.com/random/200x200?sig=1",
+        "url": ""
+    },
+    {
+        "date": "17/03/2020",
+        "kite": "Rebel",
+        "size": "9m",
+        "hangtime": "34 segundos",
+        "spot": "Tarifa",
+        "wind": "10 - 17",
+        "description": {
+            "es": "Esta vez en mi casa",
+            "en": "This time in my home spot"
+        },
+        "img": "https://source.unsplash.com/random/200x200?sig=1",
+        "url": ""
+    },
+    {
+        "date": "17/03/2021",
+        "kite": "Rebel",
+        "size": "7m",
+        "hangtime": "1 minuto",
+        "spot": "Tarifa",
+        "wind": "10 - 17",
+        "description": {
+            "es": "Esta vez en mi casa",
+            "en": "This time in my home spot"
+        },
+        "img": "https://source.unsplash.com/random/200x200?sig=1",
+        "url": ""
+    },
+    {
+        "date": "17/03/2022",
+        "kite": "Rebel",
+        "size": "13m",
+        "hangtime": "20 segundos",
+        "spot": "El Médano",
+        "wind": "10 - 17",
+        "description": {
+            "es": "Esta vez en mi casa",
+            "en": "This time in my home spot"
+        },
+        "img": "https://source.unsplash.com/random/200x200?sig=1",
+        "url": ""
+    }
+]
