@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import AvatarSwitch from "./avatar-switch";
 import SVG from "../svg";
-import classes from "./content-role-card.module.css"
+import classes from "./content-role-card.module.css";
 
 const ContentRoleCard = ({ role }) => {
   const [cardHovered, setCardHovered] = useState(false);
@@ -18,6 +18,7 @@ const ContentRoleCard = ({ role }) => {
   };
   return (
     <Link
+      className={`${role.name === 'Kitesurfer' ? classes.rightCard : classes.leftCard}`}
       href={role.to}
       onMouseEnter={onMouseEnterHandler}
       onTouchStart={onMouseEnterHandler}
@@ -26,13 +27,21 @@ const ContentRoleCard = ({ role }) => {
     >
       <li
         className={`rounded-2xl px-8 py-10 transform transition duration-700 ${
-          cardHovered ? `bg-gray-700 shadow-lg shadow-slate-300 ${classes.shadow3D}` : "bg-gray-800"
+          cardHovered
+            ? `bg-gray-700 shadow-lg shadow-slate-300 ${classes.shadow3D}`
+            : "bg-gray-800"
         }`}
       >
-        <AvatarSwitch src={role.avatar} customClass={role.customClass} hover={cardHovered} />
-        <h3 className={`mt-6 font-semibold leading-7 tracking-normal ${classes.text} ${
-          cardHovered ? `text-2xl text-white` : "text-base text-gray-400"
-        }`}>
+        <AvatarSwitch
+          src={role.avatar}
+          customClass={role.customClass}
+          hover={cardHovered}
+        />
+        <h3
+          className={`mt-6 font-semibold leading-7 tracking-normal ${
+            classes.text
+          } ${cardHovered ? `text-2xl text-white` : "text-base text-gray-400"}`}
+        >
           {role.name}
         </h3>
         {/* <p className="text-sm leading-6 text-gray-400">{role.role}</p> */}
