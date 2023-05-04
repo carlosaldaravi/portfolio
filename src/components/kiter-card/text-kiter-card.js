@@ -7,14 +7,16 @@ const TextKiterCard = () => {
         Carlos Aldaravi
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 w-max block">
-        <RowTextKiterCard textLeft="Cometa favorita" textRight="Rebel SLS 8m" />
+        <RowTextKiterCard textLeft="Kite Favorite" textRight="Rebel SLS 8m" />
         <RowTextKiterCard
-          textLeft="Tabla favorita"
+          textLeft="Board Favorite"
           textRight="Select SLS 135cm"
         />
-        <RowTextKiterCard textLeft="Surfr. Record" textRight="32,8m" />
-        <RowTextKiterCard textLeft="Hangtime record" textRight="1m" />
-        <RowTextKiterCard textLeft="Patrocinadores" textRight="Duotone, Ion" />
+        <RowTextKiterCard textLeft="Height Record" textRight="32,8m" />
+        <RowTextKiterCard textLeft="Hangtime Record" textRight="1 minuto" />
+        <RowTextKiterCard textLeft="Home Spot" textRight="Santa Pola" />
+        <RowTextKiterCard textLeft="Current Spot" textRight="El Médano" />
+        <RowTextKiterCard textLeft="Sponsors" textRight="Duotone, Ion" />
       </div>
     </div>
   );
