@@ -1,4 +1,6 @@
 import { useState } from "react";
+import classes from "./svg.module.css";
+
 const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
   const [mouseIn, setMouseIn] = useState(false);
   const onMouseEnterHandler = () => {
@@ -89,7 +91,6 @@ const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
   if (type === "spain") {
     return (
       <svg
-        // fill="currentColor"
         className={`h-8 w-8 cursor-pointer transform duration-300 ${
           actualLanguage === "es"
             ? "opacity-100"
@@ -159,6 +160,34 @@ const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
         <path
           fill="#cc2229"
           d="m8.6 43.1 61 37.2H56L8.5 51.4v-8.3zm-.1 106.3v.2h13.4l53.2-32.3v-4.8h-5.8l-60.8 37zm175.8.2V142l-48.4-29.4h-13.7l61.1 37.1h1zM169.8 43.1l-53 32.3v4.9h5.6l61-37.2h-13.6z"
+        />
+      </svg>
+    );
+  }
+  if (type === "youtube") {
+    return (
+      <svg
+        fill="red"
+        className={`${classes.btn} h-16 w-16 items-center`}
+        viewBox="0 0 461.001 461.001"
+      >
+        <path d="M365.3 67.4H95.7A95.7 95.7 0 0 0 0 163V298a95.7 95.7 0 0 0 95.7 95.7h269.6A95.7 95.7 0 0 0 461 298V163a95.7 95.7 0 0 0-95.7-95.7zM300.5 237l-126 60a5 5 0 0 1-7.3-4.5v-124a5 5 0 0 1 7.4-4.5l126 63.9a5 5 0 0 1 0 9z" />
+      </svg>
+    );
+  }
+  if (type === "backArrow") {
+    return (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
         />
       </svg>
     );
