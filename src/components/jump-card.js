@@ -3,11 +3,25 @@ import { useState } from "react";
 import classes from "./jump-card.module.css";
 import SVG from "./svg";
 import YoutubeEmbed from "./youtube-embed";
+import { motion } from "framer-motion";
 
 const JumpCard = ({ data }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [showText, setShowText] = useState(false);
+
+  const icon = {
+    hidden: {
+      opacity: 0,
+      pathLength: 0,
+      fill: "rgba(255, 255, 255, 0)",
+    },
+    visible: {
+      opacity: 1,
+      pathLength: 1,
+      fill: "rgba(255, 255, 255, 1)",
+    },
+  };
 
   const onPlayHandler = () => {
     setIsExpanded(true);
@@ -36,13 +50,13 @@ const JumpCard = ({ data }) => {
 
   return (
     <div
-      className={`relative border border-gray-800 transition-all duration-1000 ease-in transform ${
+      className={`relative border border-gray-800 ${
         isExpanded
           ? `${
               data.best
                 ? `${classes.best} border-yellow-300 shadow-yellow-300`
                 : `${classes.card} border-gray-300`
-            } scale-y-110 z-50 shadow-xl h-36 sm:h-44 rounded-md`
+            } z-50 shadow-xl h-36 sm:h-44 rounded-md`
           : `${
               data.best && classes.best
             } scale-100 bg-gradient-to-r from-gray-700 to-gray-900 rounded-t-md`
@@ -71,65 +85,78 @@ const JumpCard = ({ data }) => {
           </div>
         </>
       )}
-      <Transition
-        show={showText}
-        enter="transition-opacity ease-in duration-700"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity ease-in"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
-        <div className="absolute left-1/2 -translate-x-1/2">
-          <div className="flex">
-            <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-              Hangtime
-            </span>{" "}
-            <span className="sm:text-lg text-gray-200">{data.hangtime}</span>
-          </div>
-          <div className="flex">
-            <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-              Date
-            </span>{" "}
-            <span className="tracking-xs sm:text-lg text-gray-200">
-              {data.date}
-            </span>
-          </div>
-          <div className="flex">
-            <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-              Spot
-            </span>{" "}
-            <span className="tracking-xs sm:text-lg text-gray-200">
-              {data.spot}
-            </span>
-          </div>
-          <div className="flex">
-            <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-              Kite
-            </span>{" "}
-            <span className="tracking-xs sm:text-lg text-gray-200">
-              {data.kite}
-            </span>
-          </div>
-          <div className="flex">
-            <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-              Size
-            </span>{" "}
-            <span className="tracking-xs sm:text-lg text-gray-200">
-              {data.size}
-            </span>
-          </div>
-        </div>
-        <div
-          className={`${classes.webkit} absolute mt-8 sm:mt-12 ml-1 sm:ml-4 cursor-pointer`}
-          onClick={onPlayHandler}
-        >
-          {data.youtubeEmbedId && <SVG type="youtube" />}
-        </div>
-      </Transition>
+      {showText && (
+        <>
+          <motion.div
+            className="absolute left-1/2 -translate-x-1/2"
+            variants={icon}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              default: { duration: 1, ease: "easeInOut" },
+              fill: { duration: 1, ease: [1, 0, 0.8, 1] },
+            }}
+          >
+            <div className="flex">
+              <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
+                Hangtime
+              </span>{" "}
+              <span className="sm:text-lg text-gray-200">{data.hangtime}</span>
+            </div>
+            <div className="flex">
+              <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
+                Date
+              </span>{" "}
+              <span className="tracking-xs sm:text-lg text-gray-200">
+                {data.date}
+              </span>
+            </div>
+            <div className="flex">
+              <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
+                Spot
+              </span>{" "}
+              <span className="tracking-xs sm:text-lg text-gray-200">
+                {data.spot}
+              </span>
+            </div>
+            <div className="flex">
+              <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
+                Kite
+              </span>{" "}
+              <span className="tracking-xs sm:text-lg text-gray-200">
+                {data.kite}
+              </span>
+            </div>
+            <div className="flex">
+              <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
+                Size
+              </span>{" "}
+              <span className="tracking-xs sm:text-lg text-gray-200">
+                {data.size}
+              </span>
+            </div>
+          </motion.div>
+          {data.youtubeEmbedId && (
+            <motion.div
+              className={`${classes.webkit} absolute mt-8 sm:mt-12 ml-1 sm:ml-4 cursor-pointer`}
+              variants={icon}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                default: { duration: 1, ease: "easeInOut" },
+                fill: { duration: 1, ease: [1, 0, 0.8, 1] },
+              }}
+              onClick={onPlayHandler}
+            >
+              <SVG type="youtube" />
+            </motion.div>
+          )}
+        </>
+      )}
+
       <Transition
         show={showVideo}
-        enter="transition-opacity ease-in duration-[2s]"
+        enter="transition-opacity ease-in duration-700"
         enterFrom="opacity-0"
         enterTo="opacity-100"
         leave="transition-opacity ease-out"
@@ -151,12 +178,6 @@ const JumpCard = ({ data }) => {
             title={data.hangtime}
             className={"rounded-xl"}
           />
-          {/* <div
-            className="bg-gray-500 text-gray-100 tracking-xs text-center cursor-pointer hover:-translate-y-1 active:translate-y-1 hover:shadow-sm hover:border-none"
-            onClick={onBackHandler}
-          >
-            Back
-          </div> */}
         </div>
       </Transition>
     </div>
