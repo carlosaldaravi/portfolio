@@ -1,12 +1,13 @@
 .card {
   background-image: linear-gradient(
       to right bottom,
-      hsla(0, 0%, 12%, 0.62),
-      rgba(40, 40, 40, 0.908)
+      hsla(0, 0%, 2%, 0.9),
+      rgba(40, 40, 40, 0.6)
     ),
     url("/kitesurf.JPG");
   background-size: cover;
-  background-position: center;
+  background-position: 0% 28%;
+  
 }
 
 .best {
