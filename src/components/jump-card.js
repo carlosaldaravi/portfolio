@@ -57,7 +57,7 @@ const JumpCard = ({ data }) => {
           ? `${
               data.best
                 ? `${classes.best} border-yellow-300 shadow-yellow-300`
-                : `${classes.card} border-gray-300`
+                : `${classes.card} border-gray-200`
             } z-30 shadow-xl h-36 sm:h-44 rounded-md`
           : `${
               data.best && classes.best
