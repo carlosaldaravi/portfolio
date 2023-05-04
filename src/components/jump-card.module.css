@@ -9,7 +9,22 @@
   background-position: center;
 }
 
+.best {
+  background-image: linear-gradient(
+      to right,
+      hsla(0, 0%, 12%, 0.86),
+      rgba(40, 40, 40, .97)
+    ),
+    url("/world-record.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
 .bajorrelieve {
   color: #bebebe;
   text-shadow: -1px -2px 1px #2d2d2d;
+}
+
+.webkit {
+  text-align: -webkit-center;
 }
