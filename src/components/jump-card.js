@@ -6,6 +6,7 @@ import YoutubeEmbed from "./youtube-embed";
 import { motion } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { PlayCircleIcon } from "@heroicons/react/24/solid";
+import { FormattedMessage } from "react-intl";
 
 const JumpCard = ({ data }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -90,7 +91,7 @@ const JumpCard = ({ data }) => {
           <h3
             className={`${classes.bajorrelieve} flex justify-center sm:justify-start text-xl text-center sm:text-start font-normal text-gray-300`}
           >
-            {data.hangtime}
+            {data.hangtime} <FormattedMessage id="seconds" />
             {data.youtubeEmbedId && (
               <PlayCircleIcon className="w-6 h-6 text-gray-500 self-center ml-2" />
             )}
@@ -121,13 +122,13 @@ const JumpCard = ({ data }) => {
           >
             <div className="flex">
               <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-                Hangtime
+                <FormattedMessage id="hangtime" />
               </span>{" "}
-              <span className="sm:text-lg text-gray-200">{data.hangtime}</span>
+              <span className="sm:text-lg text-gray-200">{data.hangtime} <FormattedMessage id="seconds" /></span>
             </div>
             <div className="flex">
               <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-                Date
+                <FormattedMessage id="date" />
               </span>{" "}
               <span className="tracking-xs sm:text-lg text-gray-200">
                 {data.date}
@@ -135,7 +136,7 @@ const JumpCard = ({ data }) => {
             </div>
             <div className="flex">
               <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-                Spot
+                <FormattedMessage id="spot" />
               </span>{" "}
               <span className="tracking-xxs sm:text-lg text-gray-200">
                 {data.spot}
@@ -143,7 +144,7 @@ const JumpCard = ({ data }) => {
             </div>
             <div className="flex">
               <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-                Kite
+                <FormattedMessage id="kite" />
               </span>{" "}
               <span className="tracking-xs sm:text-lg text-gray-200">
                 {data.kite}
@@ -151,7 +152,7 @@ const JumpCard = ({ data }) => {
             </div>
             <div className="flex">
               <span className="text-gray-400 tracking-xs w-28 uppercase self-center text-end mr-4 text-xs sm:text-base sm:tracking-sm sm:mr-12 sm:w-36">
-                Size
+                <FormattedMessage id="size" />
               </span>{" "}
               <span className="tracking-xs sm:text-lg text-gray-200">
                 {data.size}
@@ -160,7 +161,7 @@ const JumpCard = ({ data }) => {
           </motion.div>
           {data.youtubeEmbedId && (
             <motion.div
-              className={`${classes.webkit} absolute mt-8 sm:mt-12 ml-1 sm:ml-4 cursor-pointer z-50`}
+              className={`${classes.webkit} absolute mt-6 sm:mt-12 left-2 sm:left-4 sm:ml-4 cursor-pointer z-50`}
               variants={icon}
               initial="hidden"
               animate="visible"
@@ -169,7 +170,6 @@ const JumpCard = ({ data }) => {
                 fill: { duration: 1, ease: [1, 0, 0.8, 1] },
               }}
               onClick={onPlayHandler}
-              // onTap={onPlayHandler}
             >
               <SVG type="youtube" />
             </motion.div>
@@ -194,7 +194,7 @@ const JumpCard = ({ data }) => {
             onClick={onBackHandler}
           >
             <SVG type="backArrow" />
-            {data.hangtime}
+            {data.hangtime} <FormattedMessage id="seconds" />
           </div>
           <YoutubeEmbed
             embedId={data.youtubeEmbedId}

@@ -18,7 +18,9 @@ const ContentRoleCard = ({ role }) => {
   };
   return (
     <Link
-      className={`${role.name === 'Kitesurfer' ? classes.rightCard : classes.leftCard}`}
+      className={`${
+        role.name === "Kitesurfer" ? classes.rightCard : classes.leftCard
+      }`}
       href={role.to}
       onMouseEnter={onMouseEnterHandler}
       onTouchStart={onMouseEnterHandler}
@@ -26,7 +28,7 @@ const ContentRoleCard = ({ role }) => {
       onTouchEnd={onMouseLeaveHandler}
     >
       <li
-        className={`rounded-2xl px-8 py-10 transform transition duration-700 ${
+        className={`rounded-2xl px-8 py-10 ${
           cardHovered
             ? `bg-gray-700 shadow-lg shadow-slate-300 ${classes.shadow3D}`
             : "bg-gray-800"
@@ -44,7 +46,6 @@ const ContentRoleCard = ({ role }) => {
         >
           {role.name}
         </h3>
-        {/* <p className="text-sm leading-6 text-gray-400">{role.role}</p> */}
         <ul role="list" className="mt-6 flex justify-center gap-x-6">
           {role.rrss.map((rs) => (
             <li key={rs.name} onClick={(e) => rrssHandler(e, rs.url)}>

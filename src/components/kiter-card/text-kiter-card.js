@@ -1,4 +1,5 @@
 import RowTextKiterCard from "./row-text-kiter-card";
+import { FormattedMessage } from "react-intl";
 
 const TextKiterCard = () => {
   return (
@@ -7,16 +8,34 @@ const TextKiterCard = () => {
         Carlos Aldaravi
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 w-max block">
-        <RowTextKiterCard textLeft="Kite Favorite" textRight="Rebel SLS 8m" />
         <RowTextKiterCard
-          textLeft="Board Favorite"
+          textLeft={<FormattedMessage id="page.kitesurf.kiteFavorite" />}
+          textRight="Rebel SLS 8m"
+        />
+        <RowTextKiterCard
+          textLeft={<FormattedMessage id="page.kitesurf.boardFavorite" />}
           textRight="Select SLS 135cm"
         />
-        <RowTextKiterCard textLeft="Height Record" textRight="32,8m" />
-        <RowTextKiterCard textLeft="Hangtime Record" textRight="1 minuto" />
-        <RowTextKiterCard textLeft="Home Spot" textRight="Santa Pola" />
-        <RowTextKiterCard textLeft="Current Spot" textRight="El Médano" />
-        <RowTextKiterCard textLeft="Sponsors" textRight="Duotone, Ion" />
+        <RowTextKiterCard
+          textLeft={<FormattedMessage id="page.kitesurf.heightRecord" />}
+          textRight="32,8m"
+        />
+        <RowTextKiterCard
+          textLeft={<FormattedMessage id="page.kitesurf.hangtimeRecord" />}
+          textRight={<FormattedMessage id="minute" />}
+        />
+        <RowTextKiterCard
+          textLeft={<FormattedMessage id="page.kitesurf.homeSpot" />}
+          textRight="Santa Pola"
+        />
+        <RowTextKiterCard
+          textLeft={<FormattedMessage id="page.kitesurf.currentSpot" />}
+          textRight="El Médano"
+        />
+        <RowTextKiterCard
+          textLeft={<FormattedMessage id="page.kitesurf.sponsors" />}
+          textRight="Duotone, Ion"
+        />
       </div>
     </div>
   );

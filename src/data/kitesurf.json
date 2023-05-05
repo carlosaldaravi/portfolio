@@ -3,7 +3,7 @@
         "date": "02/01/2023",
         "kite": "Rebel",
         "size": "13m",
-        "hangtime": "23 segundos",
+        "hangtime": "23",
         "spot": "El Médano",
         "wind": "8 - 18",
         "description": {
@@ -18,7 +18,7 @@
         "date": "13/12/2022",
         "kite": "Rebel",
         "size": "13m",
-        "hangtime": "26 segundos",
+        "hangtime": "26",
         "spot": "El Médano",
         "wind": "11 - 22",
         "description": {
@@ -33,7 +33,7 @@
         "date": "27/03/2022",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "36 segundos",
+        "hangtime": "36",
         "spot": "El Médano",
         "wind": "10 - 30",
         "description": {
@@ -48,7 +48,7 @@
         "date": "25/01/2022",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "27 segundos",
+        "hangtime": "27",
         "spot": "Tarifa",
         "wind": "0 - 40",
         "description": {
@@ -63,7 +63,7 @@
         "date": "10/12/2021",
         "kite": "Rebel",
         "size": "8m",
-        "hangtime": "+15 segundos",
+        "hangtime": "+15",
         "spot": "Misty Cliffs",
         "wind": "35 - 50",
         "description": {
@@ -78,7 +78,7 @@
         "date": "09/07/2021",
         "kite": "Rebel",
         "size": "7m",
-        "hangtime": "1 minuto",
+        "hangtime": "60",
         "spot": "Tarifa",
         "wind": "30 - 60",
         "description": {
@@ -93,7 +93,7 @@
         "date": "18/03/2021",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "34 segundos",
+        "hangtime": "34",
         "spot": "Tarifa",
         "wind": "20 - 35",
         "description": {
@@ -108,7 +108,7 @@
         "date": "16/03/2021",
         "kite": "Rebel",
         "size": "8m",
-        "hangtime": "20 segundos",
+        "hangtime": "20",
         "spot": "Tarifa",
         "wind": "20 - 35",
         "description": {
@@ -123,7 +123,7 @@
         "date": "16/10/2020",
         "kite": "Rebel",
         "size": "8m",
-        "hangtime": "16 segundos",
+        "hangtime": "16",
         "spot": "Leucate",
         "wind": "35 - 50",
         "description": {
@@ -138,7 +138,7 @@
         "date": "22/06/2020",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "31 segundos",
+        "hangtime": "31",
         "spot": "Tarifa",
         "wind": "15 - 25",
         "description": {
@@ -153,7 +153,7 @@
         "date": "06/02/2020",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "+20 segundos",
+        "hangtime": "+20",
         "spot": "Tarifa",
         "wind": "20 - 35",
         "description": {
@@ -168,7 +168,7 @@
         "date": "25/08/2019",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "33 segundos",
+        "hangtime": "33",
         "spot": "Tarifa",
         "wind": "25 - 45",
         "description": {
@@ -183,7 +183,7 @@
         "date": "27/06/2019",
         "kite": "Rebel",
         "size": "10m",
-        "hangtime": "31 segundos",
+        "hangtime": "31",
         "spot": "Santa Pola",
         "wind": "10 - 20",
         "description": {
@@ -198,7 +198,7 @@
         "date": "30/05/2019",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "25 segundos",
+        "hangtime": "25",
         "spot": "Tarifa",
         "wind": "25 - 40",
         "description": {
@@ -213,7 +213,7 @@
         "date": "02/09/2018",
         "kite": "Rebel",
         "size": "9m",
-        "hangtime": "+30 segundos",
+        "hangtime": "+30",
         "spot": "Tarifa",
         "wind": "20 - 40",
         "description": {

@@ -1,3 +1,4 @@
+import { FormattedMessage } from 'react-intl';
 import JumpCard from "./jump-card";
 import classes from "./jumps-cards.module.css";
 
@@ -8,7 +9,7 @@ const JumpsCards = ({ jumps }) => {
       <span
         className={`${classes.title} my-4 text-gray-400`}
       >
-        Best Jumps
+        <FormattedMessage id="page.kitesurf.bestJumps" />
       </span>
       {jumps.map((jump) => (
         <JumpCard key={jump.date} data={jump} />

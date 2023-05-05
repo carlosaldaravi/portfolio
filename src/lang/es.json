@@ -1,3 +1,20 @@
 {
-    "page.home.description": "Bienvenido, descubre los dos mundos que me apasionan"
+    "page.home.description": "Bienvenido, descubre los dos mundos que me apasionan",
+    "page.kitesurf.kiteFavorite": "Cometa Favorita",
+    "page.kitesurf.boardFavorite": "Tabla Favorita",
+    "page.kitesurf.heightRecord": "Record de altura",
+    "page.kitesurf.hangtimeRecord": "Record tiempo de vuelo",
+    "page.kitesurf.homeSpot": "Lugar Inicial",
+    "page.kitesurf.currentSpot": "Lugar Actual",
+    "page.kitesurf.sponsors": "Patrocinadores",
+    "page.kitesurf.bestJumps": "Mejores Saltos",
+    "knots": "Nudos",
+    "meters": "Metros",
+    "minute": "1 minuto",
+    "hangtime": "Tiempo de vuelo",
+    "date": "Fecha",
+    "spot": "Lugar",
+    "kite": "Cometa",
+    "size": "Tamaño",
+    "seconds": "segundos"
 }

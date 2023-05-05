@@ -14,11 +14,11 @@
 
 .rightCard {
   animation-name: moveInLeft;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
 }
 .leftCard {
   animation-name: moveInRight;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
 }
 
 @keyframes moveInLeft {

@@ -1,3 +1,20 @@
 {
-    "page.home.description": "Welcome, discover the two worlds that I am passionate about."
+    "page.home.description": "Welcome, discover the two worlds that I am passionate about.",
+    "page.kitesurf.kiteFavorite": "Kite Favorite",
+    "page.kitesurf.boardFavorite": "Board Favorite",
+    "page.kitesurf.heightRecord": "Height Record",
+    "page.kitesurf.hangtimeRecord": "Hangtime Record",
+    "page.kitesurf.homeSpot": "Home Spot",
+    "page.kitesurf.currentSpot": "Current Spot",
+    "page.kitesurf.sponsors": "Sponsors",
+    "page.kitesurf.bestJumps": "Best Jumps",
+    "knots": "Knots",
+    "meters": "Meters",
+    "minute": "1 minute",
+    "hangtime": "Hangtime",
+    "date": "Date",
+    "spot": "Spot",
+    "kite": "Kite",
+    "size": "Size",
+    "seconds": "seconds"
 }
