@@ -7,12 +7,12 @@ import KiterCard from "../../components/kiter-card/kiter-card";
 import JumpsCards from "../../components/jumps-cards";
 import classes from "./kitesurf.module.css";
 
-const KiteSurf = ({ events }) => {
+const KiteSurf = ({ events, me }) => {
   const router = useRouter();
 
   return (
     <div className={classes.main}>
-      <KiterCard />
+      <KiterCard me={me} />
       <JumpsCards jumps={events} />
     </div>
   );
@@ -23,7 +23,7 @@ export async function getStaticProps() {
   const jsonData = await fs.readFile(dataFilePath);
   const data = JSON.parse(jsonData);
   return {
-    props: { events: data },
+    props: { events: data.events, me: data.me },
   };
 }
 

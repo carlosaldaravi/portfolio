@@ -1,227 +1,195 @@
-[
+{
+  "me": [
     {
-        "date": "02/01/2023",
-        "kite": "Rebel",
-        "size": "13m",
-        "hangtime": "23",
-        "spot": "El Médano",
-        "wind": "8 - 18",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "",
-        "best": false
+      "id": "page.kitesurf.kiteFavorite",
+      "value": "page.kitesurf.kiteFavoriteValue"
     },
     {
-        "date": "13/12/2022",
-        "kite": "Rebel",
-        "size": "13m",
-        "hangtime": "26",
-        "spot": "El Médano",
-        "wind": "11 - 22",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "",
-        "best": false
+      "id": "page.kitesurf.boardFavorite",
+      "value": "page.kitesurf.boardFavoriteValue"
     },
     {
-        "date": "27/03/2022",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "36",
-        "spot": "El Médano",
-        "wind": "10 - 30",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "Cip6jFU_cho",
-        "best": false
+      "id": "page.kitesurf.heightRecord",
+      "value": "page.kitesurf.heightRecordValue"
     },
     {
-        "date": "25/01/2022",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "27",
-        "spot": "Tarifa",
-        "wind": "0 - 40",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "",
-        "best": false
+      "id": "page.kitesurf.hangtimeRecord",
+      "value": "page.kitesurf.hangtimeRecordValue"
     },
     {
-        "date": "10/12/2021",
-        "kite": "Rebel",
-        "size": "8m",
-        "hangtime": "+15",
-        "spot": "Misty Cliffs",
-        "wind": "35 - 50",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "2kcdjxcIBWM",
-        "best": false
+      "id": "page.kitesurf.homeSpot",
+      "value": "page.kitesurf.homeSpotValue"
     },
     {
-        "date": "09/07/2021",
-        "kite": "Rebel",
-        "size": "7m",
-        "hangtime": "60",
-        "spot": "Tarifa",
-        "wind": "30 - 60",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "-gQMmsZxw10",
-        "best": true
-    },
-    {
-        "date": "18/03/2021",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "34",
-        "spot": "Tarifa",
-        "wind": "20 - 35",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "_-PPTA3XQWg",
-        "best": false
-    },
-    {
-        "date": "16/03/2021",
-        "kite": "Rebel",
-        "size": "8m",
-        "hangtime": "20",
-        "spot": "Tarifa",
-        "wind": "20 - 35",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "",
-        "best": false
-    },
-    {
-        "date": "16/10/2020",
-        "kite": "Rebel",
-        "size": "8m",
-        "hangtime": "16",
-        "spot": "Leucate",
-        "wind": "35 - 50",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "QHBIGtWig1U",
-        "best": false
-    },
-    {
-        "date": "22/06/2020",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "31",
-        "spot": "Tarifa",
-        "wind": "15 - 25",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "",
-        "best": false
-    },
-    {
-        "date": "06/02/2020",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "+20",
-        "spot": "Tarifa",
-        "wind": "20 - 35",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "fNR0erdMT04",
-        "best": false
-    },
-    {
-        "date": "25/08/2019",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "33",
-        "spot": "Tarifa",
-        "wind": "25 - 45",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "",
-        "best": false
-    },
-    {
-        "date": "27/06/2019",
-        "kite": "Rebel",
-        "size": "10m",
-        "hangtime": "31",
-        "spot": "Santa Pola",
-        "wind": "10 - 20",
-        "description": {
-            "es": "Esta vez en mi casa",
-            "en": "This time in my home spot"
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "",
-        "best": false
-    },
-    {
-        "date": "30/05/2019",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "25",
-        "spot": "Tarifa",
-        "wind": "25 - 40",
-        "description": {
-            "es": "",
-            "en": ""
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "Q_MeCaTz-xY",
-        "best": false
-    },
-    {
-        "date": "02/09/2018",
-        "kite": "Rebel",
-        "size": "9m",
-        "hangtime": "+30",
-        "spot": "Tarifa",
-        "wind": "20 - 40",
-        "description": {
-            "es": "En la competición de la SKL mientras navegaba realicé mi primera volada",
-            "en": "While I was kiting in the SKL competition I did my first massive hangtime"
-        },
-        "img": "https://source.unsplash.com/random/200x200?sig=1",
-        "youtubeEmbedId": "5xVIQ1ZHvI8",
-        "best": false
+      "id": "page.kitesurf.currentSpot",
+      "value": "page.kitesurf.currentSpotValue"
     }
-]
+  ],
+  "events": [
+    {
+      "date": "02/01/2023",
+      "kite": "Rebel",
+      "size": "13m",
+      "hangtime": "23",
+      "spot": "El Médano",
+      "wind": "8 - 18",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "",
+      "best": false
+    },
+    {
+      "date": "13/12/2022",
+      "kite": "Rebel",
+      "size": "13m",
+      "hangtime": "26",
+      "spot": "El Médano",
+      "wind": "11 - 22",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "",
+      "best": false
+    },
+    {
+      "date": "27/03/2022",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "36",
+      "spot": "El Médano",
+      "wind": "10 - 30",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "Cip6jFU_cho",
+      "best": false
+    },
+    {
+      "date": "25/01/2022",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "27",
+      "spot": "Tarifa",
+      "wind": "0 - 40",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "",
+      "best": false
+    },
+    {
+      "date": "10/12/2021",
+      "kite": "Rebel",
+      "size": "8m",
+      "hangtime": "+15",
+      "spot": "Misty Cliffs",
+      "wind": "35 - 50",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "2kcdjxcIBWM",
+      "best": false
+    },
+    {
+      "date": "09/07/2021",
+      "kite": "Rebel",
+      "size": "7m",
+      "hangtime": "60",
+      "spot": "Tarifa",
+      "wind": "30 - 60",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "-gQMmsZxw10",
+      "best": true
+    },
+    {
+      "date": "18/03/2021",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "34",
+      "spot": "Tarifa",
+      "wind": "20 - 35",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "_-PPTA3XQWg",
+      "best": false
+    },
+    {
+      "date": "16/03/2021",
+      "kite": "Rebel",
+      "size": "8m",
+      "hangtime": "20",
+      "spot": "Tarifa",
+      "wind": "20 - 35",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "",
+      "best": false
+    },
+    {
+      "date": "16/10/2020",
+      "kite": "Rebel",
+      "size": "8m",
+      "hangtime": "16",
+      "spot": "Leucate",
+      "wind": "35 - 50",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "QHBIGtWig1U",
+      "best": false
+    },
+    {
+      "date": "22/06/2020",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "31",
+      "spot": "Tarifa",
+      "wind": "15 - 25",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "",
+      "best": false
+    },
+    {
+      "date": "06/02/2020",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "+20",
+      "spot": "Tarifa",
+      "wind": "20 - 35",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "fNR0erdMT04",
+      "best": false
+    },
+    {
+      "date": "25/08/2019",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "33",
+      "spot": "Tarifa",
+      "wind": "25 - 45",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "",
+      "best": false
+    },
+    {
+      "date": "27/06/2019",
+      "kite": "Rebel",
+      "size": "10m",
+      "hangtime": "31",
+      "spot": "Santa Pola",
+      "wind": "10 - 20",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "",
+      "best": false
+    },
+    {
+      "date": "30/05/2019",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "25",
+      "spot": "Tarifa",
+      "wind": "25 - 40",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "Q_MeCaTz-xY",
+      "best": false
+    },
+    {
+      "date": "02/09/2018",
+      "kite": "Rebel",
+      "size": "9m",
+      "hangtime": "+30",
+      "spot": "Tarifa",
+      "wind": "20 - 40",
+      "img": "https://source.unsplash.com/random/200x200?sig=1",
+      "youtubeEmbedId": "5xVIQ1ZHvI8",
+      "best": false
+    }
+  ]
+}
