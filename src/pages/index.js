@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
+import { setCookie } from "cookies-next";
 import Link from "next/link";
 import Head from "next/head";
 import RoleCard from "../components/role-card/role-card";
@@ -9,28 +10,21 @@ import classes from "../styles/Home.module.css";
 import path from "path";
 import fs from "fs/promises";
 
-export default function Home({ roles, dir }) {
+export default function Home({ roles }) {
   const { locales, locale } = useRouter();
-  console.log('locales: ', locales);
-  console.log('locale: ', locale);
-  const intl = useIntl();
+
+  const setCookieHandler = () => {
+    setCookie("NEXT_LOCALE", locale);
+  };
 
   return (
     <div>
       <Head>
         <title>Carlos Aldaravi Porfolio</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="alternate" href="http://example.com" hrefLang="x-default" />
-        <link rel="alternate" href="http://carlosaldaravi.com" hrefLang="en" />
-        <link
-          rel="alternate"
-          href="https://carlosaldaravi.com/es"
-          hrefLang="es"
-        />
-        <link rel="alternate" href="http://localhost:3001/es" hrefLang="es" />
       </Head>
 
-      <main className="">
+      <main>
         <div className="bg-gray-900 py-28 sm:py-36">
           <div className="absolute top-0 right-0 mt-2 mr-2">
             <div className={`${classes.languages} flex justify-end gap-2`}>
@@ -39,6 +33,7 @@ export default function Home({ roles, dir }) {
                   <SVG
                     type={l}
                     actualLanguage={locale}
+                    onClick={setCookieHandler}
                   />
                 </Link>
               ))}
