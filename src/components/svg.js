@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./svg.module.css";
 
-const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
+const SVG = ({ type, hover, actualLanguage }) => {
   const [mouseIn, setMouseIn] = useState(false);
   const onMouseEnterHandler = () => {
     setMouseIn(true);
@@ -9,9 +9,7 @@ const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
   const onMouseLeaveHandler = () => {
     setMouseIn(false);
   };
-  const onClickHandler = (lang) => {
-    selectedLanguage(lang);
-  };
+
   if (type === "Twitter") {
     return (
       <svg
@@ -88,7 +86,7 @@ const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
       </svg>
     );
   }
-  if (type === "spain") {
+  if (type === "es") {
     return (
       <svg
         className={`h-8 w-8 cursor-pointer transform duration-300 ${
@@ -103,14 +101,13 @@ const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        onClick={() => onClickHandler("es")}
       >
         <path fill="#ad1519" d="M0 0h6v4H0z" />
         <path fill="#fabd00" d="M0 1h6v2H0z" />
       </svg>
     );
   }
-  if (type === "england") {
+  if (type === "en") {
     return (
       <svg
         className={`h-8 w-8 cursor-pointer transform duration-300 ${
@@ -125,7 +122,6 @@ const SVG = ({ type, hover, actualLanguage, selectedLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        onClick={() => onClickHandler("en")}
       >
         <path fill="none" d="M0 0h192.8v192.8H0V0z" clipRule="evenodd" />
         <path
