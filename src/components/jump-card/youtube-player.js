@@ -3,6 +3,10 @@ import YoutubeEmbed from "../youtube-embed";
 import SVG from "../svg";
 
 const YoutubePlayer = ({jump, onBack}) => {
+  const { hangtime } = jump.texts.find(
+    (object) => Object.keys(object)[0] === "hangtime"
+  );
+
   return (
     <div className={`rounded-xl webKitFillAvailable`}>
       <div
@@ -12,11 +16,11 @@ const YoutubePlayer = ({jump, onBack}) => {
         onClick={onBack}
       >
         <SVG type="backArrow" />
-        {jump.hangtime} <FormattedMessage id="seconds" />
+        {hangtime} <FormattedMessage id="seconds" />
       </div>
       <YoutubeEmbed
         embedId={jump.youtubeEmbedId}
-        title={jump.hangtime}
+        title={hangtime}
         className={"rounded-xl"}
       />
     </div>
