@@ -15,13 +15,14 @@
     "page.kitesurf.currentSpotValue": "El Médano",
     "page.kitesurf.sponsorsValue": "Duotone, Ion",
     "page.kitesurf.bestJumps": "Best Jumps",
-    "knots": "Knots",
-    "meters": "Meters",
+    "knots": "knots",
+    "meters": "meters",
     "minute": "1 minute",
     "hangtime": "Hangtime",
     "date": "Date",
     "spot": "Spot",
     "kite": "Kite",
     "size": "Size",
+    "wind": "Wind",
     "seconds": "seconds"
 }

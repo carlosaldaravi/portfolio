@@ -1,10 +1,9 @@
-import { EyeDropperIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { useRouter } from "next/router";
 import path from "path";
 import fs from "fs/promises";
 import KiterCard from "../../components/kiter-card/kiter-card";
-import JumpsCards from "../../components/jumps-cards";
+import JumpsCards from "../../components/jump-card/jumps-cards";
 import classes from "./kitesurf.module.css";
 
 const KiteSurf = ({ events, me }) => {
