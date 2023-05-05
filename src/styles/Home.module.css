@@ -1,20 +1,15 @@
 .name {
   animation-name: moveInLeft;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
 }
 .surname {
   animation-name: moveInRight;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
 }
 
 .description {
   animation-name: moveInTop;
-  animation-duration: 3s;
-}
-
-.languages {
-  animation-name: appear;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
 }
 
 @keyframes moveInLeft {
@@ -55,15 +50,5 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
