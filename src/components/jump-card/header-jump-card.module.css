@@ -1,4 +1,5 @@
 .bajorrelieve {
   color: #bebebe;
   text-shadow: -1px -2px 1px #2d2d2d;
+  filter: blur(0) !important;
 }
