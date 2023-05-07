@@ -89,7 +89,7 @@ const SVG = ({ type, hover, actualLanguage }) => {
   if (type === "es") {
     return (
       <svg
-        className={`h-8 w-8 cursor-pointer transform duration-300 ${
+        className={`h-8 w-8 sm:h-10 sm:w-10 cursor-pointer transform duration-300 ${
           actualLanguage === "es"
             ? "opacity-100"
             : mouseIn
@@ -110,7 +110,7 @@ const SVG = ({ type, hover, actualLanguage }) => {
   if (type === "en") {
     return (
       <svg
-        className={`h-8 w-8 cursor-pointer transform duration-300 ${
+        className={`h-8 w-8 sm:h-10 sm:w-10 cursor-pointer transform duration-300 ${
           actualLanguage === "en"
             ? "opacity-100"
             : mouseIn

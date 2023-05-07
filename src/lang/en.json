@@ -15,6 +15,7 @@
     "page.kitesurf.currentSpotValue": "El Médano",
     "page.kitesurf.sponsorsValue": "Duotone, Ion",
     "page.kitesurf.bestJumps": "Best Jumps",
+    "page.about.title": "Hi, I'm Carlos",
     "knots": "knots",
     "meters": "meters",
     "minute": "1 minute",
@@ -24,5 +25,7 @@
     "kite": "Kite",
     "size": "Size",
     "wind": "Wind",
-    "seconds": "seconds"
+    "seconds": "seconds",
+    "about": "about me",
+    "contact": "contact me!"
 }
