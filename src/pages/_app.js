@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import "@/styles/info-card.scss";
+import "@/styles/sass/main.scss";
 
 import { IntlProvider } from "react-intl";
 import { useRouter } from "next/router";
