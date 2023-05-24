@@ -65,13 +65,13 @@ const JumpCard = ({
 
   return (
     <div
-      className={`relative flex items-center justify-center h-max border border-gray-800 ${
+      className={`relative flex items-center justify-center h-max border border-gray-800 transform duration-500 ease-in transition-all ${
         isExpanded
           ? `${
               jump.best
                 ? `${classes.best} border-yellow-300 shadow-yellow-300`
-                : `${classes.card} border-gray-50`
-            } z-30 shadow-xl rounded-md transform duration-500 ease-in transition-[blur] ${
+                : `${classes.card} border-gray-100`
+            } z-30 shadow-lg rounded-md ${
               cardHovered && "blur-none"
             }`
           : `${

@@ -15,7 +15,7 @@ const HeaderJumpCard = ({ jump }) => {
 
   return (
     <h3
-      className={`${classes.bajorrelieve} webKitFillAvailable flex justify-center sm:justify-between text-xl items-center text-center sm:text-end font-normal text-gray-300`}
+      className={`${classes.bajorrelieve} webKitFillAvailable flex justify-center sm:justify-between text-xl sm:text-2xl items-center text-center sm:text-end font-normal text-gray-300`}
     >
       {hangtime} <FormattedMessage id="seconds" />
       {jump.youtubeEmbedId && (

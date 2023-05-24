@@ -19,7 +19,7 @@ const JumpsCards = ({ jumps }) => {
   };
 
   return (
-    <div className="absolute top-[28rem] left-1/2 -translate-x-1/2 w-2/3 min-w-md max-w-xl">
+    <div className="mx-auto mt-10 w-2/3 min-w-md max-w-6xl">
       <span className={`${classes.title} my-4 text-gray-400`}>
         <FormattedMessage id="page.kitesurf.bestJumps" />
       </span>

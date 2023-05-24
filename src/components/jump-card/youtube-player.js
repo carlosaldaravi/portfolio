@@ -10,7 +10,7 @@ const YoutubePlayer = ({jump, onBack}) => {
   return (
     <div className={`rounded-xl webKitFillAvailable`}>
       <div
-        className={`flex justify-between px-8 text-center bg-gray-500 tracking-xxs cursor-pointer animate-appear ${
+        className={`flex justify-between px-8 text-center text-xl sm:text-2xl bg-gray-500 tracking-xxs cursor-pointer animate-appear items-center ${
           jump.best ? "text-yellow-300" : "text-gray-100"
         }`}
         onClick={onBack}
