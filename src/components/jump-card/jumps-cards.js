@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import JumpCard from "./jump-card";
 import classes from "./jumps-cards.module.css";
 
 const JumpsCards = ({ jumps }) => {
   const [cardHovered, setCardHovered] = useState(false);
-
-  useEffect(() => {
-    // console.log("cardHovered: ", cardHovered);
-  }, [cardHovered]);
 
   const setCardHoveredHandler = () => {
     setCardHovered(true);
