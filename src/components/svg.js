@@ -17,8 +17,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`h-5 w-5 transition duration-300 ease-in-out ${
-          hover ? "blur-none" : "blur-xxs"
+        className={`transition-all duration-500 ease-in ${
+          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -35,8 +35,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`h-5 w-5 transition duration-300 ease-in-out ${
-          hover ? "blur-none" : "blur-xxs"
+        className={`transition-all duration-500 ease-in ${
+          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -57,8 +57,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`h-5 w-5 transition duration-300 ease-in-out ${
-          hover ? "blur-none" : "blur-xxs"
+        className={`transition-all duration-500 ease-in ${
+          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -71,8 +71,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
   if (type === "Tiktok") {
     return (
       <svg
-        className={`h-5 w-5 transition duration-300 ease-in-out ${
-          hover ? "blur-none" : "blur-xxs"
+        className={`transition-all duration-500 ease-in ${
+          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -89,7 +89,7 @@ const SVG = ({ type, hover, actualLanguage }) => {
   if (type === "es") {
     return (
       <svg
-        className={`h-8 w-8 sm:h-10 sm:w-10 cursor-pointer transform duration-300 ${
+        className={`h-8 w-8 sm:h-12 sm:w-12 cursor-pointer transform duration-300 ${
           actualLanguage === "es"
             ? "opacity-100"
             : mouseIn
@@ -110,7 +110,7 @@ const SVG = ({ type, hover, actualLanguage }) => {
   if (type === "en") {
     return (
       <svg
-        className={`h-8 w-8 sm:h-10 sm:w-10 cursor-pointer transform duration-300 ${
+        className={`h-8 w-8 sm:h-12 sm:w-12 cursor-pointer transform duration-300 ${
           actualLanguage === "en"
             ? "opacity-100"
             : mouseIn
@@ -178,7 +178,7 @@ const SVG = ({ type, hover, actualLanguage }) => {
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-6 h-6"
+        className="w-6 h-6 sm:w-12 sm:h-12"
       >
         <path
           strokeLinecap="round"
