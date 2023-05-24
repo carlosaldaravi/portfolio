@@ -1,8 +1,8 @@
 import classes from "./about.module.css";
 import path from "path";
 import fs from "fs/promises";
-import OverlayCard from "../components/about/overlay-card";
-import AboutHeader from "../components/about/header";
+import OverlayCard from "../../components/about/overlay-card";
+import AboutHeader from "../../components/about/header";
 
 const About = ({ cards }) => {
   return (
