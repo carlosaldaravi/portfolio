@@ -35,14 +35,14 @@ module.exports = {
       },
       keyframes: {
         appear: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
-        }
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
       },
       animation: {
-        appear: 'appear 1s',
-      }
+        appear: "appear 1s",
+      },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require('tailwind-scrollbar-hide')],
 };

@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-body {
-  background-color: rgb(17 24 39);
-  color: white;
-}
-
 .webKitFillAvailable {
   width: -webkit-fill-available;
 }
