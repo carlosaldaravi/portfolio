@@ -10,9 +10,7 @@ const About = ({ cards }) => {
       <AboutHeader />
       <div
         className={`${classes.content} mx-auto top-24 text-justify sm:text-start z-50`}
-      >
-        {/* <FormattedMessage id="page.about.description" /> */}
-      </div>
+      ></div>
       <OverlayCard cards={cards} />
     </section>
   );
