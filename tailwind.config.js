@@ -40,7 +40,9 @@ module.exports = {
         },
       },
       animation: {
-        appear: "appear 1s",
+        "appear-1": "appear 1s",
+        "appear-2": "appear 2s",
+        "appear-3": "appear 3s",
       },
     },
   },

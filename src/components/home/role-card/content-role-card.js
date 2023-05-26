@@ -18,9 +18,6 @@ const ContentRoleCard = ({ role }) => {
   };
   return (
     <Link
-      className={`${
-        role.name === "Kitesurfer" ? classes.rightCard : classes.leftCard
-      }`}
       href={role.to}
       onMouseEnter={onMouseEnterHandler}
       onTouchStart={onMouseEnterHandler}
@@ -42,7 +39,11 @@ const ContentRoleCard = ({ role }) => {
         <h3
           className={`mt-6 font-semibold leading-7 tracking-normal ${
             classes.text
-          } ${cardHovered ? `text-2xl lg:text-5xl text-white` : "text-xl text-gray-400"}`}
+          } ${
+            cardHovered
+              ? `text-2xl lg:text-5xl text-white`
+              : "text-xl text-gray-400"
+          }`}
         >
           {role.name}
         </h3>
