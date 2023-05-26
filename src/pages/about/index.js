@@ -1,9 +1,7 @@
-import classes from "./about.module.css";
-import OverlayCard from "../../components/about/overlay-card";
+import OverlayCards from "../../components/about/overlay-cards";
 import AboutHeader from "../../components/about/header";
 
 const About = () => {
-  
   const cards = [
     {
       "name": "kitesurf",
@@ -40,7 +38,7 @@ const About = () => {
   return (
     <section className="mb-10">
       <AboutHeader />
-      <OverlayCard cards={cards} />
+      <OverlayCards cards={cards} />
     </section>
   );
 };
