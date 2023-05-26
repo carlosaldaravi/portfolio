@@ -8,6 +8,7 @@
     transform: translateX(0);
   }
 }
+
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -20,6 +21,7 @@
     transform: translateX(0);
   }
 }
+
 @keyframes moveInTop {
   0% {
     opacity: 0;
@@ -30,11 +32,60 @@
     transform: translateY(0);
   }
 }
+
 @keyframes appear {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+    border-color: white;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@keyframes erase {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes typingAndBlink {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+    border-color: white;
+  }
+  100% {
+    border-color: transparent;
+    width: 100%;
   }
 }

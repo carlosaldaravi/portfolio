@@ -54,7 +54,7 @@
   height: 50px;
   font-weight: inherit;
   line-height: 1;
-  color: white;
+  color: #eee;
 }
 
 .paragraph {
@@ -64,10 +64,9 @@
 
 @media screen and (max-width: 639px) {
   .card {
-    max-width: 50%;
-    
+    max-width: 60%;
   }
   .info {
-    height: 300px;
+    height: 350px;
   }
 }
