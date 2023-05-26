@@ -52,7 +52,7 @@ const AboutHeader = () => {
           <h3
             className={`${classes.subTitle} header__description mt-6 sm:mt-14 text-xl sm:text-3xl flex gap-2`}
           >
-            <span key={description} className="header__description__text">
+            <span key={description} className="header__description__text text-xl sm:text-3xl">
               {description}
             </span>
           </h3>
