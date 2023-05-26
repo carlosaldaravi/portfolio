@@ -9,11 +9,18 @@
     background: hsl(0, 0%, 18%);
     box-shadow: 0 30px 30px 30px rgba(0, 0, 0, 0.3);
   }
+  .imagen {
+    min-width: 200px;
+  }
   .header {
     width: max-content;
     white-space: nowrap;
     color: transparent;
     -webkit-text-stroke: 1px white;
+  }
+  .subTitle {
+    color: transparent;
+    -webkit-text-stroke: 1.6px rgb(169, 169, 169);
   }
   .right {
     overflow: hidden;
@@ -63,13 +70,20 @@
   
   @media screen and (max-width: 639px) {
     .wrapper {
+      margin-top: 0;
+      background: none;
+      box-shadow: none;
+      display: flex;
+      justify-content: center;
+      text-align: center;
       width: 90%;
-      height: 100px;
+      height: 150px;
     }
-    .right {
-      height: 200px;
-    }
-    .imagen {
-      width: 80%;
+    .header {
+      margin: 0 auto;
+      width: max-content;
+      white-space: nowrap;
+      color: transparent;
+      -webkit-text-stroke: 1px white;
     }
   }
