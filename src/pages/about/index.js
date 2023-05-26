@@ -40,9 +40,6 @@ const About = () => {
   return (
     <section className="mb-10">
       <AboutHeader />
-      <div
-        className={`${classes.content} mx-auto text-justify sm:text-start z-50`}
-      ></div>
       <OverlayCard cards={cards} />
     </section>
   );

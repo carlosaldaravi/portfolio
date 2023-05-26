@@ -9,18 +9,18 @@ const AboutHeader = () => {
   return (
     <div className={`${classes.wrapper} mx-auto`}>
       <div className="px-4 sm:ml-12 sm:mt-12 self-center sm:self-start">
-        <div className={`${classes.header} text-4xl sm:text-7xl`}>
+        <h2 className={`${classes.header} text-4xl sm:text-7xl`}>
           <FormattedMessage id="page.about.title" />
-        </div>
-        <div className={`${classes.subTitle} mt-6 text-xl sm:text-3xl`}>
+        </h2>
+        <h3 className={`${classes.subTitle} mt-6 text-xl sm:text-3xl`}>
           <FormattedMessage id="page.about.description" />
-        </div>
+        </h3>
       </div>
       {!isMobile && (
         <div className={`${classes.right}`}>
           <Image
             src="/yo-dev.JPG"
-            alt=""
+            alt="me"
             width={200}
             height={200}
             className={`float-right translate-x-6 sm:translate-x-14 ${classes.imagen}`}

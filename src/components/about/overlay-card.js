@@ -22,7 +22,7 @@ const Card = ({ card }) => {
         className={`${classes.info} ${card.before} overflow-y-scroll scrollbar-hide`}
       >
         <h1
-          className={`${classes.title} capitalize text-4xl text-center items-center mt-5`}
+          className={`${classes.title} capitalize text-4xl text-center tracking-xxs items-center mt-5`}
         >
           {card.name}
         </h1>
@@ -36,7 +36,7 @@ const Card = ({ card }) => {
 
 const OverlayCard = ({ cards }) => {
   return (
-    <div className="sm:mt-24 text-center">
+    <div className="mt-12 sm:mt-24 text-center">
       <h3 className="text-2xl sm:text-3xl text-gray-300 font-thin"><FormattedMessage id="page.about.freeTime" /></h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-12">
         {cards.map((card) => (
