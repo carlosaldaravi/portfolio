@@ -19,7 +19,7 @@ const Card = ({ card }) => {
     >
       <div
         ref={infoRef}
-        className={`${classes.info} ${card.before} ${classes.scroll} overflow-y-scroll scrollbar-hide`}
+        className={`${classes.info} ${card.before} overflow-y-scroll scrollbar-hide`}
       >
         <h1
           className={`${classes.title} capitalize text-4xl text-center items-center mt-5`}
@@ -36,8 +36,8 @@ const Card = ({ card }) => {
 
 const OverlayCard = ({ cards }) => {
   return (
-    <div className="mt-36 sm:mt-24 text-center">
-      <h3 className="text-2xl sm:text-3xl text-gray-300"><FormattedMessage id="page.about.freeTime" /></h3>
+    <div className="sm:mt-24 text-center">
+      <h3 className="text-2xl sm:text-3xl text-gray-300 font-thin"><FormattedMessage id="page.about.freeTime" /></h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-12">
         {cards.map((card) => (
           <Card key={card.name} card={card} />
