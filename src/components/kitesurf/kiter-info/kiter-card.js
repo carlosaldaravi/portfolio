@@ -1,4 +1,4 @@
-import Avatar from "../avatar";
+import Avatar from "../../avatar";
 import TextKiterCard from "./text-kiter-card";
 
 const KiterCard = ({ me }) => {

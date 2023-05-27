@@ -5,7 +5,7 @@ import TextsJumpCard from "./texts-jump-card";
 import YoutubeIcon from "./youtube-icon";
 import YoutubePlayer from "./youtube-player";
 import HeaderJumpCard from "./header-jump-card";
-import { useTools } from "../../hooks/useTools";
+import { useTools } from "../../../hooks/useTools";
 
 const JumpCard = ({
   jump,

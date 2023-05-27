@@ -1,4 +1,4 @@
-import SVG from "../svg";
+import SVG from "../../svg";
 
 const YoutubeIcon = ({onPlay}) => {
   return (

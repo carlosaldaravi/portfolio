@@ -2,8 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import path from "path";
 import fs from "fs/promises";
-import KiterCard from "../../components/kiter-card/kiter-card";
-import JumpsCards from "../../components/jump-card/jumps-cards";
+import KiterCard from "../../components/kitesurf/kiter-info/kiter-card";
+import JumpsCards from "../../components/kitesurf/jump-card/jumps-cards";
 import classes from "./kitesurf.module.css";
 
 const KiteSurf = ({ events, me }) => {
