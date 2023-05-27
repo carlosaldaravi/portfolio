@@ -5,7 +5,7 @@ import TextsJumpCard from "./texts-jump-card";
 import YoutubeIcon from "./youtube-icon";
 import YoutubePlayer from "./youtube-player";
 import HeaderJumpCard from "./header-jump-card";
-import { useTools } from "../../hooks/useTools";
+import { useTools } from "../../../hooks/useTools";
 
 const JumpCard = ({
   jump,
@@ -32,10 +32,8 @@ const JumpCard = ({
     }
   };
 
-  const onTouchInHandler = () => {
-    console.log("onTouchInHandler 1");
+  const onShowMoreHandler = () => {
     if (isMobile && !showVideo && !cardHovered) {
-      console.log("onTouchInHandler 2");
       setIsExpanded(true);
       setShowText(true);
       onSetCardHovered();
@@ -82,7 +80,6 @@ const JumpCard = ({
       } ${showVideo ? "p-0" : "p-4"}`}
       onMouseEnter={onHoverInHandler}
       onMouseLeave={onHoverOutHandler}
-      onTouchStart={onTouchInHandler}
     >
       {isExpanded && !showVideo && (
         <div className="absolute sm:hidden cursor-pointer right-2 top-2 animate-appear">
@@ -92,7 +89,7 @@ const JumpCard = ({
           />
         </div>
       )}
-      {!isExpanded && <HeaderJumpCard jump={jump} />}
+      {!isExpanded && <HeaderJumpCard jump={jump} onShowMore={onShowMoreHandler} />}
       {showText && (
         <>
           <TextsJumpCard texts={jump.texts} />

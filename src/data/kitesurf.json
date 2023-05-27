@@ -36,7 +36,7 @@
         { "wind": "8 - 18" }
       ],
       "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "",
+      "youtubeEmbedId": "UqJ3_v1iBUE",
       "best": false
     },
     {
@@ -49,7 +49,7 @@
         { "wind": "11 - 22" }
       ],
       "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "",
+      "youtubeEmbedId": "dacCUGIXLME",
       "best": false
     },
     {
@@ -68,14 +68,14 @@
     {
       "texts": [
         { "hangtime": "27" },
-        { "date": "25/01/2022" },
+        { "date": "19/01/2022" },
         { "spot": "Tarifa" },
         { "kite": "Rebel" },
         { "size": "9m" },
         { "wind": "0 - 40" }
       ],
       "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "",
+      "youtubeEmbedId": "ptLAZmjuRfc",
       "best": false
     },
     {
@@ -119,19 +119,6 @@
     },
     {
       "texts": [
-        { "hangtime": "20" },
-        { "date": "16/03/2021" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "8m" },
-        { "wind": "20 - 35" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "",
-      "best": false
-    },
-    {
-      "texts": [
         { "hangtime": "16" },
         { "date": "16/10/2020" },
         { "spot": "Leucate" },
@@ -145,7 +132,7 @@
     },
     {
       "texts": [
-        { "hangtime": "31" },
+        { "hangtime": "+25" },
         { "date": "22/06/2020" },
         { "spot": "Tarifa" },
         { "kite": "Rebel" },
@@ -153,7 +140,7 @@
         { "wind": "15 - 25" }
       ],
       "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "",
+      "youtubeEmbedId": "fznH5fj92VY",
       "best": false
     },
     {
@@ -179,7 +166,7 @@
         { "wind": "25 - 45" }
       ],
       "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "",
+      "youtubeEmbedId": "wXm9gL7nzCA",
       "best": false
     },
     {
