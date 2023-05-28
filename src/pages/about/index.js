@@ -4,31 +4,31 @@ import AboutHeader from "../../components/about/header";
 const About = () => {
   const cards = [
     {
-      "name": "kitesurf",
+      "name": "page.about.kitesurfCardTitle",
       "text": "page.about.kitesurfCard",
       "img": "bg-[url('/kitesurf.JPG')]",
       "before": "before:bg-[url('/kitesurf.JPG')]"
     },
     {
-      "name": "kite instructor",
+      "name": "page.about.instructorCardTitle",
       "text": "page.about.instructorCard",
       "img": "bg-[url('/instructor.jpeg')]",
       "before": "before:bg-[url('/instructor.jpeg')]"
     },
     {
-      "name": "padel",
+      "name": "page.about.padelCardTitle",
       "text": "page.about.padelCard",
       "img": "bg-[url('/yo-padel.png')]",
       "before": "before:bg-[url('/yo-padel.png')]"
     },
     {
-      "name": "juegos",
+      "name": "page.about.gamesCardTitle",
       "text": "page.about.gamesCard",
       "img": "bg-[url('/game.jpeg')]",
       "before": "before:bg-[url('/game.jpeg')]"
     },
     {
-      "name": "cine",
+      "name": "page.about.cineCardTitle",
       "text": "page.about.cineCard",
       "img": "bg-[url('/films.png')]",
       "before": "before:bg-[url('/films.png')]"
