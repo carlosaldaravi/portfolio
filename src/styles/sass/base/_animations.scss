@@ -66,9 +66,15 @@
   }
 }
 @keyframes parpadeo {
-  0% { opacity: 1; }
-  50% { opacity: .5; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes erase {
@@ -134,5 +140,22 @@
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
+  }
+}
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+  33.3% {
+    opacity: 1;
+    transform: translateY(2.7rem) scale(0.2);
+  }
+  66.6% {
+    opacity: 1;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(.7rem);
   }
 }

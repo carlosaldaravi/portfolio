@@ -22,15 +22,20 @@ const Card = ({ card, hasBeenHovered, onHover }) => {
       onMouseLeave={resetScroll}
       onTouchEnd={resetScroll}
     >
+      <div className="about__card__container">
+        <div className="chevron"></div>
+        <div className="chevron"></div>
+        <div className="chevron"></div>
+      </div>
       <div
         ref={infoRef}
         className={`${classes.info} ${card.before} overflow-y-scroll scrollbar-hide`}
       >
-        <h1
+        <h3
           className={`${classes.title} capitalize text-4xl text-center tracking-xxs items-center mt-5`}
         >
           <FormattedMessage id={card.name} />
-        </h1>
+        </h3>
         <p className={`${classes.description} ${classes.paragraph}`}>
           <FormattedMessage id={card.text} />
         </p>
