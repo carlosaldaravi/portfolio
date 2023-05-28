@@ -24,7 +24,7 @@ const Header = () => {
       )}
       {route === "/" && (
         <Link
-          className="absolute top-0 left-0 mt-4 ml-4 z-50 animate-appear cursor-pointer capitalize text-gray-300 text-lg sm:text-2xl underline underline-offset-4 sm:underline-offset-8 opacity-50 hover:opacity-100"
+          className="absolute top-0 left-0 mt-4 ml-4 z-50 animate-appear cursor-pointer capitalize text-gray-300 text-lg sm:text-2xl opacity-50 hover:opacity-100"
           href="/about"
         >
           <FormattedMessage id="about" />
