@@ -171,6 +171,24 @@ const SVG = ({ type, hover, actualLanguage }) => {
       </svg>
     );
   }
+  if (type === "youtubeHome") {
+    return (
+      <svg
+        onMouseEnter={onMouseEnterHandler}
+        onTouchStart={onMouseEnterHandler}
+        onMouseLeave={onMouseLeaveHandler}
+        onTouchEnd={onMouseLeaveHandler}
+        className={`transition-all duration-500 ease-in ${
+          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
+        }`}
+        aria-hidden="true"
+        fill={`${mouseIn ? "white" : "gray"}`}
+        viewBox="0 0 461.001 461.001"
+      >
+        <path d="M365.3 67.4H95.7A95.7 95.7 0 0 0 0 163V298a95.7 95.7 0 0 0 95.7 95.7h269.6A95.7 95.7 0 0 0 461 298V163a95.7 95.7 0 0 0-95.7-95.7zM300.5 237l-126 60a5 5 0 0 1-7.3-4.5v-124a5 5 0 0 1 7.4-4.5l126 63.9a5 5 0 0 1 0 9z" />
+      </svg>
+    );
+  }
   if (type === "backArrow") {
     return (
       <svg
