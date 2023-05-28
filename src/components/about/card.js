@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { FormattedMessage } from "react-intl";
 import classes from "./card.module.css";
 
-const Card = ({ card, hasBeenHovered, onHover }) => {
+const Card = ({ card }) => {
   const infoRef = useRef(null);
 
   const resetScroll = () => {
@@ -14,11 +14,7 @@ const Card = ({ card, hasBeenHovered, onHover }) => {
   return (
     <div
       key={`overlayCard-${card.name}`}
-      className={`${classes.card} ${card.img} ${
-        !hasBeenHovered && "animate-pulse"
-      }`}
-      onMouseEnter={onHover}
-      onTouchStart={onHover}
+      className={`${classes.card} ${card.img}`}
       onMouseLeave={resetScroll}
       onTouchEnd={resetScroll}
     >
