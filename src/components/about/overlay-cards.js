@@ -1,22 +1,7 @@
-import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import { getCookie, setCookie } from "cookies-next";
 import Card from "./card";
 
 const OverlayCards = ({ cards }) => {
-  const [hasBeenHovered, setHasBeenHovered] = useState(false);
-
-  useEffect(() => {
-    const hovered = getCookie("about-card");
-    if (hovered) {
-      setHasBeenHovered(true);
-    }
-  }, []);
-
-  const onHoverHandler = () => {
-    setHasBeenHovered(true);
-    setCookie("about-card", "hovered");
-  };
 
   return (
     <div className="mt-12 sm:mt-24 text-center">
@@ -28,8 +13,6 @@ const OverlayCards = ({ cards }) => {
           <Card
             key={card.name}
             card={card}
-            hasBeenHovered={hasBeenHovered}
-            onHover={onHoverHandler}
           />
         ))}
       </div>

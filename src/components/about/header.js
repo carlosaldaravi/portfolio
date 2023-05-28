@@ -49,10 +49,11 @@ const AboutHeader = () => {
                 originalDescription,
                 2000,
                 switcherDescription,
-                2000,
               ]}
               repeat={Infinity}
               cursor={true}
+              speed={60}
+              deletionSpeed={80}
             />
           </h3>
         }
