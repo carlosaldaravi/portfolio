@@ -29,10 +29,9 @@ const Card = ({ card, hasBeenHovered, onHover }) => {
         <h1
           className={`${classes.title} capitalize text-4xl text-center tracking-xxs items-center mt-5`}
         >
-          {card.name}
+          <FormattedMessage id={card.name} />
         </h1>
         <p className={`${classes.description} ${classes.paragraph}`}>
-          
           <FormattedMessage id={card.text} />
         </p>
       </div>
