@@ -1,4 +1,9 @@
+.grid {
+  background: linear-gradient(to right, red, yellow);
+  /* Resto del código */
+}
 .card {
+  filter: hue-rotate(50deg) saturate(10%);
   border-radius: 16px;
   margin: 0 auto;
   width: 300px;
@@ -10,8 +15,9 @@
   overflow: hidden;
   background-size: cover;
   background-position: 50% 0;
+  
+  position: relative;
 }
-
 .info {
   position: relative;
   width: 100%;

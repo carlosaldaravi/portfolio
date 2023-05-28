@@ -1,9 +1,9 @@
-.header__description__text {
+.header__title__text {
   display: inline-block;
   width: fit-content;
   border-right: 2px solid;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 2s steps(40, end) 0.2s, blink 0.7s step-end infinite;
+  animation: typingAndBlink 2s steps(40, end) 0.7s, blink 2s step-end none;
   animation-fill-mode: backwards;
 }

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { FormattedMessage } from "react-intl";
 import classes from "./card.module.css";
 
 const Card = ({ card, hasBeenHovered, onHover }) => {
@@ -31,7 +32,8 @@ const Card = ({ card, hasBeenHovered, onHover }) => {
           {card.name}
         </h1>
         <p className={`${classes.description} ${classes.paragraph}`}>
-          {card.text}
+          
+          <FormattedMessage id={card.text} />
         </p>
       </div>
     </div>

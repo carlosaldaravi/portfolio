@@ -62,7 +62,7 @@
     border-color: transparent;
   }
   50% {
-    border-color: white;
+    border-color: #eee;
   }
 }
 
@@ -82,10 +82,14 @@
   }
   1% {
     opacity: 1;
-    border-color: white;
+    border-color: #eee;
+  }
+  99% {
+    opacity: 1;
+    border-color: #eee;
   }
   100% {
-    border-color: transparent;
+    opacity: 0;
     width: 100%;
   }
 }
