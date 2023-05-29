@@ -23,12 +23,14 @@ const Header = () => {
         </Link>
       )}
       {route === "/" && (
-        <Link
-          className="absolute top-0 left-0 mt-4 ml-4 z-50 animate-appear cursor-pointer capitalize text-gray-300 text-lg sm:text-2xl opacity-50 hover:opacity-100"
-          href="/about"
-        >
-          <FormattedMessage id="about" />
-        </Link>
+        <div className="btn btn-hover transition-all absolute w-52 text-center top-4 -left-10 sm:-left-2 z-50 animate-appear opacity-50 hover:opacity-100">
+          <Link
+            className="capitalize text-lg sm:text-2xl"
+            href="/about"
+          >
+            <FormattedMessage id="about" />
+          </Link>
+        </div>
       )}
       <div className="absolute top-0 right-0 mt-4 mr-4 animate-appear z-50">
         <div className={`flex justify-end gap-2`}>
