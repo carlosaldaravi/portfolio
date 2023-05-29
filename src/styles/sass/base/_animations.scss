@@ -143,19 +143,32 @@
   }
 }
 @keyframes move-chevron {
+  0% {
+    opacity: 0;
+    
+  }
+  1% {
+    opacity: 1;
+    transform: translateY(4.3rem) scale(1.8);
+
+  }
   25% {
     opacity: 1;
+    transform: translateY(3rem) scale(1.5);
   }
   33.3% {
     opacity: 1;
-    transform: translateY(2.7rem) scale(0.2);
+    transform: translateY(2.3rem) scale(1);
   }
   66.6% {
-    opacity: 1;
-    transform: translateY(1.5rem);
+    opacity: .8;
+    transform: translateY(1.2rem) scale(.5);
+  }
+  99% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
-    transform: translateY(.7rem);
+    transform: translateY(.7rem), scale(.2);
   }
 }
