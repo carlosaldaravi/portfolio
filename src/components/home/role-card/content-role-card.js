@@ -25,7 +25,7 @@ const ContentRoleCard = ({ role }) => {
       onTouchEnd={onMouseLeaveHandler}
     >
       <li
-        className={`rounded-2xl px-8 py-10 transition-all duration-700 ${
+        className={`rounded-2xl px-8 py-10 transition-all duration-500 ${
           cardHovered
             ? `bg-gray-700 ${classes.shadow3D}`
             : `bg-gray-800 ${classes.notshadow3D}`
@@ -41,7 +41,7 @@ const ContentRoleCard = ({ role }) => {
             classes.text
           } ${
             cardHovered
-              ? `text-2xl lg:text-5xl text-white`
+              ? `text-3xl lg:text-5xl text-gray-50`
               : "text-xl text-gray-400"
           }`}
         >
