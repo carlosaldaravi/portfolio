@@ -2,7 +2,7 @@ import { FormattedMessage } from "react-intl";
 
 const HomeTitle = () => {
   return (
-    <div className="mx-auto w-2/3 min-w-lg">
+    <div className="mx-auto min-w-lg">
       <h2
         className={`indexTitle text-3xl font-bold tracking-tight text-white sm:text-4xl ml-6 sm:ml-14`}
       >
