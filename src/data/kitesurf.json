@@ -25,188 +25,215 @@
       "value": "page.kitesurf.currentSpotValue"
     }
   ],
-  "events": [
+  "sections": [
     {
-      "texts": [
-        { "hangtime": "23" },
-        { "date": "02/01/2023" },
-        { "spot": "El Médano" },
-        { "kite": "Rebel" },
-        { "size": "13m" },
-        { "wind": "8 - 18" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "UqJ3_v1iBUE",
-      "best": false
+      "name": "bestJumps",
+      "title": "page.kitesurf.bestJumps",
+      "data": [
+        {
+          "texts": [
+            { "hangtime": "23" },
+            { "date": "02/01/2023" },
+            { "spot": "El Médano" },
+            { "kite": "Rebel" },
+            { "size": "13m" },
+            { "wind": "8 - 18" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "UqJ3_v1iBUE",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "26" },
+            { "date": "13/12/2022" },
+            { "spot": "El Médano" },
+            { "kite": "Rebel" },
+            { "size": "13m" },
+            { "wind": "11 - 22" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "dacCUGIXLME",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "36" },
+            { "date": "27/03/2022" },
+            { "spot": "El Médano" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "10 - 30" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "Cip6jFU_cho",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "27" },
+            { "date": "19/01/2022" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "0 - 40" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "ptLAZmjuRfc",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "+15" },
+            { "date": "10/12/2021" },
+            { "spot": "Misty Cliffs" },
+            { "kite": "Rebel" },
+            { "size": "8m" },
+            { "wind": "35 - 50" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "2kcdjxcIBWM",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "60" },
+            { "date": "09/07/2021" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "7m" },
+            { "wind": "30 - 60" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "-gQMmsZxw10",
+          "best": true
+        },
+        {
+          "texts": [
+            { "hangtime": "34" },
+            { "date": "18/03/2021" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "20 - 35" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "_-PPTA3XQWg",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "16" },
+            { "date": "16/10/2020" },
+            { "spot": "Leucate" },
+            { "kite": "Rebel" },
+            { "size": "8m" },
+            { "wind": "35 - 50" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "QHBIGtWig1U",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "+25" },
+            { "date": "22/06/2020" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "15 - 25" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "fznH5fj92VY",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "+20" },
+            { "date": "06/02/2020" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "20 - 35" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "fNR0erdMT04",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "33" },
+            { "date": "25/08/2019" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "25 - 45" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "wXm9gL7nzCA",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "31" },
+            { "date": "27/06/2019" },
+            { "spot": "Santa Pola" },
+            { "kite": "Rebel" },
+            { "size": "10m" },
+            { "wind": "10 - 20" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "0WftpdmVEE4",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "25" },
+            { "date": "30/05/2019" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "25 - 40" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "Q_MeCaTz-xY",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "+30" },
+            { "date": "02/09/2018" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "20 - 40" }
+          ],
+          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "youtubeEmbedId": "5xVIQ1ZHvI8",
+          "best": false
+        }
+      ]
     },
     {
-      "texts": [
-        { "hangtime": "26" },
-        { "date": "13/12/2022" },
-        { "spot": "El Médano" },
-        { "kite": "Rebel" },
-        { "size": "13m" },
-        { "wind": "11 - 22" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "dacCUGIXLME",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "36" },
-        { "date": "27/03/2022" },
-        { "spot": "El Médano" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "10 - 30" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "Cip6jFU_cho",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "27" },
-        { "date": "19/01/2022" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "0 - 40" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "ptLAZmjuRfc",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "+15" },
-        { "date": "10/12/2021" },
-        { "spot": "Misty Cliffs" },
-        { "kite": "Rebel" },
-        { "size": "8m" },
-        { "wind": "35 - 50" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "2kcdjxcIBWM",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "60" },
-        { "date": "09/07/2021" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "7m" },
-        { "wind": "30 - 60" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "-gQMmsZxw10",
-      "best": true
-    },
-    {
-      "texts": [
-        { "hangtime": "34" },
-        { "date": "18/03/2021" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "20 - 35" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "_-PPTA3XQWg",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "16" },
-        { "date": "16/10/2020" },
-        { "spot": "Leucate" },
-        { "kite": "Rebel" },
-        { "size": "8m" },
-        { "wind": "35 - 50" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "QHBIGtWig1U",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "+25" },
-        { "date": "22/06/2020" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "15 - 25" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "fznH5fj92VY",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "+20" },
-        { "date": "06/02/2020" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "20 - 35" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "fNR0erdMT04",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "33" },
-        { "date": "25/08/2019" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "25 - 45" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "wXm9gL7nzCA",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "31" },
-        { "date": "27/06/2019" },
-        { "spot": "Santa Pola" },
-        { "kite": "Rebel" },
-        { "size": "10m" },
-        { "wind": "10 - 20" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "0WftpdmVEE4",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "25" },
-        { "date": "30/05/2019" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "25 - 40" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "Q_MeCaTz-xY",
-      "best": false
-    },
-    {
-      "texts": [
-        { "hangtime": "+30" },
-        { "date": "02/09/2018" },
-        { "spot": "Tarifa" },
-        { "kite": "Rebel" },
-        { "size": "9m" },
-        { "wind": "20 - 40" }
-      ],
-      "img": "https://source.unsplash.com/random/200x200?sig=1",
-      "youtubeEmbedId": "5xVIQ1ZHvI8",
-      "best": false
+      "name": "sponsors",
+      "title": "page.kitesurf.sponsors",
+      "data": [
+        {
+          "name": "Duotone",
+          "img": "/duotone-logo.png",
+          "url": "https://www.duotonesports.com/es/kiteboarding/"
+        },
+        {
+          "name": "Ion",
+          "svg": "ionLogo",
+          "url": "https://www.ion-products.com/en/"
+        },
+        {
+          "name": "El Médano Kite Club",
+          "img": "/medanokiteclub-logo.png",
+          "url": "https://elmedanokiteclub.es/"
+        }
+      ]
     }
   ]
 }

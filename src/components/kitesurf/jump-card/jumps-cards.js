@@ -15,10 +15,7 @@ const JumpsCards = ({ jumps }) => {
   };
 
   return (
-    <div className="mx-auto mt-10 w-2/3 min-w-md max-w-6xl">
-      <span className={`${classes.title} my-4 text-gray-400`}>
-        <FormattedMessage id="page.kitesurf.bestJumps" />
-      </span>
+    <div className="mx-auto mt-10 w-3/4 min-w-md max-w-6xl">
       {jumps.map((jump, index) => (
         <JumpCard
           key={`${jump.texts[1].date}-${index}`}
