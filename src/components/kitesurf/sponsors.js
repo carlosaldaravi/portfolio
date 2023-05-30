@@ -13,7 +13,7 @@ const Sponsors = ({ sponsors }) => {
                 <Link
                   key={sponsor.name}
                   href={sponsor.url}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-110 transition-all duration-500"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -31,7 +31,7 @@ const Sponsors = ({ sponsors }) => {
                 <Link
                   key={sponsor.name}
                   href={sponsor.url}
-                  className="cursor-pointer mx-auto"
+                  className="cursor-pointer mx-auto hover:scale-125 transition-all duration-500"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
