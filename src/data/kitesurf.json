@@ -220,7 +220,7 @@
       "data": [
         {
           "name": "Duotone",
-          "img": "/duotone-logo.png",
+          "svg": "duotoneLogo",
           "url": "https://www.duotonesports.com/es/kiteboarding/"
         },
         {
@@ -230,7 +230,7 @@
         },
         {
           "name": "El Médano Kite Club",
-          "img": "/elmedano-logo.png",
+          "svg": "elmedanokiteclubLogo",
           "url": "https://elmedanokiteclub.es/"
         }
       ]

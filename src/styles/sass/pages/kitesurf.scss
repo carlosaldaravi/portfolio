@@ -5,7 +5,7 @@
   font-size: 1.8rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 300;
 }
 .kitesurf-title::before,
 .kitesurf-title::after {
@@ -21,7 +21,7 @@
   border-radius: 4px;
   border: none;
   text-align: center;
-  padding: 0.2rem .5rem;
+  padding: 0.2rem 0.5rem;
   width: 9rem;
   transition: all 0.5s;
   cursor: pointer;
@@ -67,23 +67,20 @@
   opacity: 1;
   right: 0;
 }
-@media (max-width: 713px) {
-  .kitesurf-title {
-    font-size: 1.5rem;
-  }
-  .kitesurf-title::before,
-  .kitesurf-title::after {
-    width: 2.5rem;
-    margin: 0 0.5rem;
-    transform: translateY(-0.3rem);
-  }
-}
 
-@media (max-width: 400px) {
+@media (max-width: 640px) {
   .kitesurf__page__container {
     height: 300vw;
   }
   .kitesurf-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 0;
+  }
+  .kitesurf-title::before,
+  .kitesurf-title::after {
+    display: inline-block;
+    content: "";
+    border-top: 0;
+    width: fit-content;
   }
 }

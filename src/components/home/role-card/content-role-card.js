@@ -41,8 +41,8 @@ const ContentRoleCard = ({ role }) => {
             classes.text
           } ${
             cardHovered
-              ? `text-3xl lg:text-5xl text-gray-50`
-              : "text-xl text-gray-400"
+              ? `text-3xl text-gray-50`
+              : "text-2xl text-gray-400"
           }`}
         >
           {role.name}

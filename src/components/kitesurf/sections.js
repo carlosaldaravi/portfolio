@@ -15,10 +15,10 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
     <div className="flex justify-center mt-8">
       {isMobile ? (
         <span
-          className="text-gray-400 self-center text-5xl mr-4 cursor-pointer pb-2"
+          className="text-gray-300 self-center text-4xl mr-4 cursor-pointer"
           onClick={() => onChangeSection(-1)}
         >
-          &#171;
+          &#8592;
         </span>
       ) : (
         <button
@@ -33,10 +33,10 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
       </span>
       {isMobile ? (
         <span
-          className="text-gray-400 self-center text-5xl ml-4 cursor-pointer pb-2"
+          className="text-gray-300 self-center text-4xl ml-4 cursor-pointer"
           onClick={() => onChangeSection(1)}
         >
-          &#187;
+          &#8594;
         </span>
       ) : (
         <button
