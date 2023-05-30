@@ -28,6 +28,7 @@ const KiteSurf = ({ data }) => {
     } else {
       setActualSectionIndex(actualSectionIndex + oper);
     }
+    console.log('setting section selected');
     setSectionSelected(sections[actualSectionIndex]);
   };
 
