@@ -35,7 +35,7 @@ const Sponsors = ({ sponsors }) => {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <SVG type="ionLogo" />
+                  <SVG type={sponsor.svg} />
                 </Link>
               );
             }
