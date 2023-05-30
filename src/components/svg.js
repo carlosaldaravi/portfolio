@@ -17,8 +17,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`transition-all duration-500 ease-in ${
-          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
+        className={`transition-all duration-700 ease-in-out ${
+          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -35,8 +35,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`transition-all duration-500 ease-in ${
-          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
+        className={`transition-all duration-700 ease-in-out ${
+          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -57,8 +57,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`transition-all duration-500 ease-in ${
-          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
+        className={`transition-all duration-700 ease-in-out ${
+          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -71,8 +71,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
   if (type === "Tiktok") {
     return (
       <svg
-        className={`transition-all duration-500 ease-in ${
-          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
+        className={`transition-all duration-700 ease-in-out ${
+          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
@@ -178,8 +178,8 @@ const SVG = ({ type, hover, actualLanguage }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`transition-all duration-500 ease-in ${
-          hover ? "blur-none h-7 w-7 lg:h-10 lg:w-10" : "blur-xxs h-5 w-5"
+        className={`transition-all duration-700 ease-in-out ${
+          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
         }`}
         aria-hidden="true"
         fill={`${mouseIn ? "white" : "gray"}`}
