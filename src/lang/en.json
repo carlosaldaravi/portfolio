@@ -41,5 +41,7 @@
     "seconds": "seconds",
     "about": "about me",
     "contact": "contact me!",
-    "more": "More"
+    "more": "More",
+    "back": "Back",
+    "next": "Next"
 }
