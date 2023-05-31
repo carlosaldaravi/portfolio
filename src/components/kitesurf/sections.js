@@ -7,7 +7,6 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
   const { isMobile } = useTools();
 
   useEffect(() => {
-    console.log("====> sectionSelected: ", sectionSelected);
     setActualSection(sectionSelected);
   }, [sectionSelected]);
 
