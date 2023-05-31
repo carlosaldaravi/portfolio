@@ -234,6 +234,13 @@
           "url": "https://elmedanokiteclub.es/"
         }
       ]
+    },
+    {
+      "name": "news",
+      "title": "page.kitesurf.highlights",
+      "data": [
+        
+      ]
     }
   ]
 }
