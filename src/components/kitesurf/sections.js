@@ -28,7 +28,7 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
           <span><FormattedMessage id="back" /> </span>
         </button>
       )}
-      <span className={`kitesurf-title text-gray-400 self-center`}>
+      <span className={`kitesurf-title text-gray-400 self-center w-96 sm:w-[445px]`}>
         {actualSection.title && <FormattedMessage id={actualSection.title} />}
       </span>
       {isMobile ? (

@@ -22,16 +22,17 @@ const KiteSurf = ({ sections, me }) => {
   }, [sectionSelected]);
 
   const changeSectionHandler = (oper) => {
-    console.log("oper: ", oper);
-    if (actualSectionIndex + oper === sections.length) {
-      setActualSectionIndex(0);
-    } else if (actualSectionIndex + oper === -1) {
-      setActualSectionIndex(sections.length - 1);
+    let nextIndex = actualSectionIndex + oper;
+    if (nextIndex === sections.length) {
+      nextIndex = 0;
+      setActualSectionIndex(nextIndex);
+    } else if (nextIndex === -1) {
+      nextIndex = sections.length - 1;
+      setActualSectionIndex(nextIndex);
     } else {
-      setActualSectionIndex(actualSectionIndex + oper);
+      setActualSectionIndex(nextIndex);
     }
-    console.log("setting section selected");
-    setSectionSelected(sections[actualSectionIndex]);
+    setSectionSelected(sections[nextIndex]);
   };
 
   return (
