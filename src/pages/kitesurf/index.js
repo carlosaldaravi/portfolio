@@ -3,11 +3,13 @@ import path from "path";
 import fs from "fs/promises";
 import KiterCard from "../../components/kitesurf/kiter-info/kiter-card";
 import JumpsCards from "../../components/kitesurf/jump-card/jumps-cards";
+import NewsCards from "../../components/kitesurf/news-cards/news-cards";
 import KiteSections from "../../components/kitesurf/sections";
-import Sponsors from "@/components/kitesurf/sponsors";
+import Sponsors from "../../components/kitesurf/sponsors";
+import Page from "../../components/UI/page";
 
-const KiteSurf = ({ data }) => {
-  const { sections, me } = data;
+const KiteSurf = ({ sections, me }) => {
+  // const { sections, me } = data;
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
 
@@ -28,12 +30,12 @@ const KiteSurf = ({ data }) => {
     } else {
       setActualSectionIndex(actualSectionIndex + oper);
     }
-    console.log('setting section selected');
+    console.log("setting section selected");
     setSectionSelected(sections[actualSectionIndex]);
   };
 
   return (
-    <section className="kitesurf__page__container">
+    <Page className="kitesurf__page__container">
       <KiterCard me={me} />
       <KiteSections
         sections={sections}
@@ -46,7 +48,10 @@ const KiteSurf = ({ data }) => {
       {sectionSelected.name === "sponsors" && (
         <Sponsors sponsors={sectionSelected.data} />
       )}
-    </section>
+      {sectionSelected.name === "news" && (
+        <NewsCards news={sectionSelected.data} />
+      )}
+    </Page>
   );
 };
 
@@ -54,8 +59,10 @@ export async function getStaticProps() {
   const dataFilePath = path.join(process.cwd(), "src/data", "kitesurf.json");
   const jsonData = await fs.readFile(dataFilePath);
   const data = JSON.parse(jsonData);
+  const sections = data.sections.filter((section) => section.data.length > 0);
+
   return {
-    props: { data },
+    props: { sections, me: data.me },
   };
 }
 

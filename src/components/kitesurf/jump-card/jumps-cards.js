@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { FormattedMessage } from "react-intl";
 import JumpCard from "./jump-card";
-import classes from "./jumps-cards.module.css";
+import Section from "@/components/UI/section";
 
 const JumpsCards = ({ jumps }) => {
   const [cardHovered, setCardHovered] = useState(false);
@@ -15,7 +14,7 @@ const JumpsCards = ({ jumps }) => {
   };
 
   return (
-    <div className="mx-auto mt-10 w-3/4 min-w-md max-w-6xl">
+    <Section className="px-4">
       {jumps.map((jump, index) => (
         <JumpCard
           key={`${jump.texts[1].date}-${index}`}
@@ -25,7 +24,7 @@ const JumpsCards = ({ jumps }) => {
           onRemoveCardHovered={removeCardHoveredHandler}
         />
       ))}
-    </div>
+    </Section>
   );
 };
 

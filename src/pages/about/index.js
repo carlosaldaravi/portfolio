@@ -1,5 +1,6 @@
 import OverlayCards from "../../components/about/overlay-cards";
 import AboutHeader from "../../components/about/header";
+import Page from "../../components/UI/page";
 
 const About = () => {
   const cards = [
@@ -36,10 +37,10 @@ const About = () => {
   ];
 
   return (
-    <section className="mb-10">
+    <Page>
       <AboutHeader />
       <OverlayCards cards={cards} />
-    </section>
+    </Page>
   );
 };
 

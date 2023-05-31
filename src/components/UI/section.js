@@ -1,0 +1,13 @@
+const Section = ({ children, className }) => {
+  return (
+    <section
+      className={`${
+        className ? className : ""
+      } mx-auto my-10 sm:my-20 min-w-md max-w-xl sm:max-w-6xl animate-appear-1`}
+    >
+      {children}
+    </section>
+  );
+};
+
+export default Section;

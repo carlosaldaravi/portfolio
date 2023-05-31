@@ -18,7 +18,12 @@ const HeaderJumpCard = ({ jump, onShowMore }) => {
     <h3
       className={`${classes.bajorrelieve} webKitFillAvailable flex ml-4 justify-between sm:justify-between text-3xl sm:text-3xl items-center text-center sm:text-end font-normal text-gray-300`}
     >
-      {hangtime} <FormattedMessage id="seconds" />
+      <span className="flex justify-between w-56">
+        {hangtime}{" "}
+        <span className="tracking-xxs">
+          <FormattedMessage id="seconds" />
+        </span>
+      </span>
       {/* {jump.youtubeEmbedId && (
         <PlayCircleIcon className="absolute left-4 sm:left-1/2 sm:-translate-x-12 w-6 h-6 text-gray-500 self-center ml-2" />
       )} */}
