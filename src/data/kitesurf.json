@@ -239,7 +239,46 @@
       "name": "news",
       "title": "page.kitesurf.highlights",
       "data": [
-        
+        {
+          "title": "Forajidos: Carlos Aldaravi e Isaac Hernández forajidos del kitesurf y del hydrofoil",
+          "img": "/ser-2022.png",
+          "video": "",
+          "date": "21-01-2022",
+          "source": "Cadena ser",
+          "url": "https://cadenaser.com/audio/1642784018_674897/"
+        },
+        {
+          "title": "Entrevista en el programa Zapeando de La Sexta",
+          "img": "/zapeando.png",
+          "video": "PReoZonSpa4",
+          "date": "26-08-2021",
+          "source": "La sexta",
+          "url": "https://www.youtube.com/watch?v=PReoZonSpa4"
+        },
+        {
+          "title": "El kitesurfista Carlos Aldaravi cruza la playa de Valdevaqueros, en Cádiz, volando durante más de un minuto",
+          "img": "/antena3-2021.png",
+          "video": "",
+          "date": "15-08-2021",
+          "source": "Antena 3",
+          "url": "https://as.com/deportes_accion/2021/08/12/mas_accion/1628785050_322579.html"
+        },
+        {
+          "title": "Inhumano Carlos Aldaravi: cruza toda una playa de Tarifa volando durante más de un minuto",
+          "img": "/as-2021.png",
+          "video": "",
+          "date": "12/08/2021",
+          "source": "as.com",
+          "url": "https://as.com/deportes_accion/2021/08/12/mas_accion/1628785050_322579.html"
+        },
+        {
+          "title": "Un kitesurfista español se cruza la playa de valdevaqueros entera... ¡volando!",
+          "img": "/as-2019.png",
+          "video": "",
+          "date": "31/05/2019",
+          "source": "as.com",
+          "url": "https://as.com/deportes_accion/2019/05/31/videos/1559290642_438122.html"
+        }
       ]
     }
   ]

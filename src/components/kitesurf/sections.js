@@ -11,7 +11,7 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
   }, [sectionSelected]);
 
   return (
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center mt-8 animate-appear-1">
       {isMobile ? (
         <span
           className="text-gray-300 self-center text-4xl mr-4 cursor-pointer"

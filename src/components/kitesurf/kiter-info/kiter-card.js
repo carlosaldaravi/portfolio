@@ -1,12 +1,13 @@
+import Section from "@/components/UI/section";
 import Avatar from "../../avatar";
 import TextKiterCard from "./text-kiter-card";
 
 const KiterCard = ({ me }) => {
   return (
-    <div className="mx-auto mt-20 min-w-md max-w-xl sm:max-w-5xl">
+    <Section className="mt-16 animate-appear-1">
       <Avatar src={"/yo-kite.JPG"} alt={"avatar"} />
       <TextKiterCard me={me} />
-    </div>
+    </Section>
   );
 };
 

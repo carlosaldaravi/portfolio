@@ -3,7 +3,7 @@ import NewsCard from "./news-card";
 
 const NewsCards = ({ news }) => {
   return (
-    <CardsSection>
+    <CardsSection className="lg:grid-cols-2">
       {news.map((n) => (
         <NewsCard key={n.source} newsItem={n} />
       ))}
