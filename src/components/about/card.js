@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import classes from "./card.module.css";
 import { useTools } from "@/hooks/useTools";
+import classes from "./card.module.css";
 
 const Card = ({ card }) => {
   const [showArrows, setShowArrows] = useState(true);

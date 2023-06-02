@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import path from "path";
 import fs from "fs/promises";
-import KiterCard from "../../components/kitesurf/kiter-info/kiter-card";
-import JumpsCards from "../../components/kitesurf/jump-card/jumps-cards";
-import NewsCards from "../../components/kitesurf/news-cards/news-cards";
-import KiteSections from "../../components/kitesurf/sections";
-import Sponsors from "../../components/kitesurf/sponsors";
-import Page from "../../components/UI/page";
+import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
+import JumpsCards from "@/components/kitesurf/jump-card/jumps-cards";
+import NewsCards from "@/components/kitesurf/news-cards/news-cards";
+import KiteSections from "@/components/kitesurf/sections";
+import Sponsors from "@/components/kitesurf/sponsors";
+import Page from "@/components/UI/page";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);

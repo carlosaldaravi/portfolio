@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useTools } from "@/hooks/useTools";
 import classes from "./jump-card.module.css";
 import TextsJumpCard from "./texts-jump-card";
 import YoutubeIcon from "./youtube-icon";
 import YoutubePlayer from "./youtube-player";
 import HeaderJumpCard from "./header-jump-card";
-import { useTools } from "../../../hooks/useTools";
 
 const JumpCard = ({
   jump,

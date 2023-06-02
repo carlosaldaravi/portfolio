@@ -1,5 +1,5 @@
 import { FormattedMessage } from "react-intl";
-import CardsSection from "../../UI/cards-section";
+import CardsSection from "@/components/UI/cards-section";
 import Skill from "./skill";
 
 const Skills = ({ skills }) => {

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { useRouter } from "next/router";
 import { setCookie } from "cookies-next";
-import Link from "next/link";
-import SVG from "../svg";
 import { HomeIcon } from "@heroicons/react/24/outline";
-import { FormattedMessage } from "react-intl";
+import Link from "next/link";
+import SVG from "@/components/svg";
 
 const Header = () => {
   const { locales, locale, route } = useRouter();

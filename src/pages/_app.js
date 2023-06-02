@@ -7,6 +7,7 @@ import { setCookie } from "cookies-next";
 
 import en from "../lang/en.json";
 import es from "../lang/es.json";
+
 import Layout from "@/components/layout/layout";
 
 const messages = {

@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import { TypeAnimation } from "react-type-animation";
-import { useTools } from "../../hooks/useTools";
+import Image from "next/image";
+import { useTools } from "@/hooks/useTools";
 import classes from "./header.module.css";
 
 const AboutHeader = () => {

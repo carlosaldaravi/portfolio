@@ -1,6 +1,6 @@
 import RoleCard from "./role-card/role-card";
 import HomeTitle from "./home-title";
-import Section from "../UI/section";
+import Section from "@/components/UI/section";
 
 const HomeInfo = ({ roles }) => {
   return (

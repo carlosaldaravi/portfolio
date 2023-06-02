@@ -1,5 +1,5 @@
-import { useTools } from "../../../hooks/useTools";
-import SVG from "../../svg";
+import { useTools } from "@/hooks/useTools";
+import SVG from "@/components/svg";
 
 const YoutubeIcon = ({ onPlay }) => {
   const { isMobile } = useTools();

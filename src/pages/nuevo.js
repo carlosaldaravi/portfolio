@@ -1,7 +1,7 @@
-import EventList from "../components/event-list";
 import path from "path";
 import fs from "fs/promises";
-import Page from "../components/UI/page";
+import EventList from "@/components/event-list";
+import Page from "@/components/UI/page";
 
 const Nuevo = ({ events }) => {
   return (

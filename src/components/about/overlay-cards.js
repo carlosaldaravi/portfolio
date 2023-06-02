@@ -1,7 +1,7 @@
 import { FormattedMessage } from "react-intl";
 import Card from "./card";
-import CardsSection from "../UI/cards-section";
-import Section from "../UI/section";
+import CardsSection from "@/components/UI/cards-section";
+import Section from "@/components/UI/section";
 
 const OverlayCards = ({ cards }) => {
   return (

@@ -6,8 +6,8 @@ const Avatar = ({ src, alt }) => {
       <Image
         src={src}
         alt={alt}
-        width={1200}
-        height={1600}
+        width={600}
+        height={800}
         className=""
       />
     </div>
