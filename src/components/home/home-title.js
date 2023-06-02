@@ -3,11 +3,11 @@ import { FormattedMessage } from "react-intl";
 const HomeTitle = () => {
   return (
     <div className="mx-auto min-w-lg">
-      <h2
-        className={`indexTitle text-3xl font-bold tracking-tight text-white sm:text-4xl ml-6 sm:ml-14 text-center`}
+      <h1
+        className={`indexTitle font-bold tracking-tight ml-6 sm:ml-14 text-center`}
       >
         <span
-          className={`home__title__name uppercase block font-extralight text-5xl sm:text-8xl tracking-wide`}
+          className={`home__title__name uppercase block font-extralight tracking-wide`}
         >
           Carlos
         </span>
@@ -16,7 +16,7 @@ const HomeTitle = () => {
         >
           Aldaravi
         </span>
-      </h2>
+      </h1>
       <p
         className={`home__title__description mt-4 sm:mt-10 text-lg sm:text-2xl text-gray-400 font-extralight text-center`}
       >

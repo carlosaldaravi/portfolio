@@ -6,7 +6,7 @@ import Section from "../UI/section";
 const OverlayCards = ({ cards }) => {
   return (
     <Section className="mt-12 sm:mt-24 text-center">
-      <h3 className="text-2xl sm:text-3xl text-gray-300 font-thin">
+      <h3 className="text-gray-300 font-thin">
         <FormattedMessage id="page.about.freeTime" />
       </h3>
       <CardsSection>

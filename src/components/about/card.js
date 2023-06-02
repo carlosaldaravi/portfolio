@@ -34,7 +34,7 @@ const Card = ({ card }) => {
         className={`${classes.info} ${card.before} overflow-y-scroll scrollbar-hide`}
       >
         <h3
-          className={`${classes.title} flex justify-center capitalize text-4xl text-center tracking-xxs items-center`}
+          className={`${classes.title} flex justify-center capitalize text-center tracking-xxs items-center`}
         >
           {showArrows && isMobile && (
             <div className="animate-bounce mr-6 sm:mr-12 text-2xl">&#8593;</div>

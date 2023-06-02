@@ -16,7 +16,7 @@ const HeaderJumpCard = ({ jump, onShowMore }) => {
 
   return (
     <h3
-      className={`${classes.bajorrelieve} webKitFillAvailable flex ml-4 justify-between sm:justify-between text-3xl sm:text-3xl items-center text-center sm:text-end font-normal text-gray-300`}
+      className={`${classes.bajorrelieve} webKitFillAvailable flex ml-4 justify-between sm:justify-between items-center text-center sm:text-end font-normal text-gray-300`}
     >
       <span className="flex justify-between w-56">
         {hangtime}{" "}
