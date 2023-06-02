@@ -10,7 +10,7 @@ const useStyles = (name, color) =>
         linear-gradient(
           0deg,
             ${color} 0 0.5rem,
-            #222 0 calc(100% - 0.5rem),
+            #2e2e2e 0 calc(100% - 0.5rem),
             ${color} 0 100%
         )`,
       "&::before": {
