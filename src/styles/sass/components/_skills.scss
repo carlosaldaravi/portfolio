@@ -1,0 +1,126 @@
+.skills:before {
+  content: "";
+  text-transform: uppercase;
+  position: absolute;
+  top: -3rem;
+  height: 2rem;
+  color: $primary-color;
+  background-color: #222;
+  width: 100%;
+  left: 0;
+  padding: 0.6rem 0 0 0;
+  text-align: end;
+  font-weight: 900;
+  z-index: 1;
+  transition: $transitionAll;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  transform: scaleY(1.65);
+}
+
+// header down arrow
+ul.skills:after {
+  content: "";
+  position: absolute;
+  border: 1.5rem solid #fff0;
+  border-top-color: #222;
+  top: -1rem;
+  left: 1rem;
+  z-index: 0;
+  transition: $transitionAll;
+  filter: drop-shadow(0 6px 0.1px $primary-color);
+}
+
+ul.skills:hover:before {
+  transition: $transitionAll;
+  background-position: 0 50%;
+}
+ul.skills:hover:after {
+  top: -0.6rem;
+  transition: $transitionAll;
+}
+
+// progress bar text
+.skillItem {
+  margin: 0;
+  list-style: none;
+  padding: 1rem 0;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+// progress bar
+.skillItem:before {
+  content: "";
+  position: absolute;
+  background: #1c1c1c;
+  height: 0.8rem;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: 0;
+  border: 1px solid #111;
+  border-color: #111 #323232 #323232 #111;
+}
+
+// progress bar hovered
+.skillItem:after {
+  content: "";
+  height: 0.5rem;
+  margin: 0;
+  position: absolute;
+  left: 0.2rem;
+  width: 0%;
+  bottom: 1.5px;
+  transition: all 1s ease 0s;
+}
+
+ul.skills li:hover {
+  filter: brightness(1.5);
+  transition: $transitionAll;
+}
+
+ul.skills li span {
+  font-weight: 500;
+}
+
+// percent arrow to left
+ul.skills li span:before {
+  position: absolute;
+  right: -3rem;
+  top: 3.2rem;
+  transition: $transitionAll;
+  content: "";
+  opacity: 1;
+  border: 0.7rem solid #fff0;
+}
+
+// percent arrow to left on hover
+ul.skills li:hover span:before,
+.profile-skills + ul.skills li span:before {
+  transition: $transitionAll;
+  top: 3.2rem;
+  opacity: 1;
+}
+
+// box with progress when hover
+.spanSkill:after {
+  content: "";
+  position: absolute;
+  right: -3rem;
+  top: 2.4rem;
+  transition: $transitionAll;
+  color: transparent;
+  opacity: 1 !important;
+  padding: 0.2rem 0.2rem 0.2rem 0.6rem;
+  border-radius: 1px;
+  font-weight: bold;
+  pointer-events: none;
+}
+// box with progress when hover
+ul.skills li:hover span:after,
+.profile-skills + ul.skills li span:after {
+  transition: $transitionAll;
+  opacity: 1;
+}
