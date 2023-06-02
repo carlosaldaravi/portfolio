@@ -1,32 +1,32 @@
 import Image from "next/image";
 
-const Nuevo = () => {
+const Project = ({ project }) => {
   return (
     <div className="container">
       <div className="item">
         <div className="item__image">
           <div className="image-switch__outer">
             <div className="image-switch__inner">
-              <Image src="/cometa.png" alt="image" width={800} height={800} />
+              <Image src={project.img} alt="image" width={800} height={800} />
             </div>
           </div>
         </div>
         <div className="item__description">
           <div className="description-switch__outer">
             <div className="description-switch__inner">
-              <a
-                href="https://www.nytimes.com/2017/02/16/automobiles/headlights-get-new-attention-as-more-than-a-car-design-flourish.html"
-                target="_blank"
-              >
-                <p>Evo Dlab</p>
-                <div className="item__action-arrow">
-                  <i className="far fa-arrow-alt-circle-right"></i>
-                </div>
+              <a href={project.url} target="_blank">
+                <h3 className="text-gray-900 tracking-xxs font-bold">{project.name}</h3>
+                <p className="capitalize">{project.rol}</p>
+                <p className="capitalize">{project.year}</p>
+                <p className="capitalize">{project.stack}</p>
               </a>
             </div>
           </div>
         </div>
         <div className="flap level0">
+          <span className="level0-text self-center mx-auto">
+            <Image src={project.logo} alt="image" width={200} height={200} className="" />
+          </span>
           <div className="flap level1 flip-right">
             <div className="flap level2 flip-down">
               <div className="flap level3 flip-left"></div>
@@ -89,4 +89,4 @@ const Nuevo = () => {
     </div>
   );
 };
-export default Nuevo;
+export default Project;

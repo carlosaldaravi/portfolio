@@ -1,5 +1,6 @@
 .card {
-  height: 40rem;
+  // height: 40rem;
+  padding-bottom: .5rem;
   position: relative;
   background: rgb(17 24 39 / var(--tw-bg-opacity));
   border: 0.5px solid gray;
@@ -61,7 +62,6 @@
 
     .card-title {
       z-index: 10;
-      font-size: 1.5rem;
       padding-bottom: 0.75rem;
       transition: all 350ms ease-in-out;
     }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { createUseStyles } from "react-jss";
 
 const useStyles = (color, progress) =>
@@ -63,7 +64,7 @@ const SkillItem = ({ color, item, cardHovered }) => {
           isHover ? classes.spanHover + " " + classes.arrow : ""
         }`}
       >
-        {item.name}
+        <FormattedMessage id={item.name} />
       </span>
     </li>
   );

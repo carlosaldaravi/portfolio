@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import { TypeAnimation } from "react-type-animation";
-import { useTools } from "../../hooks/useTools";
+import Image from "next/image";
+import { useTools } from "@/hooks/useTools";
 import classes from "./header.module.css";
 
 const AboutHeader = () => {
@@ -34,11 +34,11 @@ const AboutHeader = () => {
   return (
     <div className={`${classes.wrapper} about__wrapper__header mx-auto`}>
       <div className="header__title pl-2 sm:ml-10 sm:mt-12 self-center sm:self-start">
-        <h2 className={`${classes.header}  text-4xl sm:text-7xl`}>
+        <h2 className={`${classes.header} `}>
           <span className={`${classes.header__title__text} header__title__text`}>{title + " "}</span>
         </h2>
         {
-          <h3
+          <p
             key={description}
             className={`${classes.description} header__description mt-6 sm:mt-14 text-xl sm:text-3xl flex gap-2`}
           >
@@ -55,7 +55,7 @@ const AboutHeader = () => {
               speed={60}
               deletionSpeed={80}
             />
-          </h3>
+          </p>
         }
       </div>
       {!isMobile && (

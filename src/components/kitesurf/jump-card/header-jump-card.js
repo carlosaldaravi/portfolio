@@ -1,5 +1,4 @@
 import { FormattedMessage } from "react-intl";
-import classes from "./header-jump-card.module.css";
 import { useTools } from "@/hooks/useTools";
 
 const HeaderJumpCard = ({ jump, onShowMore }) => {
@@ -16,26 +15,19 @@ const HeaderJumpCard = ({ jump, onShowMore }) => {
 
   return (
     <h3
-      className={`${classes.bajorrelieve} webKitFillAvailable flex ml-4 justify-between sm:justify-between text-3xl sm:text-3xl items-center text-center sm:text-end font-normal text-gray-300`}
+      className={`webKitFillAvailable flex ml-4 justify-between sm:justify-between items-center text-center sm:text-end font-normal text-gray-300`}
     >
       <span className="flex justify-between w-56">
-        {hangtime}{" "}
-        <span className="tracking-xxs">
+        <span>{hangtime}</span>
+        <span className="tracking-xxs text-3xl self-end">
           <FormattedMessage id="seconds" />
         </span>
       </span>
-      {/* {jump.youtubeEmbedId && (
-        <PlayCircleIcon className="absolute left-4 sm:left-1/2 sm:-translate-x-12 w-6 h-6 text-gray-500 self-center ml-2" />
-      )} */}
       <div>
-        <span
-          className={`${classes.bajorrelieve} hidden tracking-sm sm:block text-gray-300`}
-        >
+        <span className={`hidden tracking-xs text-3xl sm:block text-gray-300`}>
           {date}
         </span>
-        <span
-          className={`${classes.bajorrelieve} hidden tracking-sm sm:block text-gray-300`}
-        >
+        <span className={`hidden tracking-xs text-3xl sm:block text-gray-300`}>
           {spot}
         </span>
       </div>

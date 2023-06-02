@@ -1,15 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-
 $easeTime: 0.2s;
-$blockSize: 70px;
+$blockSize: 50px;
 $colorText: #345;
 $colorTextLighter: #567;
 $colorTextLightest: #789;
 
 .container {
   width: 100%;
-  min-height: 100vh;
-  padding: $blockSize $blockSize/4 0 $blockSize/4;
+  // padding: $blockSize $blockSize/4 0 $blockSize/4;
   display: grid;
   grid: auto-flow $blockSize * 6 / repeat(
       auto-fit,
@@ -66,7 +63,7 @@ $colorTextLightest: #789;
     position: absolute;
     top: $blockSize;
     left: -$blockSize * 2;
-    height: $blockSize;
+    height: $blockSize * 1.5;
     width: $blockSize * 5;
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
@@ -85,22 +82,6 @@ $colorTextLightest: #789;
       font-size: 1.03em;
       letter-spacing: 0.03em;
       color: $colorText;
-    }
-    i {
-      display: block;
-      position: absolute;
-      right: $blockSize/2;
-      top: $blockSize/2;
-      transform: translate(50%, -50%);
-      margin-left: 1em;
-      font-size: 2em;
-      color: $colorTextLighter;
-      transition: color 0.1s linear;
-    }
-    &:hover {
-      i {
-        color: $colorTextLightest;
-      }
     }
   }
   .flip-up {
@@ -132,9 +113,6 @@ $colorTextLightest: #789;
     align-items: center;
     opacity: 1;
     transition: opacity $easeTime * 3 linear $easeTime * 8;
-    i {
-      opacity: 0.5;
-    }
   }
 }
 

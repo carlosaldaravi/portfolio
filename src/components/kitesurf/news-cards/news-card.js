@@ -29,7 +29,7 @@ const NewsCard = ({ newsItem }) => {
             </a>
             <div>{newsItem.date}</div>
           </div>
-          <h3 className="card-title">{newsItem.title}</h3>
+          <h3 className="card-title text-2xl">{newsItem.title}</h3>
           <div className="card-source">
             <FormattedMessage id="by" /> {newsItem.source}
           </div>

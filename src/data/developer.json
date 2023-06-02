@@ -1,42 +1,74 @@
 {
   "skills": [
     {
+      "id": "skill-1",
       "name": "codes",
       "color": "#2187e7",
       "data": [
-        { "name": "HTML", "progress": 95 },
-        { "name": "CSS", "progress": 85 },
-        { "name": "Javascript", "progress": 80 },
-        { "name": "PHP", "progress": 80 },
-        { "name": "SQL", "progress": 60 },
-        { "name": "Typescript", "progress": 60 },
-        { "name": "Tailwind", "progress": 80 }
+        { "name": "html", "progress": 95 },
+        { "name": "css", "progress": 85 },
+        { "name": "javascript", "progress": 85 },
+        { "name": "php", "progress": 70 },
+        { "name": "sql", "progress": 60 },
+        { "name": "typescript", "progress": 65 },
+        { "name": "node", "progress": 70 },
+        { "name": "tailwind", "progress": 80 }
       ]
     },
     {
-      "name": "skills",
+      "id": "skill-2",
+      "name": "languages",
       "color": "#9acd32",
       "data": [
-        { "name": "skill1", "progress": 75 },
-        { "name": "skill2", "progress": 55 },
-        { "name": "Javascript", "progress": 40 }
+        { "name": "spanish", "progress": 100 },
+        { "name": "catalonian", "progress": 75 },
+        { "name": "english", "progress": 65 }
       ]
     },
     {
+      "id": "skill-3",
       "name": "libraries",
       "color": "#ff4500",
       "data": [
-        { "name": "React", "progress": 80 },
-        { "name": "Vue", "progress": 70 },
-        { "name": "Angular", "progress": 50 }
+        { "name": "react", "progress": 80 },
+        { "name": "vue", "progress": 70 },
+        { "name": "angular", "progress": 50 }
       ]
     }
   ],
   "projects": [
     {
       "id": "project-1",
-      "name": "Project 1",
-      "url": ""
+      "name": "Kwee",
+      "logo": "/kwee-logo.png",
+      "img": "/kwee-project.png",
+      "year": "2019",
+      "url": "https://kwee.ovh/home",
+      "rol": "backend",
+      "stack": "Node",
+      "description": "page.developer.kweeProject"
+    },
+    {
+      "id": "project-2",
+      "name": "Ocean Platform",
+      "logo": "/ocean-logo.png",
+      "img": "/ocean-project.png",
+      "year": "2020",
+      "url": "https://ocean-platform.netlify.app/",
+      "rol": "fullstack",
+      "stack": "Vue + Nest",
+      "description": "page.developer.oceanProject"
+    },
+    {
+      "id": "project-3",
+      "name": "Trainsegrity",
+      "logo": "/trainsegrity-logo.png",
+      "img": "/trainsegrity-project.png",
+      "year": "2022",
+      "url": "https://trainsegrity.vercel.app/login",
+      "rol": "fullstack",
+      "stack": "Next (React) + Nest (Node)",
+      "description": "page.developer.trainsegrityProject"
     }
   ]
 }

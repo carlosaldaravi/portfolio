@@ -1,6 +1,6 @@
-import OverlayCards from "../../components/about/overlay-cards";
-import AboutHeader from "../../components/about/header";
-import Page from "../../components/UI/page";
+import OverlayCards from "@/components/about/overlay-cards";
+import AboutHeader from "@/components/about/header";
+import Page from "@/components/UI/page";
 
 const About = () => {
   const cards = [

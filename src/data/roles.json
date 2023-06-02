@@ -1,6 +1,6 @@
 [
   {
-    "name": "Fullstack Developer",
+    "name": "page.developer.fullstack",
     "to": "/developer",
     "avatar": "/yo-dev.png",
     "customClass": "image-dev",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "name": "Kitesurfer",
+    "name": "kitesurfer",
     "to": "/kitesurf",
     "avatar": "/yo-kite.png",
     "customClass": "image-kite",

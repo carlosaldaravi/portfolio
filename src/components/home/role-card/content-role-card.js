@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
+import { FormattedMessage } from "react-intl";
 import AvatarSwitch from "./avatar-switch";
-import SVG from "../../svg";
+import SVG from "@/components/svg";
 import classes from "./content-role-card.module.css";
 
 const ContentRoleCard = ({ role }) => {
@@ -37,15 +38,11 @@ const ContentRoleCard = ({ role }) => {
           hover={cardHovered}
         />
         <h3
-          className={`mt-6 font-semibold leading-7 tracking-normal ${
+          className={`mt-6 font-semibold leading-7 tracking-normal capitalize ${
             classes.text
-          } ${
-            cardHovered
-              ? `text-3xl text-gray-50`
-              : "text-2xl text-gray-400"
-          }`}
+          } ${cardHovered ? `text-[2.5rem] text-gray-50` : "text-gray-400"}`}
         >
-          {role.name}
+          <FormattedMessage id={role.name} />
         </h3>
         <ul role="list" className="mt-6 flex justify-center gap-x-6">
           {role.rrss.map((rs) => (

@@ -1,6 +1,6 @@
 import { FormattedMessage } from "react-intl";
-import YoutubeEmbed from "../../youtube-embed";
-import SVG from "../../svg";
+import YoutubeEmbed from "@/components/youtube-embed";
+import SVG from "@/components/svg";
 
 const YoutubePlayer = ({jump, onBack}) => {
   const { hangtime } = jump.texts.find(
