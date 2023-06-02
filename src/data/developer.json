@@ -14,12 +14,12 @@
       ]
     },
     {
-      "name": "skills",
+      "name": "languages",
       "color": "#9acd32",
       "data": [
-        { "name": "skill1", "progress": 75 },
-        { "name": "skill2", "progress": 55 },
-        { "name": "Javascript", "progress": 40 }
+        { "name": "spanish", "progress": 100 },
+        { "name": "catalonian", "progress": 75 },
+        { "name": "english", "progress": 65 }
       ]
     },
     {
