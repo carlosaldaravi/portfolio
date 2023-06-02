@@ -5,7 +5,7 @@ const NewsCards = ({ news }) => {
   return (
     <CardsSection className="lg:grid-cols-2">
       {news.map((n) => (
-        <NewsCard key={n.source} newsItem={n} />
+        <NewsCard key={n.id} newsItem={n} />
       ))}
     </CardsSection>
   );
