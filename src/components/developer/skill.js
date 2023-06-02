@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { useState } from "react";
+import { useIntl } from "react-intl";
 import SkillItem from "./skill-item";
 
 const useStyles = (name, color) =>
@@ -35,7 +36,9 @@ const useStyles = (name, color) =>
 
 const Skill = ({ skill }) => {
   const [isHover, setIsHover] = useState(false);
-  const classes = useStyles(skill.name, skill.color)();
+  const intl = useIntl();
+  const name = intl.formatMessage({ id: skill.name });
+  const classes = useStyles(name, skill.color)();
 
   return (
     <div className="relative mb-20 mx-auto min-w-md">
@@ -45,7 +48,12 @@ const Skill = ({ skill }) => {
         onMouseLeave={() => setIsHover(false)}
       >
         {skill.data.map((item) => (
-          <SkillItem key={item.name} color={skill.color} item={item} cardHovered={isHover} />
+          <SkillItem
+            key={item.name}
+            color={skill.color}
+            item={item}
+            cardHovered={isHover}
+          />
         ))}
       </ul>
     </div>

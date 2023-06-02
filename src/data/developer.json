@@ -4,13 +4,13 @@
       "name": "codes",
       "color": "#2187e7",
       "data": [
-        { "name": "HTML", "progress": 95 },
-        { "name": "CSS", "progress": 85 },
-        { "name": "Javascript", "progress": 80 },
-        { "name": "PHP", "progress": 80 },
-        { "name": "SQL", "progress": 60 },
-        { "name": "Typescript", "progress": 60 },
-        { "name": "Tailwind", "progress": 80 }
+        { "name": "html", "progress": 95 },
+        { "name": "css", "progress": 85 },
+        { "name": "javascript", "progress": 80 },
+        { "name": "php", "progress": 80 },
+        { "name": "sql", "progress": 60 },
+        { "name": "typescript", "progress": 60 },
+        { "name": "tailwind", "progress": 80 }
       ]
     },
     {
@@ -26,9 +26,9 @@
       "name": "libraries",
       "color": "#ff4500",
       "data": [
-        { "name": "React", "progress": 80 },
-        { "name": "Vue", "progress": 70 },
-        { "name": "Angular", "progress": 50 }
+        { "name": "react", "progress": 80 },
+        { "name": "vue", "progress": 70 },
+        { "name": "angular", "progress": 50 }
       ]
     }
   ],

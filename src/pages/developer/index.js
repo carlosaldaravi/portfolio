@@ -2,11 +2,14 @@ import path from "path";
 import fs from "fs/promises";
 import Page from "../../components/UI/page";
 import Skills from "../../components/developer/skills";
+import { FormattedMessage } from "react-intl";
 
 const Developer = ({ data }) => {
   return (
     <Page>
-      <h1 className="text-center tracking-xxs">Fullstack Developer</h1>
+      <h1 className="text-center tracking-xxs">
+        <FormattedMessage id="page.developer.fullstack" />
+      </h1>
       <Skills skills={data.skills} />
     </Page>
   );
