@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs/promises";
 import Page from "../../components/UI/page";
-import Skills from "../../components/developer/skills";
+import Skills from "../../components/developer/skills/skills";
 import { FormattedMessage } from "react-intl";
 
 const Developer = ({ data }) => {
