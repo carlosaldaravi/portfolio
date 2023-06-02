@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import classes from "./card.module.css";
+import { useTools } from "@/hooks/useTools";
 
 const Card = ({ card }) => {
   const [showArrows, setShowArrows] = useState(true);
+  const { isMobile } = useTools();
   const infoRef = useRef(null);
 
   const resetScroll = () => {
@@ -34,9 +36,13 @@ const Card = ({ card }) => {
         <h3
           className={`${classes.title} flex justify-center capitalize text-4xl text-center tracking-xxs items-center`}
         >
-          {showArrows && <div className="animate-bounce mr-6 sm:mr-12 text-2xl">&#8593;</div>}
+          {showArrows && isMobile && (
+            <div className="animate-bounce mr-6 sm:mr-12 text-2xl">&#8593;</div>
+          )}
           <FormattedMessage id={card.name} />
-          {showArrows && <div className="animate-bounce ml-6 sm:ml-12 text-2xl">&#8593;</div>}
+          {showArrows && isMobile && (
+            <div className="animate-bounce ml-6 sm:ml-12 text-2xl">&#8593;</div>
+          )}
         </h3>
         <p className={`${classes.description} ${classes.paragraph}`}>
           <FormattedMessage id={card.text} />
