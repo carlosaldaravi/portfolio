@@ -6,9 +6,7 @@ import Skills from "../../components/developer/skills";
 const Developer = ({ data }) => {
   return (
     <Page>
-      <div className="text-center text-3xl tracking-xs">
-        <Skills skills={data.skills} />
-      </div>
+      <Skills skills={data.skills} />
     </Page>
   );
 };
