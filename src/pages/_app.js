@@ -8,6 +8,7 @@ import { setCookie } from "cookies-next";
 import en from "../lang/en.json";
 import es from "../lang/es.json";
 
+import { ThemeContextProvider } from "@/store/theme-context";
 import Layout from "@/components/layout/layout";
 
 const messages = {
@@ -22,9 +23,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeContextProvider>
     </IntlProvider>
   );
 }

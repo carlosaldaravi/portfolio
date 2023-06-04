@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
-import { getCookie } from "cookies-next";
-import { Switch } from "@headlessui/react";
+import { useContext, useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { Switch } from "@headlessui/react";
+import ThemeContext from "@/store/theme-context";
 
-const ToggleButton = ({ onChangeTheme }) => {
+const ToggleButton = () => {
   const [enabled, setEnabled] = useState(true);
+  const themeCtx = useContext(ThemeContext);
+
+  const theme = themeCtx.theme;
 
   const onChangeHandler = (e) => {
-    onChangeTheme(e);
     setEnabled(e);
+    e ? themeCtx.onChangeTheme("dark") : themeCtx.onChangeTheme("light");
   };
 
   useEffect(() => {
-    const theme = getCookie("THEME");
     if (theme === "light") setEnabled(false);
-  }, []);
+  }, [theme]);
 
   return (
     <Switch

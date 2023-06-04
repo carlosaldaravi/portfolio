@@ -11,26 +11,18 @@ html {
 }
 
 body {
-  background-color: rgb(17 24 39);
+  background-color: #111827;
   color: white;
   box-sizing: border-box;
 }
 
 .dark {
-  background-color: rgb(17 24 39);
+  background-color: #111827;
   color: #eee;
-  .roleCard {
-    background-color: #232332;
-    color: #bebebe;
-  }
 }
 .light {
-  background-color: #fff;
-  color: rgb(17 24 39);
-  .roleCard {
-    background-color: #303030;
-    color: rgb(186, 186, 186);
-  }
+  background-color: #eee;
+  color: #111827;
 }
 
 
