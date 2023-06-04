@@ -1,6 +1,13 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-const Project = ({ project }) => {
+const Project = ({ project, colorNum, onHover }) => {
+  const [color, setColor] = useState("1");
+
+  useEffect(() => {
+    setColor(colorNum);
+  }, [colorNum]);
+
   return (
     <div className="container">
       <div className="item">
@@ -15,7 +22,9 @@ const Project = ({ project }) => {
           <div className="description-switch__outer">
             <div className="description-switch__inner">
               <a href={project.url} target="_blank">
-                <h3 className="text-gray-900 tracking-xxs font-bold">{project.name}</h3>
+                <h3 className="text-gray-900 tracking-xxs font-bold">
+                  {project.name}
+                </h3>
                 <p className="capitalize">{project.rol}</p>
                 <p className="capitalize">{project.year}</p>
                 <p className="capitalize">{project.stack}</p>
@@ -23,56 +32,85 @@ const Project = ({ project }) => {
             </div>
           </div>
         </div>
-        <div className="flap level0">
+        <div className={`flap level0Color${color}`}>
           <span className="level0-text self-center mx-auto">
-            <Image src={project.logo} alt="image" width={200} height={200} className="" />
+            <Image
+              src={project.logo}
+              alt="image"
+              width={200}
+              height={200}
+              className=""
+            />
           </span>
-          <div className="flap level1 flip-right">
-            <div className="flap level2 flip-down">
-              <div className="flap level3 flip-left"></div>
-              <div className="flap level3 flip-right">
-                <div className="flap level4 flip-up">
-                  <div className="flap level5 flip-right">
-                    <div className="flap level6 flip-left"></div>
+          <div className={`flap level1 level1Color${color} flip-right`}>
+            <div className={`flap level2 level2Color${color} flip-down`}>
+              <div
+                className={`flap level3 level3Color${color} flip-left`}
+              ></div>
+              <div className={`flap level3 level3Color${color} flip-right`}>
+                <div className={`flap level4 level4Color${color} flip-up`}>
+                  <div className={`flap level5 level5Color${color} flip-right`}>
+                    <div
+                      className={`flap level6 level6Color${color} flip-left`}
+                    ></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flap level2 flip-up">
-              <div className="flap level3 flip-left">
-                <div className="flap level4 flip-up"></div>
-                <div className="flap level5 flip-down">
-                  <div className="flap level6 flip-left">
-                    <div className="flap level7 flip-up">
-                      <div className="flap level8 flip-left"></div>
-                      <div className="flap level8 flip-right"></div>
+            <div className={`flap level2 level2Color${color} flip-up`}>
+              <div className={`flap level3 level3Color${color} flip-left`}>
+                <div
+                  className={`flap level4 level4Color${color} flip-up`}
+                ></div>
+                <div className={`flap level5 level5Color${color} flip-down`}>
+                  <div className={`flap level6 level6Color${color} flip-left`}>
+                    <div className={`flap level7 level7Color${color} flip-up`}>
+                      <div
+                        className={`flap level8 level8Color${color} flip-left`}
+                      ></div>
+                      <div
+                        className={`flap level8 level8Color${color} flip-right`}
+                      ></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flap level1 flip-left">
-            <div className="flap level2 flip-up">
-              <div className="flap level3 flip-left">
-                <div className="flap level4 flip-down">
-                  <div className="flap level5 flip-left">
-                    <div className="flap level6 flip-right">
-                      <div className="flap level7 flip-up">
-                        <div className="flap level8--alt flip-right"></div>
+          <div
+            className={`flap level1 level1Color${color} flip-left`}
+            onMouseEnter={() => onHover(true)}
+          >
+            <div className={`flap level2 level2Color${color} flip-up`}>
+              <div className={`flap level3 level3Color${color} flip-left`}>
+                <div className={`flap level4 level4Color${color} flip-down`}>
+                  <div className={`flap level5 level5Color${color} flip-left`}>
+                    <div
+                      className={`flap level6 level6Color${color} flip-right`}
+                    >
+                      <div
+                        className={`flap level7 level7Color${color} flip-up`}
+                      >
+                        <div
+                          className={`flap level8Alt level8AltColor${color} flip-right`}
+                        ></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flap level2 flip-down">
-              <div className="flap level3 flip-right">
-                <div className="flap level4 flip-down">
-                  <div className="flap level5 flip-up"></div>
+            <div className={`flap level2 level2Color${color} flip-down`}>
+              <div className={`flap level3 level3Color${color} flip-right`}>
+                <div className={`flap level4 level4Color${color} flip-down`}>
+                  <div
+                    className={`flap level5 level5Color${color} flip-up`}
+                  ></div>
                 </div>
-                <div className="flap level5 flip-up">
-                  <div className="flap level6 flip-right"></div>
+                <div className={`flap level5 level5Color${color} flip-up`}>
+                  <div
+                    className={`flap level6 level6Color${color} flip-right`}
+                  ></div>
                 </div>
               </div>
             </div>

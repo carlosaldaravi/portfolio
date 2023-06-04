@@ -172,3 +172,12 @@
     transform: translateY(.7rem), scale(.2);
   }
 }
+
+@keyframes left-right {
+  from {
+    transform: translateX(0rem);
+  }
+  to {
+    transform: translateX(.4rem);
+  }
+}

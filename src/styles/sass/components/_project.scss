@@ -179,57 +179,179 @@ $colorTextLightest: #789;
   transform-origin: 0% 50%;
 }
 
-.level0 {
-  background-color: #4488cc;
-}
-
 .level1 {
-  background-color: #4466cc;
-  transition: transform $easeTime linear 0s;
+  transition: all $easeTime linear 0s;
 }
 
 .level2 {
-  background-color: #4477cc;
-  transition: transform $easeTime linear $easeTime;
+  transition: all $easeTime linear $easeTime;
 }
 
 .level3 {
-  background-color: #4499cc;
-  transition: transform $easeTime linear $easeTime * 2;
+  transition: all $easeTime linear $easeTime * 2;
 }
 
 .level4 {
-  background-color: #55aacc;
-  transition: transform $easeTime linear $easeTime * 3;
+  transition: all $easeTime linear $easeTime * 3;
 }
 
 .level5 {
-  background-color: #55bbcc;
-  transition: transform $easeTime linear $easeTime * 4;
+  transition: all $easeTime linear $easeTime * 4;
 }
 
 .level6 {
-  background-color: #55cccc;
-  transition: transform $easeTime linear $easeTime * 5;
+  transition: all $easeTime linear $easeTime * 5;
 }
 
 .level7 {
-  background-color: #55ddcc;
-  transition: transform $easeTime linear $easeTime * 6;
+  transition: all $easeTime linear $easeTime * 6;
 }
 
 .level8 {
-  background-color: #55ffcc;
-  transition: transform $easeTime linear $easeTime * 7;
+  transition: all $easeTime linear $easeTime * 7;
 }
 
-.level8--alt {
+.level8Alt {
+  transition: all $easeTime linear $easeTime * 7;
+}
+.level0Color1 {
+  background-color: #4488cc;
+}
+.level1Color1 {
+  background-color: #4466cc;
+}
+.level2Color1 {
+  background-color: #4477cc;
+}
+.level3Color1 {
+  background-color: #4499cc;
+}
+.level4Color1 {
+  background-color: #55aacc;
+}
+.level5Color1 {
+  background-color: #55bbcc;
+}
+.level6Color1 {
+  transition: all $easeTime linear 0s;
+  background-color: #55cccc;
+}
+.level7Color1 {
+  background-color: #55ddcc;
+}
+.level8Color1 {
+  background-color: #55ffcc;
+}
+.level8AltColor1 {
   background-color: #55eecc;
-  transition: transform $easeTime linear $easeTime * 7;
+}
+
+.level0Color2 {
+  background-color: #aa0000;
+}
+.level1Color2 {
+  background-color: #bb0000;
+}
+.level2Color2 {
+  background-color: #cd0000;
+}
+.level3Color2 {
+  background-color: #ef2b2b;
+}
+.level4Color2 {
+  background-color: #ef2b2b;
+}
+.level5Color2 {
+  background-color: #ec4040;
+}
+.level6Color2 {
+  transition: all $easeTime linear 0s;
+  background-color: #e95555;
+}
+.level7Color2 {
+  background-color: #e56b6b;
+}
+.level8Color2 {
+  background-color: #e28080;
+}
+.level8AltColor2 {
+  background-color: #eaa8a8;
+}
+
+.level0Color3 {
+  background-color: #9fccfa;
+}
+.level1Color3 {
+  background-color: #8ec2f9;
+}
+.level2Color3 {
+  background-color: #7eb8f8;
+}
+.level3Color3 {
+  background-color: #6daff7;
+}
+.level4Color3 {
+  background-color: #5ca5f6;
+}
+.level5Color3 {
+  background-color: #4c9bf5;
+}
+.level6Color3 {
+  transition: all $easeTime linear 0s;
+  background-color: #3b91f4;
+}
+.level7Color3 {
+  background-color: #2a88f3;
+}
+.level8Color3 {
+  background-color: #1a7ef2;
+}
+.level8AltColor3 {
+  background-color: #0974f1;
+}
+.level0Color4 {
+  background-color: #ede0d4;
+}
+.level1Color4 {
+  background-color: #e6ccb2;
+}
+.level2Color4 {
+  background-color: #ddb892;
+}
+.level3Color4 {
+  background-color: #b08968;
+}
+.level4Color4 {
+  background-color: #7f5539;
+}
+.level5Color4 {
+  background-color: #9c6644;
+}
+.level6Color4 {
+  transition: all $easeTime linear 0s;
+  background-color: #a57455;
+}
+.level7Color4 {
+  background-color: #ad8164;
+}
+.level8Color4 {
+  background-color: #b48c72;
+}
+.level8AltColor4 {
+  background-color: #bb967f;
 }
 
 .blank {
   background-color: #cde;
+}
+
+.arrow-left-right {
+  // animation: left-right .8s ease-in-out infinite ;
+  animation-name: left-right;
+  animation-duration: .3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
 }
 
 @media (min-width: 650px) and (orientation: landscape) {
