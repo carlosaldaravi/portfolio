@@ -26,10 +26,10 @@ const ContentRoleCard = ({ role }) => {
       onTouchEnd={onMouseLeaveHandler}
     >
       <li
-        className={`rounded-2xl px-8 py-10 transition-all duration-500 ${
+        className={`roleCard rounded-2xl px-8 py-10 transition-all duration-500 bg-gray-300 ${
           cardHovered
-            ? `bg-gray-700 ${classes.shadow3D}`
-            : `bg-gray-800 ${classes.notshadow3D}`
+             ? `${classes.shadow3D}`
+             : `${classes.notshadow3D}`
         }`}
       >
         <AvatarSwitch
@@ -40,7 +40,7 @@ const ContentRoleCard = ({ role }) => {
         <h3
           className={`mt-6 font-semibold leading-7 tracking-normal capitalize ${
             classes.text
-          } ${cardHovered ? `text-[2.5rem] text-gray-50` : "text-gray-400"}`}
+          } ${cardHovered ? `text-[2.5rem]` : ""}`}
         >
           <FormattedMessage id={role.name} />
         </h3>
