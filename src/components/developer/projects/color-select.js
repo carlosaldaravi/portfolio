@@ -28,7 +28,7 @@ const ColorSelect = ({ num, colorSelected, color, onSelColor }) => {
     <div
       className={`h-5 w-20 sm:h-12 sm:w-40 mt-2 rounded-xl cursor-pointer ${bgColor} ${
         colorSelected === color
-          ? `brightness-125 ${shadowColor}`
+          ? `brightness-100 ${shadowColor}`
           : "brightness-75 shadow-md"
       }`}
       onClick={() => onSelColor(num)}
