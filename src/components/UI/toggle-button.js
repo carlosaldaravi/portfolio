@@ -4,7 +4,7 @@ import { Switch } from "@headlessui/react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
 const ToggleButton = ({ onChangeTheme }) => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
 
   const onChangeHandler = (e) => {
     onChangeTheme(e);
@@ -13,7 +13,7 @@ const ToggleButton = ({ onChangeTheme }) => {
 
   useEffect(() => {
     const theme = getCookie("THEME");
-    if (theme === "dark") setEnabled(true);
+    if (theme === "light") setEnabled(false);
   }, []);
 
   return (
