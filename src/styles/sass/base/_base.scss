@@ -16,6 +16,17 @@ body {
   box-sizing: border-box;
 }
 
+.dark {
+  background-color: rgb(17 24 39);
+  color: #eee;
+  // transition: all .5s;
+}
+.light {
+  background-color: #fff;
+  color: rgb(17 24 39);
+  // transition: all .5s;
+}
+
 h1 {
   font-size: 6rem;
   line-height: 1;

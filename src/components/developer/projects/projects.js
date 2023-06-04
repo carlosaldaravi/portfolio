@@ -1,19 +1,28 @@
-import { FormattedMessage } from "react-intl";
+import { useState } from "react";
 import CardsSection from "@/components/UI/cards-section";
 import Project from "@/components/developer/projects/project";
+import ProjectsHeader from "./header";
 
 const Projects = ({ projects }) => {
+  const [projectHovered, setProjectHovered] = useState(false);
+  const [colorNumSelected, setColorNumSelected] = useState("1");
+
   return (
-    <div className="">
-      <h2 className="text-center sm:text-start text-gray-400 tracking-xs">
-        <FormattedMessage id="page.developer.projects" />
-      </h2>
-      <CardsSection className="mt-24 px-12 gap-4 sm:gap-8 lg:gap-12">
+    <ProjectsHeader
+      projectHovered={projectHovered}
+      onSelectColor={(num) => setColorNumSelected(num)}
+    >
+      <CardsSection className="mt-10 px-12 gap-4 sm:gap-8 lg:gap-12">
         {projects.map((project) => (
-          <Project key={project.id} project={project} />
+          <Project
+            key={project.id}
+            project={project}
+            colorNum={colorNumSelected}
+            onHover={(value) => setProjectHovered(value)}
+          />
         ))}
       </CardsSection>
-    </div>
+    </ProjectsHeader>
   );
 };
 

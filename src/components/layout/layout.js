@@ -1,10 +1,10 @@
 import Header from "./header";
 
-const Layout = (props) => {
+const Layout = ({ children, onChangeTheme }) => {
   return (
     <>
-      <Header />
-      <main>{props.children}</main>
+      <Header onChangeTheme={onChangeTheme} />
+      <main>{children}</main>
     </>
   );
 };
