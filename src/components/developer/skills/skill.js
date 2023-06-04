@@ -46,7 +46,7 @@ const Skill = ({ skill }) => {
   const classes = useStyles(name, skill.color)();
   
   return (
-    <div className="relative mb-20 mx-auto min-w-md">
+    <div className="relative mb-20 mx-auto min-w-lg lg:min-w-md">
       <ul
         className={`skills skills1 pt-0 px-[2.5rem] pb-[2rem] ${classes.skills} ${theme === "dark" ? "skills-dark" : "skills-light"}`}
         onMouseEnter={() => setIsHover(true)}
