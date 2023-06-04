@@ -35,17 +35,6 @@ const HeaderJumpCard = ({ jump, onShowMore }) => {
         <span className={`hidden tracking-xs text-3xl sm:block`}>{date}</span>
         <span className={`hidden tracking-xs text-3xl sm:block`}>{spot}</span>
       </div>
-      {isMobile && (
-        <button
-          type="button"
-          className={`absolute right-4 rounded-full px-2.5 py-1 text-lg font-semibold shadow-sm ring-1 ring-inset ${
-            theme === "dark" ? "bg-dark-secondary ring-light-secondary" : "bg-light-secondary ring-dark-secondary"
-          }`}
-          onClick={onShowMore}
-        >
-          <FormattedMessage id="more" />
-        </button>
-      )}
     </h3>
   );
 };
