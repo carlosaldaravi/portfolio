@@ -1,19 +1,12 @@
-import { useTools } from "@/hooks/useTools";
-import ThemeContext from "@/store/theme-context";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
+import { useTools } from "@/hooks/useTools";
+import ButtonSlider from "@/components/UI/button-slider";
+import Arrow from "@/components/UI/arrow";
 
 const KiteSections = ({ sectionSelected, onChangeSection }) => {
   const [actualSection, setActualSection] = useState(sectionSelected);
-  const themeCtx = useContext(ThemeContext);
   const { isMobile } = useTools();
-
-  const theme = themeCtx.theme;
-
-  const colorButton =
-    theme === "dark"
-      ? "bg-dark-secondary text-light-text border-light-secondary"
-      : "bg-light-secondary text-dark-text border-dark-secondary";
 
   useEffect(() => {
     setActualSection(sectionSelected);
@@ -22,43 +15,37 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
   return (
     <div className="flex justify-center mt-8 animate-appear-1">
       {isMobile ? (
-        <span
-          className="self-center text-4xl mr-4 cursor-pointer"
-          onClick={() => onChangeSection(-1)}
-        >
-          &#8592;
-        </span>
+        <Arrow
+          className="mr-4"
+          param={-1}
+          arrow="&#8592;"
+          onChangeSection={(param) => onChangeSection(param)}
+        />
       ) : (
-        <button
-          className={`kitesurf-button back-button text-xl lg:text-2xl border ${colorButton}`}
-          onClick={() => onChangeSection(-1)}
-        >
-          <span>
-            <FormattedMessage id="back" />{" "}
-          </span>
-        </button>
+        <ButtonSlider
+          className="back-button"
+          param={-1}
+          textId="back"
+          onChangeSection={(param) => onChangeSection(param)}
+        />
       )}
-      <span
-        className={`kitesurf-title self-center w-96 sm:w-[445px]`}
-      >
+      <span className={`kitesurf-title self-center w-96 sm:w-[445px]`}>
         {actualSection.title && <FormattedMessage id={actualSection.title} />}
       </span>
       {isMobile ? (
-        <span
-          className="self-center text-4xl ml-4 cursor-pointer"
-          onClick={() => onChangeSection(1)}
-        >
-          &#8594;
-        </span>
+        <Arrow
+          className="ml-4"
+          param={1}
+          arrow="&#8594;"
+          onChangeSection={(param) => onChangeSection(param)}
+        />
       ) : (
-        <button
-          className={`kitesurf-button next-button text-xl lg:text-2xl border ${colorButton}`}
-          onClick={() => onChangeSection(1)}
-        >
-          <span>
-            <FormattedMessage id="next" />{" "}
-          </span>
-        </button>
+        <ButtonSlider
+          className="next-button"
+          param={1}
+          textId="next"
+          onChangeSection={(param) => onChangeSection(param)}
+        />
       )}
     </div>
   );
