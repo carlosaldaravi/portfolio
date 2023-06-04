@@ -232,6 +232,9 @@ $colorTextLightest: #789;
 .level5Color1 {
   background-color: #55bbcc;
 }
+.level6Shadow1 {
+  box-shadow: 0 1px 2px 3px #55cccc, 0 2px 4px -2px #55cccc;
+}
 .level6Color1 {
   transition: all $easeTime linear 0s;
   background-color: #55cccc;
@@ -263,6 +266,9 @@ $colorTextLightest: #789;
 }
 .level5Color2 {
   background-color: #ec4040;
+}
+.level6Shadow2 {
+  box-shadow: 0 1px 2px 3px #e95555, 0 2px 4px -2px #e95555;
 }
 .level6Color2 {
   transition: all $easeTime linear 0s;
@@ -296,6 +302,9 @@ $colorTextLightest: #789;
 .level5Color3 {
   background-color: #4c9bf5;
 }
+.level6Shadow3 {
+  box-shadow: 0 1px 2px 3px #3b91f4, 0 2px 4px -2px #3b91f4;
+}
 .level6Color3 {
   transition: all $easeTime linear 0s;
   background-color: #3b91f4;
@@ -327,6 +336,9 @@ $colorTextLightest: #789;
 .level5Color4 {
   background-color: #9c6644;
 }
+.level6Shadow4 {
+  box-shadow: 0 1px 2px 3px #a57455, 0 2px 4px -1px #a57455;
+}
 .level6Color4 {
   transition: all $easeTime linear 0s;
   background-color: #a57455;
@@ -348,7 +360,7 @@ $colorTextLightest: #789;
 .arrow-left-right {
   // animation: left-right .8s ease-in-out infinite ;
   animation-name: left-right;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
