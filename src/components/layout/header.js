@@ -38,7 +38,7 @@ const Header = () => {
       className={`fixed top-0 py-4 sm:py-8 px-2 sm:px-6 flex justify-between w-full z-50 animate-appear-1 transition-opacity duration-500 ${
         hasScrolled
           ? `shadow-xl ${
-              theme === "light" ? "text-light-primary" : "shadow-dark-primary"
+              theme === "light" ? "text-dark-primary" : "shadow-dark-primary"
             }`
           : ""
       } ${
