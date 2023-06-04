@@ -19,13 +19,20 @@ body {
 .dark {
   background-color: rgb(17 24 39);
   color: #eee;
-  // transition: all .5s;
+  .roleCard {
+    background-color: #232332;
+    color: #bebebe;
+  }
 }
 .light {
   background-color: #fff;
   color: rgb(17 24 39);
-  // transition: all .5s;
+  .roleCard {
+    background-color: #303030;
+    color: rgb(186, 186, 186);
+  }
 }
+
 
 h1 {
   font-size: 6rem;

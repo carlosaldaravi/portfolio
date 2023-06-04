@@ -1,9 +1,9 @@
 .notshadow3D {
-  transition-duration: 1.5s;
   transform: perspective(20rem) translateY(1rem) rotateX(0deg) translateZ(0);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition: transform 1s;
 }
 
 .shadow3D {
@@ -11,6 +11,7 @@
   box-shadow: 2rem 3.5rem 3.2rem -0.8rem rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: .2rem 3.5rem 3.2rem -0.8rem rgba(0, 0, 0, 0.75);
   -moz-box-shadow: .2rem 3.5rem 3.2rem -0.8rem rgba(0, 0, 0, 0.75);
+  transition: transform 1s;
 }
 
 .text {

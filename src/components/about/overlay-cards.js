@@ -5,8 +5,8 @@ import Section from "@/components/UI/section";
 
 const OverlayCards = ({ cards }) => {
   return (
-    <Section className="mt-12 sm:mt-24 text-center">
-      <h3 className="text-gray-300 font-thin">
+    <Section className="sm:mt-24 text-center">
+      <h3 className="font-thin">
         <FormattedMessage id="page.about.freeTime" />
       </h3>
       <CardsSection>
