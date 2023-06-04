@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 const ColorSelect = ({ num, colorSelected, color, onSelColor }) => {
   const [bgColor, setBgColor] = useState();
   const [shadowColor, setShadowColor] = useState();
-  console.log("color: ", color);
 
   useEffect(() => {
     if (color === "#55cccc") {

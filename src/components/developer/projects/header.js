@@ -22,7 +22,7 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
 
   return (
     <div className="">
-      <h2 className="text-center sm:text-start text-gray-400 tracking-xs">
+      <h2 className="text-center sm:text-start tracking-xs">
         <FormattedMessage id="page.developer.projects" />
       </h2>
       <div className="flex flex-col sm:flex-row">

@@ -1,7 +1,8 @@
 import { createUseStyles } from "react-jss";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useIntl } from "react-intl";
 import SkillItem from "./skill-item";
+import ThemeContext from "@/store/theme-context";
 
 const useStyles = (name, color) =>
   createUseStyles({
@@ -14,7 +15,7 @@ const useStyles = (name, color) =>
             ${color} 0 100%
         )`,
       "&::before": {
-        content: `"${name}"`,
+        content: `"${name}"`
       },
       "&:hover:before": {
         "background-color": color,
@@ -36,14 +37,18 @@ const useStyles = (name, color) =>
 
 const Skill = ({ skill }) => {
   const [isHover, setIsHover] = useState(false);
+  const themeCtx = useContext(ThemeContext);
   const intl = useIntl();
   const name = intl.formatMessage({ id: skill.name });
-  const classes = useStyles(name, skill.color)();
+  
+  const theme = themeCtx.theme;
 
+  const classes = useStyles(name, skill.color)();
+  
   return (
-    <div className="relative mb-20 mx-auto min-w-md">
+    <div className="relative mb-20 mx-auto min-w-lg lg:min-w-md">
       <ul
-        className={`skills skills1 pt-0 px-[2.5rem] pb-[2rem] ${classes.skills}`}
+        className={`skills skills1 pt-0 px-[2.5rem] pb-[2rem] ${classes.skills} ${theme === "dark" ? "skills-dark" : "skills-light"}`}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >

@@ -6,10 +6,11 @@ const YoutubeIcon = ({ onPlay }) => {
 
   return (
     <div
-      className={`absolute left-5 sm:left-14 cursor-pointer z-10 ${
+      className={`absolute left-5 sm:left-14 cursor-pointer z-50 ${
         !isMobile && "clickHere"
       }`}
       onClick={onPlay}
+      onTouchStart={onPlay}
     >
       <SVG type="youtube" />
     </div>

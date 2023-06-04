@@ -2,7 +2,7 @@ import { FormattedMessage } from "react-intl";
 import YoutubeEmbed from "@/components/youtube-embed";
 import SVG from "@/components/svg";
 
-const YoutubePlayer = ({jump, onBack}) => {
+const BackSideCar = ({ jump, onBack }) => {
   const { hangtime } = jump.texts.find(
     (object) => Object.keys(object)[0] === "hangtime"
   );
@@ -10,10 +10,11 @@ const YoutubePlayer = ({jump, onBack}) => {
   return (
     <div className={`rounded-xl webKitFillAvailable`}>
       <div
-        className={`flex justify-between px-8 text-center text-xl sm:text-2xl bg-gray-500 tracking-xxs cursor-pointer animate-appear items-center ${
+        className={`flex justify-between px-8 text-center text-3xl font-semibold bg-gray-500 tracking-xxs cursor-pointer animate-appear items-center ${
           jump.best ? "text-yellow-300" : "text-gray-100"
         }`}
         onClick={onBack}
+        onTouchStart={onBack}
       >
         <SVG type="backArrow" />
         {hangtime} <FormattedMessage id="seconds" />
@@ -27,4 +28,4 @@ const YoutubePlayer = ({jump, onBack}) => {
   );
 };
 
-export default YoutubePlayer;
+export default BackSideCar;
