@@ -1,38 +1,25 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useRouter } from "next/router";
-import { setCookie, getCookie } from "cookies-next";
+import { setCookie } from "cookies-next";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import SVG from "@/components/svg";
-import ToggleButton from "../UI/toggle-button";
+import ToggleButton from "@/components/UI/toggle-button";
+import ThemeContext from "@/store/theme-context";
 
 const Header = () => {
-  const [theme, setTheme] = useState("night");
   const { locales, locale, route } = useRouter();
   const [hasScrolled, setHasScrolled] = useState(false);
+  const themeCtx = useContext(ThemeContext);
+
+  const theme = themeCtx.theme;
 
   const setCookieHandler = () => {
     setCookie("NEXT_LOCALE", locale);
   };
 
-  const onChangeThemeHandler = (value) => {
-    if (value) {
-      setTheme("dark");
-      setCookie("THEME", "dark");
-    } else {
-      setTheme("light");
-      setCookie("THEME", "light");
-    }
-  };
-
   useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-
-  useEffect(() => {
-    const loadedTheme = getCookie("THEME");
-    if (loadedTheme === "light") setTheme("light");
     const handleScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
@@ -51,13 +38,13 @@ const Header = () => {
       className={`fixed top-0 py-4 sm:py-8 px-2 sm:px-6 flex justify-between w-full z-50 animate-appear-1 transition-opacity duration-500 ${
         hasScrolled
           ? `shadow-xl ${
-              theme === "light" ? "text-gray-200" : "shadow-gray-900"
+              theme === "light" ? "text-light-primary" : "shadow-dark-primary"
             }`
           : ""
       } ${
         theme === "light"
-          ? "bg-white text-gray-900"
-          : "bg-gray-900 text-gray-50"
+          ? "bg-light-primary text-dark-primary"
+          : "bg-dark-primary text-light-primary"
       }`}
     >
       {route !== "/" && (
@@ -66,8 +53,19 @@ const Header = () => {
         </Link>
       )}
       {route === "/" && (
-        <div className="btn btn-hover transition-all w-32 sm:w-52 text-center opacity-50 hover:opacity-100">
-          <Link className="capitalize text-lg sm:text-2xl" href="/about">
+        <div
+          className={`header-btn header-btn-hover transition-all w-32 sm:w-52 text-center opacity-50 hover:opacity-100 ${
+            theme === "light"
+              ? "light-header-btn-hover"
+              : "dark-header-btn-hover"
+          }  ${theme === "light" ? "text-dark-text" : "text-light-text"}`}
+        >
+          <Link
+            className={`capitalize text-lg sm:text-2xl  ${
+              theme === "light" ? "text-dark-text" : "text-light-text"
+            }`}
+            href="/about"
+          >
             <FormattedMessage id="about" />
           </Link>
         </div>

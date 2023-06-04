@@ -44,6 +44,14 @@ module.exports = {
         "appear-2": "appear 2s",
         "appear-3": "appear 3s",
       },
+      colors: {
+        "dark-primary": "#111827",
+        "dark-secondary": "#0f1523",
+        "dark-text": "#000",
+        "light-primary": "#eee",
+        "light-secondary": "#d6d6d6",
+        "light-text": "#fff",
+      }
     },
   },
   plugins: [require("@tailwindcss/forms"), require('tailwind-scrollbar-hide')],
