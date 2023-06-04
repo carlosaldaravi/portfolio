@@ -4,18 +4,18 @@ import { useTools } from "@/hooks/useTools";
 import ColorOptions from "./color-options";
 
 const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
-  const [colorSelected, setColorSelected] = useState("55cccc");
+  const [colorSelected, setColorSelected] = useState("#55cccc");
   const { isMobile } = useTools();
 
-  const onColorSelectedHandler = (color) => {
-    setColorSelected(color);
-    if (color === "55cccc") {
+  const onColorSelectedHandler = (hexaColor) => {
+    setColorSelected(hexaColor);
+    if (hexaColor === "#55cccc") {
       onSelectColor("1");
-    } else if (color === "e95555") {
+    } else if (hexaColor === "#e95555") {
       onSelectColor("2");
-    } else if (color === "3b91f4") {
+    } else if (hexaColor === "#3b91f4") {
       onSelectColor("3");
-    } else if (color === "a57455") {
+    } else if (hexaColor === "#a57455") {
       onSelectColor("4");
     }
   };
@@ -33,7 +33,8 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
         {!isMobile && !projectHovered && (
           <>
             <span
-              className={`arrow-left-right self-center transition-all duration-300 text-[#${colorSelected}] text-end text-4xl relative -mt-[300px] left-[19%] lg:mt-12 lg:left-[14%]`}
+              className={`arrow-left-right self-center transition-all duration-300 text-end text-4xl relative -mt-[300px] left-[19%] lg:mt-12 lg:left-[14%]`}
+              style={{ color: colorSelected }}
             >
               &#8594;
             </span>
