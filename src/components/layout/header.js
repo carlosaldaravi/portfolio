@@ -49,19 +49,19 @@ const Header = () => {
     >
       {route !== "/" && (
         <Link className="cursor-pointer opacity-50 hover:opacity-100" href="/">
-          <HomeIcon className="w-8 h-8 sm:w-14 sm:h-14" />
+          <HomeIcon className="w-12 h-12 sm:w-16 sm:h-16" />
         </Link>
       )}
       {route === "/" && (
         <div
-          className={`header-btn header-btn-hover transition-all w-32 sm:w-52 text-center opacity-50 hover:opacity-100 ${
+          className={`header-btn header-btn-hover transition-all w-52 sm:w-64 text-center opacity-50 hover:opacity-100 ${
             theme === "light"
               ? "light-header-btn-hover"
               : "dark-header-btn-hover"
-          }  ${theme === "light" ? "text-dark-text" : "text-light-text"}`}
+          }`}
         >
           <Link
-            className={`capitalize text-lg sm:text-2xl  ${
+            className={`capitalize text-2xl sm:text-4xl  ${
               theme === "light" ? "text-dark-text" : "text-light-text"
             }`}
             href="/about"
