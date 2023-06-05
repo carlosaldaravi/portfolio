@@ -66,7 +66,7 @@ const JumpCard = ({
       } ${styles.kiteCard} ${
         theme === "dark" ? classes.kiteCardDark : classes.kiteCardLight
       } ${jump.best ? classes.bestJump : ""} ${
-        cardHovered && !isExpanded ? "z-10 blur-xxs opacity-40" : ""
+        cardHovered && !isExpanded ? "blur-xxs opacity-40" : ""
       } `}
       onMouseEnter={onHoverInHandler}
       onMouseLeave={onHoverOutHandler}

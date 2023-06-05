@@ -8,15 +8,15 @@ const BackSideCar = ({ jump, onBack }) => {
   );
 
   return (
-    <div className={`webKitFillAvailable`}>
+    <div className={`w-full z-10`}>
       <div
-        className={`flex justify-between px-8 text-center text-3xl font-semibold bg-gray-500 tracking-xxs cursor-pointer animate-appear items-center rounded-t-xl ${
+        className={`flex justify-between px-8 text-center text-3xl font-semibold bg-gray-500 tracking-xxs animate-appear items-center rounded-t-xl ${
           jump.best ? "text-yellow-300" : "text-gray-100"
         }`}
-        onClick={onBack}
-        onTouchStart={onBack}
       >
-        <SVG type="backArrow" />
+        <span onClick={onBack} onTouchStart={onBack}>
+          <SVG type="backArrow" />
+        </span>
         {hangtime} <FormattedMessage id="seconds" />
       </div>
       <YoutubeEmbed
