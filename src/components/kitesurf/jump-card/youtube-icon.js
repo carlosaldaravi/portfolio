@@ -6,7 +6,7 @@ const YoutubeIcon = ({ onPlay }) => {
 
   return (
     <div
-      className={`absolute left-5 sm:left-14 cursor-pointer z-50 ${
+      className={`absolute left-5 sm:left-14 cursor-pointer z-30 ${
         !isMobile ? "clickHere" : "animate-bounce"
       }`}
       onClick={onPlay}

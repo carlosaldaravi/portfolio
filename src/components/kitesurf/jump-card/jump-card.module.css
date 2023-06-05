@@ -1,26 +1,64 @@
-.card {
-  background-image: linear-gradient(
-      to right bottom,
-      hsla(0, 0%, 2%, 0.9),
-      rgba(40, 40, 40, 0.6)
-    ),
-    url("/kitesurf.JPG");
-  background-size: cover;
-  background-position: 0% 28%;
-  
+.kiteCard {
+  border-color: gray;
 }
 
-.best {
+.kiteCardLight {
+  --tw-gradient-from: #bebebe;
+  --tw-gradient-to: rgb(190 190 190 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  background-image: linear-gradient(
+    to right bottom,
+    hsla(0, 0%, 83%, 0.7),
+    rgba(54, 54, 54, 0.6)
+  );
+}
+
+.kiteCardDark {
+  --tw-gradient-from: #404652;
+  --tw-gradient-to: rgb(64 70 82 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  background-image: linear-gradient(
+    to right bottom,
+    hsla(229, 20%, 31%, 0.9),
+    rgba(23, 23, 43, 0.6)
+  );
+}
+
+.bestJump {
   background-image: linear-gradient(
       to right,
       hsla(0, 0%, 12%, 0.86),
-      rgba(40, 40, 40, .97)
+      rgba(40, 40, 40, 0.97)
     ),
     url("/world-record.jpeg");
-  background-size: cover;
-  background-position: center;
+  border-color: yellow;
+  color: #eee;
+}
+.kiteCard:before,
+.bestJump:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  background-size: "cover";
 }
 
 .webkit {
   text-align: -webkit-center;
+}
+
+@media (min-width: 640px) {
+  .bestJump:hover:before {
+    background-image: linear-gradient(
+        to right,
+        hsla(0, 0%, 12%, 0.86),
+        rgba(40, 40, 40, 0.97)
+      ),
+      url("/world-record.jpeg");
+    box-shadow: 0px 0px 20px 8px gold;
+  }
 }
