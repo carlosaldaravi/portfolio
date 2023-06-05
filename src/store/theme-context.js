@@ -18,6 +18,7 @@ export function ThemeContextProvider(props) {
   useEffect(() => {
     const savedThem = getCookie("THEME");
     if (savedThem) setTheme(savedThem);
+    else setTheme("dark");
   }, []);
 
   useEffect(() => {
