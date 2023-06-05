@@ -7,6 +7,7 @@ import NewsCards from "@/components/kitesurf/news-cards/news-cards";
 import KiteSections from "@/components/kitesurf/sections";
 import Sponsors from "@/components/kitesurf/sponsors";
 import Page from "@/components/UI/page";
+import SectionTitle from "@/components/UI/section-title";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
@@ -29,6 +30,7 @@ const KiteSurf = ({ sections, me }) => {
   return (
     <Page className="kitesurf__page__container">
       <KiterCard me={me} />
+      <SectionTitle title="page.kitesurf.achievements" className="mt-24 mb-12 sm:my-24" />
       <KiteSections
         sections={sections}
         sectionSelected={sectionSelected}

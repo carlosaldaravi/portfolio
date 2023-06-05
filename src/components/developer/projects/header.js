@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useTools } from "@/hooks/useTools";
 import ColorOptions from "./color-options";
+import SectionTitle from "@/components/UI/section-title";
 
 const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
   const [colorSelected, setColorSelected] = useState("#55cccc");
@@ -22,9 +23,10 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
 
   return (
     <div className="">
-      <h2 className="text-center sm:text-start tracking-xs">
-        <FormattedMessage id="page.developer.projects" />
-      </h2>
+      <SectionTitle
+        title="page.developer.projects"
+        description="page.developer.projects.description"
+      />
       <div className="flex flex-col sm:flex-row">
         <ColorOptions
           colorSelected={colorSelected}
