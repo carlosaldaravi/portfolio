@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Project = ({ project, colorNum, onHover }) => {
@@ -9,7 +10,7 @@ const Project = ({ project, colorNum, onHover }) => {
   }, [colorNum]);
 
   return (
-    <div className="container">
+    <Link href={project.url} target="_blank" className="container">
       <div className="item">
         <div className="item__image">
           <div className="image-switch__outer">
@@ -21,14 +22,14 @@ const Project = ({ project, colorNum, onHover }) => {
         <div className="item__description">
           <div className="description-switch__outer">
             <div className="description-switch__inner">
-              <a href={project.url} target="_blank">
+              <div className="w-[90%] text-xl">
                 <h3 className="text-gray-900 tracking-xxs font-bold">
                   {project.name}
                 </h3>
-                <p className="capitalize">{project.rol}</p>
-                <p className="capitalize">{project.year}</p>
-                <p className="capitalize">{project.stack}</p>
-              </a>
+                <p className="capitalize text-start">{project.rol}</p>
+                <p className="capitalize text-start">{project.year}</p>
+                <p className="capitalize text-start">{project.stack}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -124,7 +125,7 @@ const Project = ({ project, colorNum, onHover }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 export default Project;
