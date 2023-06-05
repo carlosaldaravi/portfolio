@@ -30,7 +30,7 @@ const KiteSurf = ({ sections, me }) => {
   return (
     <Page className="kitesurf__page__container">
       <KiterCard me={me} />
-      <SectionTitle title="page.kitesurf.achievements" className="my-24" />
+      <SectionTitle title="page.kitesurf.achievements" className="mt-24 mb-12 sm:my-24" />
       <KiteSections
         sections={sections}
         sectionSelected={sectionSelected}
