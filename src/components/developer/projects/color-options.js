@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import ColorSelect from "./color-select";
 
 const ColorOptions = ({ colorSelected, onColorSelected }) => {
@@ -13,31 +14,36 @@ const ColorOptions = ({ colorSelected, onColorSelected }) => {
     }
   };
   return (
-    <div className="mt-8 flex sm:flex-col mx-auto gap-2 self-center">
-      <ColorSelect
-        num="1"
-        colorSelected={colorSelected}
-        color="#55cccc"
-        onSelColor={(c) => colorHandler(c)}
-      />
-      <ColorSelect
-        num="2"
-        colorSelected={colorSelected}
-        color="#e95555"
-        onSelColor={(c) => colorHandler(c)}
-      />
-      <ColorSelect
-        num="3"
-        colorSelected={colorSelected}
-        color="#3b91f4"
-        onSelColor={(c) => colorHandler(c)}
-      />
-      <ColorSelect
-        num="4"
-        colorSelected={colorSelected}
-        color="#a57455"
-        onSelColor={(c) => colorHandler(c)}
-      />
+    <div className="mx-auto self-center mt-4 sm:mt-0">
+      <div className="text-center tracking-xxs mb-2 text-xl font-thin">
+        <FormattedMessage id="page.kitesurf.playWithColors" />
+      </div>
+      <div className="flex sm:flex-col mx-auto gap-2 self-center">
+        <ColorSelect
+          num="1"
+          colorSelected={colorSelected}
+          color="#55cccc"
+          onSelColor={(c) => colorHandler(c)}
+        />
+        <ColorSelect
+          num="2"
+          colorSelected={colorSelected}
+          color="#e95555"
+          onSelColor={(c) => colorHandler(c)}
+        />
+        <ColorSelect
+          num="3"
+          colorSelected={colorSelected}
+          color="#3b91f4"
+          onSelColor={(c) => colorHandler(c)}
+        />
+        <ColorSelect
+          num="4"
+          colorSelected={colorSelected}
+          color="#a57455"
+          onSelColor={(c) => colorHandler(c)}
+        />
+      </div>
     </div>
   );
 };

@@ -10,7 +10,6 @@ export default function Home({ roles }) {
       <Head>
         <title>Carlos Aldaravi Porfolio</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
       </Head>
       <HomeInfo roles={roles} />
     </Page>

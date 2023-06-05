@@ -24,9 +24,9 @@ const NewsCard = ({ newsItem }) => {
         <div className="card-img-hovered" style={bgImage}></div>
         <div className="card-info">
           <div className="card-about">
-            <a className="card-tag tag-news">
+            <span className="card-tag tag-news">
               <FormattedMessage id="page.kitesurf.news" />
-            </a>
+            </span>
             <div>{newsItem.date}</div>
           </div>
           <h3 className="card-title text-2xl">{newsItem.title}</h3>
