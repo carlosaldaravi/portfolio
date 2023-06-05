@@ -24,7 +24,7 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
   return (
     <div className="">
       <SectionTitle
-        title={<FormattedMessage id="page.developer.projects" />}
+        title="page.developer.projects"
         description="page.developer.projects.description"
       />
       <div className="flex flex-col sm:flex-row">

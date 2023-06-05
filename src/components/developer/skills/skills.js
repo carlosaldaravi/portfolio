@@ -7,8 +7,9 @@ const Skills = ({ skills }) => {
   return (
     <div className="mt-8">
       <SectionTitle
-        title={<FormattedMessage id="page.developer.skills" />}
+        title="page.developer.skills"
         description="page.developer.skills.description"
+        className="mt-24"
       />
 
       <CardsSection className="mt-24 sm:mt-32 profile-skills max-w-8xl text-3xl tracking-xs -mb-10">
