@@ -26,9 +26,9 @@ const Project = ({ project, colorNum, onHover }) => {
                 <h3 className="text-gray-900 tracking-xxs font-bold">
                   {project.name}
                 </h3>
-                <p className="capitalize text-start">{project.rol}</p>
-                <p className="capitalize text-start">{project.year}</p>
-                <p className="capitalize text-start">{project.stack}</p>
+                <p className="capitalize">{project.rol}</p>
+                <p className="capitalize">{project.year}</p>
+                <p className="capitalize">{project.stack}</p>
               </div>
             </div>
           </div>
