@@ -39,7 +39,15 @@
             { "size": "13m" },
             { "wind": "8 - 18" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/elmedano.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundPosition": "50% 15%;"
+              }
+            }
+          },
           "youtubeEmbedId": "UqJ3_v1iBUE",
           "best": false
         },
@@ -52,7 +60,15 @@
             { "size": "13m" },
             { "wind": "11 - 22" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/elmedano.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundPosition": "50% 15%;"
+              }
+            }
+          },
           "youtubeEmbedId": "dacCUGIXLME",
           "best": false
         },
@@ -65,7 +81,15 @@
             { "size": "9m" },
             { "wind": "10 - 30" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/elmedano.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundPosition": "50% 15%;"
+              }
+            }
+          },
           "youtubeEmbedId": "Cip6jFU_cho",
           "best": false
         },
@@ -78,7 +102,15 @@
             { "size": "9m" },
             { "wind": "0 - 40" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
           "youtubeEmbedId": "ptLAZmjuRfc",
           "best": false
         },
@@ -91,7 +123,15 @@
             { "size": "8m" },
             { "wind": "35 - 50" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/mistycliffs.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/mistycliffs.jpeg);",
+                "backgroundPosition": "100% 90%;"
+              }
+            }
+          },
           "youtubeEmbedId": "2kcdjxcIBWM",
           "best": false
         },
@@ -104,7 +144,15 @@
             { "size": "7m" },
             { "wind": "30 - 60" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/world-record.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/world-record.jpeg);",
+                "backgroundPosition": "0% 28%;"
+              }
+            }
+          },
           "youtubeEmbedId": "-gQMmsZxw10",
           "best": true
         },
@@ -117,7 +165,15 @@
             { "size": "9m" },
             { "wind": "20 - 35" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
           "youtubeEmbedId": "_-PPTA3XQWg",
           "best": false
         },
@@ -130,7 +186,15 @@
             { "size": "8m" },
             { "wind": "35 - 50" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/leucate.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/leucate.jpeg);",
+                "backgroundPosition": "20% 100%;"
+              }
+            }
+          },
           "youtubeEmbedId": "QHBIGtWig1U",
           "best": false
         },
@@ -143,7 +207,15 @@
             { "size": "9m" },
             { "wind": "15 - 25" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
           "youtubeEmbedId": "fznH5fj92VY",
           "best": false
         },
@@ -156,7 +228,15 @@
             { "size": "9m" },
             { "wind": "20 - 35" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
           "youtubeEmbedId": "fNR0erdMT04",
           "best": false
         },
@@ -169,7 +249,15 @@
             { "size": "9m" },
             { "wind": "25 - 45" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
           "youtubeEmbedId": "wXm9gL7nzCA",
           "best": false
         },
@@ -182,7 +270,15 @@
             { "size": "10m" },
             { "wind": "10 - 20" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/santapola.jpg_large",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/santapola.jpg_large);",
+                "backgroundPosition": "30% 58%;"
+              }
+            }
+          },
           "youtubeEmbedId": "0WftpdmVEE4",
           "best": false
         },
@@ -195,7 +291,15 @@
             { "size": "9m" },
             { "wind": "25 - 40" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
           "youtubeEmbedId": "Q_MeCaTz-xY",
           "best": false
         },
@@ -208,7 +312,15 @@
             { "size": "9m" },
             { "wind": "20 - 40" }
           ],
-          "img": "https://source.unsplash.com/random/200x200?sig=1",
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
           "youtubeEmbedId": "5xVIQ1ZHvI8",
           "best": false
         }

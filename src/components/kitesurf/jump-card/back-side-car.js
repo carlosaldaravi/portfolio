@@ -8,9 +8,9 @@ const BackSideCar = ({ jump, onBack }) => {
   );
 
   return (
-    <div className={`rounded-xl webKitFillAvailable`}>
+    <div className={`webKitFillAvailable`}>
       <div
-        className={`flex justify-between px-8 text-center text-3xl font-semibold bg-gray-500 tracking-xxs cursor-pointer animate-appear items-center ${
+        className={`flex justify-between px-8 text-center text-3xl font-semibold bg-gray-500 tracking-xxs cursor-pointer animate-appear items-center rounded-t-xl ${
           jump.best ? "text-yellow-300" : "text-gray-100"
         }`}
         onClick={onBack}

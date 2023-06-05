@@ -6,6 +6,9 @@ import YoutubeIcon from "./youtube-icon";
 import BackSideCard from "./back-side-car";
 import HeaderJumpCard from "./header-jump-card";
 import FrontSideCard from "./front-side-card";
+import { createUseStyles } from "react-jss";
+
+const useStyles = (style) => createUseStyles(style);
 
 const JumpCard = ({
   jump,
@@ -17,6 +20,7 @@ const JumpCard = ({
   const [showBackSide, setShowBackSide] = useState(false);
   const [showFrontSide, setShowFrontSide] = useState(false);
   const themeCtx = useContext(ThemeContext);
+  const styles = useStyles(jump.style)();
   const { isMobile } = useTools();
 
   const theme = themeCtx.theme;
@@ -57,28 +61,20 @@ const JumpCard = ({
 
   return (
     <div
-      className={`relative flex min-h-[140px] items-center justify-center h-max border sm:transform sm:duration-500 sm:ease-in sm:transition-all ${
-        isExpanded || isMobile
-          ? `${
-              jump.best
-                ? `${classes.best} border-yellow-300 shadow-yellow-300`
-                : `${classes.card} border-gray-100`
-            } z-10 shadow-lg rounded-md ${cardHovered && "blur-none"}`
-          : `${
-              jump.best && classes.best
-            } scale-100 bg-gradient-to-r rounded-t-md block transform duration-300 ease-in ${
-              theme === "dark"
-                ? "from-[#404652] to-[#111827] border-dark-secondary"
-                : "from-[#bebebe] to-[#777] border-light-secondary"
-            } ${cardHovered ? "blur-xxs opacity-40" : "blur-none"}`
-      } ${showBackSide ? "p-0" : "p-4"}`}
+      className={`kite-card flex min-h-[140px] items-center justify-center h-max border transform duration-700 ease-out transition-card rounded-xl ${
+        classes.kiteCard
+      } ${styles.kiteCard} ${
+        theme === "dark" ? classes.kiteCardDark : classes.kiteCardLight
+      } ${jump.best ? classes.bestJump : ""} ${
+        cardHovered && !isExpanded ? "z-10 blur-xxs opacity-40" : ""
+      } `}
       onMouseEnter={onHoverInHandler}
       onMouseLeave={onHoverOutHandler}
     >
       {!isExpanded && !showFrontSide && !isMobile && (
         <HeaderJumpCard jump={jump} />
       )}
-      {((isMobile || showFrontSide) && !showBackSide) && (
+      {(isMobile || showFrontSide) && !showBackSide && (
         <>
           <FrontSideCard texts={jump.texts} />
           {jump.youtubeEmbedId && <YoutubeIcon onPlay={onPlayHandler} />}

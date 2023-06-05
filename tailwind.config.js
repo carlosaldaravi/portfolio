@@ -51,6 +51,9 @@ module.exports = {
         "light-primary": "#eee",
         "light-secondary": "#d6d6d6",
         "light-text": "#fff",
+      },
+      transitionProperty: {
+        'card': 'blur, opacity',
       }
     },
   },
