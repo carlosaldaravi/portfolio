@@ -15,8 +15,8 @@ const ColorOptions = ({ colorSelected, onColorSelected }) => {
   };
   return (
     <div className="mx-auto self-center mt-4 sm:mt-0">
-      <div className="text-center tracking-xxs mb-2 text-xl font-thin">
-        <FormattedMessage id="page.kitesurf.playWithColors" />
+      <div className="text-center tracking-xxs mb-2 text-lg sm:text-xl font-light text-gray-600">
+        <FormattedMessage id="page.developer.projects.playWithColors" />
       </div>
       <div className="flex sm:flex-col mx-auto gap-2 self-center">
         <ColorSelect
