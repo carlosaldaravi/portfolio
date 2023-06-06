@@ -4,15 +4,17 @@ import fs from "fs/promises";
 import Page from "@/components/UI/page";
 import Skills from "@/components/developer/skills/skills";
 import Projects from "@/components/developer/projects/projects";
+import Footer from "@/components/layout/footer";
 
 const Developer = ({ data }) => {
   return (
-    <Page>
+    <Page className="p-0">
       <h1 className="text-center tracking-xxs">
         <FormattedMessage id="page.developer.fullstack" />
       </h1>
       <Skills skills={data.skills} />
       <Projects projects={data.projects} />
+      <Footer />
     </Page>
   );
 };

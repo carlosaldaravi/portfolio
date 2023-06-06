@@ -1,0 +1,17 @@
+.dark-footer {
+  background-color: $secondary-dark-color;
+  color: $primary-light-color;
+  // border-top: 1px solid $primary-light-color;
+}
+.light-footer {
+  background-color: $secondary-light-color;
+  color: $primary-dark-color;
+  // border-top: 1px solid $primary-dark-color;
+}
+
+.footer {
+  display: grid;
+  height: 100px;
+  align-items: center;
+  margin: 0 auto;
+}

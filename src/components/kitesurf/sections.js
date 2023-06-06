@@ -3,6 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { useTools } from "@/hooks/useTools";
 import ButtonSlider from "@/components/UI/button-slider";
 import Arrow from "@/components/UI/arrow";
+import SectionTitle from "../UI/section-title";
 
 const KiteSections = ({ sectionSelected, onChangeSection }) => {
   const [actualSection, setActualSection] = useState(sectionSelected);
@@ -29,9 +30,10 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
           onChangeSection={(param) => onChangeSection(param)}
         />
       )}
-      <span className={`kitesurf-title self-center w-96 sm:w-[445px]`}>
-        {actualSection.title && <FormattedMessage id={actualSection.title} />}
-      </span>
+      <SectionTitle
+        title={actualSection.title}
+        className="mt-24 mb-12 sm:my-24 section-title-small-vars"
+      />
       {isMobile ? (
         <Arrow
           className="ml-4"

@@ -1,6 +1,7 @@
 import OverlayCards from "@/components/about/overlay-cards";
 import AboutHeader from "@/components/about/header";
 import Page from "@/components/UI/page";
+import Footer from "@/components/layout/footer";
 
 const About = () => {
   const cards = [
@@ -40,6 +41,7 @@ const About = () => {
     <Page>
       <AboutHeader />
       <OverlayCards cards={cards} />
+      <Footer />
     </Page>
   );
 };

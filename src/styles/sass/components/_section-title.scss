@@ -1,14 +1,30 @@
-.section-title {
+.section-title-dark {
+  --c: #282f3c;
+}
+.section-title-light {
+  --c: #bebebe;
+}
+.section-title-big-vars {
   --b: 4px; /* control the border thickness */
   --w: 50vw; /* control the width of the line*/
   --g: -5px; /* control the gap */
-  --c: #0B486B;
-
+  margin-inline: auto;
   width: fit-content;
+}
+.section-title-small-vars {
+  --b: 2px;
+  --w: 30px;
+  --g: 15px;
+  min-width: 35rem;
+  max-width: 60rem;
+  margin: auto 0;
+  margin-inline: 7rem;
+}
+.section-title {
+  text-align: center;
   padding: 0 1em;
   line-height: 1.6em;
   border: 1px solid;
-  color: #fff;
   background: conic-gradient(from 45deg at left, var(--c) 25%, #0000 0) 0,
     conic-gradient(from -135deg at right, var(--c) 25%, #0000 0) 100%;
   background-size: 51% 100%;
@@ -20,5 +36,17 @@
       #0000 0
     )
     1/0 var(--w) / calc(var(--w) + var(--g));
-  margin-inline: auto;
+}
+
+@media (max-width: 639px) {
+  .section-title-small-vars {
+    --b: 0px;
+    --w: 0px;
+    --g: 0px;
+  }
+  .section-title-small-vars {
+    margin: auto 0;
+    width: fit-content;
+    min-width: 27rem;
+  }
 }
