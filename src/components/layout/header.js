@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 py-4 sm:py-8 px-2 sm:px-6 flex justify-between w-full z-50 animate-appear-1 transition-opacity duration-500 ${
+      className={`fixed top-0 py-4 sm:py-8 px-2 sm:px-6 flex justify-end w-full z-50 animate-appear-1 transition-opacity duration-500 ${
         hasScrolled
           ? `shadow-xl ${
               theme === "light" ? "text-dark-primary" : "shadow-dark-primary"
@@ -47,12 +47,12 @@ const Header = () => {
           : "bg-dark-primary text-light-primary"
       }`}
     >
-      {route !== "/" && (
+      {/* {route !== "/" && (
         <Link className="cursor-pointer opacity-50 hover:opacity-100" href="/">
           <HomeIcon className="w-12 h-12 sm:w-16 sm:h-16" />
         </Link>
-      )}
-      {route === "/" && (
+      )} */}
+      {/* {route === "/" && (
         <div
           className={`header-btn header-btn-hover transition-all w-52 sm:w-64 text-center opacity-50 hover:opacity-100 ${
             theme === "light"
@@ -69,7 +69,7 @@ const Header = () => {
             <FormattedMessage id="about" />
           </Link>
         </div>
-      )}
+      )} */}
       <div>
         <div className={`flex gap-2`}>
           <ToggleButton
