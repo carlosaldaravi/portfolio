@@ -11,7 +11,7 @@ const Portal = ({ children }) => {
   }, []);
 
   return mounted
-    ? createPortal(children, document.querySelector("#myportal"))
+    ? createPortal(children, document.querySelector("#popup"))
     : null;
 };
 

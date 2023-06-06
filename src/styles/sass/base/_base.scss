@@ -24,6 +24,11 @@ body {
   background-color: #eee;
   color: #111827;
 }
+#popup {
+  z-index: 999999;
+  transform: translateZ(1rem);
+  -webkit-transform: translateZ(1rem);
+}
 
 
 h1 {

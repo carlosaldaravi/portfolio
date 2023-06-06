@@ -57,7 +57,7 @@ export default function Popup({ isOpen, onClose, title, text }) {
                   {title}
                 </Dialog.Title>
 
-                <div className="mt-2 z-[9999999] tranform-[translateZ(1rem)]">
+                <div className="mt-2">
                   <p className={`text-lg font-thin ${textColor}`}>
                     <FormattedMessage id={text} />
                   </p>
