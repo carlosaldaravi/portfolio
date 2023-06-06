@@ -14,7 +14,6 @@ const Developer = ({ data }) => {
       </h1>
       <Skills skills={data.skills} />
       <Projects projects={data.projects} />
-      <Footer />
     </Page>
   );
 };

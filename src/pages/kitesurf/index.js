@@ -7,8 +7,6 @@ import NewsCards from "@/components/kitesurf/news-cards/news-cards";
 import KiteSections from "@/components/kitesurf/sections";
 import Sponsors from "@/components/kitesurf/sponsors";
 import Page from "@/components/UI/page";
-import SectionTitle from "@/components/UI/section-title";
-import Footer from "@/components/layout/footer";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
@@ -45,7 +43,6 @@ const KiteSurf = ({ sections, me }) => {
       {sectionSelected.name === "news" && (
         <NewsCards news={sectionSelected.data} />
       )}
-      <Footer />
     </Page>
   );
 };

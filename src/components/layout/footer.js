@@ -9,11 +9,11 @@ const Footer = () => {
   const theme = themeCtx.theme;
   const bgFooter = theme === "dark" ? "dark-footer" : "light-footer";
   return (
-    <section className={`footer mx-auto ${bgFooter}`}>
+    <footer className={`footer mx-auto ${bgFooter}`}>
       {/* <div className="">logo</div> */}
       <FooterRRSS />
       <FooterLinks />
-    </section>
+    </footer>
   );
 };
 

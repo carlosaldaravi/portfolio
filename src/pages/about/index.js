@@ -41,7 +41,6 @@ const About = () => {
     <Page>
       <AboutHeader />
       <OverlayCards cards={cards} />
-      <Footer />
     </Page>
   );
 };

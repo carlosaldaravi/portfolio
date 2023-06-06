@@ -10,10 +10,15 @@
 }
 
 .footer {
-  display: grid;
-  height: 100px;
+  z-index: 999999;
+  position: fixed;
+  display: grifd;
+  height: 9vh;
+  width: 100%;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
+  bottom: 0;
+  padding-top: 3rem
 }
 
 .footer-link {
@@ -21,4 +26,10 @@
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (max-width: 639px) {
+  .footer {
+    height: 15vh;
+  }
 }

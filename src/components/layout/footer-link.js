@@ -9,7 +9,7 @@ const FooterLink = ({ src, title }) => {
   const route = router.route;
 
   const theme = themeCtx.theme;
-  const style =
+  const activeStyle =
     theme === "dark"
       ? "border-light-primary text-light-primary"
       : "border-dark-primary text-dark-primary";
@@ -17,10 +17,14 @@ const FooterLink = ({ src, title }) => {
   return (
     <Link
       href={src}
-      className={`w-1/4 border-b-2 py-4 px-1 text-center text-sm font-medium ${
+      className={`w-1/4 border-b-2 pt-4 pb-2 px-1 text-center text-sm font-medium ${
         route === src
-          ? style
-          : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+          ? `font-extrabold ${activeStyle}`
+          : `border-transparent hover:font-bold ${
+              theme === "dark"
+                ? "text-light-secondary hover:text-light-primary hover:border-light-primary"
+                : "text-dark-secondary hover:text-dark-primary hover:border-dark-primary"
+            }`
       }`}
       aria-current={route === src ? "page" : undefined}
     >

@@ -6,7 +6,7 @@ const FooterLinks = () => {
     <div className="">
       <div className="border-b border-gray-200">
         <nav className="-mb-px flex" aria-label="Tabs">
-          <FooterLink src="/" title="Home" />
+          <FooterLink src="/" title={<FormattedMessage id="footer.home" />} />
           <FooterLink
             src="/about"
             title={<FormattedMessage id="footer.about" />}
