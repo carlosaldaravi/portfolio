@@ -4,7 +4,7 @@
   position: absolute;
   top: -3rem;
   // height: 2rem;
-  // color: $primary-color;
+  // color: $primary-dark-color;
   background-color: #2e2e2e;
   width: 100%;
   left: 0;
@@ -19,11 +19,11 @@
 }
 
 .skills-dark:before {
-  color: $primary-color;
+  color: $primary-dark-color;
 }
 
 .skills-light:before {
-  color: $secondary-color;
+  color: $primary-light-color;
 }
 
 // header down arrow
@@ -38,10 +38,10 @@ ul.skills:after {
   transition: $transitionAll;
 }
 ul.skills-dark:after {
-  filter: drop-shadow(0 6px 0.1px $primary-color);
+  filter: drop-shadow(0 6px 0.1px $primary-dark-color);
 }
 ul.skills-light:after {
-  filter: drop-shadow(0 6px 0.1px $secondary-color);
+  filter: drop-shadow(0 6px 0.1px $primary-light-color);
 }
 
 ul.skills:hover:before {

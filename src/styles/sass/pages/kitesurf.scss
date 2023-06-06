@@ -1,26 +1,7 @@
-.kitesurf-title {
-  display: block;
-  text-align: center;
-  align-self: center;
-  font-size: 1.8rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-.kitesurf-title::before,
-.kitesurf-title::after {
-  display: inline-block;
-  content: "";
-  border-top: 0.01rem solid gray;
-  width: 4rem;
-  margin: 0 1rem;
-  transform: translateY(-0.5rem);
-}
-
 .kitesurf-button {
-  border-radius: 4px;
+  border-radius: 10px;
   text-align: center;
-  padding: 0.2rem 0.5rem;
+  padding: .2rem 0.5rem;
   width: 9rem;
   transition: all 0.5s;
   cursor: pointer;
@@ -65,18 +46,4 @@
 .next-button:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-@media (max-width: 639px) {
-  .kitesurf-title {
-    font-size: 1.5rem;
-    letter-spacing: 0;
-  }
-  .kitesurf-title::before,
-  .kitesurf-title::after {
-    display: inline-block;
-    content: "";
-    border-top: 0;
-    width: fit-content;
-  }
 }

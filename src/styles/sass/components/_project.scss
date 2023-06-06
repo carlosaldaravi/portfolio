@@ -366,7 +366,7 @@ $colorTextLightest: #789;
   animation-direction: alternate;
 }
 
-@media (min-width: 650px) and (orientation: landscape) {
+@media (min-width: 1024px) and (orientation: landscape) {
   .item {
     .flip-up {
       transform: rotate3D(1, 0, 0, 0deg);
