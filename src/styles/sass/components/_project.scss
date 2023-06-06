@@ -4,7 +4,7 @@ $colorText: #345;
 $colorTextLighter: #567;
 $colorTextLightest: #789;
 
-.container {
+.project-container {
   width: 100%;
   // padding: $blockSize $blockSize/4 0 $blockSize/4;
   display: grid;
@@ -48,7 +48,7 @@ $colorTextLightest: #789;
     width: $blockSize * 5;
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
-    z-index: 999;
+    z-index: 99999;
     transform: translateZ(0.01px);
     -webkit-transform: translateZ(0.01px);
     pointer-events: none;
@@ -213,6 +213,22 @@ $colorTextLightest: #789;
 
 .level8Alt {
   transition: all $easeTime linear $easeTime * 7;
+}
+.project-button-info {
+  z-index: 1;
+  transition: all $easeTime * 4 ease-in-out 0s;
+}
+.project-button-info-1 {
+  color: #55cccc;
+}
+.project-button-info-2 {
+  color: #e95555;
+}
+.project-button-info-3 {
+  color: #3b91f4;
+}
+.project-button-info-4 {
+  color: #a57455;
 }
 .level0Color1 {
   background-color: #4488cc;

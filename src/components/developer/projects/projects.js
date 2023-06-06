@@ -2,7 +2,6 @@ import { useState } from "react";
 import CardsSection from "@/components/UI/cards-section";
 import Project from "@/components/developer/projects/project";
 import ProjectsHeader from "./header";
-import { FormattedMessage } from "react-intl";
 
 const Projects = ({ projects }) => {
   const [projectHovered, setProjectHovered] = useState(false);
