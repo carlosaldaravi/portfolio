@@ -49,8 +49,8 @@ $colorTextLightest: #789;
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
     z-index: 999;
-    transform: translateZ(-0.01px);
-    -webkit-transform: translateZ(-0.01px);
+    transform: translateZ(0.01px);
+    -webkit-transform: translateZ(0.01px);
     pointer-events: none;
     img {
       height: 100%;
@@ -73,8 +73,8 @@ $colorTextLightest: #789;
     text-align: center;
     opacity: 0.85;
     z-index: 999;
-    transform: translateZ(-0.01px);
-    -webkit-transform: translateZ(-0.01px);
+    transform: translateZ(0.01px);
+    -webkit-transform: translateZ(0.01px);
     a {
       text-decoration: none;
     }

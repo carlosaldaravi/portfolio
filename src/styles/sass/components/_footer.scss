@@ -18,7 +18,9 @@
   align-items: center;
   margin: 0 auto 0 auto;
   bottom: 0;
-  padding-top: 3rem
+  padding-top: 3rem;
+  transform: translateZ(1rem);
+  -webkit-transform: translateZ(1rem);
 }
 
 .footer-link {
