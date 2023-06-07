@@ -38,7 +38,7 @@ const ContentRoleCard = ({ role }) => {
           hover={cardHovered}
         />
         <h3
-          className={`mt-6 font-semibold leading-7 tracking-normal capitalize ${
+          className={`my-6 font-semibold leading-7 tracking-normal capitalize ${
             theme === "light" ? "text-dark-text" : "text-light-text"
           } ${classes.text} ${cardHovered ? `text-[2.5rem]` : ""}`}
         >
