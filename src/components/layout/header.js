@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl";
 import { useRouter } from "next/router";
 import { setCookie } from "cookies-next";
-import { HomeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import SVG from "@/components/svg";
 import ToggleButton from "@/components/UI/toggle-button";
@@ -79,7 +77,6 @@ const Header = () => {
             <Link key={l} href={route} locale={l}>
               <SVG
                 type={l}
-                actualLanguage={locale}
                 onClick={setCookieHandler}
               />
             </Link>

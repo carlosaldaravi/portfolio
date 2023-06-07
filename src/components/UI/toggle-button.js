@@ -22,12 +22,14 @@ const ToggleButton = () => {
     <Switch
       checked={enabled}
       onChange={(e) => onChangeHandler(e)}
-      className={`self-center relative inline-flex h-9 w-16 flex-shrink-0 cursor-pointer rounded-full border-2 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2
+      className={`self-center relative inline-flex h-9 w-16 cursor-pointer rounded-full border-2 transition-colors duration-200 ease-in-out
         ${enabled ? "bg-gray-900" : "bg-gray-200"}`}
     >
       <span className="sr-only">Use setting</span>
       <span
-        className={`pointer-events-none relative inline-block h-7 w-7 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out
+        className={`pointer-events-none relative inline-block h-7 w-7 transform rounded-full shadow transition duration-200 ease-in-out ${
+          theme === "dark" ? "bg-dark-primary" : "bg-light-secondary"
+        }
           ${enabled ? "translate-x-7" : "translate-x-0"}
           
         `}
@@ -43,7 +45,11 @@ const ToggleButton = () => {
         `}
             aria-hidden="true"
           >
-            <SunIcon className="h-10 w-10 text-gray-900" />
+            <SunIcon
+              className={`h-10 w-10 text-gray-900 ${
+                theme === "dark" ? "text-light-primary" : "text-dark-primary"
+              }`}
+            />
           </span>
         )}
         {enabled && (
@@ -57,7 +63,7 @@ const ToggleButton = () => {
           `}
             aria-hidden="true"
           >
-            <MoonIcon className="h-10 w-10 text-black" />
+            <MoonIcon className="h-10 w-10 text-gray-50" />
           </span>
         )}
       </span>

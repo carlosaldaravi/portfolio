@@ -1,8 +1,10 @@
+import { useRouter } from "next/router";
 import { useContext, useState } from "react";
-import classes from "./svg.module.css";
 import ThemeContext from "@/store/theme-context";
+import classes from "./svg.module.css";
 
-const SVG = ({ type, actualLanguage, size, className }) => {
+const SVG = ({ type, size, className }) => {
+  const { locale } = useRouter();
   const [mouseIn, setMouseIn] = useState(false);
   const themeCtx = useContext(ThemeContext);
 
@@ -113,10 +115,10 @@ const SVG = ({ type, actualLanguage, size, className }) => {
     return (
       <svg
         className={`h-8 w-8 sm:h-12 sm:w-12 cursor-pointer transform duration-300 ${
-          actualLanguage === "es"
+          locale === "es"
             ? "opacity-100"
             : mouseIn
-            ? "scale-105 opacity-100"
+            ? "opacity-100"
             : "opacity-20"
         }`}
         viewBox="0 0 6 4"
@@ -134,10 +136,10 @@ const SVG = ({ type, actualLanguage, size, className }) => {
     return (
       <svg
         className={`h-8 w-8 sm:h-12 sm:w-12 cursor-pointer transform duration-300 ${
-          actualLanguage === "en"
+          locale === "en"
             ? "opacity-100"
             : mouseIn
-            ? "scale-105 opacity-100"
+            ? "opacity-100"
             : "opacity-20"
         }`}
         viewBox="0 0 192.756 192.756"
