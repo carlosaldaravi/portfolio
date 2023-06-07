@@ -69,13 +69,10 @@ const Project = ({ project, colorNum, onHover }) => {
           >
             <div className="description-switch__outer">
               <div className="description-switch__inner">
-                <div className="w-[90%] text-xl">
+                <div className="text-xl">
                   <h3 className="text-gray-900 tracking-xxs font-bold">
                     {project.name}
                   </h3>
-                  <p className="capitalize">{project.rol}</p>
-                  <p className="capitalize">{project.year}</p>
-                  <p className="capitalize">{project.stack}</p>
                 </div>
               </div>
             </div>
@@ -87,7 +84,7 @@ const Project = ({ project, colorNum, onHover }) => {
                 alt="image"
                 width={200}
                 height={200}
-                className=""
+                className="h-16 w-16"
               />
             </span>
             <div className={`flap level1 level1Color${color} flip-right`}>
