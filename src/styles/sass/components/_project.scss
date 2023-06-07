@@ -147,7 +147,7 @@ $colorTextLightest: #789;
   width: 100%;
   display: flex;
   transform-style: preserve-3d;
-  z-index: -1;
+  z-index: -10;
   p {
     margin: auto;
     font-family: sans-serif;
