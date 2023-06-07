@@ -20,8 +20,8 @@ export default function Popup({ isOpen, onClose, title, text }) {
           className="fixed inset-0 overflow-y-auto"
           onClose={onClose}
         >
-          <div className="min-h-screen px-4 text-center">
-            <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+          <div className="popop min-h-screen px-4 text-center">
+            <Dialog.Overlay className="fixed inset-0 bg-black opacity-80" />
 
             <span
               className="inline-block h-screen align-middle"
