@@ -37,7 +37,6 @@ $colorTextLightest: #789;
     font-size: 2.2em;
     color: white;
     opacity: 0;
-    z-index: 10000;
     pointer-events: none;
   }
   &__image {
@@ -209,7 +208,6 @@ $colorTextLightest: #789;
   transition: all $easeTime linear $easeTime * 7;
 }
 .project-button-info {
-  z-index: 1;
   transition: all $easeTime * 4 ease-in-out 0s;
 }
 .project-button-info-1 {
