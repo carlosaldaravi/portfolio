@@ -17,10 +17,10 @@ const FooterLink = ({ src, title }) => {
   return (
     <Link
       href={src}
-      className={`w-1/4 border-b-2 pt-10 pb-2 text-center text-sm font-medium ${
+      className={`mx-auto px-3 border-b-2 text-center text-lg sm:text-2xl ${
         route === src
           ? `font-extrabold ${activeStyle}`
-          : `border-transparent hover:font-bold ${
+          : `border-transparent hover:font-semibold ${
               theme === "dark"
                 ? "text-light-secondary hover:text-light-primary hover:border-light-primary"
                 : "text-dark-secondary hover:text-dark-primary hover:border-dark-primary"

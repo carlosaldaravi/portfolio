@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import Footer from "./footer";
-import Header from "./header";
+import Footer from "./footer/footer";
+import Header from "./header/header";
 
 const Layout = ({ children, onChangeTheme }) => {
   const router = useRouter();

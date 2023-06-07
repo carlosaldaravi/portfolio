@@ -1,7 +1,7 @@
 import { FormattedMessage } from "react-intl";
-import FooterLink from "./footer-link";
+import NavbarLink from "./navbar-link";
 
-const FooterLinks = () => {
+const HeaderNavbar = () => {
 
   const footerLinks = [
     {
@@ -27,12 +27,12 @@ const FooterLinks = () => {
   ];
 
   return (
-    <nav className="flex" aria-label="pages">
+    <nav className="flex w-full" aria-label="pages">
       {footerLinks.map((link) => (
-        <FooterLink key={link.id} src={link.src} title={link.title} />
+        <NavbarLink key={link.id} src={link.src} title={link.title} />
       ))}
     </nav>
   );
 };
 
-export default FooterLinks;
+export default HeaderNavbar;
