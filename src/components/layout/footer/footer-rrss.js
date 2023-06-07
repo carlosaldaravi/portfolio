@@ -24,8 +24,8 @@ const FooterRRSS = () => {
     },
   ];
   return (
-    <div className="flex justify-center">
-      <div className="min-w-sm min-h-[25px] tracking-xxs mr-12 font-semibold ">
+    <div className="flex justify-center items-center">
+      <div className="tracking-xxs text-lg mr-24 font-bold">
         @carlosaldaravi
       </div>
       <RRSS rrssList={rrss} />

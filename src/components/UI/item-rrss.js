@@ -11,7 +11,7 @@ const ItemRRSS = ({ rrss }) => {
   return (
     <li onClick={(e) => rrssHandler(e, rrss.url)}>
       <span className="sr-only">{rrss.name}</span>
-      <SVG type={rrss.name} className="hover:h-8 hover:w-8" />
+      <SVG type={rrss.name} />
     </li>
   );
 };

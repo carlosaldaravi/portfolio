@@ -12,9 +12,9 @@
   position: fixed;
   width: 100%;
   align-items: center;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   bottom: 0;
-  padding-top: 1.5rem;
+  padding: 1rem 0;
 }
 
 .footer-link {
@@ -22,4 +22,11 @@
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (max-width: 639px) {
+  .footer {
+    margin: 0 auto 0 auto;
+    padding: 1rem 0 2rem 0;
+  }
 }

@@ -16,6 +16,15 @@ body {
   box-sizing: border-box;
 }
 
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 49;
+  padding: 2rem 1.5rem;
+}
+
 .dark {
   background-color: #111827;
   color: #eee;
@@ -24,7 +33,6 @@ body {
   background-color: #eee;
   color: #111827;
 }
-
 
 h1 {
   font-size: 6rem;
@@ -42,6 +50,9 @@ h3 {
 }
 
 @media (max-width: 639px) {
+  header {
+    padding: 1rem 0.5rem;
+  }
   h1 {
     font-size: 3rem;
     line-height: 1;

@@ -4,7 +4,6 @@ import fs from "fs/promises";
 import Page from "@/components/UI/page";
 import Skills from "@/components/developer/skills/skills";
 import Projects from "@/components/developer/projects/projects";
-import Footer from "@/components/layout/footer";
 
 const Developer = ({ data }) => {
   return (
