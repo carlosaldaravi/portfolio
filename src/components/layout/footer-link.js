@@ -17,7 +17,7 @@ const FooterLink = ({ src, title }) => {
   return (
     <Link
       href={src}
-      className={`w-1/4 border-b-2 pt-4 pb-2 px-1 text-center text-sm font-medium ${
+      className={`w-1/4 border-b-2 pt-10 pb-2 text-center text-sm font-medium ${
         route === src
           ? `font-extrabold ${activeStyle}`
           : `border-transparent hover:font-bold ${

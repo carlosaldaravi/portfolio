@@ -10,17 +10,16 @@
 }
 
 .footer {
-  z-index: 999999;
+  z-index: 49; // back to popup that is 50
   position: fixed;
-  display: grifd;
-  height: 9vh;
+  // display: grid;
   width: 100%;
   align-items: center;
   margin: 0 auto 0 auto;
   bottom: 0;
-  padding-top: 3rem;
-  transform: translateZ(1rem);
-  -webkit-transform: translateZ(1rem);
+  padding-top: 1.5rem;
+  // transform: translateZ(1rem);
+  // -webkit-transform: translateZ(1rem);
 }
 
 .footer-link {
@@ -32,6 +31,6 @@
 
 @media (max-width: 639px) {
   .footer {
-    height: 15vh;
+    // height: 12vh;
   }
 }

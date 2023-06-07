@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import classes from "./svg.module.css";
 import ThemeContext from "@/store/theme-context";
 
-const SVG = ({ type, hover, actualLanguage, className }) => {
+const SVG = ({ type, actualLanguage, size, className }) => {
   const [mouseIn, setMouseIn] = useState(false);
   const themeCtx = useContext(ThemeContext);
 
@@ -22,8 +22,8 @@ const SVG = ({ type, hover, actualLanguage, className }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`cursor-pointer transition-all duration-700 ease-in-out ${
-          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
+        className={`cursor-pointer transition-all duration-300 ease-in-out ${
+          size ? size : "h-6 w-6"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -40,8 +40,8 @@ const SVG = ({ type, hover, actualLanguage, className }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`cursor-pointer transition-all duration-700 ease-in-out ${
-          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
+        className={`cursor-pointer transition-all duration-300 ease-in-out ${
+          size ? size : "h-6 w-6"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -58,8 +58,8 @@ const SVG = ({ type, hover, actualLanguage, className }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`cursor-pointer transition-all duration-700 ease-in-out ${
-          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
+        className={`cursor-pointer transition-all duration-300 ease-in-out ${
+          size ? size : "h-6 w-6"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -80,8 +80,8 @@ const SVG = ({ type, hover, actualLanguage, className }) => {
         onTouchStart={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
-        className={`cursor-pointer transition-all duration-700 ease-in-out ${
-          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
+        className={`cursor-pointer transition-all duration-300 ease-in-out ${
+          size ? size : "h-6 w-6"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -94,8 +94,8 @@ const SVG = ({ type, hover, actualLanguage, className }) => {
   if (type === "Tiktok") {
     return (
       <svg
-        className={`cursor-pointer transition-all duration-700 ease-in-out ${
-          hover ? "blur-none h-7 w-7" : "blur-xxs h-5 w-5"
+        className={`cursor-pointer transition-all duration-300 ease-in-out ${
+          size ? size : "h-6 w-6"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
