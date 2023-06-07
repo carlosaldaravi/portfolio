@@ -25,8 +25,8 @@ $colorTextLightest: #789;
   height: $blockSize;
   display: grid;
   grid: 1fr / 1fr;
-  perspective: 500px;
-  perspective-origin: 50% 50%;
+  // perspective: 500px;
+  // perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   &__hover-icon {
     position: absolute;
@@ -52,30 +52,23 @@ $colorTextLightest: #789;
       height: 100%;
       width: 100%;
       object-fit: cover;
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
   &__description {
     position: absolute;
     top: $blockSize;
     left: -$blockSize * 2;
-    height: $blockSize * 1.5;
+    height: $blockSize * 1;
     width: $blockSize * 5;
     grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
+    // grid-column: 1 / span 1;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    opacity: 0.85;
-    a {
-      text-decoration: none;
-    }
-    p {
-      font-size: 1.03em;
-      letter-spacing: 0.03em;
-      color: $colorText;
-    }
+    opacity: 0.7;
+    z-index: -1;
   }
   .flip-up {
     transform: rotate3D(1, 0, 0, 180deg);
@@ -84,7 +77,7 @@ $colorTextLightest: #789;
     transform: rotate3D(0, 1, 0, 180deg);
   }
   .flip-down {
-    transform: rotate3D(1, 0, 0, 180deg);
+    transform: rotate3D(1, 0, 0, -180deg);
   }
   .flip-left {
     transform: rotate3D(0, 1, 0, -180deg);
@@ -146,14 +139,10 @@ $colorTextLightest: #789;
   height: 100%;
   width: 100%;
   display: flex;
-  transform-style: preserve-3d;
+  // transform-style: preserve-3d;
   z-index: -10;
-  p {
-    margin: auto;
-    font-family: sans-serif;
-    color: white;
-    visibility: hidden;
-  }
+  transform: translateZ(-2rem);
+  -webkit-transform: translateZ(-12rem);
 }
 
 .flip-up {
