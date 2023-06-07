@@ -1,11 +1,18 @@
+import ThemeContext from "@/store/theme-context";
+import { useContext } from "react";
+
 const Arrow = ({ className, arrow, param, onChangeSection }) => {
+  const themeCtx = useContext(ThemeContext);
+  const theme = themeCtx.theme;
   return (
-    <span
-      className={`self-center text-4xl cursor-pointer ${className}`}
+    <div
+      className={`text-center text-5xl cursor-pointer rounded-full ${className} ${
+        theme === "dark" ? "bg-dark-secondary" : "bg-light-secondary"
+      }`}
       onClick={() => onChangeSection(param)}
     >
-      {arrow}
-    </span>
+      <span className="p-1">{arrow}</span>
+    </div>
   );
 };
 
