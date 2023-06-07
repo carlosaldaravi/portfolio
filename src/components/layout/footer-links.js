@@ -1,28 +1,37 @@
-import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
-import ThemeContext from "@/store/theme-context";
 import FooterLink from "./footer-link";
 
 const FooterLinks = () => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+
+  const footerLinks = [
+    {
+      id: "footer-link-home",
+      src: "/",
+      title: <FormattedMessage id="footer.home" />,
+    },
+    {
+      id: "footer-link-about",
+      src: "/about",
+      title: <FormattedMessage id="footer.about" />,
+    },
+    {
+      id: "footer-link-dev",
+      src: "/developer",
+      title: <FormattedMessage id="footer.developer" />,
+    },
+    {
+      id: "footer-link-kiter",
+      src: "/kitesurf",
+      title: "Kiter",
+    },
+  ];
+
   return (
-    <div className="">
-      <div className={`border-b ${theme === "dark" ? "border-light-secondary" : "border-dark-secondary"}`}>
-        <nav className="-mb-px flex" aria-label="Tabs">
-          <FooterLink src="/" title={<FormattedMessage id="footer.home" />} />
-          <FooterLink
-            src="/about"
-            title={<FormattedMessage id="footer.about" />}
-          />
-          <FooterLink
-            src="/developer"
-            title={<FormattedMessage id="footer.developer" />}
-          />
-          <FooterLink src="/kitesurf" title="Kiter" />
-        </nav>
-      </div>
-    </div>
+    <nav className="flex" aria-label="pages">
+      {footerLinks.map((link) => (
+        <FooterLink key={link.id} src={link.src} title={link.title} />
+      ))}
+    </nav>
   );
 };
 

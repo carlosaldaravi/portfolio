@@ -2,9 +2,9 @@ import Link from "next/link";
 import { useContext, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import AvatarSwitch from "./avatar-switch";
-import SVG from "@/components/svg";
 import classes from "./content-role-card.module.css";
 import ThemeContext from "@/store/theme-context";
+import RRSS from "@/components/UI/rrss";
 
 const ContentRoleCard = ({ role }) => {
   const [cardHovered, setCardHovered] = useState(false);
@@ -18,10 +18,7 @@ const ContentRoleCard = ({ role }) => {
   const onMouseLeaveHandler = () => {
     setCardHovered(false);
   };
-  const rrssHandler = (e, url) => {
-    e.preventDefault();
-    window.open(url, "_blank", "noreferrer");
-  };
+
   return (
     <Link
       href={role.to}
@@ -47,14 +44,7 @@ const ContentRoleCard = ({ role }) => {
         >
           <FormattedMessage id={role.name} />
         </h3>
-        <ul role="list" className="mt-6 flex justify-center gap-x-6">
-          {role.rrss.map((rs) => (
-            <li key={rs.name} onClick={(e) => rrssHandler(e, rs.url)}>
-              <span className="sr-only">{rs.name}</span>
-              <SVG type={rs.name} hover={cardHovered} />
-            </li>
-          ))}
-        </ul>
+        <RRSS rrssList={role.rrss} />
       </li>
     </Link>
   );

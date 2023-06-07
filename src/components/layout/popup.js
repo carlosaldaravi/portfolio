@@ -17,7 +17,7 @@ export default function Popup({ isOpen, onClose, title, text }) {
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 overflow-y-auto"
+          className="fixed inset-0 overflow-y-auto z-50"
           onClose={onClose}
         >
           <div className="popop min-h-screen px-4 text-center">
