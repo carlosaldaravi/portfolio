@@ -69,6 +69,17 @@
       "rol": "fullstack",
       "stack": ["react", "tailwind", "nodejs", "nestjs", "typescript", "postgresql"],
       "description": "page.developer.trainsegrityProject"
+    },
+    {
+      "id": "project-4",
+      "name": "Portfolio",
+      "logo": "/vercel.svg",
+      "img": "/portfolio.png",
+      "year": "2023",
+      "url": "https://carlosaldaravi.com",
+      "rol": "frontend",
+      "stack": ["react", "tailwind", "javascript"],
+      "description": "page.developer.portfolio"
     }
   ]
 }

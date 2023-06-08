@@ -25,6 +25,11 @@ const KiteSurf = ({ sections, me }) => {
     }
     setSectionSelected(sections[nextIndex]);
   };
+  
+  const setSectionHandler = (i) => {
+    setActualSectionIndex(i);
+    setSectionSelected(sections[i]);
+  }
 
   return (
     <Page className="kitesurf__page__container">
@@ -33,6 +38,7 @@ const KiteSurf = ({ sections, me }) => {
         sections={sections}
         sectionSelected={sectionSelected}
         onChangeSection={(oper) => changeSectionHandler(oper)}
+        onSelectSection={(i) => setSectionHandler(i)}
       />
       {sectionSelected.name === "bestJumps" && (
         <JumpsCards jumps={sectionSelected.data} />

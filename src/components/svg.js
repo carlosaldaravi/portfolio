@@ -491,9 +491,9 @@ const SVG = ({ type, size, className }) => {
             gradientTransform="rotate(116.1 53.1 203) scale(86.48)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".3" stop-color="#3E863D" />
-            <stop offset=".5" stop-color="#55934F" />
-            <stop offset=".8" stop-color="#5AAD45" />
+            <stop offset=".3" stopColor="#3E863D" />
+            <stop offset=".5" stopColor="#55934F" />
+            <stop offset=".8" stopColor="#5AAD45" />
           </linearGradient>
           <linearGradient
             id="d"
@@ -502,9 +502,9 @@ const SVG = ({ type, size, className }) => {
             gradientTransform="rotate(-36.5 550.8 -214.3) scale(132.798)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".57" stop-color="#3E863D" />
-            <stop offset=".72" stop-color="#619857" />
-            <stop offset="1" stop-color="#76AC64" />
+            <stop offset=".57" stopColor="#3E863D" />
+            <stop offset=".72" stopColor="#619857" />
+            <stop offset="1" stopColor="#76AC64" />
           </linearGradient>
           <linearGradient
             id="f"
@@ -513,11 +513,11 @@ const SVG = ({ type, size, className }) => {
             gradientTransform="translate(192.9 279.7) scale(97.417)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".16" stop-color="#6BBF47" />
-            <stop offset=".38" stop-color="#79B461" />
-            <stop offset=".47" stop-color="#75AC64" />
-            <stop offset=".7" stop-color="#659E5A" />
-            <stop offset=".9" stop-color="#3E863D" />
+            <stop offset=".16" stopColor="#6BBF47" />
+            <stop offset=".38" stopColor="#79B461" />
+            <stop offset=".47" stopColor="#75AC64" />
+            <stop offset=".7" stopColor="#659E5A" />
+            <stop offset=".9" stopColor="#3E863D" />
           </linearGradient>
           <clipPath id="a">
             <path d="M239 226.6 197 251a5 5 0 0 0-2.5 4.4V304a5 5 0 0 0 2.5 4.4l42.1 24.3c1.6 1 3.6 1 5.1 0l42.1-24.3c1.6-1 2.6-2.6 2.6-4.4v-48.7a5 5 0 0 0-2.6-4.4l-42-24.3a5.1 5.1 0 0 0-5.2 0" />
@@ -539,27 +539,27 @@ const SVG = ({ type, size, className }) => {
         />
         <path
           fill="#333"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="M95 90.5c0-1.8-1-3.5-2.6-4.4L50 61.7a5 5 0 0 0-2.3-.6h-.4a5 5 0 0 0-2.4.6L2.6 86.1A5.2 5.2 0 0 0 0 90.6v65.6c0 1 .6 1.8 1.4 2.2.7.5 1.7.5 2.5 0L29.1 144c1.6-1 2.5-2.6 2.5-4.5V109c0-1.9 1-3.5 2.6-4.5l10.7-6.1a5 5 0 0 1 5.1 0l10.7 6.1c1.6 1 2.6 2.6 2.6 4.5v30.6c0 1.9 1 3.5 2.6 4.5L91 158.4c.8.5 1.8.5 2.6 0s1.3-1.3 1.3-2.2zm199.8 34.2c0 .5-.2 1-.6 1.1l-14.6 8.4c-.4.2-.9.2-1.3 0l-14.5-8.4c-.4-.2-.7-.6-.7-1v-16.9c0-.4.3-.8.7-1l14.5-8.5c.4-.2 1-.2 1.3 0l14.6 8.4c.4.3.6.7.6 1.1zm4-124.4a2.6 2.6 0 0 0-3.9 2.3v65a1.8 1.8 0 0 1-2.7 1.5L281.6 63c-1.5-1-3.5-1-5 0l-42.4 24.5a5.1 5.1 0 0 0-2.6 4.4v48.9c0 1.8 1 3.5 2.6 4.4l42.3 24.5c1.6.9 3.6.9 5.1 0l42.4-24.5c1.6-1 2.6-2.6 2.6-4.4v-122c0-1.8-1-3.5-2.7-4.4zm141 107.2c1.6-1 2.6-2.6 2.6-4.4V91.2c0-1.8-1-3.5-2.6-4.4l-42-24.5c-1.7-.9-3.6-.9-5.2 0l-42.4 24.5a5.1 5.1 0 0 0-2.5 4.4v49c0 1.8 1 3.5 2.6 4.4l42 24c1.6.9 3.5.9 5 0l25.5-14.2a2.6 2.6 0 0 0 0-4.4l-42.6-24.5a2.5 2.5 0 0 1-1.3-2.2V108c0-1 .5-1.8 1.3-2.2l13.3-7.7c.8-.4 1.7-.4 2.5 0l13.3 7.7c.8.4 1.3 1.3 1.3 2.2v12c0 1 .5 1.8 1.3 2.3.7.4 1.7.4 2.5 0zm0 0"
         />
         <path
           fill="#689f63"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="M394.5 105.2a1 1 0 0 1 1 0l8.1 4.7c.4.2.5.5.5.8v9.4c0 .4-.1.7-.5.9l-8 4.7a1 1 0 0 1-1 0l-8.2-4.7a1 1 0 0 1-.5-.9v-9.4c0-.3.2-.6.5-.8zm0 0"
         />
-        <g clip-path="url(#a)" transform="translate(-78.3 -164)">
+        <g clipPath="url(#a)" transform="translate(-78.3 -164)">
           <path
             fill="url(#b)"
             d="m331.4 246.8-118.8-58.2-60.8 124.2L270.5 371zm0 0"
           />
         </g>
-        <g clip-path="url(#c)" transform="translate(-78.3 -164)">
+        <g clipPath="url(#c)" transform="translate(-78.3 -164)">
           <path
             fill="url(#d)"
             d="M144 264 228 377.5l110.9-82-83.9-113.4zm0 0"
           />
         </g>
-        <g clip-path="url(#e)" transform="translate(-78.3 -164)">
+        <g clipPath="url(#e)" transform="translate(-78.3 -164)">
           <path fill="url(#f)" d="M197 226v107.4h91.7V225.9zm0 0" />
         </g>
       </svg>
