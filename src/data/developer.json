@@ -67,7 +67,7 @@
       "year": "2022",
       "url": "https://trainsegrity.vercel.app/login",
       "rol": "fullstack",
-      "stack": ["react", "tailwind", "typescript", "nodejs", "nestjs", "typescript", "postgresql"],
+      "stack": ["react", "tailwind", "nodejs", "nestjs", "typescript", "postgresql"],
       "description": "page.developer.trainsegrityProject"
     }
   ]

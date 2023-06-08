@@ -62,7 +62,7 @@ const Popup = ({ isOpen, onClose, title, text, stack, rol }) => {
                   <p className={`text-lg sm:text-2xl font-extralight ${textColor}`}>
                     <FormattedMessage id={text} />
                   </p>
-                  <div className="mt-4 grid grid-cols-3 gap-4 items-center">
+                  <div className="mt-10 grid grid-cols-3 gap-4 items-center">
                     {stack.map((item) => (
                       <div key={item} className="mx-auto self-center">
                         <SVG type={item} />
