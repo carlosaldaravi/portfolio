@@ -1,5 +1,39 @@
+
+$col1: #488196;
+$col2: #01324c;
+$cubic-1: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$cubic-2: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$grad: linear-gradient(135deg, $col1, $col2);
+$shadow: 0 6px 16px darken($col2, 10%);
+
 .popup {
   z-index: 9999999;
   transform: translateZ(2rem);
   -webkit-transform: translateZ(2rem);
 }
+
+.card {
+  position: relative;
+  margin: 10rem auto;
+  perspective: 150rem;
+  width: 70vw;
+  height: 40vh;
+  transition: all 500ms $cubic-1;
+
+  .front {
+    position: absolute;
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    color: white;
+    transition: 500ms $cubic-2;
+    z-index: 1;
+    align-items: center;
+    background-image: $grad;
+    box-shadow: $shadow, inset 0 0 15px $col1;
+  }
+}
+
