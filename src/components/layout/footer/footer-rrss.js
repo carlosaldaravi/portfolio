@@ -3,6 +3,14 @@ import RRSS from "@/components/UI/rrss";
 const FooterRRSS = () => {
   const rrss = [
     {
+      name: "Github",
+      url: "https://github.com/carlosaldaravi",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/carlos-aldaravi/",
+    },
+    {
       name: "Instagram",
       url: "https://www.instagram.com/carlosaldaravi/?hl=es",
     },
@@ -17,10 +25,6 @@ const FooterRRSS = () => {
     {
       name: "Twitter",
       url: "https://twitter.com/carlosaldaravi",
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/carlos-aldaravi/",
     },
   ];
   return (

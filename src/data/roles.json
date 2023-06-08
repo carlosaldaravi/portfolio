@@ -6,12 +6,16 @@
     "customClass": "image-dev",
     "rrss": [
       {
-        "name": "Twitter",
-        "url": "https://twitter.com/carlosaldaravi"
+        "name": "Github",
+        "url": "https://github.com/carlosaldaravi"
       },
       {
         "name": "LinkedIn",
         "url": "https://www.linkedin.com/in/carlos-aldaravi/"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/carlosaldaravi"
       }
     ]
   },
