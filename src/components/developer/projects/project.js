@@ -7,7 +7,7 @@ import { useTools } from "@/hooks/useTools";
 
 const Project = ({ project, colorNum, onHover }) => {
   const [infoPositionStyle, setInfoPositionStyle] = useState();
-  const [isPopupOpen, setPopupOpen] = useState(true);
+  const [isPopupOpen, setPopupOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [color, setColor] = useState("1");
   const { isMobile } = useTools();
