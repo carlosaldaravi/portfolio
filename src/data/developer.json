@@ -45,7 +45,7 @@
       "year": "2019",
       "url": "https://kwee.ovh/home",
       "rol": "backend",
-      "stack": "Node",
+      "stack": ["nodejs", "nestjs", "mongodb"],
       "description": "page.developer.kweeProject"
     },
     {
@@ -56,7 +56,7 @@
       "year": "2020",
       "url": "https://ocean-platform.netlify.app/",
       "rol": "fullstack",
-      "stack": "Vue + Nest",
+      "stack": ["vuejs", "nodejs", "nestjs", "postgresql", "tailwind"],
       "description": "page.developer.oceanProject"
     },
     {
@@ -67,7 +67,7 @@
       "year": "2022",
       "url": "https://trainsegrity.vercel.app/login",
       "rol": "fullstack",
-      "stack": "Next (React) + Nest (Node)",
+      "stack": ["react", "nestjs", "postgresql", "typescript", "tailwind"],
       "description": "page.developer.trainsegrityProject"
     }
   ]

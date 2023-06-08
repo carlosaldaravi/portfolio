@@ -7,7 +7,7 @@ import { useTools } from "@/hooks/useTools";
 
 const Project = ({ project, colorNum, onHover }) => {
   const [infoPositionStyle, setInfoPositionStyle] = useState();
-  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [isPopupOpen, setPopupOpen] = useState(true);
   const [hovered, setHovered] = useState(false);
   const [color, setColor] = useState("1");
   const { isMobile } = useTools();
@@ -48,6 +48,8 @@ const Project = ({ project, colorNum, onHover }) => {
         onClose={closePopupHandler}
         title={project.name}
         text={project.description}
+        stack={project.stack}
+        rol={project.rol}
       />
       <div className="project-container">
         <Link
