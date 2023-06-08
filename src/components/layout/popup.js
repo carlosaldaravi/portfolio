@@ -40,31 +40,33 @@ const Popup = ({ isOpen, onClose, title, text, stack, rol }) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-50"
             >
-              <div className={`card`}>
+              <div className="popup-card-container">
                 <button
                   onClick={onClose}
-                  className={`absolute right-3 top-2 ${textColor}`}
+                  className={`absolute right-3 top-2 z-50`}
                 >
                   <XMarkIcon className="h-8 w-8" />
                 </button>
-                <div className="mt-2 front">
+                <div className={`popup-card ${theme === "dark" ? "popup-card-dark" : "popup-card-light"}`}>
                   <Dialog.Title
                     as="h3"
-                    className={`text-4xl font-medium tracking-xxs text-gray-900 ${textColor}`}
+                    className={`text-4xl sm:text-5xl font-bold tracking-xxs text-gray-900 ${textColor}`}
                   >
                     {title}
                   </Dialog.Title>
                   <p
-                    className={`my-2 text-lg capitalize font-semibold ${textColor}`}
+                    className={`my-2 text-lg sm:text-2xl capitalize font-semibold ${textColor}`}
                   >
                     {rol}
                   </p>
-                  <p className={`text-lg font-thin ${textColor}`}>
+                  <p className={`text-lg sm:text-2xl font-extralight ${textColor}`}>
                     <FormattedMessage id={text} />
                   </p>
-                  <div className="mt-4 flex justify-between items-center w-full">
+                  <div className="mt-4 grid grid-cols-3 gap-4 items-center">
                     {stack.map((item) => (
-                      <SVG key={item} type={item}></SVG>
+                      <div key={item} className="mx-auto self-center">
+                        <SVG type={item} />
+                      </div>
                     ))}
                   </div>
                 </div>
