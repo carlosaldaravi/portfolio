@@ -17,22 +17,22 @@
     },
     {
       "id": "skill-2",
-      "name": "languages",
-      "color": "#9acd32",
-      "data": [
-        { "name": "spanish", "progress": 100 },
-        { "name": "catalonian", "progress": 75 },
-        { "name": "english", "progress": 65 }
-      ]
-    },
-    {
-      "id": "skill-3",
       "name": "libraries",
       "color": "#ff4500",
       "data": [
         { "name": "react", "progress": 80 },
         { "name": "vue", "progress": 70 },
         { "name": "angular", "progress": 50 }
+      ]
+    },
+    {
+      "id": "skill-3",
+      "name": "languages",
+      "color": "#9acd32",
+      "data": [
+        { "name": "spanish", "progress": 100 },
+        { "name": "catalonian", "progress": 75 },
+        { "name": "english", "progress": 65 }
       ]
     }
   ],

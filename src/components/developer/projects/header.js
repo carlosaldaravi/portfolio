@@ -36,7 +36,7 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
         {!isMobile && !projectHovered && (
           <>
             <span
-              className={`arrow-left-right self-center transition-all duration-300 text-end text-4xl relative hidden lg:block -mt-[300px] left-[19%] lg:mt-36 lg:left-[12%]`}
+              className={`arrow-left-right self-center transition-all duration-300 text-end text-4xl relative hidden lg:block -mt-[315px] left-[12%]`}
               style={{ color: colorSelected }}
             >
               &#8594;
