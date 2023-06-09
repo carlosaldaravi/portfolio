@@ -61,7 +61,7 @@ const JumpCard = ({
 
   return (
     <div
-      className={`kite-card flex min-h-[140px] items-center justify-center h-max border transform duration-700 ease-out transition-card rounded-xl ${
+      className={`kite-card mt-4 sm:mt-0 flex min-h-[140px] items-center justify-center h-max border transform duration-700 ease-out transition-card rounded-xl ${
         classes.kiteCard
       } ${styles.kiteCard} ${
         theme === "dark" ? classes.kiteCardDark : classes.kiteCardLight

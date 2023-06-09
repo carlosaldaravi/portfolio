@@ -149,7 +149,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/world-record.jpeg);",
-                "backgroundPosition": "0% 28%;"
+                "backgroundPosition": "48% 50%;"
               }
             }
           },
