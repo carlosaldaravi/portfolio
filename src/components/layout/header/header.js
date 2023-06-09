@@ -1,16 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { setCookie } from "cookies-next";
 import Link from "next/link";
 import SVG from "@/components/svg";
 import ToggleButton from "@/components/UI/toggle-button";
 import ThemeContext from "@/store/theme-context";
+import LanguageContext from "@/store/language-context";
 import HeaderNavbar from "./header-navbar";
 
 const Header = () => {
   const { locales, locale, route } = useRouter();
   const [hasScrolled, setHasScrolled] = useState(false);
   const themeCtx = useContext(ThemeContext);
+  const languageCtx = useContext(LanguageContext);
 
   const theme = themeCtx.theme;
 
@@ -27,7 +28,7 @@ const Header = () => {
   } ${route === "/" ? "justify-end" : "justify-between"}`;
 
   const setCookieHandler = () => {
-    setCookie("NEXT_LOCALE", locale);
+    languageCtx.onChangeLanguage(locale);
   };
 
   useEffect(() => {

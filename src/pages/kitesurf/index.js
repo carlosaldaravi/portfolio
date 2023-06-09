@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import path from "path";
 import fs from "fs/promises";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
-import JumpsCards from "@/components/kitesurf/jump-card/jumps-cards";
-import NewsCards from "@/components/kitesurf/news-cards/news-cards";
-import KiteSections from "@/components/kitesurf/sections";
-import Sponsors from "@/components/kitesurf/sponsors";
+import KiteSectionsSelector from "@/components/kitesurf/kite-sections-selector";
 import Page from "@/components/UI/page";
+import KiteSections from "@/components/kitesurf/kite-sections";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
@@ -25,30 +23,25 @@ const KiteSurf = ({ sections, me }) => {
     }
     setSectionSelected(sections[nextIndex]);
   };
-  
+
   const setSectionHandler = (i) => {
     setActualSectionIndex(i);
     setSectionSelected(sections[i]);
-  }
+  };
 
   return (
     <Page className="kitesurf__page__container">
       <KiterCard me={me} />
-      <KiteSections
+      <KiteSectionsSelector
         sections={sections}
         sectionSelected={sectionSelected}
         onChangeSection={(oper) => changeSectionHandler(oper)}
         onSelectSection={(i) => setSectionHandler(i)}
       />
-      {sectionSelected.name === "bestJumps" && (
-        <JumpsCards jumps={sectionSelected.data} />
-      )}
-      {sectionSelected.name === "sponsors" && (
-        <Sponsors sponsors={sectionSelected.data} />
-      )}
-      {sectionSelected.name === "news" && (
-        <NewsCards news={sectionSelected.data} />
-      )}
+      <KiteSections
+        sectionSelected={sectionSelected}
+        onChangeSection={(oper) => changeSectionHandler(oper)}
+      />
     </Page>
   );
 };
