@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
-import JumpsCards from "./jump-card/jumps-cards";
 import NewsCards from "./news-cards/news-cards";
 import Sponsors from "./sponsors";
+import KiteSectionTransition from "./kite-sections-transition";
+import JumpsCards from "./jump-card/jumps-cards";
 
-const KiteSections = ({ sectionSelected, onChangeSection }) => {
+const KiteSections = ({
+  sectionSelected,
+  direction,
+  onChangeSection,
+}) => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
@@ -31,20 +36,43 @@ const KiteSections = ({ sectionSelected, onChangeSection }) => {
 
   return (
     <div
+      className="overflow-hidden"
       onTouchStart={touchStartHandler}
       onTouchMove={touchMoveHandler}
     >
       {sectionSelected.name === "bestJumps" && (
-        <JumpsCards
-          jumps={sectionSelected.data}
-          onChangeSection={(oper) => onChangeSection(oper)}
-        />
+        <KiteSectionTransition
+          name="bestJumps"
+          sectionSelected={sectionSelected}
+          direction={direction}
+          onChangeSection={onChangeSection}
+        >
+          <JumpsCards
+            jumps={sectionSelected.data}
+            onChangeSection={(oper) => onChangeSection(oper)}
+          />
+        </KiteSectionTransition>
       )}
+
       {sectionSelected.name === "sponsors" && (
-        <Sponsors sponsors={sectionSelected.data} />
+        <KiteSectionTransition
+          name="sponsors"
+          sectionSelected={sectionSelected}
+          direction={direction}
+          onChangeSection={onChangeSection}
+        >
+          <Sponsors sponsors={sectionSelected.data} />
+        </KiteSectionTransition>
       )}
       {sectionSelected.name === "news" && (
-        <NewsCards news={sectionSelected.data} />
+        <KiteSectionTransition
+          name="news"
+          sectionSelected={sectionSelected}
+          direction={direction}
+          onChangeSection={onChangeSection}
+        >
+          <NewsCards news={sectionSelected.data} />
+        </KiteSectionTransition>
       )}
     </div>
   );
