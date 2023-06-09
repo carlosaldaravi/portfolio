@@ -5,7 +5,7 @@ import Arrow from "@/components/UI/arrow";
 import SectionTitle from "@/components/UI/section-title";
 import SectionPagination from "@/components/UI/section-pagination";
 
-const KiteSections = ({
+const KiteSectionsSelector = ({
   sections,
   sectionSelected,
   onSelectSection,
@@ -73,4 +73,4 @@ const KiteSections = ({
   );
 };
 
-export default KiteSections;
+export default KiteSectionsSelector;
