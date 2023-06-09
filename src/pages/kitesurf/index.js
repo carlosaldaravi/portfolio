@@ -9,8 +9,10 @@ import KiteSections from "@/components/kitesurf/kite-sections";
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
+  const [direction, setDirection] = useState("");
 
   const changeSectionHandler = (oper) => {
+    oper === 1 ? setDirection("left") : setDirection("right");
     let nextIndex = actualSectionIndex + oper;
     if (nextIndex === sections.length) {
       nextIndex = 0;
@@ -40,6 +42,7 @@ const KiteSurf = ({ sections, me }) => {
       />
       <KiteSections
         sectionSelected={sectionSelected}
+        direction={direction}
         onChangeSection={(oper) => changeSectionHandler(oper)}
       />
     </Page>
