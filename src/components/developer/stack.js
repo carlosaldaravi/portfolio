@@ -6,7 +6,6 @@ const Stack = ({ stack }) => {
     <>
       <SectionTitle
         title="page.developer.stack"
-        description="page.developer.stack.description"
         className="section-title-big-vars"
       />
       <div className="mt-8 grid grid-cols-3 max-w-sm mx-auto">
