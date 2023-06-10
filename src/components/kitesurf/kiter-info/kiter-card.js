@@ -5,7 +5,7 @@ import TextKiterCard from "./text-kiter-card";
 const KiterCard = ({ me }) => {
   return (
     <Section className="mt-16 animate-appear-1">
-      <Avatar src={"/yo-kite.JPG"} alt={"avatar"} />
+      <Avatar src={"/yo-kite.jpg"} alt={"avatar"} />
       <TextKiterCard me={me} />
     </Section>
   );

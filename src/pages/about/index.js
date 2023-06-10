@@ -7,8 +7,8 @@ const About = () => {
     {
       name: "page.about.kitesurfCardTitle",
       text: "page.about.kitesurfCard",
-      img: "bg-[url('/kitesurf.JPG')]",
-      before: "before:bg-[url('/kitesurf.JPG')]",
+      img: "bg-[url('/kitesurf.jpg')]",
+      before: "before:bg-[url('/kitesurf.jpg')]",
     },
     {
       name: "page.about.instructorCardTitle",

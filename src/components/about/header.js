@@ -61,11 +61,11 @@ const AboutHeader = () => {
       {!isMobile && (
         <div className={`${classes.right}`}>
           <Image
-            src="/yo-dev.JPG"
+            src="/yo-dev.png"
             alt="me"
             width={200}
             height={200}
-            className={`float-right translate-x-6 sm:translate-x-14 ${classes.imagen}`}
+            className={`float-right translate-x-6 bg-white sm:translate-x-14 ${classes.imagen}`}
           />
         </div>
       )}
