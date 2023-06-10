@@ -12,7 +12,7 @@
         { "name": "sql", "progress": 60 },
         { "name": "typescript", "progress": 65 },
         { "name": "node", "progress": 70 },
-        { "name": "tailwind", "progress": 80 }
+        { "name": "tailwind", "progress": 85 }
       ]
     },
     {
