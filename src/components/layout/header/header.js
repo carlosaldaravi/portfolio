@@ -53,7 +53,7 @@ const Header = () => {
       <div className={`flex gap-2`}>
         <ToggleButton />
         {locales.map((l) => (
-          <Link key={l} href={route} locale={l} scroll={false}>
+          <Link key={l} href={route} locale={l} shallow={true}>
             <SVG type={l} onClick={setCookieHandler} />
           </Link>
         ))}
