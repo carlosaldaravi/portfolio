@@ -2,8 +2,8 @@
   {
     "name": "kitesurf",
     "text": "Me inicié en este deporte en el 2006. Me he especializado en saltos con mucho tiempo de vuelo de tal manera que en julio del 2021, logré un salto considerado como récord mundial en Tarifa. Gracias a él conseguí aparecer en distintos medios como deportes cuatro, las noticias de antena 3 y zapeando de la sexta. Puedes ver este salto en mi sección de kitesurf.",
-    "img": "bg-[url('/kitesurf.JPG')]",
-    "before": "before:bg-[url('/kitesurf.JPG')]"
+    "img": "bg-[url('/kitesurf.jpg')]",
+    "before": "before:bg-[url('/kitesurf.jpg')]"
   },
   {
     "name": "kite instructor",
