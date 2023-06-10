@@ -35,24 +35,24 @@ const AboutHeader = () => {
     <div className={`${classes.wrapper} about__wrapper__header mx-auto`}>
       <div className="header__title pl-2 sm:ml-10 sm:mt-12 self-center sm:self-start">
         <h2 className={`${classes.header} `}>
-          <span className={`${classes.header__title__text} header__title__text`}>{title + " "}</span>
+          <span className={`${classes.header__title__text}`}>{title}</span>
         </h2>
         {
           <p
             key={description}
-            className={`${classes.description} header__description mt-6 sm:mt-14 text-xl sm:text-3xl flex gap-2`}
+            className={`${classes.description} mt-6 sm:mt-14 text-xl sm:text-3xl flex gap-2`}
           >
             <TypeAnimation
-              className="header__description__text text-xl sm:text-3xl"
+              className="text-xl sm:text-3xl"
               sequence={[
-                2700,
+                700,
                 originalDescription,
-                2000,
+                3000,
                 switcherDescription,
               ]}
               repeat={Infinity}
               cursor={true}
-              speed={60}
+              speed={20}
               deletionSpeed={80}
             />
           </p>
