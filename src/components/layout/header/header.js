@@ -8,6 +8,7 @@ import ToggleButton from "@/components/UI/toggle-button";
 import ThemeContext from "@/store/theme-context";
 import LanguageContext from "@/store/language-context";
 import HeaderNavbar from "./header-navbar";
+import { getBgColor, getShadowColor } from "@/tools/theme";
 
 const Header = () => {
   const { locales, locale, route } = useRouter();
@@ -18,18 +19,8 @@ const Header = () => {
   const theme = themeCtx.theme;
 
   const headerClasses = `${
-    hasScrolled
-      ? `shadow-xl ${
-          theme === THEMES_TYPES.light
-            ? "text-dark-primary"
-            : "shadow-dark-primary"
-        }`
-      : ""
-  } ${
-    theme === THEMES_TYPES.light
-      ? "bg-light-primary text-dark-primary"
-      : "bg-dark-primary text-light-primary"
-  } ${route === "/" ? "justify-end" : "justify-between"}`;
+    hasScrolled ? `shadow-lg ${getShadowColor(theme)}` : ""
+  } ${getBgColor(theme)} ${route === "/" ? "justify-end" : "justify-between"}`;
 
   const setCookieHandler = () => {
     languageCtx.onChangeLanguage(locale);

@@ -4,16 +4,15 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FormattedMessage } from "react-intl";
 import ThemeContext from "@/store/theme-context";
 import Portal from "@/hoc/portal";
-import SVG from "../svg";
+import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";
 import { THEMES_TYPES } from "@/types/themes";
+import { getTextColor } from "@/tools/theme";
 
 const Popup = ({ isOpen, onClose, title, text, stack, rol }) => {
   const themeCtx = useContext(ThemeContext);
   const theme = themeCtx.theme;
-
-  const textColor =
-    theme === THEMES_TYPES.dark ? "text-light-primary" : "text-dark-primary";
+  const textColor = getTextColor(theme);
 
   return (
     <Portal>

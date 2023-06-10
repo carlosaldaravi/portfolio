@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { THEMES_TYPES } from "@/types/themes";
 import ThemeContext from "@/store/theme-context";
+import { getBgColor } from "@/tools/theme";
 
 const SectionPagination = ({ list, actualIndex, onSelectSection }) => {
   const themeCtx = useContext(ThemeContext);
   const theme = themeCtx.theme;
-  const bgColor =
-    theme === THEMES_TYPES.dark ? "bg-light-primary" : "bg-dark-primary";
+  const bgColor = getBgColor(theme);
 
   return (
     <div className="flex justify-center mt-6 sm:mt-8 gap-3 sm:gap-4">

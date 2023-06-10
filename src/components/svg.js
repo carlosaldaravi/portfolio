@@ -5,6 +5,7 @@ import classes from "./svg.module.css";
 import { SVG_TYPES } from "@/types/svg";
 import { LANGUAGES_TYPES } from "@/types/languages";
 import { THEMES_TYPES } from "@/types/themes";
+import { getColor } from "@/tools/theme";
 
 const SVG = ({ type, size, className }) => {
   const { locale } = useRouter();
@@ -12,7 +13,7 @@ const SVG = ({ type, size, className }) => {
   const themeCtx = useContext(ThemeContext);
 
   const theme = themeCtx.theme;
-  const color = theme === THEMES_TYPES.dark ? "white" : "black";
+  const color = getColor(theme);
 
   const onMouseEnterHandler = () => {
     setMouseIn(true);
