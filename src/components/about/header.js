@@ -14,6 +14,8 @@ const AboutHeader = () => {
   const intl = useIntl();
   const { isMobile } = useTools();
 
+  const sequence = [700, originalDescription, 3000, switcherDescription];
+
   useEffect(() => {
     if (intl) {
       const titleUpdated = intl.formatMessage({ id: "page.about.title" });
@@ -44,12 +46,7 @@ const AboutHeader = () => {
           >
             <TypeAnimation
               className="text-xl sm:text-3xl"
-              sequence={[
-                700,
-                originalDescription,
-                3000,
-                switcherDescription,
-              ]}
+              sequence={sequence}
               repeat={Infinity}
               cursor={true}
               speed={20}
