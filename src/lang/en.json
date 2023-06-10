@@ -42,6 +42,8 @@
   "page.developer.oceanProject": "Webapp for kite schools to manage students, instructors, bookings.. etc.",
   "page.developer.trainsegrityProject": "Customer project. It is aimed at physiotherapists and trainers.",
   "page.developer.portfolio": "My own porftolio, in 2023 I decided to spend more time with frontend and improve my skills with React because I like it a lot.",
+  "page.developer.stack": "Stack",
+  "page.developer.stack.description": "Here is my stack",
   "footer.home": "Home",
   "footer.about": "About",
   "footer.developer": "Developer",

@@ -4,6 +4,7 @@ import fs from "fs/promises";
 import Page from "@/components/UI/page";
 import Skills from "@/components/developer/skills/skills";
 import Projects from "@/components/developer/projects/projects";
+import Stack from "@/components/developer/stack";
 
 const Developer = ({ data }) => {
   return (
@@ -13,6 +14,7 @@ const Developer = ({ data }) => {
       </h1>
       <Skills skills={data.skills} />
       <Projects projects={data.projects} />
+      <Stack stack={data.stack} />
     </Page>
   );
 };
