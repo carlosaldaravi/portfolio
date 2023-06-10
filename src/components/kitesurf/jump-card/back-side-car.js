@@ -1,6 +1,7 @@
 import { FormattedMessage } from "react-intl";
 import YoutubeEmbed from "@/components/youtube-embed";
 import SVG from "@/components/svg";
+import { SVG_TYPES } from "@/types/svg";
 
 const BackSideCar = ({ jump, onBack }) => {
   const { hangtime } = jump.texts.find(
@@ -15,7 +16,7 @@ const BackSideCar = ({ jump, onBack }) => {
         }`}
       >
         <span onClick={onBack} onTouchStart={onBack}>
-          <SVG type="backArrow" />
+          <SVG type={SVG_TYPES.backArrow} />
         </span>
         {hangtime} <FormattedMessage id="seconds" />
       </div>

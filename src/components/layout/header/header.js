@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import { SVG_TYPES } from "@/types/svg";
+import { THEMES_TYPES } from "@/types/themes";
 import SVG from "@/components/svg";
 import ToggleButton from "@/components/UI/toggle-button";
 import ThemeContext from "@/store/theme-context";
@@ -18,11 +20,13 @@ const Header = () => {
   const headerClasses = `${
     hasScrolled
       ? `shadow-xl ${
-          theme === "light" ? "text-dark-primary" : "shadow-dark-primary"
+          theme === THEMES_TYPES.light
+            ? "text-dark-primary"
+            : "shadow-dark-primary"
         }`
       : ""
   } ${
-    theme === "light"
+    theme === THEMES_TYPES.light
       ? "bg-light-primary text-dark-primary"
       : "bg-dark-primary text-light-primary"
   } ${route === "/" ? "justify-end" : "justify-between"}`;
@@ -54,7 +58,7 @@ const Header = () => {
         <ToggleButton />
         {locales.map((l) => (
           <Link key={l} href={route} locale={l} shallow={true}>
-            <SVG type={l} onClick={setCookieHandler} />
+            <SVG type={SVG_TYPES[l]} onClick={setCookieHandler} />
           </Link>
         ))}
       </div>

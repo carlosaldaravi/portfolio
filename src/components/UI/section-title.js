@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
+import { THEMES_TYPES } from "@/types/themes";
 import ThemeContext from "@/store/theme-context";
 
 const SectionTitle = ({ title, className, description }) => {
@@ -8,12 +9,14 @@ const SectionTitle = ({ title, className, description }) => {
   const theme = themeCtx.theme;
 
   const styleTitle =
-    theme === "dark"
+    theme === THEMES_TYPES.dark
       ? "section-title-dark text-light-text"
       : "section-title-light text-dark-text";
   return (
     <>
-      <h3 className={`section-title uppercase transition-all duration-300 ${className} ${styleTitle}`}>
+      <h3
+        className={`section-title uppercase transition-all duration-300 ${className} ${styleTitle}`}
+      >
         <FormattedMessage id={title} />
       </h3>
       {description && (

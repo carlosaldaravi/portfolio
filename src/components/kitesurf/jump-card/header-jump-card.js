@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
+import { THEMES_TYPES } from "@/types/themes";
 import ThemeContext from "@/store/theme-context";
 
 const HeaderJumpCard = ({ jump }) => {
@@ -20,7 +21,9 @@ const HeaderJumpCard = ({ jump }) => {
   return (
     <h3
       className={`webKitFillAvailable flex ml-4 justify-between sm:justify-between items-center text-center sm:text-end font-normal ${
-        theme === "light" && !jump.best ? "text-dark-text" : "text-light-text"
+        theme === THEMES_TYPES.light && !jump.best
+          ? "text-dark-text"
+          : "text-light-text"
       }`}
     >
       <span className="flex justify-between w-56">

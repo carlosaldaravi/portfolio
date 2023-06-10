@@ -1,9 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import { getCookie, setCookie } from "cookies-next";
 import { IntlProvider } from "react-intl";
-import en from "../lang/en.json";
-import es from "../lang/es.json";
+import en from "@/lang/en.json";
+import es from "@/lang/es.json";
 import { useRouter } from "next/router";
+import { LANGUAGES_TYPES } from "@/types/languages";
+
+const COOKIE_NAME = "NEXT_LOCALE";
 
 const messages = {
   en,
@@ -19,19 +22,23 @@ export function LanguageContextProvider(props) {
   const { locale } = useRouter();
 
   const changeLanguageHandler = (nextLanguage) => {
-    if (nextLanguage === "es" || nextLanguage === "en") {
-      setCookie("NEXT_LOCALE", locale);
+    if (
+      Object.keys(LANGUAGES_TYPES).some(
+        (type) => LANGUAGES_TYPES[type] === nextTheme
+      )
+    ) {
+      setCookie(COOKIE_NAME, locale);
       setLanguage(nextLanguage);
     }
   };
 
   useEffect(() => {
-    const savedLang = getCookie("NEXT_LOCALE");
+    const savedLang = getCookie(COOKIE_NAME);
     if (savedLang) {
       setLanguage(savedLang);
     } else {
-      setLanguage("es");
-      setCookie("NEXT_LOCALE", locale);
+      setLanguage(LANGUAGES_TYPES.es);
+      setCookie(COOKIE_NAME, locale);
     }
   }, [locale]);
 

@@ -7,6 +7,7 @@ import BackSideCard from "./back-side-car";
 import HeaderJumpCard from "./header-jump-card";
 import FrontSideCard from "./front-side-card";
 import { createUseStyles } from "react-jss";
+import { THEMES_TYPES } from "@/types/themes";
 
 const useStyles = (style) => createUseStyles(style);
 
@@ -64,7 +65,9 @@ const JumpCard = ({
       className={`kite-card mt-4 sm:mt-0 flex min-h-[140px] items-center justify-center h-max border transform duration-700 ease-out transition-card rounded-xl ${
         classes.kiteCard
       } ${styles.kiteCard} ${
-        theme === "dark" ? classes.kiteCardDark : classes.kiteCardLight
+        theme === THEMES_TYPES.dark
+          ? classes.kiteCardDark
+          : classes.kiteCardLight
       } ${jump.best ? classes.bestJump : ""} ${
         cardHovered && !isExpanded ? "blur-xxs opacity-40" : ""
       } `}

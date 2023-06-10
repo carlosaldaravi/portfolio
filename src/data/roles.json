@@ -7,14 +7,17 @@
     "rrss": [
       {
         "name": "Github",
+        "svg": "Github",
         "url": "https://github.com/carlosaldaravi"
       },
       {
         "name": "LinkedIn",
+        "svg": "LinkedIn",
         "url": "https://www.linkedin.com/in/carlos-aldaravi/"
       },
       {
         "name": "Twitter",
+        "svg": "Twitter",
         "url": "https://twitter.com/carlosaldaravi"
       }
     ]
@@ -27,14 +30,17 @@
     "rrss": [
       {
         "name": "Instagram",
+        "svg": "Instagram",
         "url": "https://www.instagram.com/carlosaldaravi/?hl=es"
       },
       {
         "name": "Tiktok",
+        "svg": "Tiktok",
         "url": "https://www.tiktok.com/@carlosaldaravi"
       },
       {
-        "name": "youtubeHome",
+        "name": "Youtube",
+        "svg": "youtubeHome",
         "url": "https://www.youtube.com/@CarlosAldaravi/videos"
       }
     ]
