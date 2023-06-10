@@ -1,5 +1,6 @@
 import { useTools } from "@/hooks/useTools";
 import SVG from "@/components/svg";
+import { SVG_TYPES } from "@/types/svg";
 
 const YoutubeIcon = ({ onPlay }) => {
   const { isMobile } = useTools();
@@ -12,7 +13,7 @@ const YoutubeIcon = ({ onPlay }) => {
       onClick={onPlay}
       onTouchStart={onPlay}
     >
-      <SVG type="youtube" />
+      <SVG type={SVG_TYPES.youtube} />
     </div>
   );
 };

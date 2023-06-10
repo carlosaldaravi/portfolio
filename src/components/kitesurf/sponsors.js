@@ -2,6 +2,7 @@ import Image from "next/image";
 import SVG from "../svg";
 import Link from "next/link";
 import Section from "../UI/section";
+import { SVG_TYPES } from '@/types/svg';
 
 const Sponsors = ({ sponsors }) => {
   return (
@@ -34,7 +35,7 @@ const Sponsors = ({ sponsors }) => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <SVG type={sponsor.svg} />
+                <SVG type={SVG_TYPES[sponsor.svg]} />
               </Link>
             );
           }

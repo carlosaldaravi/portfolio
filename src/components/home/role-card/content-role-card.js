@@ -5,6 +5,8 @@ import AvatarSwitch from "./avatar-switch";
 import classes from "./content-role-card.module.css";
 import ThemeContext from "@/store/theme-context";
 import RRSS from "@/components/UI/rrss";
+import { THEMES_TYPES } from "@/types/themes";
+import { getBgSecondaryColor } from "@/tools/theme";
 
 const ContentRoleCard = ({ role }) => {
   const [cardHovered, setCardHovered] = useState(false);
@@ -30,7 +32,7 @@ const ContentRoleCard = ({ role }) => {
       <li
         className={`rounded-2xl px-8 py-10 transition-all duration-500 ${
           cardHovered ? `${classes.shadow3D}` : `${classes.notshadow3D}`
-        } ${theme === "light" ? "bg-light-secondary" : "bg-dark-secondary"}`}
+        } ${getBgSecondaryColor(theme)}`}
       >
         <AvatarSwitch
           src={role.avatar}
@@ -39,7 +41,7 @@ const ContentRoleCard = ({ role }) => {
         />
         <h3
           className={`my-6 font-semibold leading-7 tracking-normal capitalize ${
-            theme === "light" ? "text-dark-text" : "text-light-text"
+            theme === THEMES_TYPES.light ? "text-dark-text" : "text-light-text"
           } ${classes.text} ${cardHovered ? `text-[2.5rem]` : ""}`}
         >
           <FormattedMessage id={role.name} />

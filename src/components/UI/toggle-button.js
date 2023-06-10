@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { Switch } from "@headlessui/react";
 import ThemeContext from "@/store/theme-context";
+import { THEMES_TYPES } from "@/types/themes";
 
 const ToggleButton = () => {
   const [enabled, setEnabled] = useState(true);
@@ -11,11 +12,13 @@ const ToggleButton = () => {
 
   const onChangeHandler = (e) => {
     setEnabled(e);
-    e ? themeCtx.onChangeTheme("dark") : themeCtx.onChangeTheme("light");
+    e
+      ? themeCtx.onChangeTheme(THEMES_TYPES.dark)
+      : themeCtx.onChangeTheme(THEMES_TYPES.light);
   };
 
   useEffect(() => {
-    if (theme === "light") setEnabled(false);
+    if (theme === THEMES_TYPES.light) setEnabled(false);
   }, [theme]);
 
   return (
@@ -28,7 +31,7 @@ const ToggleButton = () => {
       <span className="sr-only">Use setting</span>
       <span
         className={`pointer-events-none relative inline-block h-7 w-7 transform rounded-full shadow transition duration-200 ease-in-out ${
-          theme === "dark" ? "bg-dark-primary" : "bg-light-secondary"
+          theme === THEMES_TYPES.dark ? "bg-dark-primary" : "bg-light-secondary"
         }
           ${enabled ? "translate-x-7" : "translate-x-0"}
           
@@ -47,7 +50,9 @@ const ToggleButton = () => {
           >
             <SunIcon
               className={`h-10 w-10 text-gray-900 ${
-                theme === "dark" ? "text-light-primary" : "text-dark-primary"
+                theme === THEMES_TYPES.dark
+                  ? "text-light-primary"
+                  : "text-dark-primary"
               }`}
             />
           </span>

@@ -1,12 +1,14 @@
-import ThemeContext from "@/store/theme-context";
 import { useContext } from "react";
+import { THEMES_TYPES } from "@/types/themes";
+import ThemeContext from "@/store/theme-context";
 
 const RowTextKiterCard = ({ textLeft, textRight }) => {
   const themeCtx = useContext(ThemeContext);
 
   const theme = themeCtx.theme;
 
-  const colorText = theme === "dark" ? "text-light-text" : "text-dark-text";
+  const colorText =
+    theme === THEMES_TYPES.dark ? "text-light-text" : "text-dark-text";
 
   return (
     <div className="flex">

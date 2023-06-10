@@ -2,6 +2,10 @@ import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import ThemeContext from "@/store/theme-context";
 import classes from "./svg.module.css";
+import { SVG_TYPES } from "@/types/svg";
+import { LANGUAGES_TYPES } from "@/types/languages";
+import { THEMES_TYPES } from "@/types/themes";
+import { getColor } from "@/tools/theme";
 
 const SVG = ({ type, size, className }) => {
   const { locale } = useRouter();
@@ -9,7 +13,7 @@ const SVG = ({ type, size, className }) => {
   const themeCtx = useContext(ThemeContext);
 
   const theme = themeCtx.theme;
-  const color = theme === "dark" ? "white" : "black";
+  const color = getColor(theme);
 
   const onMouseEnterHandler = () => {
     setMouseIn(true);
@@ -17,7 +21,7 @@ const SVG = ({ type, size, className }) => {
   const onMouseLeaveHandler = () => {
     setMouseIn(false);
   };
-  if (type === "youtubeHome") {
+  if (type === SVG_TYPES.youtubeHome) {
     return (
       <svg
         onMouseEnter={onMouseEnterHandler}
@@ -35,7 +39,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "Github") {
+  if (type === SVG_TYPES.github) {
     return (
       <svg
         onMouseEnter={onMouseEnterHandler}
@@ -57,7 +61,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "Twitter") {
+  if (type === SVG_TYPES.twitter) {
     return (
       <svg
         onMouseEnter={onMouseEnterHandler}
@@ -75,7 +79,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "LinkedIn") {
+  if (type === SVG_TYPES.linkedin) {
     return (
       <svg
         onMouseEnter={onMouseEnterHandler}
@@ -97,7 +101,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "Instagram") {
+  if (type === SVG_TYPES.instagram) {
     return (
       <svg
         onMouseEnter={onMouseEnterHandler}
@@ -115,7 +119,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "Tiktok") {
+  if (type === SVG_TYPES.tiktok) {
     return (
       <svg
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
@@ -133,11 +137,11 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "es") {
+  if (type === SVG_TYPES.es) {
     return (
       <svg
         className={`h-8 w-8 sm:h-12 sm:w-12 cursor-pointer transform duration-300 ${
-          locale === "es"
+          locale === LANGUAGES_TYPES.es
             ? "opacity-100"
             : mouseIn
             ? "opacity-100"
@@ -154,11 +158,11 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "en") {
+  if (type === SVG_TYPES.en) {
     return (
       <svg
         className={`h-8 w-8 sm:h-12 sm:w-12 cursor-pointer transform duration-300 ${
-          locale === "en"
+          locale === LANGUAGES_TYPES.en
             ? "opacity-100"
             : mouseIn
             ? "opacity-100"
@@ -207,7 +211,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "youtube") {
+  if (type === SVG_TYPES.youtube) {
     return (
       <svg
         fill="red"
@@ -218,7 +222,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "backArrow") {
+  if (type === SVG_TYPES.backArrow) {
     return (
       <svg
         fill="none"
@@ -235,7 +239,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "ionLogo") {
+  if (type === SVG_TYPES.ionLogo) {
     return (
       <svg
         viewBox="0 0 1615 500"
@@ -248,7 +252,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "duotoneLogo") {
+  if (type === SVG_TYPES.duotoneLogo) {
     return (
       <svg
         className="w-[12rem] sm:w-[18rem] lg:w-[23rem]"
@@ -262,7 +266,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "elmedanokiteclubLogo") {
+  if (type === SVG_TYPES.elmedanokiteclubLogo) {
     return (
       <svg
         viewBox="0 0 770.15997 575.58667"
@@ -345,12 +349,9 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "nestjs") {
+  if (type === SVG_TYPES.nestjs) {
     return (
-      <svg
-        className="w-16 h-16"
-        viewBox="0 0 264.58333 255.58751"
-      >
+      <svg className="w-16 h-16" viewBox="0 0 264.58333 255.58751">
         <path
           fill="#e0234e"
           fillRule="evenodd"
@@ -359,7 +360,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "vuejs") {
+  if (type === SVG_TYPES.vuejs) {
     return (
       <svg className="w-16 h-16" viewBox="0 0 261.76 226.69">
         <g transform="matrix(1.333 0 0 -1.333 -76.3 313.3)">
@@ -375,14 +376,17 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "react") {
+  if (type === SVG_TYPES.react) {
     return (
-      <svg
-        className="w-16 h-16"
-        viewBox="-11.5 -10.23174 23 20.46348"
-      >
-        <circle r="2.05" fill={theme === "dark" ? "#61dafb" : "black"} />
-        <g fill="none" stroke={theme === "dark" ? "#61dafb" : "black"}>
+      <svg className="w-16 h-16" viewBox="-11.5 -10.23174 23 20.46348">
+        <circle
+          r="2.05"
+          fill={theme === THEMES_TYPES.dark ? "#61dafb" : "black"}
+        />
+        <g
+          fill="none"
+          stroke={theme === THEMES_TYPES.dark ? "#61dafb" : "black"}
+        >
           <ellipse rx="11" ry="4.2" />
           <ellipse rx="11" ry="4.2" transform="rotate(60)" />
           <ellipse rx="11" ry="4.2" transform="rotate(120)" />
@@ -390,13 +394,9 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "tailwind") {
+  if (type === SVG_TYPES.tailwind) {
     return (
-      <svg
-        className="w-16 h-16"
-        fill="none"
-        viewBox="0 0 1000 1000"
-      >
+      <svg className="w-16 h-16" fill="none" viewBox="0 0 1000 1000">
         <path
           fill="#07B6D5"
           d="M489.5 226.5C328 231.6 280 347 269 409.5c14.3-23.2 59.5-74 126-74 77.5 0 136.5 86.5 172.5 113.5a272.6 272.6 0 0 0 247 41c92-28 134.7-125.7 144-172-44.5 60.5-112 96.8-195.5 54-57.5-29.5-100.5-151-273.5-145.5ZM261 501C99.5 506.1 51.5 621.5 40.5 684c14.3-23.2 59.5-74 126-74C244 610 303 696.5 339 723.5a272.6 272.6 0 0 0 247 41c92-28 134.7-125.7 144-172-44.5 60.5-112 96.8-195.5 54C477 617 434 495.5 261 501Z"
@@ -404,7 +404,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "angular") {
+  if (type === SVG_TYPES.angular) {
     return (
       <svg className={size ? size : "w-10 h-10"} viewBox="0 0 250 250">
         <path
@@ -422,7 +422,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "php") {
+  if (type === SVG_TYPES.php) {
     return (
       <svg
         className={size ? size : "w-10 h-10"}
@@ -546,7 +546,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "mongodb") {
+  if (type === SVG_TYPES.mongodb) {
     return (
       <svg className={size ? size : "h-8 sm:h-12"} viewBox="0 0 1112.61 300">
         <path
@@ -568,7 +568,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "postgresql") {
+  if (type === SVG_TYPES.postgresql) {
     return (
       <svg viewBox="0 0 432.071 445.383" className="w-16 h-16">
         <g
@@ -628,7 +628,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "javascript") {
+  if (type === SVG_TYPES.javascript) {
     return (
       <svg className="w-16 h-16" viewBox="0 0 630 630">
         <path fill="#f7df1e" d="M0 0h630v630H0z" />
@@ -636,7 +636,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "typescript") {
+  if (type === SVG_TYPES.typescript) {
     return (
       <svg
         className="w-16 h-16"
@@ -654,7 +654,7 @@ const SVG = ({ type, size, className }) => {
       </svg>
     );
   }
-  if (type === "nodejs") {
+  if (type === SVG_TYPES.nodejs) {
     return (
       <svg
         className="w-16 h-16"

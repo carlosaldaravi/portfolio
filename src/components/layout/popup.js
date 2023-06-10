@@ -4,14 +4,15 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FormattedMessage } from "react-intl";
 import ThemeContext from "@/store/theme-context";
 import Portal from "@/hoc/portal";
-import SVG from "../svg";
+import SVG from "@/components/svg";
+import { SVG_TYPES } from "@/types/svg";
+import { THEMES_TYPES } from "@/types/themes";
+import { getTextColor } from "@/tools/theme";
 
 const Popup = ({ isOpen, onClose, title, text, stack, rol }) => {
   const themeCtx = useContext(ThemeContext);
   const theme = themeCtx.theme;
-
-  const textColor =
-    theme === "dark" ? "text-light-primary" : "text-dark-primary";
+  const textColor = getTextColor(theme);
 
   return (
     <Portal>
@@ -23,13 +24,6 @@ const Popup = ({ isOpen, onClose, title, text, stack, rol }) => {
         >
           <div className="popop min-h-screen px-4 text-center">
             <Dialog.Overlay className="fixed inset-0 bg-black opacity-80" />
-
-            {/* <span
-              className="inline-block h-screen align-middle"
-              aria-hidden="true"
-            >
-              &#8203;
-            </span> */}
 
             <Transition.Child
               as={Fragment}
@@ -47,7 +41,13 @@ const Popup = ({ isOpen, onClose, title, text, stack, rol }) => {
                 >
                   <XMarkIcon className="h-8 w-8" />
                 </button>
-                <div className={`popup-card ${theme === "dark" ? "popup-card-dark" : "popup-card-light"}`}>
+                <div
+                  className={`popup-card ${
+                    theme === THEMES_TYPES.dark
+                      ? "popup-card-dark"
+                      : "popup-card-light"
+                  }`}
+                >
                   <Dialog.Title
                     as="h3"
                     className={`text-4xl sm:text-5xl font-bold tracking-xxs text-gray-900 ${textColor}`}
@@ -59,13 +59,15 @@ const Popup = ({ isOpen, onClose, title, text, stack, rol }) => {
                   >
                     {rol}
                   </p>
-                  <p className={`text-lg sm:text-2xl font-extralight ${textColor}`}>
+                  <p
+                    className={`text-lg sm:text-2xl font-extralight ${textColor}`}
+                  >
                     <FormattedMessage id={text} />
                   </p>
                   <div className="mt-10 grid grid-cols-3 gap-4 items-center">
                     {stack.map((item) => (
                       <div key={item} className="mx-auto self-center">
-                        <SVG type={item} />
+                        <SVG type={SVG_TYPES[item]} />
                       </div>
                     ))}
                   </div>
