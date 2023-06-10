@@ -64,7 +64,7 @@ const Project = ({ project, colorNum, onHover }) => {
               </div>
             </div>
           </div>
-          <Link
+          <div
             href={project.url}
             target={!isMobile ? "_blank" : ""}
             className="item__description"
@@ -78,7 +78,7 @@ const Project = ({ project, colorNum, onHover }) => {
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
           <div className={`flap level0Color${color}`}>
             <span className="level0-text self-center mx-auto">
               <Image
