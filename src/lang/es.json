@@ -42,6 +42,8 @@
   "page.developer.oceanProject": "Se trata de una aplicación web para escuelas de kitesurf donde pueden gestionar reservas, alumnos, instructores, etc.",
   "page.developer.trainsegrityProject": "Proyecto que realicé para un cliente. Va dirigido a fisoterapeutas, entrenadores y readaptadores.",
   "page.developer.portfolio": "Mi propio portfolio, en 2023 he decidido dedicar más tiempo al frontend y mejorar con React ya que me encanta esta tecnología.",
+  "page.developer.stack": "Tecnologías",
+  "page.developer.stack.description": "Estas son mis tecnologías",
   "footer.home": "Inicio",
   "footer.about": "Sobre mí",
   "footer.developer": "Desarrollador",

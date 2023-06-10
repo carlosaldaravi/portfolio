@@ -56,7 +56,15 @@
       "year": "2020",
       "url": "https://ocean-platform.netlify.app/",
       "rol": "fullstack",
-      "stack": ["vuejs", "tailwind", "javascript", "nodejs", "nestjs", "typescript", "postgresql"],
+      "stack": [
+        "vuejs",
+        "tailwind",
+        "javascript",
+        "nodejs",
+        "nestjs",
+        "typescript",
+        "postgresql"
+      ],
       "description": "page.developer.oceanProject"
     },
     {
@@ -67,7 +75,14 @@
       "year": "2022",
       "url": "https://trainsegrity.vercel.app/login",
       "rol": "fullstack",
-      "stack": ["react", "tailwind", "nodejs", "nestjs", "typescript", "postgresql"],
+      "stack": [
+        "react",
+        "tailwind",
+        "nodejs",
+        "nestjs",
+        "typescript",
+        "postgresql"
+      ],
       "description": "page.developer.trainsegrityProject"
     },
     {
@@ -81,5 +96,13 @@
       "stack": ["react", "tailwind", "javascript"],
       "description": "page.developer.portfolio"
     }
+  ],
+  "stack": [
+    { "id": "stack-1", "name": "React", "svg": "react" },
+    { "id": "stack-2", "name": "Vue", "svg": "vuejs" },
+    { "id": "stack-3", "name": "Angular", "svg": "angular" },
+    { "id": "stack-4", "name": "Talwind", "svg": "tailwind" },
+    { "id": "stack-5", "name": "PHP", "svg": "php" },
+    { "id": "stack-6", "name": "Node", "svg": "nodejs" }
   ]
 }
