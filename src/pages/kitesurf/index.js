@@ -33,7 +33,7 @@ const KiteSurf = ({ sections, me }) => {
 
   return (
     <Page className="relative kitesurf__page__container">
-      <div className="fixed inset-0 z-0 opacity-10">
+      <div className="fixed inset-0 z-0 opacity-50">
         <video
           className="w-full h-screen object-cover"
           src={"/video.MP4"}
