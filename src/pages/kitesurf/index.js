@@ -14,6 +14,8 @@ const KiteSurf = ({ sections, me }) => {
   const { isMobile } = useTools();
 
   const videoUrl = isMobile ? "/video-short.mp4" : "/video.MP4";
+  const videoUrlWebm = "/video-short.webm";
+  const videoPoster = "/video-poster.png";
 
   const changeSectionHandler = (oper) => {
     oper === 1 ? setDirection("left") : setDirection("right");
@@ -40,12 +42,14 @@ const KiteSurf = ({ sections, me }) => {
       <div className="fixed inset-0 z-0 opacity-50">
         <video
           className="w-full h-screen object-cover"
-          src={videoUrl}
           autoPlay
           muted
           loop
           playsInline
-        />
+        >
+          <source src={videoUrl} type="video/mp4" />
+          <source src={videoUrlWebm} type="video/mp4" />
+        </video>
       </div>
 
       <div className="relative z-10">
