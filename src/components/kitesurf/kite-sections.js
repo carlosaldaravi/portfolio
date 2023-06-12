@@ -19,17 +19,20 @@ const KiteSections = ({
   const touchMoveHandler = (e) => {
     setTouchEnd(e.touches[0].clientX);
   };
+  
+  const touchEndHandler = (e) => {
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   useEffect(() => {
     if (touchEnd !== 0) {
       if (touchStart - touchEnd > 100) {
         onChangeSection(1); // to the next section
-        setTouchStart(0);
-        setTouchEnd(0);
+        touchEndHandler();
       } else if (touchEnd - touchStart > 100) {
         onChangeSection(-1); // to the previous section
-        setTouchStart(0);
-        setTouchEnd(0);
+        touchEndHandler()
       }
     }
   }, [touchStart, touchEnd, onChangeSection]);
@@ -39,6 +42,7 @@ const KiteSections = ({
       className="overflow-hidden"
       onTouchStart={touchStartHandler}
       onTouchMove={touchMoveHandler}
+      onTouchEnd={touchEndHandler}
     >
       {sectionSelected.name === "bestJumps" && (
         <KiteSectionTransition
