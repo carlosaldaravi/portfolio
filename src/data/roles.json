@@ -1,6 +1,6 @@
 [
   {
-    "name": "page.developer.fullstack",
+    "name": "page.home.engineer",
     "to": "/developer",
     "avatar": "/yo-dev.png",
     "customClass": "image-dev",
