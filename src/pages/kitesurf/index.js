@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import path from "path";
 import fs from "fs/promises";
-import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import KiteSectionsSelector from "@/components/kitesurf/kite-sections-selector";
-import Page from "@/components/UI/page";
+import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import KiteSections from "@/components/kitesurf/kite-sections";
+import Page from "@/components/UI/page";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
@@ -32,19 +32,31 @@ const KiteSurf = ({ sections, me }) => {
   };
 
   return (
-    <Page className="kitesurf__page__container">
-      <KiterCard me={me} />
-      <KiteSectionsSelector
-        sections={sections}
-        sectionSelected={sectionSelected}
-        onChangeSection={(oper) => changeSectionHandler(oper)}
-        onSelectSection={(i) => setSectionHandler(i)}
-      />
-      <KiteSections
-        sectionSelected={sectionSelected}
-        direction={direction}
-        onChangeSection={(oper) => changeSectionHandler(oper)}
-      />
+    <Page className="relative kitesurf__page__container">
+      <div className="fixed inset-0 z-0 opacity-10">
+        <video
+          className="w-full h-screen object-cover"
+          src={"/video.MP4"}
+          autoPlay
+          muted
+          loop
+        />
+      </div>
+
+      <div className="relative z-10">
+        <KiterCard me={me} />
+        <KiteSectionsSelector
+          sections={sections}
+          sectionSelected={sectionSelected}
+          onChangeSection={(oper) => changeSectionHandler(oper)}
+          onSelectSection={(i) => setSectionHandler(i)}
+        />
+        <KiteSections
+          sectionSelected={sectionSelected}
+          direction={direction}
+          onChangeSection={(oper) => changeSectionHandler(oper)}
+        />
+      </div>
     </Page>
   );
 };

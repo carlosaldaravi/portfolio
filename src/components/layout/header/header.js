@@ -20,7 +20,9 @@ const Header = () => {
 
   const headerClasses = `${
     hasScrolled ? `shadow-lg ${getShadowColor(theme)}` : ""
-  } ${getBgColor(theme)} ${route === "/" ? "justify-end" : "justify-between"}`;
+  } ${route !== "/kitesurf" ? getBgColor(theme) : "bg-transparent"} ${
+    route === "/" ? "justify-end" : "justify-between"
+  }`;
 
   const setCookieHandler = () => {
     languageCtx.onChangeLanguage(locale);

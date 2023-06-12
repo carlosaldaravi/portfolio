@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import ThemeContext from "@/store/theme-context";
-import { getBgColor } from "@/tools/theme";
+import { getOppositeBgColor } from "@/tools/theme";
 
 const SectionPagination = ({ list, actualIndex, onSelectSection }) => {
   const themeCtx = useContext(ThemeContext);
   const theme = themeCtx.theme;
-  const bgColor = getBgColor(theme);
+  const bgColor = getOppositeBgColor(theme);
 
   return (
     <div className="flex justify-center mt-6 sm:mt-8 gap-3 sm:gap-4">
