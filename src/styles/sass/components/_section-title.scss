@@ -2,7 +2,7 @@
   --c: #282f3c;
 }
 .section-title-light {
-  --c: #bebebe;
+  --c: #d6d6d6;
 }
 .section-title-big-vars {
   --b: 4px; /* control the border thickness */
@@ -43,10 +43,9 @@
     --b: 0px;
     --w: 0px;
     --g: 0px;
-  }
-  .section-title-small-vars {
+    font-size: 1.6rem;
     margin: auto 0;
     width: fit-content;
-    min-width: 27rem;
+    min-width: 24rem;
   }
 }

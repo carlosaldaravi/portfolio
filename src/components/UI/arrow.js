@@ -7,12 +7,12 @@ const Arrow = ({ className, arrow, param, onChangeSection }) => {
   const theme = themeCtx.theme;
   return (
     <div
-      className={`text-center text-4xl cursor-pointer rounded-full self-center p-2 shadow-sm ${className} ${
+      className={`cursor-pointer rounded-full w-12 h-12 shadow-sm flex items-center justify-center ${className} ${
         theme === THEMES_TYPES.dark ? "bg-dark-secondary" : "bg-light-secondary"
       }`}
       onClick={() => onChangeSection(param)}
     >
-      <span className="p-1">{arrow}</span>
+      <span className="">{arrow}</span>
     </div>
   );
 };
