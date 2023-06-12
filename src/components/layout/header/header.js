@@ -19,10 +19,13 @@ const Header = () => {
   const theme = themeCtx.theme;
 
   const headerClasses = `${
-    hasScrolled ? `shadow-lg ${getShadowColor(theme)}` : ""
-  } ${route !== "/kitesurf" ? getBgColor(theme) : "bg-transparent"} ${
-    route === "/" ? "justify-end" : "justify-between"
-  }`;
+    hasScrolled
+      ? `shadow-lg ${getShadowColor(theme)} ${
+          route === "/kitesurf" && "bg-opacity-80"
+        }`
+      : "bg-opacity-0"
+  } ${getBgColor(theme)} 
+   ${route === "/" ? "justify-end" : "justify-between"}`;
 
   const setCookieHandler = () => {
     languageCtx.onChangeLanguage(locale);

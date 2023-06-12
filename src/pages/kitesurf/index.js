@@ -5,11 +5,15 @@ import KiteSectionsSelector from "@/components/kitesurf/kite-sections-selector";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import KiteSections from "@/components/kitesurf/kite-sections";
 import Page from "@/components/UI/page";
+import { useTools } from "@/hooks/useTools";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
   const [direction, setDirection] = useState("");
+  const { isMobile } = useTools();
+
+  const videoUrl = isMobile ? "/video-short.mp4" : "/video.MP4";
 
   const changeSectionHandler = (oper) => {
     oper === 1 ? setDirection("left") : setDirection("right");
@@ -36,10 +40,11 @@ const KiteSurf = ({ sections, me }) => {
       <div className="fixed inset-0 z-0 opacity-50">
         <video
           className="w-full h-screen object-cover"
-          src={"/video.MP4"}
+          src={videoUrl}
           autoPlay
           muted
           loop
+          playsInline
         />
       </div>
 

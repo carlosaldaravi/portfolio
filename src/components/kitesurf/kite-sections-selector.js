@@ -4,6 +4,7 @@ import ButtonSlider from "@/components/UI/button-slider";
 import Arrow from "@/components/UI/arrow";
 import SectionTitle from "@/components/UI/section-title";
 import SectionPagination from "@/components/UI/section-pagination";
+import { ArrowSmallLeftIcon, ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 
 const KiteSectionsSelector = ({
   sections,
@@ -33,7 +34,7 @@ const KiteSectionsSelector = ({
           <Arrow
             className="mr-4"
             param={-1}
-            arrow="&#8592;"
+            arrow={<ArrowSmallLeftIcon className="w-10 h-10" />}
             onChangeSection={(param) => onChangeSection(param)}
           />
         ) : (
@@ -52,7 +53,7 @@ const KiteSectionsSelector = ({
           <Arrow
             className="ml-4"
             param={1}
-            arrow="&#8594;"
+            arrow={<ArrowSmallRightIcon className="w-10 h-10" />}
             onChangeSection={(param) => onChangeSection(param)}
           />
         ) : (
