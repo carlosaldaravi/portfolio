@@ -34,7 +34,7 @@ const KiteSectionsSelector = ({
           <Arrow
             className="mr-4"
             param={-1}
-            arrow={<ArrowSmallLeftIcon className="w-10 h-10" />}
+            arrow={<ArrowSmallLeftIcon />}
             onChangeSection={(param) => onChangeSection(param)}
           />
         ) : (
@@ -53,7 +53,7 @@ const KiteSectionsSelector = ({
           <Arrow
             className="ml-4"
             param={1}
-            arrow={<ArrowSmallRightIcon className="w-10 h-10" />}
+            arrow={<ArrowSmallRightIcon />}
             onChangeSection={(param) => onChangeSection(param)}
           />
         ) : (

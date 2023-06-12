@@ -12,7 +12,7 @@ const Arrow = ({ className, arrow, param, onChangeSection }) => {
       }`}
       onClick={() => onChangeSection(param)}
     >
-      <span className="">{arrow}</span>
+      <span className="h-8 w-8">{arrow}</span>
     </div>
   );
 };
