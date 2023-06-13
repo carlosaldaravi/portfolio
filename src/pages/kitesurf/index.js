@@ -6,6 +6,7 @@ import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import KiteSections from "@/components/kitesurf/kite-sections";
 import Page from "@/components/UI/page";
 import { useTools } from "@/hooks/useTools";
+import BackgroundVideo from "@/components/UI/background-video";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
@@ -39,19 +40,11 @@ const KiteSurf = ({ sections, me }) => {
 
   return (
     <Page className="relative kitesurf__page__container">
-      <div className="fixed inset-0 z-0 opacity-50">
-        <video
-          className="w-full h-screen object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/video-poster.png"
-        >
-          <source src={videoUrl} type="video/mp4" />
-          <source src={videoUrlWebm} type="video/mp4" />
-        </video>
-      </div>
+      <BackgroundVideo
+        src={videoUrl}
+        srcWebm={videoUrlWebm}
+        srcPoster={videoPoster}
+      />
 
       <div className="relative z-10">
         <KiterCard me={me} />
