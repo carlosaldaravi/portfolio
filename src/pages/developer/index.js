@@ -5,6 +5,7 @@ import Page from "@/components/UI/page";
 import Skills from "@/components/developer/skills/skills";
 import Projects from "@/components/developer/projects/projects";
 import Stack from "@/components/developer/stack";
+import Curriculum from "@/components/developer/curriculum";
 
 const Developer = ({ data }) => {
   return (
@@ -15,6 +16,7 @@ const Developer = ({ data }) => {
       <Skills skills={data.skills} />
       <Projects projects={data.projects} />
       <Stack stack={data.stack} />
+      <Curriculum curriculum={data.curriculum} />
     </Page>
   );
 };

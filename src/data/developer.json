@@ -104,5 +104,8 @@
     { "id": "stack-4", "name": "Talwind", "svg": "tailwind" },
     { "id": "stack-5", "name": "PHP", "svg": "php" },
     { "id": "stack-6", "name": "Node", "svg": "nodejs" }
-  ]
+  ],
+  "curriculum": {
+    "fileName": "CV_12-06_CarlosAldaravi.pdf"
+  }
 }
