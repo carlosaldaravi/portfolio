@@ -46,6 +46,7 @@ const KiteSurf = ({ sections, me }) => {
           muted
           loop
           playsInline
+          poster="/video-poster.png"
         >
           <source src={videoUrl} type="video/mp4" />
           <source src={videoUrlWebm} type="video/mp4" />
