@@ -15,7 +15,7 @@ const KiteSurf = ({ sections, me }) => {
   const { isMobile } = useTools();
 
   const videoUrl = isMobile ? "/video-short.mp4" : "/video.MP4";
-  const videoUrlWebm = "/video-short.webm";
+  const videoUrlWebm = isMobile ? "/video-short.webm" : "/video.webm";
   const videoPoster = "/video-poster.png";
 
   const changeSectionHandler = (oper) => {
