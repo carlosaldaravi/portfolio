@@ -23,6 +23,7 @@
     "react-intl": "^6.4.2",
     "react-jss": "^10.10.0",
     "react-type-animation": "^3.0.1",
+    "react-use-downloader": "^1.2.4",
     "sass": "^1.62.1",
     "sharp": "^0.32.1",
     "tailwind-scrollbar-hide": "^1.1.7"
