@@ -3,6 +3,7 @@ import NewsCards from "./news-cards/news-cards";
 import Sponsors from "./sponsors";
 import KiteSectionTransition from "./kite-sections-transition";
 import JumpsCards from "./jump-card/jumps-cards";
+import Gear from "./gear/gear";
 
 const KiteSections = ({
   sectionSelected,
@@ -76,6 +77,16 @@ const KiteSections = ({
           onChangeSection={onChangeSection}
         >
           <NewsCards news={sectionSelected.data} />
+        </KiteSectionTransition>
+      )}
+      {sectionSelected.name === "gear" && (
+        <KiteSectionTransition
+          name="gear"
+          sectionSelected={sectionSelected}
+          direction={direction}
+          onChangeSection={onChangeSection}
+        >
+          <Gear gear={sectionSelected.data} />
         </KiteSectionTransition>
       )}
     </div>

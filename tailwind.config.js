@@ -53,9 +53,25 @@ module.exports = {
         "light-text": "#fff",
       },
       transitionProperty: {
-        'card': 'blur, opacity',
-      }
+        card: "blur, opacity",
+      },
+      rotate: {
+        15: "15deg",
+        20: "20deg",
+        25: "25deg",
+        30: "30deg",
+        35: "35deg",
+        40: "40deg",
+        50: "50deg",
+        55: "55deg",
+        60: "60deg",
+        65: "65deg",
+        70: "70deg",
+        75: "75deg",
+        80: "80deg",
+        85: "85deg",
+      },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require('tailwind-scrollbar-hide')],
+  plugins: [require("@tailwindcss/forms"), require("tailwind-scrollbar-hide")],
 };
