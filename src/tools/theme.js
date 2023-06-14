@@ -6,12 +6,15 @@ const getTextColor = (theme) => {
     : "text-dark-primary";
 };
 const getColor = (theme) => {
-  return theme === THEMES_TYPES.dark ? "white" : "black";
+  return theme === THEMES_TYPES.dark ? "dark-primary" : "light-primary";
+};
+const getOppositeColor = (theme) => {
+  return theme === THEMES_TYPES.dark ? "#eee" : "#111827";
 };
 const getBgColor = (theme) => {
   return theme === THEMES_TYPES.dark ? "bg-dark-primary" : "bg-light-primary";
 };
-const getOppositeBgColor = (theme) => {
+const getBgOppositeColor = (theme) => {
   return theme === THEMES_TYPES.dark ? "bg-light-primary" : "bg-dark-primary";
 };
 const getBgSecondaryColor = (theme) => {
@@ -21,4 +24,4 @@ const getShadowColor = (theme) => {
   return theme === THEMES_TYPES.dark ? "shadow-dark-primary" : "shadow-light-primary";
 };
 
-export { getTextColor, getColor, getBgColor, getOppositeBgColor, getShadowColor, getBgSecondaryColor };
+export { getTextColor, getColor, getOppositeColor, getBgColor, getBgOppositeColor, getShadowColor, getBgSecondaryColor };

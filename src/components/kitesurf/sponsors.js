@@ -1,12 +1,19 @@
 import Image from "next/image";
-import SVG from "../svg";
 import Link from "next/link";
-import Section from "../UI/section";
+import { useContext } from "react";
+import { getBgOppositeColor } from '@/tools/theme';
 import { SVG_TYPES } from '@/types/svg';
+import ThemeContext from "@/store/theme-context";
+import Section from "@/components/UI/section";
+import SVG from "@/components/svg";
 
 const Sponsors = ({ sponsors }) => {
+  const themeCtx = useContext(ThemeContext);
+  const theme = themeCtx.theme;
+  const bgSecondaryColor = getBgOppositeColor(theme);
+
   return (
-    <Section className="items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 sm:gap-x-10">
+    <Section className="items-center grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 sm:gap-x-10">
         {sponsors.map((sponsor) => {
           if (sponsor.img) {
             return (
@@ -18,7 +25,7 @@ const Sponsors = ({ sponsors }) => {
                 target="_blank"
               >
                 <Image
-                  className={`${sponsor.className} rounded-lg h-24 w-64 col-span-1 object-contain mx-auto px-4`}
+                  className={`${sponsor.className} rounded-lg w-48 sm:w-56 lg:w-72 col-span-1 object-contain mx-auto ${bgSecondaryColor}`}
                   src={sponsor.img}
                   alt={sponsor.name}
                   width={200}
