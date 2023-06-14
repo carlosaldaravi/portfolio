@@ -397,6 +397,66 @@
           "url": "https://as.com/deportes_accion/2019/05/31/videos/1559290642_438122.html"
         }
       ]
+    },
+    {
+      "name": "gear",
+      "title": "page.kitesurf.gear",
+      "data": [
+        {
+          "name": "kites",
+          "kites": [
+            {
+              "id": "gear-1",
+              "name": "Rebel SLS",
+              "sizes": ["7m, 8m, 9m"],
+              "img": "/rebel.webp",
+              "url": "https://www.duotonesports.com/es/kiteboarding/kites/rebel-sls/"
+            },
+            {
+              "id": "gear-2",
+              "name": "Evo DLAB",
+              "sizes": ["10m", "11m"],
+              "img": "/evo.webp",
+              "url": "https://www.duotonesports.com/es/kiteboarding/kites/evo-d/lab/"
+            }
+          ]
+        },
+        {
+          "name": "bars",
+          "bars": [
+            {
+              "id": "gear-3",
+              "name": "Clickbar 12m + 12m",
+              "img": "/clickbar.webp",
+              "url": "https://www.duotonesports.com/es/kiteboarding/bars/click-bar/"
+            },
+            {
+              "id": "gear-4",
+              "name": "Trustbar 22m + 2m",
+              "img": "/trustbar.webp",
+              "url": "https://www.duotonesports.com/es/kiteboarding/bars/trust-bar/"
+            }
+          ]
+        },
+        {
+          "id": "gear-5",
+          "name": "Select SLS 135cm",
+          "img": "/select.webp",
+          "url": "https://www.duotonesports.com/es/kiteboarding/boards/twintips/select-sls/"
+        },
+        {
+          "id": "gear-6",
+          "name": "Seek Amp",
+          "img": "/wetsuit.webp",
+          "url": "https://www.ion-products.com/en/products/seek-amp-4-3-front-zip-48232-4467?refinements%5Bsubcategory.value%5D%5B0%5D=Semidry&refinements%5Bentry.value%5D%5B0%5D=Frontzip&variant=42569169961160"
+        },
+        {
+          "id": "gear-7",
+          "name": "Riot Curv 14",
+          "img": "/harness.webp",
+          "url": "https://www.ion-products.com/en/products/riot-curv-48232-4709?variant=42569106784456"
+        }
+      ]
     }
   ]
 }

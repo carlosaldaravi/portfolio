@@ -12,7 +12,7 @@ const Projects = ({ projects }) => {
       projectHovered={projectHovered}
       onSelectColor={(num) => setColorNumSelected(num)}
     >
-      <CardsSection className="mt-10 px-12 gap-4 sm:gap-8 lg:gap-12">
+      <CardsSection className="mt-10 px-12 gap-4 sm:gap-8 lg:gap-12 lg:grid-cols-4">
         {projects.map((project) => (
           <Project
             key={project.id}

@@ -38,9 +38,9 @@ const Project = ({ project, colorNum, onHover }) => {
   }, [hovered]);
 
   return (
-    <div className="">
+    <div>
       <InformationCircleIcon
-        className={`mb-14 lg:relative cursor-pointer mx-auto h-14 w-14 project-button-info project-button-info-${color} ${infoPositionStyle}`}
+        className={`lg:relative cursor-pointer mx-auto h-14 w-14 project-button-info project-button-info-${color} ${infoPositionStyle}`}
         onClick={handleOpenPopup}
       />
       <Popup
@@ -53,11 +53,12 @@ const Project = ({ project, colorNum, onHover }) => {
       />
       <div className="project-container">
         <Link
-            href={project.url}
-            target={!isMobile ? "_blank" : ""} className="item" onMouseLeave={() => hoverOutHandler()}>
-          <div
-            className="item__image"
-          >
+          href={project.url}
+          target={!isMobile ? "_blank" : ""}
+          className="item"
+          onMouseLeave={() => hoverOutHandler()}
+        >
+          <div className="item__image">
             <div className="image-switch__outer">
               <div className="image-switch__inner">
                 <Image src={project.img} alt="image" width={800} height={800} />

@@ -18,7 +18,7 @@ const ColorOptions = ({ colorSelected, onColorSelected }) => {
       <div className="text-center tracking-xxs mb-2 text-lg sm:text-xl font-light text-gray-600">
         <FormattedMessage id="page.developer.projects.playWithColors" />
       </div>
-      <div className="flex sm:flex-col mx-auto gap-2 self-center">
+      <div className="flex mx-auto gap-2 self-center">
         <ColorSelect
           num="1"
           colorSelected={colorSelected}
