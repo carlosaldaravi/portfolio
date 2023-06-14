@@ -4,6 +4,7 @@ import Sponsors from "./sponsors";
 import KiteSectionTransition from "./kite-sections-transition";
 import JumpsCards from "./jump-card/jumps-cards";
 import Gear from "./gear/gear";
+import Ranking from "./ranking/ranking";
 
 const KiteSections = ({
   sectionSelected,
@@ -87,6 +88,16 @@ const KiteSections = ({
           onChangeSection={onChangeSection}
         >
           <Gear gear={sectionSelected.data} />
+        </KiteSectionTransition>
+      )}
+      {sectionSelected.name === "ranking" && (
+        <KiteSectionTransition
+          name="ranking"
+          sectionSelected={sectionSelected}
+          direction={direction}
+          onChangeSection={onChangeSection}
+        >
+          <Ranking ranking={sectionSelected.data} />
         </KiteSectionTransition>
       )}
     </div>
