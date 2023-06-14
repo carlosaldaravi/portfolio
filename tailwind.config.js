@@ -72,8 +72,13 @@ module.exports = {
         85: "85deg",
       },
       gridTemplateColumns: {
-        ranking: "30px 1fr 50px"
-      }
+        ranking: "30px 1fr 50px",
+      },
+      scale: {
+        200: "2",
+        250: "2.5",
+        300: "3",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms"), require("tailwind-scrollbar-hide")],
