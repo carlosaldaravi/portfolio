@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <header
-      className={`animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
+      className={`min-w-lg animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
     >
       {route !== "/" && <HeaderNavbar />}
       <div className={`flex gap-2`}>

@@ -41,7 +41,9 @@ const GearCard = ({ gear }) => {
       {gear.sizes && (
         <div className="flex gap-6 mt-4">
           {gear.sizes.map((size) => (
-            <span key={`${gear.name}-${size}`}>{size}</span>
+            <span key={`${gear.name}-${size}`} className="text-lg">
+              {size}
+            </span>
           ))}
         </div>
       )}

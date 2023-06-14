@@ -4,7 +4,7 @@ import Link from "next/link";
 import ThemeContext from "@/store/theme-context";
 import { THEMES_TYPES } from "@/types/themes";
 
-const FooterLink = ({ src, title }) => {
+const NavbarLink = ({ src, title }) => {
   const themeCtx = useContext(ThemeContext);
   const router = useRouter();
   const route = router.route;
@@ -18,7 +18,7 @@ const FooterLink = ({ src, title }) => {
   return (
     <Link
       href={src}
-      className={`mx-auto px-3 border-b-2 text-center text-lg sm:text-2xl ${
+      className={`mx-auto px-1 sm:px-4 border-b-2 text-center text-lg sm:text-2xl ${
         route === src
           ? `font-extrabold ${activeStyle}`
           : `border-transparent hover:font-semibold ${
@@ -34,4 +34,4 @@ const FooterLink = ({ src, title }) => {
   );
 };
 
-export default FooterLink;
+export default NavbarLink;
