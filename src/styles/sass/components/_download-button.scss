@@ -1,15 +1,7 @@
 .download-button {
-  display: inline-block;
   padding: 12px 12px 10px;
-  border: 0;
-  border-radius: 3px;
+  border-radius: 1rem;
   transition: all 1.2s ease-in-out;
-  
-  .download-icon::after {
-    content: "\f019";
-    font-size: 40px;
-    color: #fff;
-  }
   
   &:hover {
     animation: pulse 0.2s 2 both;
@@ -17,11 +9,7 @@
   
   &.loading {
     .loading-icon {
-      animation: loading 2s infinite linear;
-      
-      &::after {
-        content: "\f1ce";
-      }        
+      animation: loading 2s infinite linear;    
     }
   }
   
@@ -29,10 +17,8 @@
     border-radius: 50%;
     background: #80bca3;
     
-    .download-button::after {
-      content: "\f00c";
-      color: transparent;
-      animation: change-icon 1s 0.6s linear both;
+    .success-icon {
+      animation: change-icon .5s .6s linear both;
     }
   }
 }

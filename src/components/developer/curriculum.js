@@ -46,14 +46,16 @@ const Curriculum = ({ curriculum }) => {
         className="my-12 section-title-big-vars"
       />
       <div className="flex flex-col justify-center items-center gap-8">
-        <div className="cursor-pointer flex justify-center items-center gap-8">
+        <div
+          className="cursor-pointer flex justify-center items-center gap-8"
+          onClick={downloadHandler}
+        >
           <h3>
             <FormattedMessage id="page.developer.download" />
           </h3>
           <a
             href=""
             className={`download-button ${successClass} ${loadingClass} ${bgSecondaryColor}`}
-            onClick={downloadHandler}
           >
             {!loadingClass && successClass !== "success" && (
               <ArrowDownTrayIcon className="download-icon w-10 h-10" />
