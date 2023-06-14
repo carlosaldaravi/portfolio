@@ -28,21 +28,11 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
         description="page.developer.projects.description"
         className="section-title-big-vars"
       />
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col">
         <ColorOptions
           colorSelected={colorSelected}
           onColorSelected={(color) => onColorSelectedHandler(color)}
         />
-        {!isMobile && !projectHovered && (
-          <>
-            <span
-              className={`arrow-left-right self-center transition-all duration-300 text-end text-4xl relative hidden lg:block -mt-[315px] left-[12%]`}
-              style={{ color: colorSelected }}
-            >
-              &#8594;
-            </span>
-          </>
-        )}
         {children}
       </div>
     </div>
