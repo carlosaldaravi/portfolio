@@ -18,7 +18,7 @@ const Sponsors = ({ sponsors }) => {
                 target="_blank"
               >
                 <Image
-                  className={`${sponsor.className} rounded-lg h-24 w-64 col-span-1 object-contain mx-auto bg-gray-200 px-4`}
+                  className={`${sponsor.className} rounded-lg h-24 w-64 col-span-1 object-contain mx-auto px-4`}
                   src={sponsor.img}
                   alt={sponsor.name}
                   width={200}
