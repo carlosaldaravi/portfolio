@@ -51,7 +51,7 @@ const Project = ({ project, colorNum, onHover }) => {
         stack={project.stack}
         rol={project.rol}
       />
-      <div className="project-container">
+      <div className="project-container mt-12 lg:mt-0">
         <Link
           href={project.url}
           target={!isMobile ? "_blank" : ""}
