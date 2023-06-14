@@ -103,7 +103,11 @@
     { "id": "stack-3", "name": "Angular", "svg": "angular" },
     { "id": "stack-4", "name": "Talwind", "svg": "tailwind" },
     { "id": "stack-5", "name": "PHP", "svg": "php" },
-    { "id": "stack-6", "name": "Node", "svg": "nodejs" }
+    { "id": "stack-6", "name": "Node", "svg": "nodejs" },
+    { "id": "stack-7", "name": "Nestjs", "svg": "nestjs" },
+    { "id": "stack-8", "name": "Postgressql", "svg": "postgresql" },
+    { "id": "stack-9", "name": "Mysql", "svg": "mysql" },
+    { "id": "stack-10", "name": "Mongodb", "svg": "mongodb" }
   ],
   "curriculum": {
     "fileName": "CV_12-06_CarlosAldaravi.pdf"
