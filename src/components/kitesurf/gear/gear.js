@@ -1,6 +1,7 @@
 import Section from "@/components/UI/section";
 import GearCard from "./gear-card";
 import { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 
 const Gear = ({ gear }) => {
   const [gearToShow, setGearToShow] = useState([]);
@@ -19,11 +20,16 @@ const Gear = ({ gear }) => {
     setGearToShow(flattened);
   }, [gear]);
   return (
-    <Section className="items-center grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 sm:gap-x-10">
-      {gearToShow.map((item) => (
-        <GearCard key={item.id} gear={item} />
-      ))}
-    </Section>
+    <div className="flex flex-col mt-6 justify-center items-center">
+      <p className="text-xl">
+        <FormattedMessage id="page.kitesurf.gear.description" />
+      </p>
+      <Section className="items-center grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 sm:gap-x-10">
+        {gearToShow.map((item) => (
+          <GearCard key={item.id} gear={item} />
+        ))}
+      </Section>
+    </div>
   );
 };
 export default Gear;

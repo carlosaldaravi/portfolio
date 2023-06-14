@@ -413,7 +413,7 @@
             {
               "id": "gear-1",
               "name": "Rebel SLS",
-              "sizes": ["7m, 8m, 9m"],
+              "sizes": ["7m", "8m", "9m"],
               "img": "/rebel.webp",
               "url": "https://www.duotonesports.com/es/kiteboarding/kites/rebel-sls/"
             },
