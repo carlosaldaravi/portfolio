@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import NewsCards from "./news-cards/news-cards";
-import Sponsors from "./sponsors";
+import NewsCards from "@/components/kitesurf/news-cards/news-cards";
+import Sponsors from "@/components/kitesurf/sponsors";
+import JumpsCards from "@/components/kitesurf/jump-card/jumps-cards";
+import Gear from "@/components/kitesurf/gear/gear";
+import Ranking from "@/components/kitesurf/ranking/ranking";
 import KiteSectionTransition from "./kite-sections-transition";
-import JumpsCards from "./jump-card/jumps-cards";
-import Gear from "./gear/gear";
-import Ranking from "./ranking/ranking";
 
 const KiteSections = ({
   sectionSelected,
