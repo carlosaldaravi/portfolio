@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import path from "path";
 import fs from "fs/promises";
-import KiteSectionsSelector from "@/components/kitesurf/kite-sections-selector";
+import KiteSectionsSelector from "@/components/kitesurf/sections/kite-sections-selector";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
-import KiteSections from "@/components/kitesurf/kite-sections";
+import KiteSections from "@/components/kitesurf/sections/kite-sections";
 import Page from "@/components/UI/page";
 import { useTools } from "@/hooks/useTools";
 import BackgroundVideo from "@/components/UI/background-video";
