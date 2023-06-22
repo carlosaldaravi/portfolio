@@ -5,14 +5,31 @@ import JumpsCards from "@/components/kitesurf/jump-card/jumps-cards";
 import Gear from "@/components/kitesurf/gear/gear";
 import Ranking from "@/components/kitesurf/ranking/ranking";
 import KiteSectionTransition from "./kite-sections-transition";
+import useFetch from "@/hooks/useFetch";
+import { API_GET_RANKING } from "@/env/constants";
 
-const KiteSections = ({
-  sectionSelected,
-  direction,
-  onChangeSection,
-}) => {
+const KiteSections = ({ sectionSelected, direction, onChangeSection }) => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [ranking, setRanking] = useState();
+  const { get } = useFetch(API_GET_RANKING);
+
+  const getRanking = async () => {
+    const { data } = await get();
+
+    if (data) {
+      const dataAux = data.slice(0, 10);
+      setRanking(
+        dataAux.map((item, i) => {
+          return {
+            name: item.user.name,
+            height: Number(item.value).toFixed(1),
+            position: i + 1,
+          };
+        })
+      );
+    }
+  };
 
   const touchStartHandler = (e) => {
     setTouchStart(e.touches[0].clientX);
@@ -21,11 +38,16 @@ const KiteSections = ({
   const touchMoveHandler = (e) => {
     setTouchEnd(e.touches[0].clientX);
   };
-  
+
   const touchEndHandler = (e) => {
     setTouchStart(0);
     setTouchEnd(0);
   };
+
+  useEffect(() => {
+    getRanking();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (touchEnd !== 0) {
@@ -34,7 +56,7 @@ const KiteSections = ({
         touchEndHandler();
       } else if (touchEnd - touchStart > 100) {
         onChangeSection(-1); // to the previous section
-        touchEndHandler()
+        touchEndHandler();
       }
     }
   }, [touchStart, touchEnd, onChangeSection]);
@@ -97,7 +119,7 @@ const KiteSections = ({
           direction={direction}
           onChangeSection={onChangeSection}
         >
-          <Ranking ranking={sectionSelected.data} />
+          <Ranking ranking={ranking} />
         </KiteSectionTransition>
       )}
     </div>
