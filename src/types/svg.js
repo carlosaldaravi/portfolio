@@ -11,6 +11,7 @@ export const SVG_TYPES = {
     backArrow: "backArrow",
     ionLogo: "ionLogo",
     duotoneLogo: "duotoneLogo",
+    kaiLogo: "kaiLogo",
     elmedanokiteclubLogo: "elmedanokiteclubLogo",
     nestjs: "nestjs",
     vuejs: "vuejs",
