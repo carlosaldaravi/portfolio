@@ -349,6 +349,11 @@
           "name": "Surfr.",
           "img": "/surfr.png",
           "url": "https://www.thesurfr.app/"
+        },
+        {
+          "name": "Kai Clothes",
+          "svg": "kaiLogo",
+          "url": "https://kaiclothes.com/"
         }
       ]
     },
