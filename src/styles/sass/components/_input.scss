@@ -1,0 +1,12 @@
+.input-contact {
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px;
+    background: none;
+    opacity: .5;
+}
+.input-contact:focus {
+    box-shadow: none;
+    border-color: inherit;
+    opacity: 1;
+}
