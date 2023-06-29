@@ -22,7 +22,6 @@ const validateForm = (values) => {
     errors.message = (
       <FormattedMessage id="page.contact.form.message.required" />
     );
-    errors.message = "El mensaje es requerido";
   } else if (values.message.length < 10) {
     errors.message = <FormattedMessage id="page.contact.form.message.length" />;
   }
