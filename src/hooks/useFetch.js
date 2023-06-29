@@ -1,4 +1,9 @@
+import { useIntl } from "react-intl";
+
 const useFetch = (url) => {
+  const intl = useIntl();
+  const somethingWrongError = intl.formatMessage({ id: "somethingWrong" });
+
   async function get(endpoint = "", options) {
     const toFetch = fetch(url + endpoint, {
       headers: getHeaders(),
@@ -8,12 +13,25 @@ const useFetch = (url) => {
     return await doFetch(toFetch);
   }
 
+  const post = async (body, endpoint = "", options) => {
+    const toFetch = fetch(`${url}${endpoint}`, {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: getHeaders(),
+      ...options,
+    });
+
+    return await doFetch(toFetch);
+  };
+
   const doFetch = async (toFetch) => {
     try {
       const res = await toFetch;
       const json = await res.json();
 
-      return res.ok ? { data: json.data || json, errors: null } : checkError(json);
+      return res.ok
+        ? { data: json.data || json, errors: null }
+        : checkError(json);
     } catch (error) {
       return checkError(error);
     }
@@ -22,28 +40,28 @@ const useFetch = (url) => {
   const getHeaders = () => {
     return {
       "Content-Type": "application/json",
+      Accept: "application/json",
     };
   };
 
   const checkError = async (json) => {
     let errors = [];
-    console.log('json: ', json);
     if (typeof json === "string") {
       errors.push(json);
-    } else if (json.error.length) {
+    } else if (json.error && json.error.length) {
       errors = [json.error];
     } else if (typeof json.error === "string") {
       errors.push(json.error);
     } else if (Array.isArray(json)) {
       errors = json;
     } else {
-      errors.push("Something went wrong");
+      errors.push(somethingWrongError);
     }
 
     return { errors, data: null };
   };
 
-  return { get };
+  return { get, post };
 };
 
 export default useFetch;
