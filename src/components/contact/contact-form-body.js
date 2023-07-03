@@ -10,7 +10,7 @@ import useFetch from "@/hooks/useFetch";
 import Image from "next/image";
 
 const ContactFormBody = () => {
-  const [formError, setFormError] = useState("");
+  const [responseError, setResponseError] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { post } = useFetch(FORMSPARK_URL);
@@ -34,7 +34,7 @@ const ContactFormBody = () => {
     });
     if (data) {
       setIsFormSubmitted(true);
-      setFormError("");
+      setResponseError("");
       clearValues();
       setTimeout(() => {
         setIsFormSubmitted(false);
@@ -42,9 +42,9 @@ const ContactFormBody = () => {
     }
     if (errors) {
       setIsFormSubmitted(false);
-      setFormError(errors[0]);
+      setResponseError(errors[0]);
       setTimeout(() => {
-        setFormError("");
+        setResponseError("");
       }, 7000);
     }
     setIsLoading(false);
@@ -146,9 +146,9 @@ const ContactFormBody = () => {
               {isLoading && <ArrowPathIcon className="h-8 w-8 animate-spin" />}
             </button>
           </div>
-          {formError && (
+          {responseError && (
             <p className="animate-appear-1 italic text-red-500 text-xl text-center">
-              {formError}
+              {responseError}
             </p>
           )}
           {isFormSubmitted && (
