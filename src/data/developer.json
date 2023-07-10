@@ -87,6 +87,17 @@
     },
     {
       "id": "project-4",
+      "name": "Duotone Team",
+      "logo": "/duotone-logo.png",
+      "img": "/duotoneteam.png",
+      "year": "2023",
+      "url": "https://duotone-team-mtd01va0o-carlosaldaravi-gmail.vercel.app/?vercelToolbarCode=iuK6-656mxcWjtb",
+      "rol": "frontend",
+      "stack": ["astro", "svelte", "tailwind"],
+      "description": "page.developer.duotone"
+    },
+    {
+      "id": "project-5",
       "name": "Portfolio",
       "logo": "/vercel.svg",
       "img": "/portfolio.png",
