@@ -25,4 +25,6 @@ export const SVG_TYPES = {
     typescript: "typescript",
     nodejs: "nodejs",
     mysql: "mysql",
+    astro: "astro",
+    svelte: "svelte",
   };
