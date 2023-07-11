@@ -91,7 +91,7 @@
       "logo": "/duotone-logo.png",
       "img": "/duotoneteam.png",
       "year": "2023",
-      "url": "https://duotone-team-mtd01va0o-carlosaldaravi-gmail.vercel.app/?vercelToolbarCode=iuK6-656mxcWjtb",
+      "url": "https://duotone-team.netlify.app/",
       "rol": "frontend",
       "stack": ["astro", "svelte", "tailwind"],
       "description": "page.developer.duotone"
