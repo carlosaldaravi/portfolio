@@ -2,7 +2,6 @@ import { FormattedMessage } from "react-intl";
 import path from "path";
 import fs from "fs/promises";
 import Page from "@/components/UI/page";
-import Skills from "@/components/developer/skills/skills";
 import Projects from "@/components/developer/projects/projects";
 import Stack from "@/components/developer/stack";
 import Curriculum from "@/components/developer/curriculum";
@@ -10,11 +9,11 @@ import Curriculum from "@/components/developer/curriculum";
 const Developer = ({ data }) => {
   return (
     <Page className="p-0">
-      <h1 className="text-center tracking-xxs">
+      <h1 className="text-center tracking-xxs mb-16">
         <FormattedMessage id="page.developer.fullstack" />
       </h1>
-      <Skills skills={data.skills} />
       <Projects projects={data.projects} />
+      {/* <Skills skills={data.skills} /> */}
       <Stack stack={data.stack} />
       <Curriculum curriculum={data.curriculum} />
     </Page>

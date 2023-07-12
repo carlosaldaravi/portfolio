@@ -3,7 +3,7 @@ const Section = ({ children, className }) => {
     <section
       className={`${
         className ? className : ""
-      } mx-auto my-10 min-w-md max-w-xl sm:max-w-6xl animate-appear-1`}
+      } mx-auto my-10 min-w-md max-w-xl sm:max-w-6xl lg:max-w-screen-xl animate-appear-1`}
     >
       {children}
     </section>

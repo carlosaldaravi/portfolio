@@ -5,7 +5,7 @@ import SectionTitle from "@/components/UI/section-title";
 
 const Skills = ({ skills }) => {
   return (
-    <div className="mt-8">
+    <div className="">
       <SectionTitle
         title="page.developer.skills"
         description="page.developer.skills.description"
