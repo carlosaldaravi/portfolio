@@ -2,31 +2,6 @@
   "skills": [
     {
       "id": "skill-1",
-      "name": "codes",
-      "color": "#2187e7",
-      "data": [
-        { "name": "html", "progress": 95 },
-        { "name": "css", "progress": 85 },
-        { "name": "javascript", "progress": 85 },
-        { "name": "php", "progress": 70 },
-        { "name": "sql", "progress": 60 },
-        { "name": "typescript", "progress": 65 },
-        { "name": "node", "progress": 70 },
-        { "name": "tailwind", "progress": 85 }
-      ]
-    },
-    {
-      "id": "skill-2",
-      "name": "libraries",
-      "color": "#ff4500",
-      "data": [
-        { "name": "react", "progress": 80 },
-        { "name": "vue", "progress": 70 },
-        { "name": "angular", "progress": 50 }
-      ]
-    },
-    {
-      "id": "skill-3",
       "name": "languages",
       "color": "#9acd32",
       "data": [
@@ -77,6 +52,7 @@
       "rol": "fullstack",
       "stack": [
         "react",
+        "nextjs",
         "tailwind",
         "nodejs",
         "nestjs",
@@ -89,23 +65,12 @@
       "id": "project-4",
       "name": "Duotone Team",
       "logo": "/duotone-logo.png",
-      "img": "/duotoneteam.png",
+      "img": "/duotone-team.png",
       "year": "2023",
       "url": "https://duotone-team.netlify.app/",
       "rol": "frontend",
       "stack": ["astro", "svelte", "tailwind"],
       "description": "page.developer.duotone"
-    },
-    {
-      "id": "project-5",
-      "name": "Portfolio",
-      "logo": "/vercel.svg",
-      "img": "/portfolio.png",
-      "year": "2023",
-      "url": "https://carlosaldaravi.com",
-      "rol": "frontend",
-      "stack": ["react", "tailwind", "javascript"],
-      "description": "page.developer.portfolio"
     }
   ],
   "stack": [

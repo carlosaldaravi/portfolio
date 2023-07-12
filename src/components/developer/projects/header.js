@@ -29,10 +29,10 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
         className="section-title-big-vars"
       />
       <div className="flex flex-col">
-        <ColorOptions
+        {/* <ColorOptions
           colorSelected={colorSelected}
           onColorSelected={(color) => onColorSelectedHandler(color)}
-        />
+        /> */}
         {children}
       </div>
     </div>
