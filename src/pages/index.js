@@ -13,7 +13,7 @@ export default function Home({ roles }) {
       <Head>
         <title>Carlos Aldaravi Porfolio</title>
         <meta name="description" content={meta} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
       </Head>
       <HomeInfo roles={roles} />
     </Page>

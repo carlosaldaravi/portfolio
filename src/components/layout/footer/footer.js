@@ -4,6 +4,7 @@ import FooterRRSS from "./footer-rrss";
 import { THEMES_TYPES } from "@/types/themes";
 import Link from "next/link";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 const Footer = () => {
   const themeCtx = useContext(ThemeContext);
@@ -17,7 +18,16 @@ const Footer = () => {
       {/* <div className="">logo</div> */}
       <div className="flex justify-center">
         <div className="tracking-xxs text-lg sm:text-xl mr-10 sm:mr-24 font-bold">
-          @carlosaldaravi
+          <div className="flex items-center justify-between gap-8">
+            <Image
+              src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
+              alt="logo"
+              width={60}
+              height={80}
+              className="h-6 w-9"
+            />
+            <p className="text-2xl">@carlosaldaravi</p>
+          </div>
         </div>
         <FooterRRSS />
       </div>
