@@ -4,14 +4,17 @@ export const useTools = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
+    setIsMobile(window.innerWidth < 640);
+
+    const handleResize = (event) => {
+      event.matches ? setIsMobile(true) : setIsMobile(false);
     };
 
-    window.addEventListener("resize", handleResize);
-    handleResize();
+    const desktopMediaQuery = window.matchMedia("(max-width: 639px)");
+    desktopMediaQuery.addEventListener("change", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => desktopMediaQuery.removeEventListener("change", handleResize);
   }, []);
+
   return { isMobile };
 };
