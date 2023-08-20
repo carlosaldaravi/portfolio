@@ -28,4 +28,6 @@ export const SVG_TYPES = {
   astro: "astro",
   svelte: "svelte",
   nextjs: "nextjs",
+  kitesurf: "kitesurf",
+  developer: "developer",
 };

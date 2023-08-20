@@ -19,26 +19,37 @@ const Footer = () => {
       <div className="flex justify-center">
         <div className="tracking-xxs text-lg sm:text-xl mr-10 sm:mr-24 font-bold">
           <div className="flex items-center justify-between gap-8">
-            <Image
+            {/* <Image
               src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
               alt="logo"
               width={60}
               height={80}
               className="h-6 w-9"
-            />
+            /> */}
             <p className="text-2xl">@carlosaldaravi</p>
           </div>
         </div>
         <FooterRRSS />
       </div>
-      <Link
-        href="/contact"
-        className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"
-      >
-        <span className="tracking-xxs text-lg sm:text-xl">
-          <FormattedMessage id="page.contact" />
-        </span>
-      </Link>
+      <div className="flex justify-center gap-2">
+        <Link
+          href="/about"
+          className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"
+        >
+          <span className="tracking-xxs text-lg sm:text-xl">
+            <FormattedMessage id="footer.about" />
+          </span>
+        </Link>
+        
+        <Link
+          href="/contact"
+          className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"
+        >
+          <span className="tracking-xxs text-lg sm:text-xl">
+            <FormattedMessage id="page.contact" />
+          </span>
+        </Link>
+      </div>
     </footer>
   );
 };

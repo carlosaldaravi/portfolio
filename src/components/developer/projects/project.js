@@ -17,7 +17,7 @@ const Project = ({ project, index }) => {
 
   return (
     <div
-      className={`min-h-[40vh] sm:flex sm:border-none shadow-lg sm:shadow-none p-4 my-12 sm:my-40 ${
+      className={`mx-4 min-h-[40vh] sm:flex sm:border-none shadow-lg sm:shadow-none my-6 sm:my-12 ${
         index % 2 === 0 ? "flex-row" : "flex-row-reverse"
       } `}
     >
@@ -37,7 +37,7 @@ const Project = ({ project, index }) => {
           index % 2 === 0 ? "sm:rounded-r-xl" : "sm:rounded-l-xl"
         } ${bgSecondaryColor}`}
       >
-        <div className="sm:w-[30rem] mx-auto mt-10 sm:mt-0">
+        <div className="mx-auto mt-10 px-6">
           <h3 className="text-center w-full tracking-xxs mb-12 text-5xl font-bold">
             {project.name}
           </h3>

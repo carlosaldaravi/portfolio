@@ -6,8 +6,8 @@ const AvatarSwitch = ({ src, customClass, hover }) => {
     <div className="flex justify-center">
       <div className="relative">
         <div
-          className={`rounded-full overflow-hidden w-64 h-64 ${
-            hover ? "bg-gray-50" : "bg-gray-300"
+          className={`rounded-full overflow-hidden w-64 h-64 transition-all duration-1000 ${
+            hover ? "bg-gray-50" : "bg-gray-400"
           }`}
         ></div>
         <div className="absolute inset-0 z-10 flex items-center justify-center">
@@ -20,12 +20,15 @@ const AvatarSwitch = ({ src, customClass, hover }) => {
               src={src}
               alt="avatar"
               priority={true}
-              width={1200}
-              height={1600}
+              width={600}
+              height={800}
               object-fit="cover"
               object-position="top"
               className={`object-cover transition duration-1000 ease-in-out grayscale ${
-                hover && `grayscale-0 ${customClass === 'image-dev' ? classes.dev : classes.kite}`
+                hover &&
+                `grayscale-0 ${
+                  customClass === "image-dev" ? classes.dev : classes.kite
+                }`
               }`}
             />
           </div>

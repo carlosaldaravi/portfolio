@@ -11,7 +11,7 @@ const Projects = ({ projects }) => {
       projectHovered={projectHovered}
       onSelectColor={(num) => setColorNumSelected(num)}
     >
-      <Section className="mt-10 px-12 gap-4 sm:gap-8 lg:gap-12 lg:grid-cols-4 sm:max-w-7xl">
+      <Section className="flex justify-center flex-col items-center lg:max-w-6xl">
         {projects.map((project, i) => (
           <Proyect key={project.id} project={project} index={i} />
         ))}

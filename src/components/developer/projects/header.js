@@ -25,7 +25,6 @@ const ProjectsHeader = ({ children, projectHovered, onSelectColor }) => {
     <div className="">
       <SectionTitle
         title="page.developer.projects"
-        description="page.developer.projects.description"
         className="section-title-big-vars"
       />
       <div className="flex flex-col">
