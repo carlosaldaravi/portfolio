@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { SVG_TYPES } from "@/types/svg";
-import { THEMES_TYPES } from "@/types/themes";
 import SVG from "@/components/svg";
 import ToggleButton from "@/components/UI/toggle-button";
 import ThemeContext from "@/store/theme-context";
@@ -10,12 +9,14 @@ import LanguageContext from "@/store/language-context";
 import HeaderNavbar from "./header-navbar";
 import { getBgColor, getShadowColor } from "@/tools/theme";
 import Image from "next/image";
+import { useTools } from "@/hooks/useTools";
 
 const Header = () => {
   const { locales, locale, route } = useRouter();
   const [hasScrolled, setHasScrolled] = useState(false);
   const themeCtx = useContext(ThemeContext);
   const languageCtx = useContext(LanguageContext);
+  const { isMobile } = useTools();
 
   const theme = themeCtx.theme;
 
@@ -50,21 +51,27 @@ const Header = () => {
     <header
       className={`grid grid-cols-3 animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
     >
-      <Link href="/" className="flex-grow opacity-90 ">
-        <Image
-          src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
-          alt="logo"
-          width={60}
-          height={80}
-          className="h-12 w-14 sm:h-16 sm:w-20"
-        />
-      </Link>
+      {route !== "/" ? (
+        <Link href="/" className="flex-grow opacity-90 ml-2">
+          <Image
+            src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
+            alt="logo"
+            width={60}
+            height={80}
+            className="h-12 w-14 sm:h-16 sm:w-20"
+          />
+        </Link>
+      ) : (
+        <div></div>
+      )}
       <div className="">{route !== "/" && <HeaderNavbar />}</div>
       <div className={`flex justify-end items-center`}>
-        <div className="">
-          <ToggleButton />
-        </div>
-        <div className="flex gap-2 ml-5 sm:ml-12">
+        {((isMobile && route === "/") || !isMobile) && (
+          <div className="">
+            <ToggleButton />
+          </div>
+        )}
+        <div className="flex gap-2 ml-5 mr-2 sm:ml-12">
           {locales.map((l) => (
             <Link key={l} href={route} locale={l} shallow={true}>
               <SVG type={SVG_TYPES[l]} onClick={setCookieHandler} />
@@ -72,8 +79,6 @@ const Header = () => {
           ))}
         </div>
       </div>
-      {/* <div className="flex justify-end">
-      </div> */}
     </header>
   );
 };

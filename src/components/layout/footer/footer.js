@@ -26,12 +26,12 @@ const Footer = () => {
               height={80}
               className="h-6 w-9"
             /> */}
-            <p className="text-2xl">@carlosaldaravi</p>
+            <p className="text-xl">@carlosaldaravi</p>
           </div>
         </div>
         <FooterRRSS />
       </div>
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center gap-2 mt-2">
         <Link
           href="/about"
           className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"
