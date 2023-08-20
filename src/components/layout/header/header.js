@@ -9,6 +9,7 @@ import ThemeContext from "@/store/theme-context";
 import LanguageContext from "@/store/language-context";
 import HeaderNavbar from "./header-navbar";
 import { getBgColor, getShadowColor } from "@/tools/theme";
+import Image from "next/image";
 
 const Header = () => {
   const { locales, locale, route } = useRouter();
@@ -47,17 +48,32 @@ const Header = () => {
 
   return (
     <header
-      className={`min-w-lg animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
+      className={`grid grid-cols-3 animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
     >
-      {route !== "/" && <HeaderNavbar />}
-      <div className={`flex gap-2`}>
-        <ToggleButton />
-        {locales.map((l) => (
-          <Link key={l} href={route} locale={l} shallow={true}>
-            <SVG type={SVG_TYPES[l]} onClick={setCookieHandler} />
-          </Link>
-        ))}
+      <Link href="/" className="flex-grow opacity-90 ">
+        <Image
+          src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
+          alt="logo"
+          width={60}
+          height={80}
+          className="h-12 w-14 sm:h-16 sm:w-20"
+        />
+      </Link>
+      <div className="">{route !== "/" && <HeaderNavbar />}</div>
+      <div className={`flex justify-end items-center`}>
+        <div className="">
+          <ToggleButton />
+        </div>
+        <div className="flex gap-2 ml-5 sm:ml-12">
+          {locales.map((l) => (
+            <Link key={l} href={route} locale={l} shallow={true}>
+              <SVG type={SVG_TYPES[l]} onClick={setCookieHandler} />
+            </Link>
+          ))}
+        </div>
       </div>
+      {/* <div className="flex justify-end">
+      </div> */}
     </header>
   );
 };
