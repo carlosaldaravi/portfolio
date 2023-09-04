@@ -47,7 +47,7 @@ const Project = ({ project, index }) => {
           </p>
           <div className="flex mt-12">
             {project.stack.map((item) => (
-              <div key={item} className="mx-auto self-center">
+              <div key={item} className="mx-auto self-center" title={item}>
                 <SVG type={SVG_TYPES[item]} />
               </div>
             ))}

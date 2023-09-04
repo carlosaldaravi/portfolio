@@ -54,6 +54,7 @@ const Header = () => {
       {route !== "/" ? (
         <Link href="/" className="flex-grow opacity-90 ml-2">
           <Image
+            title="Logo Carlos Aldaravi"
             src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
             alt="logo"
             width={60}

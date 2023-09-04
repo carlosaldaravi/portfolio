@@ -11,7 +11,7 @@ const Stack = ({ stack }) => {
       />
       <div className="mt-8 grid grid-cols-3 max-w-sm mx-auto">
         {stack.map((s) => (
-          <div key={s.id} className="mx-auto self-center scale-105">
+          <div key={s.id} className="mx-auto self-center scale-105" title={s.name}>
             <SVG type={SVG_TYPES[s.svg]} size="h-20 w-20" />
           </div>
         ))}
