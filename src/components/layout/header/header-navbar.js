@@ -16,7 +16,7 @@ const HeaderNavbar = () => {
   ];
 
   return (
-    <nav className="flex justify-center w-full" aria-label="pages">
+    <nav className="flex justify-center gap-8 w-full h-full" aria-label="pages">
       {footerLinks.map((link) => (
         <NavbarLink key={link.id} src={link.src} title={link.title} name={link.name} />
       ))}

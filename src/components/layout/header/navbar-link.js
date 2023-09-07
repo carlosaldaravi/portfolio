@@ -22,18 +22,30 @@ const NavbarLink = ({ src, title, name }) => {
   return (
     <Link
       href={src}
-      className={`mx-auto px-1 sm:px-4 text-xl sm:text-2xl ${
+      className={`h-full flex flex-grow md:flex-0 justify-center items-center text-xl sm:text-4xl tracking-xxs uppercase duration-300 ${
         route === src
-          ? `font-extrabold border-b ${activeStyle}`
+          ? `font-extrabold ${activeStyle}`
           : `opacity-60 hover:font-semibold ${
               theme === THEMES_TYPES.dark
-                ? "text-light-secondary hover:text-light-primary hover:border-light-primary"
-                : "text-dark-secondary hover:text-dark-primary hover:border-dark-primary"
+                ? "text-light-secondary hover:text-light-primary"
+                : "text-dark-secondary hover:text-dark-primary"
             }`
       }`}
       aria-current={route === src ? "page" : undefined}
     >
-      {isMobile ? <SVG type={SVG_TYPES[name]} size="h-12 w-12" /> : title}
+      <span
+        className={`${
+          route === src
+            ? `px-12 border-b-2 font-extrabold ${activeStyle}`
+            : ` ${
+                theme === THEMES_TYPES.dark
+                  ? "border-light-primary"
+                  : "border-dark-primary"
+              }`
+        }`}
+      >
+        {isMobile ? <SVG type={SVG_TYPES[name]} size="h-12 w-12" /> : title}
+      </span>
     </Link>
   );
 };

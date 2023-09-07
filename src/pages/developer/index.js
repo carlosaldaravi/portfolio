@@ -5,13 +5,12 @@ import Page from "@/components/UI/page";
 import Projects from "@/components/developer/projects/projects";
 import Stack from "@/components/developer/stack";
 import Curriculum from "@/components/developer/curriculum";
+import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 
 const Developer = ({ data }) => {
   return (
     <Page className="p-0">
-      <h1 className="text-center tracking-xxs mb-16">
-        <FormattedMessage id="page.developer.fullstack" />
-      </h1>
+      <KiterCard me={data.me} src="/yo-dev.png" />
       <Projects projects={data.projects} />
       {/* <Skills skills={data.skills} /> */}
       <Stack stack={data.stack} />
