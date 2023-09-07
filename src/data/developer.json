@@ -1,4 +1,26 @@
 {
+  "me": [
+    {
+      "id": "page.developer.study",
+      "value": "page.home.engineer"
+    },
+    {
+      "id": "page.developer.profession",
+      "value": "page.developer.fullstack"
+    },
+    {
+      "id": "page.developer.actualCompany",
+      "value": "page.developer.actualCompanyValue"
+    },
+    {
+      "id": "page.developer.rol",
+      "value": "page.developer.rolValue"
+    },
+    {
+      "id": "page.developer.favouriteStack",
+      "value": "page.developer.favouriteStackValue"
+    }
+  ],
   "skills": [
     {
       "id": "skill-1",

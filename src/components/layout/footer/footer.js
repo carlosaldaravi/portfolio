@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
         <FooterRRSS />
       </div>
-      <div className="flex justify-center gap-2 mt-2">
+      <div className="flex justify-center gap-2 mt-2 sm:mt-0">
         <Link
           href="/about"
           className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"

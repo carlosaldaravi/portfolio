@@ -49,10 +49,10 @@ const Header = () => {
 
   return (
     <header
-      className={`grid grid-cols-3 animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
+      className={`grid grid-cols-3 sm:flex sm:justify-between sm:gap-20 md:gap-40 min-w-lg animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
     >
       {route !== "/" ? (
-        <Link href="/" className="flex-grow opacity-90 ml-2">
+        <Link href="/" className="opacity-90 ml-2">
           <Image
             title="Logo Carlos Aldaravi"
             src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
@@ -65,7 +65,7 @@ const Header = () => {
       ) : (
         <div></div>
       )}
-      <div className="">{route !== "/" && <HeaderNavbar />}</div>
+      <div className="flex-grow">{route !== "/" && <HeaderNavbar />}</div>
       <div className={`flex justify-end items-center`}>
         {((isMobile && route === "/") || !isMobile) && (
           <div className="">

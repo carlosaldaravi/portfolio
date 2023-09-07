@@ -47,7 +47,7 @@ const KiteSurf = ({ sections, me }) => {
       />
 
       <div className="relative z-10">
-        <KiterCard me={me} />
+        <KiterCard me={me} src="/yo-kite-avatar.jpg" />
         <KiteSectionsSelector
           sections={sections}
           sectionSelected={sectionSelected}
