@@ -93,6 +93,17 @@
       "rol": "frontend",
       "stack": ["astro", "svelte", "tailwind"],
       "description": "page.developer.duotone"
+    },
+    {
+      "id": "project-5",
+      "name": "Surfr. Leaderboard",
+      "logo": "surfr.png",
+      "img": "/surfr-project.png",
+      "year": "2023",
+      "url": "https://surfr-leaderboard.vercel.app/",
+      "rol": "frontend",
+      "stack": ["react", "tailwind"],
+      "description": "page.developer.surfr"
     }
   ],
   "stack": [
