@@ -5,7 +5,7 @@ import Link from "next/link";
 import Popup from "@/components/layout/popup";
 import { useTools } from "@/hooks/useTools";
 
-const Project = ({ project, colorNum, onHover }) => {
+const ProjectOFF = ({ project, colorNum, onHover }) => {
   const [infoPositionStyle, setInfoPositionStyle] = useState();
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -184,4 +184,4 @@ const Project = ({ project, colorNum, onHover }) => {
     </div>
   );
 };
-export default Project;
+export default ProjectOFF;
