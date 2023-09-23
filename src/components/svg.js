@@ -255,7 +255,7 @@ const SVG = ({ type, size, className }) => {
   if (type === SVG_TYPES.duotoneLogo) {
     return (
       <svg
-        className="w-[14rem] sm:w-[24rem] lg:w-[30rem]"
+        className="w-[14rem] sm:w-[24rem]"
         fill={color}
         viewBox="0 0 463.9 113.4"
       >

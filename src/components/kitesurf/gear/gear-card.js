@@ -16,7 +16,7 @@ const GearCard = ({ gear }) => {
     <Link
       href={gear.url}
       target={!isMobile ? "_blank" : ""}
-      className={`mx-auto cursor-pointer w-64 h-96 rounded-2xl flex flex-col items-center shadow-xl transform transition-all duration-300 ${
+      className={`mx-auto cursor-pointer h-auto py-8 rounded-2xl flex flex-col items-center shadow-xl transform transition-all duration-300 ${
         hovered ? "bg-opacity-80" : "bg-opacity-50"
       } ${bgSecondaryColor}`}
       onMouseEnter={() => setHovered(true)}
@@ -27,7 +27,7 @@ const GearCard = ({ gear }) => {
         alt="kite"
         height={800}
         width={600}
-        className={`mt-6 w-auto transform transition-all duration-300 ${
+        className={`w-auto transform transition-all duration-300 ${
           hovered && "-translate-y-14 -rotate-20"
         }`}
       />
