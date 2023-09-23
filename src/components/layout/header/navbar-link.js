@@ -22,7 +22,7 @@ const NavbarLink = ({ src, title, name }) => {
   return (
     <Link
       href={src}
-      className={`h-full flex flex-grow md:flex-0 justify-center items-center text-xl sm:text-4xl tracking-xxs uppercase duration-300 ${
+      className={`h-full flex flex-grow md:flex-0 justify-center items-center text-xl sm:text-2xl lg:text-4xl tracking-xxs uppercase duration-300 ${
         route === src
           ? `font-extrabold ${activeStyle}`
           : `opacity-60 hover:font-semibold ${
