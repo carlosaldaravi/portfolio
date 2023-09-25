@@ -17,8 +17,8 @@ const About = () => {
       before: "before:bg-[url('/instructor.jpeg')]",
     },
     {
-      name: "page.about.padelCardTitle",
-      text: "page.about.padelCard",
+      name: "page.about.paddleCardTitle",
+      text: "page.about.paddleCard",
       img: "bg-[url('/yo-padel.png')]",
       before: "before:bg-[url('/yo-padel.png')]",
     },
