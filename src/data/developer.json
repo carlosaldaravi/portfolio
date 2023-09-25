@@ -42,7 +42,7 @@
       "year": "2019",
       "url": "https://kwee.ovh/home",
       "rol": "backend",
-      "stack": ["nodejs", "javascript", "mongodb"],
+      "stack": ["javascript", "nodejs", "mongodb"],
       "description": "page.developer.kweeProject"
     },
     {
@@ -54,12 +54,12 @@
       "url": "https://ocean-platform.netlify.app/",
       "rol": "fullstack",
       "stack": [
+        "javascript",
+        "typescript",
         "vuejs",
         "tailwind",
-        "javascript",
         "nodejs",
         "nestjs",
-        "typescript",
         "postgresql"
       ],
       "description": "page.developer.oceanProject"
@@ -73,12 +73,12 @@
       "url": "https://trainsegrity.vercel.app/login",
       "rol": "fullstack",
       "stack": [
+        "typescript",
         "react",
         "nextjs",
         "tailwind",
         "nodejs",
         "nestjs",
-        "typescript",
         "postgresql"
       ],
       "description": "page.developer.trainsegrityProject"
@@ -91,7 +91,7 @@
       "year": "2023",
       "url": "https://duotone-team.netlify.app/",
       "rol": "frontend",
-      "stack": ["astro", "svelte", "tailwind"],
+      "stack": ["javascript", "astro", "svelte", "tailwind"],
       "description": "page.developer.duotone"
     },
     {
@@ -102,7 +102,7 @@
       "year": "2023",
       "url": "https://surfr-leaderboard.vercel.app/",
       "rol": "frontend",
-      "stack": ["react", "tailwind"],
+      "stack": ["javascript", "react", "tailwind"],
       "description": "page.developer.surfr"
     }
   ],
@@ -110,13 +110,16 @@
     { "id": "stack-1", "name": "React", "svg": "react" },
     { "id": "stack-2", "name": "Vue", "svg": "vuejs" },
     { "id": "stack-3", "name": "Angular", "svg": "angular" },
-    { "id": "stack-4", "name": "Talwind", "svg": "tailwind" },
-    { "id": "stack-5", "name": "PHP", "svg": "php" },
-    { "id": "stack-6", "name": "Node", "svg": "nodejs" },
-    { "id": "stack-7", "name": "Nestjs", "svg": "nestjs" },
-    { "id": "stack-8", "name": "Postgressql", "svg": "postgresql" },
-    { "id": "stack-9", "name": "Mysql", "svg": "mysql" },
-    { "id": "stack-10", "name": "Mongodb", "svg": "mongodb" }
+    { "id": "stack-4", "name": "Astro", "svg": "astro" },
+    { "id": "stack-5", "name": "Svelte", "svg": "svelte" },
+    { "id": "stack-6", "name": "Talwind", "svg": "tailwind" },
+    { "id": "stack-7", "name": "PHP", "svg": "php" },
+    { "id": "stack-8", "name": "Node", "svg": "nodejs" },
+    { "id": "stack-9", "name": "Nestjs", "svg": "nestjs" },
+    { "id": "stack-10", "name": "Postgressql", "svg": "postgresql" },
+    { "id": "stack-11", "name": "Mysql", "svg": "mysql" },
+    { "id": "stack-12", "name": "Mongodb", "svg": "mongodb" },
+    { "id": "stack-13", "name": "GitHub", "svg": "github" }
   ],
   "curriculum": {
     "fileName": "CV_12-06_CarlosAldaravi.pdf"
