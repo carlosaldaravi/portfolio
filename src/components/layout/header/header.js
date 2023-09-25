@@ -74,7 +74,7 @@ const Header = () => {
         )}
         <div className="flex gap-2 ml-5 mr-2 sm:ml-12">
           {locales.map((l) => (
-            <Link key={l} href={route} locale={l} shallow={true}>
+            <Link key={`locale-${l}`} href={route} locale={l} shallow={true}>
               <SVG type={SVG_TYPES[l]} onClick={setCookieHandler} />
             </Link>
           ))}

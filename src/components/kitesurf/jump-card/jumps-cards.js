@@ -14,7 +14,7 @@ const JumpsCards = ({ jumps }) => {
   };
 
   return (
-    <Section className="px-4">
+    <Section className="">
       {jumps.map((jump, index) => (
         <JumpCard
           key={`${jump.texts[1].date}-${index}`}

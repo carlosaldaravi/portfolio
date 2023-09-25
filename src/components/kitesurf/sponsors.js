@@ -13,7 +13,7 @@ const Sponsors = ({ sponsors }) => {
   const bgSecondaryColor = getBgOppositeColor(theme);
 
   return (
-    <Section className="items-center grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 sm:gap-x-10">
+    <Section className="w-full items-center grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-10 sm:gap-x-10">
         {sponsors.map((sponsor) => {
           if (sponsor.img) {
             return (
