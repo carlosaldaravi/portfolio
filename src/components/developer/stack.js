@@ -16,7 +16,7 @@ const Stack = ({ stack }) => {
             className="mx-auto self-center"
             title={s.name}
           >
-            <SVG type={SVG_TYPES[s.svg]} size={"h-24 w-24"} />
+            <SVG type={SVG_TYPES[s.svg]} className={"opacity-100"} size={"h-24 w-24"} />
           </div>
         ))}
       </div>

@@ -40,9 +40,10 @@
       "logo": "/kwee.svg",
       "img": "/kwee-project.png",
       "year": "2019",
+      "github": { "url": "", "private": true },
       "url": "https://kwee.ovh/home",
       "rol": "backend",
-      "stack": ["nodejs", "javascript", "mongodb"],
+      "stack": ["javascript", "nodejs", "mongodb"],
       "description": "page.developer.kweeProject"
     },
     {
@@ -51,15 +52,16 @@
       "logo": "/ocean-logo.png",
       "img": "/ocean-project.png",
       "year": "2020",
+      "github": { "url": "https://github.com/carlosaldaravi/ocean-backend", "private": false },
       "url": "https://ocean-platform.netlify.app/",
       "rol": "fullstack",
       "stack": [
+        "javascript",
+        "typescript",
         "vuejs",
         "tailwind",
-        "javascript",
         "nodejs",
         "nestjs",
-        "typescript",
         "postgresql"
       ],
       "description": "page.developer.oceanProject"
@@ -70,15 +72,16 @@
       "logo": "/trainsegrity-logo.png",
       "img": "/trainsegrity-project.png",
       "year": "2022",
+      "github": { "url": "", "private": true },
       "url": "https://trainsegrity.vercel.app/login",
       "rol": "fullstack",
       "stack": [
+        "typescript",
         "react",
         "nextjs",
         "tailwind",
         "nodejs",
         "nestjs",
-        "typescript",
         "postgresql"
       ],
       "description": "page.developer.trainsegrityProject"
@@ -89,9 +92,10 @@
       "logo": "/duotone-logo.png",
       "img": "/duotone-team.png",
       "year": "2023",
+      "github": { "url": "https://github.com/carlosaldaravi/duotone-team", "private": false },
       "url": "https://duotone-team.netlify.app/",
       "rol": "frontend",
-      "stack": ["astro", "svelte", "tailwind"],
+      "stack": ["javascript", "astro", "svelte", "tailwind"],
       "description": "page.developer.duotone"
     },
     {
@@ -100,9 +104,10 @@
       "logo": "surfr.png",
       "img": "/surfr-project.png",
       "year": "2023",
+      "github": { "url": "https://github.com/carlosaldaravi/surfr-leaderboard", "private": false },
       "url": "https://surfr-leaderboard.vercel.app/",
       "rol": "frontend",
-      "stack": ["react", "tailwind"],
+      "stack": ["javascript", "react", "tailwind"],
       "description": "page.developer.surfr"
     }
   ],
@@ -110,13 +115,16 @@
     { "id": "stack-1", "name": "React", "svg": "react" },
     { "id": "stack-2", "name": "Vue", "svg": "vuejs" },
     { "id": "stack-3", "name": "Angular", "svg": "angular" },
-    { "id": "stack-4", "name": "Talwind", "svg": "tailwind" },
-    { "id": "stack-5", "name": "PHP", "svg": "php" },
-    { "id": "stack-6", "name": "Node", "svg": "nodejs" },
-    { "id": "stack-7", "name": "Nestjs", "svg": "nestjs" },
-    { "id": "stack-8", "name": "Postgressql", "svg": "postgresql" },
-    { "id": "stack-9", "name": "Mysql", "svg": "mysql" },
-    { "id": "stack-10", "name": "Mongodb", "svg": "mongodb" }
+    { "id": "stack-4", "name": "Astro", "svg": "astro" },
+    { "id": "stack-5", "name": "Svelte", "svg": "svelte" },
+    { "id": "stack-6", "name": "Talwind", "svg": "tailwind" },
+    { "id": "stack-7", "name": "PHP", "svg": "php" },
+    { "id": "stack-8", "name": "Node", "svg": "nodejs" },
+    { "id": "stack-9", "name": "Nestjs", "svg": "nestjs" },
+    { "id": "stack-10", "name": "Postgressql", "svg": "postgresql" },
+    { "id": "stack-11", "name": "Mysql", "svg": "mysql" },
+    { "id": "stack-12", "name": "Mongodb", "svg": "mongodb" },
+    { "id": "stack-13", "name": "GitHub", "svg": "github" }
   ],
   "curriculum": {
     "fileName": "CV_12-06_CarlosAldaravi.pdf"

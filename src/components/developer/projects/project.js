@@ -33,7 +33,7 @@ const Project = ({ project, index }) => {
       />
 
       <div
-        className={`w-full flex items-center mx-auto rounded-b-xl sm:rounded-none ${
+        className={`w-full flex items-center justify-center rounded-b-xl sm:rounded-none ${
           index % 2 === 0 ? "sm:rounded-r-xl" : "sm:rounded-l-xl"
         } ${bgSecondaryColor}`}
       >
@@ -52,10 +52,27 @@ const Project = ({ project, index }) => {
               </div>
             ))}
           </div>
-          <div className="w-full px-6 mb-4 inline-block">
-            <Link href={project.url} target={!isMobile ? "_blank" : ""}>
-              <Button className="mt-12 w-full">
-                <FormattedMessage id="show" />
+          <div className="w-full mt-12 flex flex-col sm:flex-row gap-2 mb-4 flex-grow">
+            <Link
+              className="w-full"
+              href={project.url}
+              target={!isMobile ? "_blank" : ""}
+            >
+              <Button className="w-full">
+                <FormattedMessage id="join" />
+              </Button>
+            </Link>
+            <Link
+              className="w-full"
+              href={project.github.url}
+              target={!isMobile ? "_blank" : ""}
+            >
+              <Button
+                className="w-full"
+                icon={SVG_TYPES.github}
+                disabled={project.github.private}
+              >
+                GitHub
               </Button>
             </Link>
           </div>
