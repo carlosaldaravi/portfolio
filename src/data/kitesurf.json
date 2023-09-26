@@ -362,7 +362,16 @@
       "title": "page.kitesurf.highlights",
       "data": [
         {
-          "id": "news-1",
+          "id": "news-6",
+          "title": "El Campeonato de España de Big Air certifica el cambio generacional",
+          "img": "/as-2023.png",
+          "video": "",
+          "date": "25/09/2023",
+          "source": "as.com",
+          "url": "https://as.com/deportes_accion/2023/09/25/mas_accion/1695651833_001168.html"
+        },
+        {
+          "id": "news-5",
           "title": "Forajidos: Carlos Aldaravi e Isaac Hernández forajidos del kitesurf y del hydrofoil",
           "img": "/ser-2022.png",
           "video": "",
@@ -371,7 +380,7 @@
           "url": "https://cadenaser.com/audio/1642784018_674897/"
         },
         {
-          "id": "news-2",
+          "id": "news-4",
           "title": "Entrevista en el programa Zapeando de La Sexta",
           "img": "/zapeando.png",
           "video": "PReoZonSpa4",
@@ -389,7 +398,7 @@
           "url": "https://as.com/deportes_accion/2021/08/12/mas_accion/1628785050_322579.html"
         },
         {
-          "id": "news-4",
+          "id": "news-2",
           "title": "Inhumano Carlos Aldaravi: cruza toda una playa de Tarifa volando durante más de un minuto",
           "img": "/as-2021.png",
           "video": "",
@@ -398,7 +407,7 @@
           "url": "https://as.com/deportes_accion/2021/08/12/mas_accion/1628785050_322579.html"
         },
         {
-          "id": "news-5",
+          "id": "news-1",
           "title": "Un kitesurfista español se cruza la playa de valdevaqueros entera... ¡volando!",
           "img": "/as-2019.png",
           "video": "",
