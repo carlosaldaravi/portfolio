@@ -428,8 +428,8 @@
               "id": "gear-1",
               "name": "Rebel SLS",
               "sizes": ["7m", "8m", "9m"],
-              "img": "/rebel.webp",
-              "url": "https://www.duotonesports.com/es/kiteboarding/kites/rebel-sls/"
+              "img": "/rebel-2024.webp",
+              "url": "https://www.duotonesports.com/es/products/duotone-rebel-sls-2024-44240-3010"
             },
             {
               "id": "gear-2",
@@ -446,22 +446,22 @@
             {
               "id": "gear-3",
               "name": "Clickbar 12m + 12m",
-              "img": "/clickbar.webp",
-              "url": "https://www.duotonesports.com/es/kiteboarding/bars/click-bar/"
+              "img": "/clickbar-2024.webp",
+              "url": "https://www.duotonesports.com/es/products/duotone-click-bar-quad-control-2024-44240-3202?color=S&variant=46975515394372"
             },
             {
               "id": "gear-4",
               "name": "Trustbar 22m + 2m",
-              "img": "/trustbar.webp",
-              "url": "https://www.duotonesports.com/es/kiteboarding/bars/trust-bar/"
+              "img": "/trustbar-2024.webp",
+              "url": "https://www.duotonesports.com/es/products/trust-bar-quad-control-44230-3201?color=S"
             }
           ]
         },
         {
           "id": "gear-5",
-          "name": "Select SLS 135cm",
-          "img": "/select.webp",
-          "url": "https://www.duotonesports.com/es/kiteboarding/boards/twintips/select-sls/"
+          "name": "Jaime SLS 133cm",
+          "img": "/jaime-2024.webp",
+          "url": "https://www.duotonesports.com/es/products/duotone-jaime-sls-2024-44240-3421"
         },
         {
           "id": "gear-6",
