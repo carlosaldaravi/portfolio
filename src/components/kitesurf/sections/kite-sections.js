@@ -7,6 +7,7 @@ import Ranking from "@/components/kitesurf/ranking/ranking";
 import KiteSectionTransition from "./kite-sections-transition";
 import useFetch from "@/hooks/useFetch";
 import { API_GET_RANKING } from "@/env/constants";
+import { leaderboard } from "@/data/leaderboard";
 
 const KiteSections = ({ sectionSelected, direction, onChangeSection }) => {
   const [touchStart, setTouchStart] = useState(0);
@@ -28,6 +29,8 @@ const KiteSections = ({ sectionSelected, direction, onChangeSection }) => {
           };
         })
       );
+    } else {
+      setRanking(leaderboard);
     }
   };
 
