@@ -8,6 +8,7 @@ import Button from "@/components/UI/button";
 import Link from "next/link";
 import { useTools } from "@/hooks/useTools";
 import { getBgSecondaryColor } from "@/tools/theme";
+import classes from "./project.module.css";
 
 const Project = ({ project, index }) => {
   const themeCtx = useContext(ThemeContext);
@@ -37,22 +38,22 @@ const Project = ({ project, index }) => {
           index % 2 === 0 ? "sm:rounded-r-xl" : "sm:rounded-l-xl"
         } ${bgSecondaryColor}`}
       >
-        <div className="mx-auto mt-10 px-6">
-          <h3 className="text-center w-full tracking-xxs mb-12 text-5xl font-bold">
+        <div className="flex flex-col h-full gap-8 p-8">
+          <h3 className="text-center w-full tracking-xxs text-5xl font-bold">
             {project.name}
           </h3>
 
-          <p className="text-center text-2xl font-extralight">
+          <p className="flex-grow text-center text-2xl font-extralight">
             <FormattedMessage id={project.description} />
           </p>
-          <div className="flex mt-12">
+          <div className={classes.gridMinMax}>
             {project.stack.map((item) => (
-              <div key={item} className="mx-auto self-center" title={item}>
+              <div key={item} className="flex justify-center" title={item}>
                 <SVG type={SVG_TYPES[item]} />
               </div>
             ))}
           </div>
-          <div className="w-full mt-12 flex flex-col sm:flex-row gap-2 mb-4 flex-grow">
+          <div className="w-full flex flex-col sm:flex-row gap-2">
             <Link
               className="w-full"
               href={project.url}
