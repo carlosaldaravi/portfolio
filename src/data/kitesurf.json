@@ -32,6 +32,27 @@
       "data": [
         {
           "texts": [
+            { "hangtime": "50" },
+            { "date": "08/10/2023" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "20 - 35" }
+          ],
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "NKCRMnX25BE",
+          "best": false
+        },
+        {
+          "texts": [
             { "hangtime": "23" },
             { "date": "02/01/2023" },
             { "spot": "El Médano" },
@@ -451,8 +472,8 @@
             },
             {
               "id": "gear-4",
-              "name": "Trustbar 22m + 2m",
-              "img": "/trustbar-2024.webp",
+              "name": "Clickbar 22m + 2m",
+              "img": "/clickbar-2024.webp",
               "url": "https://www.duotonesports.com/es/products/trust-bar-quad-control-44230-3201?color=S"
             }
           ]
