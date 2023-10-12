@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import path from "path";
 import fs from "fs/promises";
 import KiteSectionsSelector from "@/components/kitesurf/sections/kite-sections-selector";
@@ -7,16 +7,24 @@ import KiteSections from "@/components/kitesurf/sections/kite-sections";
 import Page from "@/components/UI/page";
 import { useTools } from "@/hooks/useTools";
 import BackgroundVideo from "@/components/UI/background-video";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
   const [direction, setDirection] = useState("");
   const { isMobile } = useTools();
+  const tracker = useTracker();
 
   const videoUrl = isMobile ? "/video-short.mp4" : "/video.MP4";
   const videoUrlWebm = isMobile ? "/video-short.webm" : "/video.webm";
   const videoPoster = "/video-poster.png";
+
+  useEffect(() => {
+    tracker.page(TRACKING_TYPES.page.kitesurfer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const changeSectionHandler = (oper) => {
     oper === 1 ? setDirection("left") : setDirection("right");

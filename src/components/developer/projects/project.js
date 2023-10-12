@@ -9,12 +9,15 @@ import Link from "next/link";
 import { useTools } from "@/hooks/useTools";
 import { getBgSecondaryColor } from "@/tools/theme";
 import classes from "./project.module.css";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const Project = ({ project, index }) => {
   const themeCtx = useContext(ThemeContext);
   const theme = themeCtx.theme;
   const bgSecondaryColor = getBgSecondaryColor(theme);
   const { isMobile } = useTools();
+  const tracker = useTracker();
 
   return (
     <div
@@ -58,6 +61,11 @@ const Project = ({ project, index }) => {
               className="w-full"
               href={project.url}
               target={!isMobile ? "_blank" : ""}
+              onClick={() =>
+                tracker.track(TRACKING_TYPES.event.visitProjectClick, {
+                  project: project.name,
+                })
+              }
             >
               <Button className="w-full">
                 <FormattedMessage id="join" />
@@ -67,6 +75,11 @@ const Project = ({ project, index }) => {
               className="w-full"
               href={project.github.url}
               target={!isMobile ? "_blank" : ""}
+              onClick={() =>
+                tracker.track(TRACKING_TYPES.event.githubProjectClick, {
+                  project: project.name,
+                })
+              }
             >
               <Button
                 className="w-full"

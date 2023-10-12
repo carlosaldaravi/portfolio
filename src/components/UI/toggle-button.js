@@ -3,14 +3,21 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { Switch } from "@headlessui/react";
 import ThemeContext from "@/store/theme-context";
 import { THEMES_TYPES } from "@/types/themes";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const ToggleButton = () => {
   const [enabled, setEnabled] = useState(true);
   const themeCtx = useContext(ThemeContext);
+  const tracker = useTracker();
 
   const theme = themeCtx.theme;
 
   const onChangeHandler = (e) => {
+    const event = e
+      ? TRACKING_TYPES.event.darkThemeClick
+      : TRACKING_TYPES.event.lightThemeClick;
+    tracker.track(event);
     setEnabled(e);
     e
       ? themeCtx.onChangeTheme(THEMES_TYPES.dark)

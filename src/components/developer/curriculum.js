@@ -9,8 +9,11 @@ import { useContext, useEffect, useState } from "react";
 import ThemeContext from "@/store/theme-context";
 import { FormattedMessage } from "react-intl";
 import { getBgSecondaryColor } from "@/tools/theme";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const Curriculum = ({ curriculum }) => {
+  const tracker = useTracker();
   const [successClass, setSuccessClass] = useState("");
   const [loadingClass, setLoadingClass] = useState("");
   const { percentage, download, error, isInProgress } = useDownloader();
@@ -22,6 +25,7 @@ const Curriculum = ({ curriculum }) => {
 
   const downloadHandler = (e) => {
     e.preventDefault();
+    tracker.track(TRACKING_TYPES.event.downloadCV);
     download(`/${fileName}`, fileName);
   };
 

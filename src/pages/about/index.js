@@ -1,8 +1,18 @@
 import OverlayCards from "@/components/about/overlay-cards";
 import AboutHeader from "@/components/about/header";
 import Page from "@/components/UI/page";
+import { useEffect } from "react";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const About = () => {
+  const tracker = useTracker();
+
+  useEffect(() => {
+    tracker.page(TRACKING_TYPES.page.about);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const cards = [
     {
       name: "page.about.kitesurfCardTitle",

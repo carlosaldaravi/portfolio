@@ -6,11 +6,14 @@ import { THEMES_TYPES } from "@/types/themes";
 import { useTools } from "@/hooks/useTools";
 import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const NavbarLink = ({ src, title, name }) => {
   const { isMobile } = useTools();
   const themeCtx = useContext(ThemeContext);
   const router = useRouter();
+  const tracker = useTracker();
   const route = router.route;
 
   const theme = themeCtx.theme;
@@ -19,9 +22,21 @@ const NavbarLink = ({ src, title, name }) => {
       ? "border-light-primary text-light-primary"
       : "border-dark-primary text-dark-primary";
 
+  const navBarClickHandler = (src) => {
+    const event =
+      src === "/developer"
+        ? TRACKING_TYPES.event.developerClick
+        : TRACKING_TYPES.event.kitesurferClick;
+
+    tracker.track(event, {
+      from: "Header",
+    });
+  };
+
   return (
     <Link
       href={src}
+      onClick={() => navBarClickHandler(src)}
       className={`h-full flex flex-grow md:flex-0 justify-center items-center text-xl sm:text-2xl lg:text-4xl tracking-xxs uppercase duration-300 ${
         route === src
           ? `font-extrabold ${activeStyle}`

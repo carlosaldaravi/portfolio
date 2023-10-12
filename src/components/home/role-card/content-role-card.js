@@ -7,10 +7,13 @@ import ThemeContext from "@/store/theme-context";
 import RRSS from "@/components/UI/rrss";
 import { THEMES_TYPES } from "@/types/themes";
 import { getBgSecondaryColor } from "@/tools/theme";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const ContentRoleCard = ({ role }) => {
   const [cardHovered, setCardHovered] = useState(false);
   const themeCtx = useContext(ThemeContext);
+  const tracker = useTracker();
 
   const theme = themeCtx.theme;
 
@@ -21,6 +24,16 @@ const ContentRoleCard = ({ role }) => {
     setCardHovered(false);
   };
 
+  const trackHandler = (role) => {
+    const event =
+      role.to === "/kitesurf"
+        ? TRACKING_TYPES.event.kitesurferClick
+        : TRACKING_TYPES.event.developerClick;
+    tracker.track(event, {
+      from: "Home",
+    });
+  };
+
   return (
     <Link
       href={role.to}
@@ -28,6 +41,7 @@ const ContentRoleCard = ({ role }) => {
       onTouchStart={onMouseEnterHandler}
       onMouseLeave={onMouseLeaveHandler}
       onTouchEnd={onMouseLeaveHandler}
+      onClick={() => trackHandler(role)}
     >
       <li
         className={`rounded-2xl px-8 py-10 transition-all duration-500 ${
