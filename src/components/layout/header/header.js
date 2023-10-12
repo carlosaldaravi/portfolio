@@ -10,6 +10,8 @@ import HeaderNavbar from "./header-navbar";
 import { getBgColor, getShadowColor } from "@/tools/theme";
 import Image from "next/image";
 import { useTools } from "@/hooks/useTools";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const Header = () => {
   const { locales, locale, route } = useRouter();
@@ -17,6 +19,7 @@ const Header = () => {
   const themeCtx = useContext(ThemeContext);
   const languageCtx = useContext(LanguageContext);
   const { isMobile } = useTools();
+  const tracker = useTracker();
 
   const theme = themeCtx.theme;
 
@@ -47,12 +50,24 @@ const Header = () => {
     };
   }, []);
 
+  const selectLanguageHandler = (l) => {
+    const event =
+      l === "es"
+        ? TRACKING_TYPES.event.esLanguageClick
+        : TRACKING_TYPES.event.enLanguageClick;
+    tracker.track(event);
+  };
+
   return (
     <header
       className={`grid grid-cols-3 sm:flex sm:justify-between sm:gap-20 md:gap-40 min-w-lg animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
     >
       {route !== "/" ? (
-        <Link href="/" className="opacity-90 ml-2">
+        <Link
+          href="/"
+          onClick={() => tracker.track(TRACKING_TYPES.event.logoClick)}
+          className="opacity-90 ml-2"
+        >
           <Image
             title="Logo Carlos Aldaravi"
             src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
@@ -74,7 +89,13 @@ const Header = () => {
         )}
         <div className="flex gap-2 ml-5 mr-2 sm:ml-12">
           {locales.map((l) => (
-            <Link key={`locale-${l}`} href={route} locale={l} shallow={true}>
+            <Link
+              key={`locale-${l}`}
+              href={route}
+              locale={l}
+              shallow={true}
+              onClick={() => selectLanguageHandler(l)}
+            >
               <SVG type={SVG_TYPES[l]} onClick={setCookieHandler} />
             </Link>
           ))}

@@ -3,11 +3,21 @@ import path from "path";
 import fs from "fs/promises";
 import HomeInfo from "../components/home/home-info";
 import Page from "../components/UI/page";
-import { FormattedMessage, useIntl } from "react-intl";
+import useTracker from "@/hooks/useTracker";
+import { useIntl } from "react-intl";
+import { useEffect } from "react";
+import { TRACKING_TYPES } from "@/types/track";
 
 export default function Home({ roles }) {
   const intl = useIntl();
   const meta = intl.formatMessage({ id: "page.home.meta" });
+  const tracker = useTracker();
+
+  useEffect(() => {
+    tracker.page(TRACKING_TYPES.page.home);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Page>
       <Head>

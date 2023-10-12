@@ -8,6 +8,8 @@ import HeaderJumpCard from "./header-jump-card";
 import FrontSideCard from "./front-side-card";
 import { createUseStyles } from "react-jss";
 import { THEMES_TYPES } from "@/types/themes";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const useStyles = (style) => createUseStyles(style);
 
@@ -23,12 +25,20 @@ const JumpCard = ({
   const themeCtx = useContext(ThemeContext);
   const styles = useStyles(jump.style)();
   const { isMobile } = useTools();
+  const tracker = useTracker();
 
   const theme = themeCtx.theme;
 
   const onPlayHandler = () => {
     setShowBackSide(true);
     setShowFrontSide(false);
+
+    tracker.track(
+      TRACKING_TYPES.event.youtubeIconClick,
+      jump.texts.reduce((result, currentObject) => {
+        return Object.assign(result, currentObject);
+      }, {})
+    );
   };
 
   const onBackHandler = () => {
