@@ -185,3 +185,25 @@ const ProjectOFF = ({ project, colorNum, onHover }) => {
   );
 };
 export default ProjectOFF;
+
+// {
+//   "texts": [
+//     { "hangtime": "+15" },
+//     { "date": "10/12/2021" },
+//     { "spot": "Misty Cliffs" },
+//     { "kite": "Rebel" },
+//     { "size": "8m" },
+//     { "wind": "35 - 50" }
+//   ],
+//   "img": "/mistycliffs.jpeg",
+//   "style": {
+//     "kiteCard": {
+//       "&::before": {
+//         "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/mistycliffs.jpeg);",
+//         "backgroundPosition": "100% 90%;"
+//       }
+//     }
+//   },
+//   "youtubeEmbedId": "2kcdjxcIBWM",
+//   "best": false
+// },

@@ -3,3 +3,9 @@
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 }
+
+.verticalText {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+}
