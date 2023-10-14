@@ -32,6 +32,27 @@
       "data": [
         {
           "texts": [
+            { "hangtime": "60" },
+            { "date": "09/07/2021" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "7m" },
+            { "wind": "30 - 60" }
+          ],
+          "img": "/world-record.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/world-record.jpeg);",
+                "backgroundPosition": "48% 50%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "-gQMmsZxw10",
+          "best": true
+        },
+        {
+          "texts": [
             { "hangtime": "50" },
             { "date": "08/10/2023" },
             { "spot": "Tarifa" },
@@ -49,48 +70,6 @@
             }
           },
           "youtubeEmbedId": "NKCRMnX25BE",
-          "best": false
-        },
-        {
-          "texts": [
-            { "hangtime": "23" },
-            { "date": "02/01/2023" },
-            { "spot": "El Médano" },
-            { "kite": "Rebel" },
-            { "size": "13m" },
-            { "wind": "8 - 18" }
-          ],
-          "img": "/elmedano.jpeg",
-          "style": {
-            "kiteCard": {
-              "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
-                "backgroundPosition": "50% 15%;"
-              }
-            }
-          },
-          "youtubeEmbedId": "UqJ3_v1iBUE",
-          "best": false
-        },
-        {
-          "texts": [
-            { "hangtime": "26" },
-            { "date": "13/12/2022" },
-            { "spot": "El Médano" },
-            { "kite": "Rebel" },
-            { "size": "13m" },
-            { "wind": "11 - 22" }
-          ],
-          "img": "/elmedano.jpeg",
-          "style": {
-            "kiteCard": {
-              "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
-                "backgroundPosition": "50% 15%;"
-              }
-            }
-          },
-          "youtubeEmbedId": "dacCUGIXLME",
           "best": false
         },
         {
@@ -116,48 +95,6 @@
         },
         {
           "texts": [
-            { "hangtime": "27" },
-            { "date": "19/01/2022" },
-            { "spot": "Tarifa" },
-            { "kite": "Rebel" },
-            { "size": "9m" },
-            { "wind": "0 - 40" }
-          ],
-          "img": "/tarifa.jpeg",
-          "style": {
-            "kiteCard": {
-              "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
-              }
-            }
-          },
-          "youtubeEmbedId": "ptLAZmjuRfc",
-          "best": false
-        },
-        {
-          "texts": [
-            { "hangtime": "60" },
-            { "date": "09/07/2021" },
-            { "spot": "Tarifa" },
-            { "kite": "Rebel" },
-            { "size": "7m" },
-            { "wind": "30 - 60" }
-          ],
-          "img": "/world-record.jpeg",
-          "style": {
-            "kiteCard": {
-              "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/world-record.jpeg);",
-                "backgroundPosition": "48% 50%;"
-              }
-            }
-          },
-          "youtubeEmbedId": "-gQMmsZxw10",
-          "best": true
-        },
-        {
-          "texts": [
             { "hangtime": "34" },
             { "date": "18/03/2021" },
             { "spot": "Tarifa" },
@@ -175,69 +112,6 @@
             }
           },
           "youtubeEmbedId": "_-PPTA3XQWg",
-          "best": false
-        },
-        {
-          "texts": [
-            { "hangtime": "16" },
-            { "date": "16/10/2020" },
-            { "spot": "Leucate" },
-            { "kite": "Rebel" },
-            { "size": "8m" },
-            { "wind": "35 - 50" }
-          ],
-          "img": "/leucate.jpeg",
-          "style": {
-            "kiteCard": {
-              "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/leucate.jpeg);",
-                "backgroundPosition": "20% 100%;"
-              }
-            }
-          },
-          "youtubeEmbedId": "QHBIGtWig1U",
-          "best": false
-        },
-        {
-          "texts": [
-            { "hangtime": "+25" },
-            { "date": "22/06/2020" },
-            { "spot": "Tarifa" },
-            { "kite": "Rebel" },
-            { "size": "9m" },
-            { "wind": "15 - 25" }
-          ],
-          "img": "/tarifa.jpeg",
-          "style": {
-            "kiteCard": {
-              "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
-              }
-            }
-          },
-          "youtubeEmbedId": "fznH5fj92VY",
-          "best": false
-        },
-        {
-          "texts": [
-            { "hangtime": "+20" },
-            { "date": "06/02/2020" },
-            { "spot": "Tarifa" },
-            { "kite": "Rebel" },
-            { "size": "9m" },
-            { "wind": "20 - 35" }
-          ],
-          "img": "/tarifa.jpeg",
-          "style": {
-            "kiteCard": {
-              "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
-              }
-            }
-          },
-          "youtubeEmbedId": "fNR0erdMT04",
           "best": false
         },
         {
@@ -263,6 +137,27 @@
         },
         {
           "texts": [
+            { "hangtime": "32" },
+            { "date": "02/09/2018" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "20 - 40" }
+          ],
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "5xVIQ1ZHvI8",
+          "best": false
+        },
+        {
+          "texts": [
             { "hangtime": "31" },
             { "date": "27/06/2019" },
             { "spot": "Santa Pola" },
@@ -280,6 +175,69 @@
             }
           },
           "youtubeEmbedId": "0WftpdmVEE4",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "27" },
+            { "date": "19/01/2022" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "0 - 40" }
+          ],
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "ptLAZmjuRfc",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "27" },
+            { "date": "22/06/2020" },
+            { "spot": "Tarifa" },
+            { "kite": "Rebel" },
+            { "size": "9m" },
+            { "wind": "15 - 25" }
+          ],
+          "img": "/tarifa.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundPosition": "20% 65%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "fznH5fj92VY",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "26" },
+            { "date": "13/12/2022" },
+            { "spot": "El Médano" },
+            { "kite": "Rebel" },
+            { "size": "13m" },
+            { "wind": "11 - 22" }
+          ],
+          "img": "/elmedano.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundPosition": "50% 15%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "dacCUGIXLME",
           "best": false
         },
         {
@@ -303,14 +261,36 @@
           "youtubeEmbedId": "Q_MeCaTz-xY",
           "best": false
         },
+
         {
           "texts": [
-            { "hangtime": "+30" },
-            { "date": "02/09/2018" },
+            { "hangtime": "23" },
+            { "date": "02/01/2023" },
+            { "spot": "El Médano" },
+            { "kite": "Rebel" },
+            { "size": "13m" },
+            { "wind": "8 - 18" }
+          ],
+          "img": "/elmedano.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundPosition": "50% 15%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "UqJ3_v1iBUE",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "22" },
+            { "date": "06/02/2020" },
             { "spot": "Tarifa" },
             { "kite": "Rebel" },
             { "size": "9m" },
-            { "wind": "20 - 40" }
+            { "wind": "20 - 35" }
           ],
           "img": "/tarifa.jpeg",
           "style": {
@@ -321,7 +301,28 @@
               }
             }
           },
-          "youtubeEmbedId": "5xVIQ1ZHvI8",
+          "youtubeEmbedId": "fNR0erdMT04",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "16" },
+            { "date": "16/10/2020" },
+            { "spot": "Leucate" },
+            { "kite": "Rebel" },
+            { "size": "8m" },
+            { "wind": "35 - 50" }
+          ],
+          "img": "/leucate.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/leucate.jpeg);",
+                "backgroundPosition": "20% 100%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "QHBIGtWig1U",
           "best": false
         }
       ]
