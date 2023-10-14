@@ -35,36 +35,34 @@
   ],
   "projects": [
     {
-      "id": "project-1",
-      "name": "Kwee",
-      "logo": "/kwee.svg",
-      "img": "/kwee-project.png",
-      "year": "2019",
-      "github": { "url": "", "private": true },
-      "url": "https://kwee.ovh/home",
-      "rol": "backend",
-      "stack": ["javascript", "nodejs", "mongodb"],
-      "description": "page.developer.kweeProject"
+      "id": "project-5",
+      "name": "Surfr. Leaderboard",
+      "logo": "surfr.png",
+      "img": "/surfr-project.png",
+      "year": "2023",
+      "github": {
+        "url": "https://github.com/carlosaldaravi/surfr-leaderboard",
+        "private": false
+      },
+      "url": "https://surfr-leaderboard.vercel.app/",
+      "rol": "frontend",
+      "stack": ["javascript", "react", "tailwind"],
+      "description": "page.developer.surfr"
     },
     {
-      "id": "project-2",
-      "name": "Ocean Platform",
-      "logo": "/ocean-logo.png",
-      "img": "/ocean-project.png",
-      "year": "2020",
-      "github": { "url": "https://github.com/carlosaldaravi/ocean-backend", "private": false },
-      "url": "https://ocean-platform.netlify.app/",
-      "rol": "fullstack",
-      "stack": [
-        "javascript",
-        "typescript",
-        "vuejs",
-        "tailwind",
-        "nodejs",
-        "nestjs",
-        "postgresql"
-      ],
-      "description": "page.developer.oceanProject"
+      "id": "project-4",
+      "name": "Duotone Team",
+      "logo": "/duotone-logo.png",
+      "img": "/duotone-team.png",
+      "year": "2023",
+      "github": {
+        "url": "https://github.com/carlosaldaravi/duotone-team",
+        "private": false
+      },
+      "url": "https://duotone-team.netlify.app/",
+      "rol": "frontend",
+      "stack": ["javascript", "astro", "svelte", "tailwind"],
+      "description": "page.developer.duotone"
     },
     {
       "id": "project-3",
@@ -87,28 +85,40 @@
       "description": "page.developer.trainsegrityProject"
     },
     {
-      "id": "project-4",
-      "name": "Duotone Team",
-      "logo": "/duotone-logo.png",
-      "img": "/duotone-team.png",
-      "year": "2023",
-      "github": { "url": "https://github.com/carlosaldaravi/duotone-team", "private": false },
-      "url": "https://duotone-team.netlify.app/",
-      "rol": "frontend",
-      "stack": ["javascript", "astro", "svelte", "tailwind"],
-      "description": "page.developer.duotone"
+      "id": "project-2",
+      "name": "Ocean Platform",
+      "logo": "/ocean-logo.png",
+      "img": "/ocean-project.png",
+      "year": "2020",
+      "github": {
+        "url": "https://github.com/carlosaldaravi/ocean-backend",
+        "private": false
+      },
+      "url": "https://ocean-platform.netlify.app/",
+      "rol": "fullstack",
+      "stack": [
+        "javascript",
+        "typescript",
+        "vuejs",
+        "tailwind",
+        "nodejs",
+        "nestjs",
+        "postgresql"
+      ],
+      "description": "page.developer.oceanProject"
     },
+
     {
-      "id": "project-5",
-      "name": "Surfr. Leaderboard",
-      "logo": "surfr.png",
-      "img": "/surfr-project.png",
-      "year": "2023",
-      "github": { "url": "https://github.com/carlosaldaravi/surfr-leaderboard", "private": false },
-      "url": "https://surfr-leaderboard.vercel.app/",
-      "rol": "frontend",
-      "stack": ["javascript", "react", "tailwind"],
-      "description": "page.developer.surfr"
+      "id": "project-1",
+      "name": "Kwee",
+      "logo": "/kwee.svg",
+      "img": "/kwee-project.png",
+      "year": "2019",
+      "github": { "url": "", "private": true },
+      "url": "https://kwee.ovh/home",
+      "rol": "backend",
+      "stack": ["javascript", "nodejs", "mongodb"],
+      "description": "page.developer.kweeProject"
     }
   ],
   "stack": [
