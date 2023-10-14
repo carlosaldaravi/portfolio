@@ -13,6 +13,7 @@
   min-width: 200px;
   max-width: 200px;
   width: 200px;
+  /* background-color: transparent; */
 }
 .header__title__text {
   color: transparent;
@@ -26,9 +27,11 @@
 }
 .right {
   overflow: hidden;
-  clip-path: polygon(45% 100%, 65% 0, 100% 0, 100% 100%, 8% 100%);
+  /* clip-path: polygon(0% 100%, 25% 0, 100% 0, 100% 100%, 8% 100%); */
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 62% 100%, 25% 100%);
+
   object-fit: cover;
-  height: 250px;
+  height: 225px;
 }
 
 @media screen and (max-width: 419px) {
