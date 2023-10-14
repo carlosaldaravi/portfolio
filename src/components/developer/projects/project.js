@@ -25,7 +25,7 @@ const Project = ({ project, index }) => {
         <div
           className={`flex justify-center items-center py-4 font-bold absolute -left-6 rounded-l-2xl col w-6 -z-10 hover:z-50 bg-yellow-700`}
         >
-          <p className={`${classes.verticalText}`}>{project.year}</p>
+          <p className={`text-white ${classes.verticalText}`}>{project.year}</p>
         </div>
       </div>
       <div
