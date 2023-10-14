@@ -45,7 +45,7 @@ const AboutHeader = () => {
             className={`${classes.description} mt-6 sm:mt-14 text-xl sm:text-3xl flex gap-2`}
           >
             <TypeAnimation
-              className="text-xl sm:text-3xl"
+              className="text-2xl md:text-3xl"
               sequence={sequence}
               repeat={Infinity}
               cursor={true}
@@ -62,7 +62,7 @@ const AboutHeader = () => {
             alt="me"
             width={200}
             height={200}
-            className={`float-right translate-x-6 bg-white sm:translate-x-14 ${classes.imagen}`}
+            className={`float-right bg-white translate-x-10 ${classes.imagen}`}
           />
         </div>
       )}
