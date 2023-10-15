@@ -10,7 +10,8 @@ export const TRACKING_TYPES = {
     downloadCV: "Download CV",
     visitProjectClick: "Click to visit project",
     githubProjectClick: "Click to project GitHub",
-    youtubeIconClick: "Click on YouTube"
+    youtubeIconClick: "Click on YouTube",
+    kiteJumpsOrderClick: "Change kite jumps order"
   },
   page: {
     home: "Home",
