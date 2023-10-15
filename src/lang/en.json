@@ -118,6 +118,7 @@
   "vue": "Vue",
   "angular": "Angular",
   "year": "year",
+  "orderBy": "Order by",
   "somethingWrong": "Sorry, something went wrong. Try it again",
   "formSubmitted": "Form has been submitted correctly",
   "page.privacyPolicy": "Privacy policy",

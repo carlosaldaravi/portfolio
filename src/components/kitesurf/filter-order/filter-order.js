@@ -2,23 +2,36 @@ import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { JUMPS_ORDER_TYPES } from "@/types/jumps-order";
-
-const filter = [
-  { id: 1, name: JUMPS_ORDER_TYPES.hangtime },
-  { id: 2, name: JUMPS_ORDER_TYPES.date },
-  { id: 3, name: JUMPS_ORDER_TYPES.spot },
-];
+import { FormattedMessage } from "react-intl";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+const filter = [
+  {
+    id: 1,
+    name: <FormattedMessage id={JUMPS_ORDER_TYPES.hangtime} />,
+    value: JUMPS_ORDER_TYPES.hangtime,
+  },
+  {
+    id: 2,
+    name: <FormattedMessage id={JUMPS_ORDER_TYPES.date} />,
+    value: JUMPS_ORDER_TYPES.date,
+  },
+  {
+    id: 3,
+    name: <FormattedMessage id={JUMPS_ORDER_TYPES.spot} />,
+    value: JUMPS_ORDER_TYPES.spot,
+  },
+];
+
 const FilterOrder = ({ onChangeOrder }) => {
   const [selected, setSelected] = useState(filter[0]);
 
   const onChangeHandler = (order) => {
-      onChangeOrder(order.name);
-      setSelected(order);
+    onChangeOrder(order.value);
+    setSelected(order);
   };
 
   return (
@@ -26,7 +39,7 @@ const FilterOrder = ({ onChangeOrder }) => {
       {({ open }) => (
         <>
           <Listbox.Label className="block text-xl font-medium leading-6">
-            Ordenar por
+            <FormattedMessage id="orderBy" />
           </Listbox.Label>
           <div className="relative mt-2">
             <Listbox.Button className="relative w-full cursor-default rounded-md bg-transparent py-1.5 pl-3 pr-10 text-left shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-700 sm:text-sm sm:leading-6">

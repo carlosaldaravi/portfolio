@@ -3,13 +3,19 @@ import JumpCard from "./jump-card";
 import Section from "@/components/UI/section";
 import FilterOrder from "../filter-order/filter-order";
 import { JUMPS_ORDER_TYPES } from "@/types/jumps-order";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const JumpsCards = ({ jumps }) => {
   const [cardHovered, setCardHovered] = useState(false);
   const [orderedJumps, setOrderedJumps] = useState(jumps);
   const [updateFlag, setUpdateFlag] = useState(false);
+  const tracker = useTracker();
 
   const orderHandler = (order) => {
+    tracker.track(TRACKING_TYPES.event.kiteJumpsOrderClick, {
+      order,
+    });
     if (order === JUMPS_ORDER_TYPES.date) {
       setOrderedJumps(
         jumps.sort((a, b) => {
