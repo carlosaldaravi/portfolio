@@ -146,7 +146,13 @@
       "endDate": null,
       "company": "page.developer.experience.evm.name",
       "rol": "Tech Lead",
-      "description": "page.developer.experience.evm"
+      "description": "page.developer.experience.evm",
+      "achievement": [
+        "page.developer.experience.evm.achievement1",
+        "page.developer.experience.evm.achievement2",
+        "page.developer.experience.evm.achievement3"
+      ],
+      "place": "page.developer.experience.place.remote"
     },
     {
       "id": "experience-4",
@@ -154,7 +160,9 @@
       "endDate": "31/07/2023",
       "company": "page.developer.experience.freelance.name",
       "rol": "Full-Stack Developer",
-      "description": "page.developer.experience.freelance"
+      "description": "page.developer.experience.freelance",
+      "achievement": [],
+      "place": "page.developer.experience.place.remote"
     },
     {
       "id": "experience-3",
@@ -162,7 +170,9 @@
       "endDate": "31/12/2022",
       "company": "page.developer.experience.inbenta.name",
       "rol": "Full-Stack Developer",
-      "description": "page.developer.experience.inbenta"
+      "description": "page.developer.experience.inbenta",
+      "achievement": [],
+      "place": "page.developer.experience.place.remote"
     },
     {
       "id": "experience-2",
@@ -170,7 +180,9 @@
       "endDate": "31/12/2020",
       "company": "page.developer.experience.z1.name",
       "rol": "Backend Developer",
-      "description": "page.developer.experience.z1"
+      "description": "page.developer.experience.z1",
+      "achievement": [],
+      "place": "page.developer.experience.place.remote"
     },
     {
       "id": "experience-1",
@@ -178,8 +190,9 @@
       "endDate": "30/06/2020",
       "company": "page.developer.experience.conwork.name",
       "rol": "Full-Stack Developer",
-      "description": "page.developer.experience.conwork"
+      "description": "page.developer.experience.conwork",
+      "achievement": [],
+      "place": "page.developer.experience.place.onsite"
     }
   ]
-  
 }
