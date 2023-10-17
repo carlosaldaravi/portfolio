@@ -138,5 +138,48 @@
   ],
   "curriculum": {
     "fileName": "CV_12-06_CarlosAldaravi.pdf"
-  }
+  },
+  "experience": [
+    {
+      "id": "experience-5",
+      "startDate": "01/08/2023",
+      "endDate": null,
+      "company": "page.developer.experience.evm.name",
+      "rol": "Tech Lead",
+      "description": "page.developer.experience.evm"
+    },
+    {
+      "id": "experience-4",
+      "startDate": "01/01/2023",
+      "endDate": "31/07/2023",
+      "company": "page.developer.experience.freelance.name",
+      "rol": "Full-Stack Developer",
+      "description": "page.developer.experience.freelance"
+    },
+    {
+      "id": "experience-3",
+      "startDate": "01/05/2021",
+      "endDate": "31/12/2022",
+      "company": "page.developer.experience.inbenta.name",
+      "rol": "Full-Stack Developer",
+      "description": "page.developer.experience.inbenta"
+    },
+    {
+      "id": "experience-2",
+      "startDate": "01/08/2020",
+      "endDate": "31/12/2020",
+      "company": "page.developer.experience.z1.name",
+      "rol": "Backend Developer",
+      "description": "page.developer.experience.z1"
+    },
+    {
+      "id": "experience-1",
+      "startDate": "01/07/2018",
+      "endDate": "30/06/2020",
+      "company": "page.developer.experience.conwork.name",
+      "rol": "Full-Stack Developer",
+      "description": "page.developer.experience.conwork"
+    }
+  ]
+  
 }

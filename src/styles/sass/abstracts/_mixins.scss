@@ -5,3 +5,15 @@
     clear: both;
   }
 }
+
+@mixin rotate($angle) {
+  transform: rotate($angle);
+}
+
+@mixin box-shadow($value) {
+  box-shadow: $value;
+}
+
+@mixin transition($value) {
+  transition: $value;
+}
