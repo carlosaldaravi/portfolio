@@ -1,4 +1,3 @@
-import { FormattedMessage } from "react-intl";
 import path from "path";
 import fs from "fs/promises";
 import Page from "@/components/UI/page";
@@ -9,6 +8,7 @@ import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import useTracker from "@/hooks/useTracker";
 import { useEffect } from "react";
 import { TRACKING_TYPES } from "@/types/track";
+import Experience from "@/components/developer/experience/experience";
 
 const Developer = ({ data }) => {
   const tracker = useTracker();
@@ -23,6 +23,7 @@ const Developer = ({ data }) => {
       <KiterCard me={data.me} src="/yo-dev.png" />
       <Projects projects={data.projects} />
       {/* <Skills skills={data.skills} /> */}
+      <Experience experience={data.experience} />
       <Stack stack={data.stack} />
       <Curriculum curriculum={data.curriculum} />
     </Page>
