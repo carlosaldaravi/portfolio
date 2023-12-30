@@ -126,11 +126,9 @@
     { "id": "stack-2", "name": "Vue", "svg": "vuejs" },
     { "id": "stack-3", "name": "Angular", "svg": "angular" },
     { "id": "stack-4", "name": "Astro", "svg": "astro" },
-    { "id": "stack-5", "name": "Svelte", "svg": "svelte" },
     { "id": "stack-6", "name": "Talwind", "svg": "tailwind" },
     { "id": "stack-7", "name": "PHP", "svg": "php" },
     { "id": "stack-8", "name": "Node", "svg": "nodejs" },
-    { "id": "stack-9", "name": "Nestjs", "svg": "nestjs" },
     { "id": "stack-10", "name": "Postgressql", "svg": "postgresql" },
     { "id": "stack-11", "name": "Mysql", "svg": "mysql" },
     { "id": "stack-12", "name": "Mongodb", "svg": "mongodb" },
@@ -152,7 +150,8 @@
         "page.developer.experience.evm.achievement2",
         "page.developer.experience.evm.achievement3"
       ],
-      "place": "page.developer.experience.place.remote"
+      "place": "page.developer.experience.place.remote",
+      "now": "page.developer.experience.now"
     },
     {
       "id": "experience-4",
@@ -162,7 +161,8 @@
       "rol": "Full-Stack Developer",
       "description": "page.developer.experience.freelance",
       "achievement": [],
-      "place": "page.developer.experience.place.remote"
+      "place": "page.developer.experience.place.remote",
+      "now": "page.developer.experience.now"
     },
     {
       "id": "experience-3",
@@ -172,17 +172,19 @@
       "rol": "Full-Stack Developer",
       "description": "page.developer.experience.inbenta",
       "achievement": [],
-      "place": "page.developer.experience.place.remote"
+      "place": "page.developer.experience.place.remote",
+      "now": "page.developer.experience.now"
     },
     {
       "id": "experience-2",
       "startDate": "01/08/2020",
       "endDate": "31/12/2020",
       "company": "page.developer.experience.z1.name",
-      "rol": "Backend Developer",
+      "rol": "Backend Developer Junior",
       "description": "page.developer.experience.z1",
       "achievement": [],
-      "place": "page.developer.experience.place.remote"
+      "place": "page.developer.experience.place.remote",
+      "now": "page.developer.experience.now"
     },
     {
       "id": "experience-1",
@@ -192,7 +194,8 @@
       "rol": "Full-Stack Developer",
       "description": "page.developer.experience.conwork",
       "achievement": [],
-      "place": "page.developer.experience.place.onsite"
+      "place": "page.developer.experience.place.onsite",
+      "now": "page.developer.experience.now"
     }
   ]
 }
