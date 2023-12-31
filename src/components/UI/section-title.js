@@ -13,7 +13,7 @@ const SectionTitle = ({ title, className, description }) => {
       ? "section-title-dark text-light-text"
       : "section-title-light text-dark-text";
   return (
-    <>
+    <div className="my-16 sm:my-32">
       <h3
         className={`section-title uppercase transition-all duration-300 ${className} ${styleTitle}`}
       >
@@ -24,7 +24,7 @@ const SectionTitle = ({ title, className, description }) => {
           <FormattedMessage id={description} />
         </p>
       )}
-    </>
+    </div>
   );
 };
 

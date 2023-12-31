@@ -12,7 +12,8 @@ const Company = ({ experience }) => {
       <div className="timeline-event-copy">
         <div className="flex justify-between">
           <p className="timeline-event-thumbnail text-xl font-semibold">
-            {experience.startDate} - {experience.endDate || "now"}
+            {experience.startDate} -{" "}
+            {experience.endDate || <FormattedMessage id={experience.now} />}
           </p>
           <span className="block font-extralight tracking-xxs ">
             <FormattedMessage id={experience.place} />
