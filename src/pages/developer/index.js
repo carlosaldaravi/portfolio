@@ -21,9 +21,9 @@ const Developer = ({ data }) => {
   return (
     <Page className="p-0">
       <KiterCard me={data.me} src="/yo-dev.png" />
+      <Experience experience={data.experience} />
       <Projects projects={data.projects} />
       {/* <Skills skills={data.skills} /> */}
-      <Experience experience={data.experience} />
       <Stack stack={data.stack} />
       <Curriculum curriculum={data.curriculum} />
     </Page>
