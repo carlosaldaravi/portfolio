@@ -29,7 +29,7 @@ const KiteSectionsSelector = ({
 
   return (
     <div>
-      <div className="flex justify-center mt-8 animate-appear-1">
+      <div className="flex justify-center items-center mt-8 animate-appear-1">
         {isMobile ? (
           <Arrow
             className="mr-4"
