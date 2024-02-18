@@ -69,7 +69,7 @@
   "page.developer.experience.place.remote": "Remote",
   "page.developer.experience.place.onsite": "On-site",
   "page.developer.experience.evm.name": "EVM Group",
-  "page.developer.experience.evm": "Working as a Full-Stack senior in the EVM group playing the role of technical leader in tamiz.es.",
+  "page.developer.experience.evm": "Working as a Full-Stack senior in the EVM group playing the role of technical leader in {link}.",
   "page.developer.experience.evm.achievement1": "Sprint agile methodology",
   "page.developer.experience.evm.achievement2": "Implementation of Stripe as a payment gateway",
   "page.developer.experience.evm.achievement3": "Implementation of Segment as CDP",

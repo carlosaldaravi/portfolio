@@ -55,17 +55,17 @@ const AboutHeader = () => {
           </p>
         }
       </div>
-      {!isMobile && (
+      {/* {!isMobile && (
         <div className={`${classes.right}`}>
           <Image
             src="/yo-dev.png"
             alt="me"
             width={200}
             height={200}
-            className={`float-right bg-white translate-x-10 ${classes.imagen}`}
+            className={`float-right translate-x-10 ${classes.imagen}`}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

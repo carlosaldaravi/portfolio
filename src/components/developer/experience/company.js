@@ -24,7 +24,21 @@ const Company = ({ experience }) => {
         </h2>
         <h4 className="font-bold">{experience.rol}</h4>
         <p className="text-xl">
-          <FormattedMessage id={experience.description} />
+          <FormattedMessage
+            id={experience.description}
+            values={{
+              link: (
+                <a
+                  href="https://www.tamiz.es/"
+                  className="underline text-blue-500"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  tamiz.es
+                </a>
+              ),
+            }}
+          />
         </p>
         {experience.achievement.length > 0 && (
           <ul>
