@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Avatar = ({ src, alt }) => {
   return (
-    <div className="h-44 w-44 sm:h-56 sm:w-56 rounded-full overflow-hidden mx-auto shadow-2xl">
+    <div className="size-64 sm:size-96 rounded-full overflow-hidden mx-auto">
       <Image
         src={src}
         alt={alt}

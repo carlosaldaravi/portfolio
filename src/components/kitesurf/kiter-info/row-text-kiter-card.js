@@ -13,11 +13,11 @@ const RowTextKiterCard = ({ textLeft, textRight }) => {
   return (
     <div className="flex">
       <span
-        className={`uppercase tracking-xxs sm:tracking-xxs w-40 sm:w-96 text-sm sm:text-lg my-1 self-center ${colorText}}`}
+        className={`uppercase tracking-xxs sm:tracking-xxs w-40 sm:w-96 text-xl sm:text-xl my-4 self-center ${colorText}}`}
       >
         {textLeft}
       </span>
-      <span className={`self-center text-2xl ${colorText}`}> {textRight}</span>
+      <span className={`self-center text-4xl ${colorText}`}> {textRight}</span>
     </div>
   );
 };
