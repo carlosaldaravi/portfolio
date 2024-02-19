@@ -62,24 +62,20 @@ const Header = () => {
     <header
       className={`grid grid-cols-3 sm:flex sm:justify-between sm:gap-20 md:gap-40 min-w-lg animate-appear-1 transition-opacity duration-500 ${headerClasses}`}
     >
-      {route !== "/" ? (
-        <Link
-          href="/"
-          onClick={() => tracker.track(TRACKING_TYPES.event.logoClick)}
-          className="opacity-90 ml-2"
-        >
-          <Image
-            title="Logo Carlos Aldaravi"
-            src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
-            alt="logo"
-            width={60}
-            height={80}
-            className="h-12 w-14 sm:h-16 sm:w-20"
-          />
-        </Link>
-      ) : (
-        <div></div>
-      )}
+      <Link
+        href="/"
+        onClick={() => tracker.track(TRACKING_TYPES.event.logoClick)}
+        className="opacity-90 ml-2"
+      >
+        <Image
+          title="Logo Carlos Aldaravi"
+          src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
+          alt="logo"
+          width={60}
+          height={80}
+          className="h-12 w-14 sm:h-16 sm:w-20"
+        />
+      </Link>
       <div className="flex-grow">{route !== "/" && <HeaderNavbar />}</div>
       <div className={`flex justify-end items-center`}>
         {((isMobile && route === "/") || !isMobile) && (

@@ -18,6 +18,12 @@
     "before": "before:bg-[url('/yo-padel.png')]"
   },
   {
+    "name": "juegos",
+    "text": "Me considero algo \"friki\" de los juegos. Siempre he preferido los juegos de ordenador a los de consolas. Me gusta jugar al League of Legends, al Counter Strike, al Playerunknown's Battleground. Aunque el CS fue el juego de mis inicios y ahora al que más juego es al LOL.",
+    "img": "bg-[url('/game.jpeg')]",
+    "before": "before:bg-[url('/game.jpeg')]"
+  },
+  {
     "name": "cine",
     "text": "Me encantan las películas y las series aunque suelo pasar más tiempo viendo series que películas. Mis preferidas son las basadas en hechos reales y las de la segunda guerra mundial.",
     "img": "bg-[url('/films.png')]",

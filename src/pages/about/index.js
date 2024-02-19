@@ -33,12 +33,6 @@ const About = () => {
       before: "before:bg-[url('/yo-padel.png')]",
     },
     {
-      name: "page.about.gamesCardTitle",
-      text: "page.about.gamesCard",
-      img: "bg-[url('/game.jpeg')]",
-      before: "before:bg-[url('/game.jpeg')]",
-    },
-    {
       name: "page.about.cineCardTitle",
       text: "page.about.cineCard",
       img: "bg-[url('/films.png')]",

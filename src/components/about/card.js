@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useTools } from "@/hooks/useTools";
 import classes from "./card.module.css";
+import Link from "next/link";
 
 const Card = ({ card }) => {
   const [showArrows, setShowArrows] = useState(true);
@@ -45,7 +46,20 @@ const Card = ({ card }) => {
           )}
         </h3>
         <p className={`${classes.description} ${classes.paragraph}`}>
-          <FormattedMessage id={card.text} />
+          <FormattedMessage
+            id={card.text}
+            values={{
+              link: (
+                <Link
+                  href="/kitesurf"
+                  className="underline font-extrabold text-blue-100"
+                  rel="noopener noreferrer"
+                >
+                  kitesurf
+                </Link>
+              ),
+            }}
+          />
         </p>
       </div>
     </div>
