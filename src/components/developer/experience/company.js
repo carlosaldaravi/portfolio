@@ -7,7 +7,7 @@ const Company = ({ experience }) => {
   const theme = themeCtx.theme;
 
   return (
-    <li className="timeline-event">
+    <li className="reveal timeline-event">
       <label className="timeline-event-icon"></label>
       <div className="timeline-event-copy">
         <div className="flex justify-between">

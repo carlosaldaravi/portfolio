@@ -20,7 +20,7 @@ const Project = ({ project, index }) => {
   const tracker = useTracker();
 
   return (
-    <div className="m-8 sm:my-12">
+    <div className={`reveal m-8 sm:my-12`}>
       <div className="relative top-10 flex-row-reverse">
         <div
           className={`flex justify-center items-center py-4 font-bold absolute -left-6 rounded-l-2xl col w-6 -z-10 hover:z-50 bg-yellow-700`}

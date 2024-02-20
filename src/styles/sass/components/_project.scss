@@ -4,14 +4,17 @@ $colorText: #345;
 $colorTextLighter: #567;
 $colorTextLightest: #789;
 
+.reveal {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+
 .project-container {
   width: 100%;
   // padding: $blockSize $blockSize/4 0 $blockSize/4;
   display: grid;
-  grid: auto-flow $blockSize * 6 / repeat(
-      auto-fit,
-      minmax($blockSize * 5, $blockSize * 5)
-    );
+  grid: auto-flow $blockSize * 6 / repeat(auto-fit, minmax($blockSize * 5, $blockSize * 5));
   grid-gap: $blockSize/4;
   justify-content: center;
   align-content: center;
@@ -197,7 +200,7 @@ $colorTextLightest: #789;
   transition: all $easeTime linear $easeTime * 7;
 }
 .project-button-info {
-  transition: all $easeTime * 1 ease-in-out ;
+  transition: all $easeTime * 1 ease-in-out;
 }
 .project-button-info-1 {
   color: #55cccc;
@@ -230,7 +233,9 @@ $colorTextLightest: #789;
   background-color: #55bbcc;
 }
 .level6Shadow1 {
-  box-shadow: 0 1px 2px 3px #55cccc, 0 2px 4px -2px #55cccc;
+  box-shadow:
+    0 1px 2px 3px #55cccc,
+    0 2px 4px -2px #55cccc;
 }
 .level6Color1 {
   transition: all $easeTime linear 0s;
@@ -265,7 +270,9 @@ $colorTextLightest: #789;
   background-color: #ec4040;
 }
 .level6Shadow2 {
-  box-shadow: 0 1px 2px 3px #e95555, 0 2px 4px -2px #e95555;
+  box-shadow:
+    0 1px 2px 3px #e95555,
+    0 2px 4px -2px #e95555;
 }
 .level6Color2 {
   transition: all $easeTime linear 0s;
@@ -300,7 +307,9 @@ $colorTextLightest: #789;
   background-color: #4c9bf5;
 }
 .level6Shadow3 {
-  box-shadow: 0 1px 2px 3px #3b91f4, 0 2px 4px -2px #3b91f4;
+  box-shadow:
+    0 1px 2px 3px #3b91f4,
+    0 2px 4px -2px #3b91f4;
 }
 .level6Color3 {
   transition: all $easeTime linear 0s;
@@ -334,7 +343,9 @@ $colorTextLightest: #789;
   background-color: #9c6644;
 }
 .level6Shadow4 {
-  box-shadow: 0 1px 2px 3px #a57455, 0 2px 4px -1px #a57455;
+  box-shadow:
+    0 1px 2px 3px #a57455,
+    0 2px 4px -1px #a57455;
 }
 .level6Color4 {
   transition: all $easeTime linear 0s;

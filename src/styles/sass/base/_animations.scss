@@ -196,7 +196,7 @@
     opacity: 0;
     color: transparent;
   }
-  
+
   100% {
     opacity: 1;
     color: #fff;
@@ -214,5 +214,16 @@
 
   to {
     transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+    
   }
 }
