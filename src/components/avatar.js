@@ -1,4 +1,5 @@
 import Image from "next/image";
+import classes from "./avatar.module.css";
 
 const Avatar = ({ src, alt }) => {
   return (
@@ -8,7 +9,7 @@ const Avatar = ({ src, alt }) => {
         alt={alt}
         width={600}
         height={800}
-        className=""
+        className={`${classes.avatar}`}
       />
     </div>
   );
