@@ -3,7 +3,7 @@ import classes from "./avatar.module.css";
 
 const Avatar = ({ src, alt }) => {
   return (
-    <div className="size-64 sm:size-96 rounded-full overflow-hidden mx-auto">
+    <div className="w-64 sm:w-80 rounded-full mx-auto">
       <Image
         src={src}
         alt={alt}
