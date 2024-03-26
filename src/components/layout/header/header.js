@@ -73,7 +73,7 @@ const Header = () => {
           alt="logo"
           width={60}
           height={80}
-          className="h-12 w-14 sm:h-16 sm:w-20"
+          className="h-auto w-24 sm:w-32"
         />
       </Link>
       <div className="flex-grow">{route !== "/" && <HeaderNavbar />}</div>
