@@ -25,7 +25,7 @@ const Developer = ({ data }) => {
       <Projects projects={data.projects} />
       {/* <Skills skills={data.skills} /> */}
       <Stack stack={data.stack} />
-      {/* <Curriculum curriculum={data.curriculum} /> */}
+      <Curriculum curriculum={data.curriculum} />
     </Page>
   );
 };

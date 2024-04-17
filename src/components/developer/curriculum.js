@@ -11,6 +11,7 @@ import { FormattedMessage } from "react-intl";
 import { getBgSecondaryColor } from "@/tools/theme";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
+import Link from "next/link";
 
 const Curriculum = ({ curriculum }) => {
   const tracker = useTracker();
@@ -54,6 +55,10 @@ const Curriculum = ({ curriculum }) => {
           className="cursor-pointer flex justify-center items-center gap-8"
           onClick={downloadHandler}
         >
+          <Link href={`/curriculum`}>
+            <h3><FormattedMessage id="show" /> PDF</h3>
+          </Link>
+          {/* 
           <h3>
             <FormattedMessage id="page.developer.download" />
           </h3>
@@ -70,7 +75,7 @@ const Curriculum = ({ curriculum }) => {
             {!loadingClass && successClass === "success" && (
               <CheckIcon className="success-icon w-10 h-10" />
             )}
-          </a>
+          </a> */}
         </div>
         {error && (
           <p className="text-red-500 text-xl inline-block">

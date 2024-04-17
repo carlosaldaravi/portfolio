@@ -1,0 +1,163 @@
+.main {
+    * {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+    }
+
+    h1,
+    h1 * {
+        font-size: 50px;
+    }
+    h2,
+    h2 * {
+        font-size: 28px;
+        color: #7290d0;
+        font-weight: 900;
+    }
+    width: 210mm;
+    // height: 297mm;
+    padding: 10mm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin: auto;
+    display: flex;
+    color: black;
+
+    &__left {
+        width: 33%;
+        padding-right: 5rem;
+        &__body {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+    }
+
+    &__right {
+        flex-grow: 1;
+        &__header {
+            border-bottom: 15px solid #4e4e4e;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            .header {
+                &__title {
+                    font-size: 32px;
+                    &__name {
+                        color: #4e4e4e;
+                        font-weight: 100;
+                    }
+                    &__surname {
+                        color: #4e4e4e;
+                        font-weight: 900;
+                    }
+                }
+                &__subtitle {
+                    font-weight: 100;
+                }
+            }
+        }
+        &__body {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            .body {
+                &__section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    &__title {
+                        font-weight: 900;
+                    }
+                    &__header {
+                        display: flex;
+                        gap: 1rem;
+                        .header {
+                            &__date {
+                                font-weight: 100;
+                            }
+                            &__title {
+                                flex-grow: 1;
+                                font-weight: 900;
+                            }
+                            &__place {
+                                color: #7290d0;
+                                font-weight: 100;
+                                font-size: 14px;
+                                &::before {
+                                    content: "/";
+                                }
+                            }
+                        }
+                    }
+                    &__body {
+                        padding-left: 6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: white;
+    padding: 1rem;
+    opacity: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    font-size: 12px;
+}
+
+@keyframes float {
+    0% {
+        transform: rotate(0deg) translate(5px) rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg) translate(5px) rotate(-90deg);
+    }
+    50% {
+        transform: rotate(180deg) translate(5px) rotate(-180deg);
+    }
+    75% {
+        transform: rotate(270deg) translate(5px) rotate(-270deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(5px) rotate(-360deg);
+    }
+}
+
+.bubble:nth-child(2) {
+    animation: float 3.5s linear infinite;
+}
+
+.bubble:nth-child(3) {
+    animation: float 4s linear reverse infinite;
+}
+
+.bubble:nth-child(4) {
+    animation: float 4.5s linear infinite;
+}
+.bubble:nth-child(5) {
+    animation: float 3.7s linear reverse infinite;
+}
+.bubble:nth-child(6) {
+    animation: float 4s linear infinite;
+}
+.bubble:nth-child(7) {
+    animation: float 4.7s linear reverse infinite;
+}
+.bubble:nth-child(8) {
+    animation: float 4.1s linear infinite;
+}
+.bubble:nth-child(9) {
+    animation: float 3.9s linear reverse infinite;
+}
+.bubble:nth-child(10) {
+    animation: float 3.7s linear infinite;
+}
