@@ -30,4 +30,6 @@ export const SVG_TYPES = {
   nextjs: "nextjs",
   kitesurf: "kitesurf",
   developer: "developer",
+  star: "star",
+  document: "document",
 };

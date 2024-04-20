@@ -2,6 +2,7 @@
     * {
         font-family: "Roboto", sans-serif;
         font-size: 16px;
+        color: #4e4e4e;
     }
 
     h1,
@@ -24,8 +25,7 @@
     color: black;
 
     &__left {
-        width: 33%;
-        padding-right: 5rem;
+        padding-right: 3rem;
         &__body {
             text-align: right;
             display: flex;
@@ -94,7 +94,7 @@
                         }
                     }
                     &__body {
-                        padding-left: 6rem;
+                        padding-left: 5rem;
                     }
                 }
             }
@@ -106,6 +106,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     border-radius: 100%;
     color: white;
     padding: 1rem;
@@ -133,31 +134,31 @@
 }
 
 .bubble:nth-child(2) {
-    animation: float 3.5s linear infinite;
+    animation: float 4.2s linear infinite;
 }
 
 .bubble:nth-child(3) {
-    animation: float 4s linear reverse infinite;
+    animation: float 4.6s linear reverse infinite;
 }
 
 .bubble:nth-child(4) {
-    animation: float 4.5s linear infinite;
+    animation: float 4.9s linear infinite;
 }
 .bubble:nth-child(5) {
-    animation: float 3.7s linear reverse infinite;
+    animation: float 4.5s linear reverse infinite;
 }
 .bubble:nth-child(6) {
-    animation: float 4s linear infinite;
+    animation: float 4.4s linear infinite;
 }
 .bubble:nth-child(7) {
-    animation: float 4.7s linear reverse infinite;
+    animation: float 5.3s linear reverse infinite;
 }
 .bubble:nth-child(8) {
-    animation: float 4.1s linear infinite;
+    animation: float 4.8s linear infinite;
 }
 .bubble:nth-child(9) {
-    animation: float 3.9s linear reverse infinite;
+    animation: float 4.7s linear reverse infinite;
 }
 .bubble:nth-child(10) {
-    animation: float 3.7s linear infinite;
+    animation: float 5s linear infinite;
 }

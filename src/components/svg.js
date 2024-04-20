@@ -7,7 +7,7 @@ import { LANGUAGES_TYPES } from "@/types/languages";
 import { THEMES_TYPES } from "@/types/themes";
 import { getOppositeColor } from "@/tools/theme";
 
-const SVG = ({ type, size, className }) => {
+const SVG = ({ type, size, className, fill }) => {
   const { locale } = useRouter();
   const [mouseIn, setMouseIn] = useState(false);
   const themeCtx = useContext(ThemeContext);
@@ -799,6 +799,34 @@ const SVG = ({ type, size, className }) => {
         <path
           fill="currentColor"
           d="M999 240.2 521.7 4.8a19.3 19.3 0 0 0-25.5 0L19.1 240.2C6.3 240.2 0 253 0 265.7S6.3 291 19.1 291l477.2 235.4c6.4 0 6.4 6.4 12.7 6.4s6.4 0 12.8-6.4L897 342v267.3c0 19 12.8 31.8 31.9 31.8 19.1 0 31.8-12.8 31.8-31.8V310.2l38.1-19c12.8 0 19.2-12.8 19.2-25.5s-6.4-25.5-19.2-25.5zM509 463 101.8 265.7 509 68.4l407.3 197.3L509 462.9zM789 434c19 0 31.8 12.8 31.8 31.8v293.3c0 6.3-6.4 19-19 25.4A707 707 0 0 1 509 848.2c-108.1 0-210-19.2-292.7-63.7-12.7 0-19-12.7-19-25.4V465.8c0-19 12.7-31.8 31.8-31.8 19 0 31.7 12.8 31.7 31.8V740c140.1 63.6 356.4 63.6 496.4 0V465.8c0-19 12.7-31.8 31.8-31.8z"
+        />
+      </svg>
+    );
+  }
+  if (type === SVG_TYPES.star) {
+    return (
+      <svg className={size ? size : "size-7"} fill={fill} viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+        />
+      </svg>
+    );
+  }
+  if (type === SVG_TYPES.document) {
+    return (
+      <svg
+        className={size ? size : "size-16"}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
         />
       </svg>
     );

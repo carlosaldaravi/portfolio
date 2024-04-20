@@ -1,4 +1,4 @@
-const BigInfo = ({ title, children }) => {
+const CurriculumSection = ({ title, children }) => {
   const firstThree = title.substring(0, 3);
   const theRest = title.substring(3);
   return (
@@ -12,4 +12,4 @@ const BigInfo = ({ title, children }) => {
   );
 };
 
-export default BigInfo;
+export default CurriculumSection;
