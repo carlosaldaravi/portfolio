@@ -17,12 +17,12 @@ const Education = () => {
             values={{
               link: (
                 <a
-                  href="https://kwee.ovh/"
+                  href="https://ocean-platform.netlify.app/"
                   className="underline text-blue-500"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  kwee.ovh
+                  ocean-platform.netlify.app
                 </a>
               ),
             }}
@@ -34,12 +34,12 @@ const Education = () => {
             values={{
               link: (
                 <a
-                  href="https://ocean-platform.netlify.app/"
+                  href="https://kwee.ovh/"
                   className="underline text-blue-500"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  ocean-platform.netlify.app
+                  kwee.ovh
                 </a>
               ),
             }}
