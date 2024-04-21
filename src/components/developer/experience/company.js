@@ -19,36 +19,38 @@ const Company = ({ experience }) => {
             <FormattedMessage id={experience.place} />
           </span>
         </div>
-        <h2 className="font-black">
-          <FormattedMessage id={experience.company} />
-        </h2>
-        <h4 className="font-bold">{experience.rol}</h4>
-        <p className="text-xl">
-          <FormattedMessage
-            id={experience.description}
-            values={{
-              link: (
-                <a
-                  href="https://www.tamiz.es/"
-                  className="underline text-blue-500"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  tamiz.es
-                </a>
-              ),
-            }}
-          />
-        </p>
-        {experience.achievement.length > 0 && (
-          <ul>
-            {experience.achievement.map((item) => (
-              <li key={item} className="text-lg">
-                - <FormattedMessage id={item} />
-              </li>
-            ))}
-          </ul>
-        )}
+        <div className="flex flex-col gap-4">
+          <h2 className="font-black">{experience.rol}</h2>
+          <h4 className="text-4xl">
+            <FormattedMessage id={experience.company} />
+          </h4>
+          <p className="text-2xl font-extralight">
+            <FormattedMessage
+              id={experience.description}
+              values={{
+                link: (
+                  <a
+                    href="https://www.tamiz.es/"
+                    className="underline text-blue-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    tamiz.es
+                  </a>
+                ),
+              }}
+            />
+          </p>
+          {experience.achievement.length > 0 && (
+            <ul>
+              {experience.achievement.map((item) => (
+                <li key={item} className="font-thin text-2xl">
+                  - <FormattedMessage id={item} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </li>
   );

@@ -36,7 +36,7 @@ const Footer = () => {
           href="/about"
           className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"
         >
-          <span className="tracking-xxs text-lg sm:text-xl">
+          <span className="tracking-xxs text-lg sm:text-2xl">
             <FormattedMessage id="footer.about" />
           </span>
         </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
           href="/contact"
           className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"
         >
-          <span className="tracking-xxs text-lg sm:text-xl">
+          <span className="tracking-xxs text-lg sm:text-2xl">
             <FormattedMessage id="page.contact" />
           </span>
         </Link>

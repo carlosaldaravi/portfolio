@@ -20,7 +20,7 @@ const SectionTitle = ({ title, className, description }) => {
         <FormattedMessage id={title} />
       </h3>
       {description && (
-        <p className="text-center text-xl sm:text-2xl mt-8 text-gray-500">
+        <p className="text-center text-xl sm:text-2xl mt-8 font-thin">
           <FormattedMessage id={description} />
         </p>
       )}
