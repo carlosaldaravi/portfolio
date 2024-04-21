@@ -1,31 +1,49 @@
+import { FormattedMessage } from "react-intl";
 import CurriculumSection from "./curriculum-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
 
 const Experience = () => {
   return (
-    <CurriculumSection title={"Experience"}>
+    <CurriculumSection titleId="page.developer.experience">
       <TimeLineEvent
-        date="08/2023 - present"
+        date={
+          <>
+            08/2023 - <FormattedMessage id="present" />
+          </>
+        }
         title="Teach Lead"
         place="EVM Group"
       >
         <PrettyParagraph>
-          Working as a Full-Stack senior in EVM group playing the role of
-          technical leader in <a href="https://tamiz.es">tamiz.es</a>
+          <FormattedMessage
+            id="page.developer.experience.evm"
+            values={{
+              link: (
+                <a
+                  href="https://tamiz.es/"
+                  className="underline text-blue-500"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  tamiz.es
+                </a>
+              ),
+            }}
+          />
         </PrettyParagraph>
       </TimeLineEvent>
       <TimeLineEvent
-        date="01/2023 - present"
+        date={
+          <>
+            01/2023 - <FormattedMessage id="present" />
+          </>
+        }
         title="Full-Stack Developer"
         place="Freelance"
       >
         <PrettyParagraph>
-          I decided to move forward with React and Node. I have been working for
-          a different clients as Full-Stack developer. I developed projects with
-          React + Node and others simply with NextJS. I am currently working for
-          a client on a React Native project. These projects are accessible on
-          my website.
+          <FormattedMessage id="page.developer.experience.freelance" />
         </PrettyParagraph>
       </TimeLineEvent>
       <TimeLineEvent
@@ -34,10 +52,7 @@ const Experience = () => {
         place="Inbenta"
       >
         <PrettyParagraph>
-          Working as 100% remote with JavaScript and VueJS on Frontend and PHP
-          on Backend. All tasks managed by Jira. Use of GitLab to work with
-          projects. All written communication and documentation in English.
-          Daily in Spanish and monthly also in English.
+          <FormattedMessage id="page.developer.experience.inbenta" />
         </PrettyParagraph>
       </TimeLineEvent>
       <TimeLineEvent
@@ -46,28 +61,16 @@ const Experience = () => {
         place="Z1"
       >
         <PrettyParagraph>
-          Working as 100% remote with NestJS (NodeJS), GraphQL, PostgreSQL,
-          Prisma, Jira, Everhour. The main programming language was TypeScript.
+          <FormattedMessage id="page.developer.experience.z1" />
         </PrettyParagraph>
       </TimeLineEvent>
       <TimeLineEvent
-        date="01/2019 - 07/2020"
+        date="07/2018 - 07/2020"
         title="Full-Stack Developer"
         place="Conwork"
       >
         <PrettyParagraph>
-          The main programming language of the company is PHP but we have had
-          some projects in which I have had to work in Angular, Node and Vue.
-        </PrettyParagraph>
-      </TimeLineEvent>
-      <TimeLineEvent
-        date="07/2018 - 01/2019"
-        title="Internship"
-        place="Conwork"
-      >
-        <PrettyParagraph>
-          I did my internship in this company for 6 month, I programmed for 4
-          months with PHP and 2 month with JavaScript in NodeJS and Angular.
+          <FormattedMessage id="page.developer.experience.conwork" />
         </PrettyParagraph>
       </TimeLineEvent>
     </CurriculumSection>

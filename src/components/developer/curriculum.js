@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 import Link from "next/link";
 import SVG from "../svg";
 
-const Curriculum = ({ curriculum }) => {
+const Curriculum = () => {
   return (
     <>
       <SectionTitle

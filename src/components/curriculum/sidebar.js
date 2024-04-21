@@ -1,4 +1,4 @@
-import SVG from "../svg";
+import { FormattedMessage } from "react-intl";
 import Bubble from "./bubble";
 import Bubbles from "./bubbles";
 import SidebarSection from "./sidebar-section";
@@ -8,12 +8,16 @@ const Sidebar = () => {
   return (
     <div className="main__left">
       <div className="main__left__body">
-        <SidebarSection title="Website">
+        <SidebarSection
+          title={<FormattedMessage id="page.curriculum.sidebar.website" />}
+        >
           <a href="https://carlosaldaravi.com" target="_blank" rel="noreferrer">
             www.carlosaldaravi.com
           </a>
         </SidebarSection>
-        <SidebarSection title="Address">
+        <SidebarSection
+          title={<FormattedMessage id="page.curriculum.sidebar.address" />}
+        >
           <p>Elche, Alicante</p>
         </SidebarSection>
         <SidebarSection title="Skype">
@@ -31,60 +35,89 @@ const Sidebar = () => {
             <p>github.com/carlosaldaravi</p>
           </a>
         </SidebarSection>
-        <SidebarSection title="Languages">
+        <SidebarSection title={<FormattedMessage id="languages" />}>
           <div className="flex items-center justify-end">
-            <h3 className="mt-4 font-semibold !text-4xl mr-1">Spanish</h3>
+            <h3 className="mt-4 font-semibold !text-4xl mr-1 capitalize">
+              <FormattedMessage id="spanish" />
+            </h3>
             <SkillStars starsFilled={5} />
           </div>
           <div className="flex items-center justify-end">
-            <h3 className="mt-4 font-semibold !text-4xl mr-1">English</h3>
+            <h3 className="mt-4 font-semibold !text-4xl mr-1 capitalize">
+              <FormattedMessage id="english" />
+            </h3>
             <SkillStars starsFilled={4} />
           </div>
           <div className="flex items-center justify-end">
-            <h3 className="mt-4 font-semibold !text-4xl mr-1">Catalonian</h3>
+            <h3 className="mt-4 font-semibold !text-4xl mr-1 capitalize">
+              <FormattedMessage id="catalonian" />
+            </h3>
             <SkillStars starsFilled={3} />
           </div>
         </SidebarSection>
-        <SidebarSection title="Personal Skills">
+        <SidebarSection
+          title={
+            <FormattedMessage id="page.curriculum.sidebar.personalSkills" />
+          }
+        >
           <Bubbles>
-            <Bubble name="Team Player" color="blue-500" size="48" head={true} />
             <Bubble
-              name="Curiosity"
-              color="blue-800"
-              size="24"
-              top="3%"
-              left="0%"
+              name={
+                <FormattedMessage id="page.curriculum.sidebar.personalSkills.teamwork" />
+              }
+              color="blue-500"
+              size="48"
+              head={true}
             />
             <Bubble
-              name="Clean Code"
-              color="green-500"
+              name={
+                <FormattedMessage id="page.curriculum.sidebar.personalSkills.responsability" />
+              }
+              color="blue-800"
               size="24"
+              top="-6%"
+              left="-10%"
+            />
+            <Bubble
+              name={
+                <FormattedMessage id="page.curriculum.sidebar.personalSkills.commitment" />
+              }
+              color="green-500"
+              size="42"
               top="-16%"
               left="37%"
             />
             <Bubble
-              name="Initiative"
+              name={
+                <FormattedMessage id="page.curriculum.sidebar.personalSkills.proactivity" />
+              }
               color="orange-500"
-              size="24"
+              size="20"
               top="10%"
               left="73%"
             />
             <Bubble
-              name="Organize"
+              name={
+                <FormattedMessage id="page.curriculum.sidebar.personalSkills.adaptability" />
+              }
               color="red-500"
               size="24"
-              top="52%"
-              left="3%"
+              top="58%"
+              left="-5%"
             />
             <Bubble
-              name="Manage"
+              name={
+                <FormattedMessage id="page.curriculum.sidebar.personalSkills.fastLearning" />
+              }
               color="pink-500"
               size="24"
               top="52%"
               left="75%"
             />
             <Bubble
-              name="Problem Solving"
+              name={
+                <FormattedMessage id="page.curriculum.sidebar.personalSkills.problemSolving" />
+              }
               color="green-900"
               size="24"
               top="75%"
@@ -92,72 +125,20 @@ const Sidebar = () => {
             />
           </Bubbles>
         </SidebarSection>
-        <SidebarSection title="Programming">
+        <SidebarSection
+          title={<FormattedMessage id="page.curriculum.sidebar.programming" />}
+        >
           <Bubbles>
             <Bubble name="React" color="blue-500" size="48" head={true} />
-            <Bubble
-              name="Angular"
-              color="blue-800"
-              size="24"
-              top="25%"
-              left="-8%"
-            />
-            <Bubble
-              name="Vue"
-              color="green-500"
-              size="20"
-              top="82%"
-              left="22%"
-            />
-            <Bubble
-              name="Node"
-              color="red-500"
-              size="24"
-              top="47%"
-              left="73%"
-            />
-            <Bubble
-              name="Git"
-              color="purple-500"
-              size="16"
-              top="-2%"
-              left="60%"
-            />
-            <Bubble
-              name="HTML"
-              color="gray-500"
-              size="24"
-              top="-18%"
-              left="27%"
-            />
-            <Bubble
-              name="CSS"
-              color="yellow-500"
-              size="16"
-              top="62%"
-              left="5%"
-            />
-            <Bubble
-              name="Tailwind"
-              color="pink-500"
-              size="24"
-              top="72%"
-              left="50%"
-            />
-            <Bubble
-              name="Laravel"
-              color="green-900"
-              size="24"
-              top="13%"
-              left="73%"
-            />
-            <Bubble
-              name="SQL"
-              color="orange-500"
-              size="16"
-              top="4%"
-              left="8%"
-            />
+            <Bubble name="Angular" top="25%" left="-12%" />
+            <Bubble name="CSS" top="82%" left="22%" />
+            <Bubble name="Node" top="57%" left="67%" />
+            <Bubble name="SQL" top="-2%" left="60%" />
+            <Bubble name="HTML" top="-18%" left="27%" />
+            <Bubble name="Vue" top="62%" left="5%" />
+            <Bubble name="Tailwind" top="82%" left="50%" />
+            <Bubble name="Laravel" top="36%" left="77%" />
+            <Bubble name="GIT" top="4%" left="8%" />
           </Bubbles>
         </SidebarSection>
       </div>
