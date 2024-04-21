@@ -156,7 +156,7 @@
     {
       "id": "experience-4",
       "startDate": "01/01/2023",
-      "endDate": "31/07/2023",
+      "endDate": null,
       "company": "page.developer.experience.freelance.name",
       "rol": "Full-Stack Developer",
       "description": "page.developer.experience.freelance",
