@@ -1,10 +1,10 @@
 const Bubble = ({ name, color, size, top, left, head = false }) => {
   return (
     <div
-      className={`bubble size-${size} bg-${color} ${
+      className={`bubble bg-${color} ${
         head ? "bubble-head" : "bubble-dynamic"
       }`}
-      style={{ top, left }}
+      style={{ width: size, height: size, top, left }}
     >
       {name}
     </div>

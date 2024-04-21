@@ -1,6 +1,6 @@
 .main {
     * {
-        font-family: "Roboto", sans-serif;
+        // font-family: "Roboto", sans-serif;
         font-size: 16px;
         color: #4e4e4e;
     }
@@ -13,7 +13,7 @@
     h2 * {
         font-size: 28px;
         color: #7290d0;
-        font-weight: 900;
+        font-weight: 800;
     }
     width: 210mm;
     // height: 297mm;
@@ -32,6 +32,24 @@
             display: flex;
             flex-direction: column;
             gap: 3rem;
+            .body {
+                &__info {
+                    &__section {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        .section {
+                            &__title {
+                                margin-top: 1rem;
+                                margin-right: 0.25rem;
+                                text-transform: capitalize;
+                                font-weight: 600;
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -70,7 +88,8 @@
                     display: flex;
                     flex-direction: column;
                     gap: 0.5rem;
-                    &__title {
+                    &__title,
+                    &__title * {
                         font-weight: 900;
                     }
                     &__header {
@@ -78,12 +97,13 @@
                         gap: 1rem;
                         .header {
                             &__date {
-                                font-weight: 500;
+                                font-weight: 600;
                                 font-style: italic;
                             }
                             &__title {
                                 flex-grow: 1;
-                                font-weight: 900;
+                                font-weight: 700;
+                                font-size: 17px;
                             }
                             &__place {
                                 color: #7290d0;
@@ -115,7 +135,7 @@
     padding: 1rem;
     opacity: 75%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    font-size: 12px;
+    font-size: 11.5px;
 }
 .bubble-head {
     font-weight: 700;
@@ -146,57 +166,39 @@
 
 .bubble:nth-child(2) {
     animation: float 4.2s linear infinite;
-    width: 9rem;
-    height: 9rem;
     background-color: #c55959;
 }
 
 .bubble:nth-child(3) {
     animation: float 4.6s linear reverse infinite;
-    width: 7rem;
-    height: 7rem;
     background-color: #3f0046c5;
 }
 
 .bubble:nth-child(4) {
     animation: float 4.9s linear infinite;
-    width: 6.7rem;
-    height: 6.7rem;
     background-color: #23b100;
 }
 .bubble:nth-child(5) {
     animation: float 4.5s linear reverse infinite;
-    width: 7.5rem;
-    height: 7.5rem;
     background-color: #8d2a63;
 }
 .bubble:nth-child(6) {
     animation: float 4.4s linear infinite;
-    width: 7rem;
-    height: 7rem;
     background-color: #f4a60a;
 }
 .bubble:nth-child(7) {
     animation: float 5.3s linear reverse infinite;
-    width: 7rem;
-    height: 7rem;
     background-color: #8a0202;
 }
 .bubble:nth-child(8) {
     animation: float 4.8s linear infinite;
-    width: 5rem;
-    height: 5rem;
     background-color: #02a161;
 }
 .bubble:nth-child(9) {
     animation: float 4.7s linear reverse infinite;
-    width: 4.5rem;
-    height: 4.5rem;
     background-color: #150248;
 }
 .bubble:nth-child(10) {
     animation: float 5s linear infinite;
-    width: 3.5rem;
-    height: 3.5rem;
     background-color: #004d4a;
 }
