@@ -60,7 +60,7 @@ const Sidebar = () => {
                 <FormattedMessage id="page.curriculum.sidebar.personalSkills.responsability" />
               }
               color="blue-800"
-              size="8rem"
+              size="9rem"
               top="-6%"
               left="-10%"
             />
@@ -78,7 +78,7 @@ const Sidebar = () => {
                 <FormattedMessage id="page.curriculum.sidebar.personalSkills.proactivity" />
               }
               color="orange-500"
-              size="6rem"
+              size="7em"
               top="10%"
               left="73%"
             />
@@ -87,7 +87,7 @@ const Sidebar = () => {
                 <FormattedMessage id="page.curriculum.sidebar.personalSkills.adaptability" />
               }
               color="red-500"
-              size="6.5rem"
+              size="7.5rem"
               top="58%"
               left="-5%"
             />
@@ -96,7 +96,7 @@ const Sidebar = () => {
                 <FormattedMessage id="page.curriculum.sidebar.personalSkills.fastLearning" />
               }
               color="pink-500"
-              size="5.5rem"
+              size="7rem"
               top="52%"
               left="75%"
             />
@@ -105,7 +105,7 @@ const Sidebar = () => {
                 <FormattedMessage id="page.curriculum.sidebar.personalSkills.problemSolving" />
               }
               color="green-900"
-              size="5.6rem"
+              size="7rem"
               top="75%"
               left="40%"
             />
