@@ -29,7 +29,7 @@ const SVG = ({ type, size, className, fill }) => {
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
-          size ? size : "h-6 w-6"
+          size ? size : "h-8 w-8"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -47,7 +47,7 @@ const SVG = ({ type, size, className, fill }) => {
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
-          size ? size : "h-6 w-6"
+          size ? size : "h-8 w-8"
         } ${className ? className : mouseIn ? "opacity-100" : "opacity-60"}`}
         aria-hidden="true"
         fill="currentColor"
@@ -69,7 +69,7 @@ const SVG = ({ type, size, className, fill }) => {
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
-          size ? size : "h-6 w-6"
+          size ? size : "h-8 w-8"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -87,7 +87,7 @@ const SVG = ({ type, size, className, fill }) => {
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
-          size ? size : "h-6 w-6"
+          size ? size : "h-8 w-8"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -109,7 +109,7 @@ const SVG = ({ type, size, className, fill }) => {
         onMouseLeave={onMouseLeaveHandler}
         onTouchEnd={onMouseLeaveHandler}
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
-          size ? size : "h-6 w-6"
+          size ? size : "h-8 w-8"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
@@ -123,7 +123,7 @@ const SVG = ({ type, size, className, fill }) => {
     return (
       <svg
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
-          size ? size : "h-6 w-6"
+          size ? size : "h-8 w-8"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
         aria-hidden="true"
         fill="currentColor"
