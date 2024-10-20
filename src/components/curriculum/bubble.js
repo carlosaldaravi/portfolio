@@ -10,7 +10,6 @@ const Bubble = ({
   const pdfPositions = {
     React: { top: "12%", left: "15%" },
     Teamwork: { top: "27%", left: "52%" },
-    // Agrega las posiciones para las demás burbujas
   };
 
   const pdfStyle = {
@@ -37,7 +36,18 @@ const Bubble = ({
       }`}
       style={isGeneratingPDF ? pdfStyle : webStyle}
     >
-      <div className="bubble-content">{name}</div>
+      <div
+        className="bubble-content"
+        style={
+          isGeneratingPDF
+            ? head
+              ? { transform: "translate(-50%, -70%)" }
+              : { transform: "translate(-50%, -78%)" }
+            : {}
+        }
+      >
+        {name}
+      </div>
     </div>
   );
 };
