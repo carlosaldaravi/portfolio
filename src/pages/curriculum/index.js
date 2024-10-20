@@ -1,7 +1,5 @@
 import Page from "@/components/UI/page";
 import Education from "@/components/curriculum/education";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import { useContext, useRef, useState } from "react";
 import Experience from "@/components/curriculum/experience";
 import Certification from "@/components/curriculum/certification";
@@ -18,6 +16,7 @@ import { getBgSecondaryColor } from "@/tools/theme";
 import { TRACKING_TYPES } from "@/types/track";
 
 const Curriculum = () => {
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const resumeRef = useRef(null);
   const tracker = useTracker();
   const themeCtx = useContext(ThemeContext);
@@ -25,49 +24,59 @@ const Curriculum = () => {
   const bgSecondaryColor = getBgSecondaryColor(theme);
 
   const downloadResumeAsPDF = () => {
-    html2canvas(resumeRef.current, {
-      scale: 2,
-      windowWidth: resumeRef.current.scrollWidth,
-      windowHeight: resumeRef.current.scrollHeight,
-    }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-      });
+    setIsGeneratingPDF(true);
+    import("html2pdf.js").then((html2pdfModule) => {
+      const html2pdf = html2pdfModule.default;
+      const element = resumeRef.current;
+      const opt = {
+        margin: [0, 0, 0, 0],
+        filename: "curriculum-carlos-aldaravi.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          dpi: 192,
+          letterRendering: true,
+        },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      };
 
-      const imgWidth = pdf.internal.pageSize.getWidth();
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-      heightLeft -= pdf.internal.pageSize.getHeight();
-
-      while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pdf.internal.pageSize.getHeight();
-      }
-
-      pdf.save("curriculum-carlos-aldaravi.pdf");
-      tracker.track(TRACKING_TYPES.event.downloadCV);
+      html2pdf()
+        .set(opt)
+        .from(element)
+        .save()
+        .then(() => {
+          tracker.track(TRACKING_TYPES.event.downloadCV);
+          setIsGeneratingPDF(false);
+        })
+        .catch(() => {
+          setIsGeneratingPDF(false);
+        });
     });
   };
+
   return (
     <Page className="p-0">
       <div ref={resumeRef} className="main">
-        <Sidebar />
+        <Sidebar isGeneratingPDF={isGeneratingPDF} />
         <div className="main__right">
           <Header />
           <div className="main__right__body">
-            <Experience />
-            <Education />
-            <Certification />
-            <HonorAndAward />
-            <OtherInfo />
+            <div className="section">
+              <Experience />
+            </div>
+            <div className="section">
+              <Education />
+            </div>
+            <div className="section">
+              <Certification />
+            </div>
+            <div className="section">
+              <HonorAndAward />
+            </div>
+            <div className="section">
+              <OtherInfo />
+            </div>
             <Footer />
           </div>
         </div>

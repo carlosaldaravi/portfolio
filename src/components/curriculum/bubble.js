@@ -1,12 +1,43 @@
-const Bubble = ({ name, color, size, top, left, head = false }) => {
+const Bubble = ({
+  name,
+  color,
+  size,
+  top,
+  left,
+  head = false,
+  isGeneratingPDF = false,
+}) => {
+  const pdfPositions = {
+    React: { top: "12%", left: "15%" },
+    Teamwork: { top: "27%", left: "52%" },
+    // Agrega las posiciones para las demás burbujas
+  };
+
+  const pdfStyle = {
+    width: size,
+    height: size,
+    top: pdfPositions[name]?.top || top || "auto",
+    left: pdfPositions[name]?.left || left || "auto",
+    position: "absolute",
+    animation: "none",
+  };
+
+  const webStyle = {
+    width: size,
+    height: size,
+    top: top,
+    left: left,
+    position: "absolute",
+  };
+
   return (
     <div
       className={`bubble bg-${color} ${
         head ? "bubble-head" : "bubble-dynamic"
       }`}
-      style={{ width: size, height: size, top, left }}
+      style={isGeneratingPDF ? pdfStyle : webStyle}
     >
-      {name}
+      <div className="bubble-content">{name}</div>
     </div>
   );
 };
