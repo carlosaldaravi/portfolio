@@ -1,3 +1,4 @@
+import { MY_NAME } from "@/constants/constants";
 import { format } from "@formkit/tempo";
 import { useIntl } from "react-intl";
 
@@ -7,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <p className="italic">{date}</p>
-      <o className="text-right italic">Carlos Aldaravi</o>
+      <o className="text-right italic">{MY_NAME}</o>
     </>
   );
 };

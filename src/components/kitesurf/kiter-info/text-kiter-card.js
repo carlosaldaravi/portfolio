@@ -1,3 +1,4 @@
+import { MY_NAME } from "@/constants/constants";
 import RowTextKiterCard from "./row-text-kiter-card";
 import { FormattedMessage } from "react-intl";
 
@@ -5,7 +6,7 @@ const TextKiterCard = ({ me }) => {
   return (
     <div className="mt-12 flex flex-col gap-12">
       <div className="text-center text-4xl sm:text-6xl tracking-xs mb-2">
-        Carlos Aldaravi
+        {MY_NAME}
       </div>
       <div className="mx-auto w-max block">
         {me.map((data) => (

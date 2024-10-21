@@ -25,7 +25,7 @@ const Developer = ({ data }) => {
   return (
     <Page className="p-0">
       <Head>
-        <title>Carlos Aldaravi Porfolio</title>
+        <title>{MY_NAME} Porfolio</title>
         <meta name="description" content={meta} />
       </Head>
       <KiterCard me={data.me} src="/yo-dev.png" />

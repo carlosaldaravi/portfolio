@@ -7,6 +7,7 @@ import useTracker from "@/hooks/useTracker";
 import { useIntl } from "react-intl";
 import { useEffect } from "react";
 import { TRACKING_TYPES } from "@/types/track";
+import { MY_NAME } from "@/constants/constants";
 
 export default function Home({ roles }) {
   const intl = useIntl();
@@ -21,7 +22,7 @@ export default function Home({ roles }) {
   return (
     <Page>
       <Head>
-        <title>Carlos Aldaravi Porfolio</title>
+        <title>{MY_NAME} Porfolio</title>
         <meta name="description" content={meta} />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
       </Head>

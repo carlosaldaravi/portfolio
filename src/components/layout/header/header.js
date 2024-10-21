@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useTools } from "@/hooks/useTools";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
+import { MY_NAME } from "@/constants/constants";
 
 const Header = () => {
   const { locales, locale, route } = useRouter();
@@ -68,7 +69,7 @@ const Header = () => {
         className="opacity-90 ml-2"
       >
         <Image
-          title="Logo Carlos Aldaravi"
+          title={`Logo ${MY_NAME}`}
           src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
           alt="logo"
           width={60}
