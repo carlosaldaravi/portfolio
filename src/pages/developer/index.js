@@ -3,7 +3,6 @@ import fs from "fs/promises";
 import Page from "@/components/UI/page";
 import Projects from "@/components/developer/projects/projects";
 import Stack from "@/components/developer/stack";
-import Curriculum from "@/components/developer/curriculum";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import useTracker from "@/hooks/useTracker";
 import { useEffect } from "react";
@@ -25,7 +24,6 @@ const Developer = ({ data }) => {
       <Projects projects={data.projects} />
       {/* <Skills skills={data.skills} /> */}
       <Stack stack={data.stack} />
-      <Curriculum curriculum={data.curriculum} />
     </Page>
   );
 };

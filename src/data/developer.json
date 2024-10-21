@@ -19,6 +19,10 @@
     {
       "id": "page.developer.favouriteStack",
       "value": "page.developer.favouriteStackValue"
+    },
+    {
+      "id": "page.developer.curriculum",
+      "value": "icon-document"
     }
   ],
   "skills": [
