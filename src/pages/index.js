@@ -11,7 +11,6 @@ import { TRACKING_TYPES } from "@/types/track";
 import Experience from "@/components/developer/experience/experience";
 import Head from "next/head";
 import { useIntl } from "react-intl";
-import { MY_NAME } from "@/constants/constants";
 
 const Developer = ({ data }) => {
   const tracker = useTracker();
@@ -26,7 +25,7 @@ const Developer = ({ data }) => {
   return (
     <Page className="p-0">
       <Head>
-        <title>{MY_NAME} Porfolio</title>
+        <title>Carlos Aldaravi Porfolio</title>
         <meta name="description" content={meta} />
       </Head>
       <KiterCard me={data.me} src="/yo-dev.png" />
