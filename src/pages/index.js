@@ -11,6 +11,7 @@ import { TRACKING_TYPES } from "@/types/track";
 import Experience from "@/components/developer/experience/experience";
 import Head from "next/head";
 import { useIntl } from "react-intl";
+import { MY_NAME } from "@/constants/constants";
 
 const Developer = ({ data }) => {
   const tracker = useTracker();
