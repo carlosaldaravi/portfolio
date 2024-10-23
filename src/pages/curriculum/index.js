@@ -1,19 +1,15 @@
-import Page from "@/components/UI/page";
-import Education from "@/components/curriculum/education";
+import useTracker from "@/hooks/useTracker";
 import { useContext, useRef, useState } from "react";
-import Experience from "@/components/curriculum/experience";
-import Certification from "@/components/curriculum/certification";
-import HonorAndAward from "@/components/curriculum/honor-and-award";
-import OtherInfo from "@/components/curriculum/other-info";
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import { FormattedMessage } from "react-intl";
+import { TRACKING_TYPES } from "@/types/track";
+import { getBgSecondaryColor } from "@/tools/theme";
+import ThemeContext from "@/store/theme-context";
+import Page from "@/components/UI/page";
 import Footer from "@/components/curriculum/footer";
 import Sidebar from "@/components/curriculum/sidebar";
 import Header from "@/components/curriculum/header";
-import { FormattedMessage } from "react-intl";
-import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import useTracker from "@/hooks/useTracker";
-import ThemeContext from "@/store/theme-context";
-import { getBgSecondaryColor } from "@/tools/theme";
-import { TRACKING_TYPES } from "@/types/track";
+import sectionsData from "@/data/sections-data";
 
 const Curriculum = () => {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
@@ -62,21 +58,11 @@ const Curriculum = () => {
         <div className="main__right">
           <Header />
           <div className="main__right__body">
-            <div className="section">
-              <Experience />
-            </div>
-            <div className="section">
-              <Education />
-            </div>
-            <div className="section">
-              <Certification />
-            </div>
-            <div className="section">
-              <HonorAndAward />
-            </div>
-            <div className="section">
-              <OtherInfo />
-            </div>
+            {sectionsData.map(({ id, Component }) => (
+              <div key={id} className="section">
+                <Component />
+              </div>
+            ))}
             <Footer />
           </div>
         </div>
