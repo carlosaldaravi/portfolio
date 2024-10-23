@@ -5,11 +5,14 @@ import HonorAndAward from "@/components/curriculum/honor-and-award";
 import OtherInfo from "@/components/curriculum/other-info";
 
 const sectionsData = [
-  { id: "experience", Component: Experience },
-  { id: "education", Component: Education },
-  { id: "certification", Component: Certification },
-  { id: "honorAndAward", Component: HonorAndAward },
-  { id: "otherInfo", Component: OtherInfo },
+  { titleId: "page.developer.experience", Component: Experience },
+  { titleId: "page.curriculum.body.education.title", Component: Education },
+  { titleId: "page.curriculum.body.certifications", Component: Certification },
+  {
+    titleId: "page.curriculum.body.honorsAndAwards.title",
+    Component: HonorAndAward,
+  },
+  { titleId: "page.curriculum.body.otherInfo.title", Component: OtherInfo },
 ];
 
 export default sectionsData;

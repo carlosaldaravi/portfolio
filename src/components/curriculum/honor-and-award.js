@@ -3,9 +3,9 @@ import CurriculumSection from "./curriculum-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
 
-const HonorAndAward = () => {
+const HonorAndAward = ({ titleId, isEditable = false }) => {
   return (
-    <CurriculumSection titleId="page.curriculum.body.honorsAndAwards.title">
+    <CurriculumSection titleId={titleId}>
       <TimeLineEvent
         date="10/2017"
         title={

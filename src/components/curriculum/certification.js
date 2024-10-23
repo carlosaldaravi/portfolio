@@ -3,9 +3,9 @@ import CurriculumSection from "./curriculum-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
 
-const Certification = () => {
+const Certification = ({ titleId, isEditable = false }) => {
   return (
-    <CurriculumSection titleId="page.curriculum.body.certifications">
+    <CurriculumSection titleId={titleId}>
       <TimeLineEvent
         date="04/2023"
         title="Next.js and React - The Complete Guide"

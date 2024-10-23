@@ -58,9 +58,9 @@ const Curriculum = () => {
         <div className="main__right">
           <Header />
           <div className="main__right__body">
-            {sectionsData.map(({ id, Component }) => (
-              <div key={id} className="section">
-                <Component />
+            {sectionsData.map(({ titleId, Component }) => (
+              <div key={titleId} className="section">
+                <Component titleId={titleId} />
               </div>
             ))}
             <Footer />
