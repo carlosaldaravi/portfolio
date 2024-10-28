@@ -199,7 +199,6 @@ const Curriculum = () => {
         image: { type: "jpeg", quality: 0.98 },
         html2canvas: {
           scale: 2,
-          useCORS: true,
           dpi: 192,
           letterRendering: true,
         },
