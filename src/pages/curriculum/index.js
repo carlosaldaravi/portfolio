@@ -23,6 +23,8 @@ import OtherInfo from "@/components/curriculum/other-info";
 const Curriculum = () => {
   const intl = useIntl();
   const [sections, setSections] = useState(sectionsData);
+  const [name, setName] = useState("Carlos");
+  const [surname, setSurname] = useState("Aldaravi");
   const [isEditable, setIsEditable] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const resumeRef = useRef(null);
@@ -222,19 +224,27 @@ const Curriculum = () => {
     <Page className="p-0">
       <div ref={resumeRef} className="relative main">
         {!isGeneratingPDF && (
-          <div className="absolute w-56 top-0 right-5 flex flex-col justify-center items-center">
+          <div className="absolute z-10 w-56 top-0 right-5 flex flex-col justify-center items-center">
+            {!isEditable && (
+              <span
+                className={`download-button flex flex-col justify-center items-center animate-pulse cursor-pointer`}
+                onClick={downloadResumeAsPDF}
+              >
+                <ArrowDownTrayIcon className="download-icon size-14" />
+                <p className="text-2xl font-bold italic">Descargar</p>
+              </span>
+            )}
             <span
-              className={`download-button flex flex-col justify-center items-center animate-pulse cursor-pointer`}
-              onClick={downloadResumeAsPDF}
+              className={`flex flex-col justify-center items-center ${
+                isEditable ? "mt-10" : ""
+              }`}
             >
-              <ArrowDownTrayIcon className="download-icon size-14" />
-              <p className="text-2xl font-bold italic">Descargar</p>
-            </span>
-            <span className="flex flex-col justify-center items-center">
               {isEditable ? (
                 <>
                   <CheckIcon
-                    className="size-10 cursor-pointer stroke-green-600"
+                    className={`cursor-pointer stroke-green-600 ${
+                      isEditable ? "size-16" : "size-10"
+                    }`}
                     onClick={() => setIsEditable(!isEditable)}
                   />
                   <p className="text-xl font-bold italic">Terminar</p>
@@ -253,7 +263,13 @@ const Curriculum = () => {
         )}
         <Sidebar isGeneratingPDF={isGeneratingPDF} />
         <div className="main__right">
-          <Header />
+          <Header
+            name={name}
+            surname={surname}
+            onChangeName={(newName) => setName(newName)}
+            onChangeSurname={(newSurname) => setSurname(newSurname)}
+            isEditable={isEditable}
+          />
           <div className="main__right__body">
             {sections.map(({ titleId, Component }) => (
               <div key={titleId} className="section">
@@ -304,7 +320,7 @@ const Curriculum = () => {
                 </EditableSection>
               </div>
             ))}
-            <Footer />
+            <Footer name={name} surname={surname} />
           </div>
         </div>
       </div>
