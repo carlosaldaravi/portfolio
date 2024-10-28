@@ -220,6 +220,14 @@ const Curriculum = () => {
     });
   };
 
+  const handleEditCV = () => {
+    isEditable
+      ? tracker.track(TRACKING_TYPES.event.saveCV)
+      : tracker.track(TRACKING_TYPES.event.editCV);
+
+    setIsEditable(!isEditable);
+  };
+
   return (
     <Page className="p-0">
       <div ref={resumeRef} className="relative main">
@@ -245,7 +253,7 @@ const Curriculum = () => {
                     className={`cursor-pointer stroke-green-600 ${
                       isEditable ? "size-16" : "size-10"
                     }`}
-                    onClick={() => setIsEditable(!isEditable)}
+                    onClick={handleEditCV}
                   />
                   <p className="text-xl font-bold italic">Terminar</p>
                 </>
@@ -253,7 +261,7 @@ const Curriculum = () => {
                 <>
                   <PencilIcon
                     className="size-10 cursor-pointer"
-                    onClick={() => setIsEditable(!isEditable)}
+                    onClick={handleEditCV}
                   />
                   <p className="text-xl font-bold italic">o.. ¡Hazlo Tuyo!</p>
                 </>

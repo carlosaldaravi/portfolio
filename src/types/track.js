@@ -11,7 +11,9 @@ export const TRACKING_TYPES = {
     visitProjectClick: "Click to visit project",
     githubProjectClick: "Click to project GitHub",
     youtubeIconClick: "Click on YouTube",
-    kiteJumpsOrderClick: "Change kite jumps order"
+    kiteJumpsOrderClick: "Change kite jumps order",
+    editCV: "Start to Edit CV",
+    saveCV: "Finish to Edit CV",
   },
   page: {
     home: "Home",
