@@ -1,4 +1,4 @@
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import useTracker from "@/hooks/useTracker";
 import { useContext, useRef, useState } from "react";
 import {
@@ -239,7 +239,9 @@ const Curriculum = () => {
                 onClick={downloadResumeAsPDF}
               >
                 <ArrowDownTrayIcon className="download-icon size-14" />
-                <p className="text-2xl font-bold italic">Descargar</p>
+                <p className="text-2xl font-bold italic">
+                  <FormattedMessage id="page.developer.download" />
+                </p>
               </span>
             )}
             <span
@@ -257,7 +259,9 @@ const Curriculum = () => {
                       isEditable ? "size-16" : "size-10"
                     }`}
                   />
-                  <p className="text-xl font-bold italic">Terminar</p>
+                  <p className="text-xl font-bold italic">
+                    <FormattedMessage id="page.developer.finish" />
+                  </p>
                 </span>
               ) : (
                 <span
@@ -265,7 +269,9 @@ const Curriculum = () => {
                   onClick={handleEditCV}
                 >
                   <PencilIcon className="size-10" />
-                  <p className="text-xl font-bold italic">o.. ¡Hazlo Tuyo!</p>
+                  <p className="text-xl font-bold italic">
+                    <FormattedMessage id="page.developer.makeYours" />
+                  </p>
                 </span>
               )}
             </span>
