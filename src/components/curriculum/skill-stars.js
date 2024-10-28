@@ -1,14 +1,16 @@
 import SVG from "../svg";
 
-const SkillStars = ({ starsFilled }) => {
+const SkillStars = ({ starsFilled, isEditable, onStarClick }) => {
   return (
     <div className="flex h-full self-end">
       {Array.from({ length: 5 }).map((_, i) => (
-        <SVG
+        <span
           key={`star-${i}`}
-          type="star"
-          fill={i < starsFilled ? "#7290d0" : "#b1b1b1"}
-        />
+          onClick={() => isEditable && onStarClick(i + 1)}
+          style={{ cursor: isEditable ? "pointer" : "default" }}
+        >
+          <SVG type="star" fill={i < starsFilled ? "#7290d0" : "#b1b1b1"} />
+        </span>
       ))}
     </div>
   );

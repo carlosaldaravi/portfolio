@@ -261,7 +261,7 @@ const Curriculum = () => {
             </span>
           </div>
         )}
-        <Sidebar isGeneratingPDF={isGeneratingPDF} />
+        <Sidebar isEditable={isEditable} isGeneratingPDF={isGeneratingPDF} />
         <div className="main__right">
           <Header
             name={name}

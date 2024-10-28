@@ -1,52 +1,67 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import Bubble from "./bubble";
 import Bubbles from "./bubbles";
 import SidebarSection from "./sidebar-section";
-import SkillStars from "./skill-stars";
-import StarsSection from "./starts-section";
+import { useState } from "react";
+import PersonalInfoSection from "./personal-info-section";
+import LanguagesSection from "./languages-section";
 
-const Sidebar = ({ isGeneratingPDF }) => {
+const Sidebar = ({ isEditable, isGeneratingPDF }) => {
+  const intl = useIntl();
+  const [personalInfo, setPersonalInfo] = useState({
+    website: "https://carlosaldaravi.com",
+    address: "Elche, Alicante",
+    skype: "carlosaldaravi.skype",
+    email: "carlosaldaravi@gmail.com",
+    github: "github.com/carlosaldaravi",
+  });
+
+  const [languages, setLanguages] = useState([
+    {
+      id: "lang-1",
+      language: intl.formatMessage({ id: "spanish" }),
+      starsFilled: 5,
+    },
+    {
+      id: "lang-2",
+      language: intl.formatMessage({ id: "english" }),
+      starsFilled: 4,
+    },
+    {
+      id: "lang-3",
+      language: intl.formatMessage({ id: "catalonian" }),
+      starsFilled: 3,
+    },
+  ]);
+
+  const [skills, setSkills] = useState({
+    personalSkills: [
+      { id: "teamwork", name: "Teamwork", color: "blue-500", size: "12rem" },
+      // Agrega los demás elementos aquí
+    ],
+    programmingSkills: [
+      { id: "react", name: "React", color: "blue-500", size: "12rem" },
+      // Agrega los demás elementos aquí
+    ],
+  });
   return (
     <div className="main__left">
       <div className="main__left__body">
-        <SidebarSection
-          title={<FormattedMessage id="page.curriculum.sidebar.website" />}
-        >
-          <a href="https://carlosaldaravi.com" target="_blank" rel="noreferrer">
-            www.carlosaldaravi.com
-          </a>
-        </SidebarSection>
-        <SidebarSection
-          title={<FormattedMessage id="page.curriculum.sidebar.address" />}
-        >
-          <p>Elche, Alicante</p>
-        </SidebarSection>
-        <SidebarSection title="Skype">
-          <p>
-            carlosaldaravi
-            <br />
-            .skype
-          </p>
-        </SidebarSection>
-        <SidebarSection title="Email">
-          <a href="mailto:carlosaldaravi@gmail.com">
-            <p>
-              carlosaldaravi@
-              <br />
-              gmail.com
-            </p>
-          </a>
-        </SidebarSection>
-        <SidebarSection title="GitHub">
-          <a href="https://github.com/carlosaldaravi" target="_blank">
-            <p>github.com/carlosaldaravi</p>
-          </a>
-        </SidebarSection>
-        <SidebarSection title={<FormattedMessage id="languages" />}>
+        <PersonalInfoSection
+          personalInfo={personalInfo}
+          setPersonalInfo={setPersonalInfo}
+          isEditable={isEditable}
+        />
+        <LanguagesSection
+          languages={languages}
+          setLanguages={setLanguages}
+          isEditable={isEditable}
+        />
+        {/* <SidebarSection title={<FormattedMessage id="languages" />}>
           <StarsSection titleId="spanish" starsFilled={5} />
           <StarsSection titleId="english" starsFilled={4} />
           <StarsSection titleId="catalonian" starsFilled={3} />
-        </SidebarSection>
+        </SidebarSection> */}
         <SidebarSection
           title={
             <FormattedMessage id="page.curriculum.sidebar.personalSkills" />
