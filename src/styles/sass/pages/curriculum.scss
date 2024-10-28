@@ -231,6 +231,15 @@
     page-break-inside: avoid;
 }
 
+.bubble_cv_edit {
+    width: fit-content;
+    text-align: center;
+    border: none;
+    border-bottom: dashed 1px;
+    border-radius: 15%;
+    opacity: 1;
+    font-family: "Roboto", sans-serif;
+}
 .input_cv_edit {
     max-width: 100%;
     width: 100%;

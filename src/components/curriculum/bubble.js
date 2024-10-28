@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Bubble = ({
   name,
   color,
@@ -6,7 +8,17 @@ const Bubble = ({
   left,
   head = false,
   isGeneratingPDF = false,
+  isEditable = false,
+  onChangeText,
 }) => {
+  const [editableText, setEditableText] = useState(name);
+
+  const handleBlur = () => {
+    if (onChangeText) {
+      onChangeText(editableText);
+    }
+  };
+
   const pdfPositions = {
     React: { top: "12%", left: "15%" },
     Teamwork: { top: "27%", left: "52%" },
@@ -46,7 +58,17 @@ const Bubble = ({
             : {}
         }
       >
-        {name}
+        {!isEditable ? (
+          <>{editableText}</>
+        ) : (
+          <input
+            type="text"
+            value={editableText}
+            onChange={(e) => setEditableText(e.target.value)}
+            onBlur={handleBlur}
+            className="bubble_cv_edit"
+          />
+        )}
       </div>
     </div>
   );

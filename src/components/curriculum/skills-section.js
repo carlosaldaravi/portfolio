@@ -1,5 +1,7 @@
 import Bubbles from "./bubbles";
 import Bubble from "./bubble";
+import SidebarSection from "./sidebar-section";
+import { FormattedMessage } from "react-intl";
 
 const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
   const handleSkillChange = (section, id, value) => {
@@ -13,58 +15,50 @@ const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
 
   return (
     <>
-      <Bubbles>
-        {skills.personalSkills.map((skill) => (
-          <Bubble
-            key={skill.id}
-            name={
-              isEditable ? (
-                <input
-                  value={skill.name}
-                  onChange={(e) =>
-                    handleSkillChange(
-                      "personalSkills",
-                      skill.id,
-                      e.target.value
-                    )
-                  }
-                />
-              ) : (
-                skill.name
-              )
-            }
-            color={skill.color}
-            size={skill.size}
-            isGeneratingPDF={isGeneratingPDF}
-          />
-        ))}
-      </Bubbles>
-      <Bubbles>
-        {skills.programmingSkills.map((skill) => (
-          <Bubble
-            key={skill.id}
-            name={
-              isEditable ? (
-                <input
-                  value={skill.name}
-                  onChange={(e) =>
-                    handleSkillChange(
-                      "programmingSkills",
-                      skill.id,
-                      e.target.value
-                    )
-                  }
-                />
-              ) : (
-                skill.name
-              )
-            }
-            color={skill.color}
-            size={skill.size}
-            isGeneratingPDF={isGeneratingPDF}
-          />
-        ))}
-      </Bubbles>
+      <SidebarSection
+        title={<FormattedMessage id="page.curriculum.sidebar.personalSkills" />}
+      >
+        <Bubbles>
+          {skills.personalSkills.map((skill) => (
+            <Bubble
+              key={skill.id}
+              name={skill.skill}
+              color={skill.color}
+              size={skill.size}
+              top={skill.top}
+              left={skill.left}
+              head={skill.head || false}
+              isGeneratingPDF={isGeneratingPDF}
+              isEditable={isEditable}
+              onChangeText={(newName) =>
+                handleSkillChange("personalSkills", skill.id, newName)
+              }
+            />
+          ))}
+        </Bubbles>
+      </SidebarSection>
+      <SidebarSection
+        title={<FormattedMessage id="page.curriculum.sidebar.programming" />}
+      >
+        <Bubbles>
+          {skills.programmingSkills.map((skill) => (
+            <Bubble
+              key={skill.id}
+              name={skill.skill}
+              color={skill.color}
+              size={skill.size}
+              top={skill.top}
+              left={skill.left}
+              head={skill.head || false}
+              isGeneratingPDF={isGeneratingPDF}
+              isEditable={isEditable}
+              onChangeText={(newName) =>
+                handleSkillChange("personalSkills", skill.id, newName)
+              }
+            />
+          ))}
+        </Bubbles>
+      </SidebarSection>
     </>
   );
 };
