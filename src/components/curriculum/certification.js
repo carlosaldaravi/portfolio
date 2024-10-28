@@ -3,7 +3,6 @@ import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
 import { PlusIcon } from "@heroicons/react/24/outline";
-import { FormattedMessage } from "react-intl";
 
 const Certification = ({
   titleId,

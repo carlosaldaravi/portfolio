@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import Bubble from "./bubble";
 import Bubbles from "./bubbles";
 import SidebarSection from "./sidebar-section";
-import { useState } from "react";
 import PersonalInfoSection from "./personal-info-section";
 import LanguagesSection from "./languages-section";
 
@@ -37,11 +37,9 @@ const Sidebar = ({ isEditable, isGeneratingPDF }) => {
   const [skills, setSkills] = useState({
     personalSkills: [
       { id: "teamwork", name: "Teamwork", color: "blue-500", size: "12rem" },
-      // Agrega los demás elementos aquí
     ],
     programmingSkills: [
       { id: "react", name: "React", color: "blue-500", size: "12rem" },
-      // Agrega los demás elementos aquí
     ],
   });
   return (
@@ -57,11 +55,6 @@ const Sidebar = ({ isEditable, isGeneratingPDF }) => {
           setLanguages={setLanguages}
           isEditable={isEditable}
         />
-        {/* <SidebarSection title={<FormattedMessage id="languages" />}>
-          <StarsSection titleId="spanish" starsFilled={5} />
-          <StarsSection titleId="english" starsFilled={4} />
-          <StarsSection titleId="catalonian" starsFilled={3} />
-        </SidebarSection> */}
         <SidebarSection
           title={
             <FormattedMessage id="page.curriculum.sidebar.personalSkills" />
