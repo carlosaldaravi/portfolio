@@ -8,9 +8,9 @@ const Footer = ({ name, surname }) => {
   return (
     <>
       <p className="italic">{date}</p>
-      <o className="text-right italic">
+      <p className="text-right italic">
         {name} {surname}
-      </o>
+      </p>
     </>
   );
 };
