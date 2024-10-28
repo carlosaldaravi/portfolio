@@ -89,6 +89,7 @@
             }
         }
         &__body {
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 5rem;
@@ -227,4 +228,22 @@
 .section {
     break-inside: avoid;
     page-break-inside: avoid;
+}
+
+.input_cv_edit {
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    border-bottom: dashed 1px;
+    background: none;
+    opacity: 0.75;
+    font-family: "Roboto", sans-serif;
+    overflow-wrap: break-word;
+    resize: vertical;
+}
+
+.input_cv_edit:focus {
+    box-shadow: none;
+    border-color: inherit;
+    opacity: 1;
 }
