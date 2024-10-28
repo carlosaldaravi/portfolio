@@ -195,7 +195,7 @@ const Curriculum = () => {
       const element = resumeRef.current;
       const opt = {
         margin: [0, 0, 0, 0],
-        filename: "curriculum-carlos-aldaravi.pdf",
+        filename: `CV-${name}-${surname}.pdf`,
         image: { type: "jpeg", quality: 0.98 },
         html2canvas: {
           scale: 2,
@@ -248,23 +248,25 @@ const Curriculum = () => {
               }`}
             >
               {isEditable ? (
-                <>
+                <span
+                  className="flex flex-col justify-center items-center cursor-pointer"
+                  onClick={handleEditCV}
+                >
                   <CheckIcon
-                    className={`cursor-pointer stroke-green-600 ${
+                    className={`stroke-green-600 ${
                       isEditable ? "size-16" : "size-10"
                     }`}
-                    onClick={handleEditCV}
                   />
                   <p className="text-xl font-bold italic">Terminar</p>
-                </>
+                </span>
               ) : (
-                <>
-                  <PencilIcon
-                    className="size-10 cursor-pointer"
-                    onClick={handleEditCV}
-                  />
+                <span
+                  className="flex flex-col justify-center items-center cursor-pointer"
+                  onClick={handleEditCV}
+                >
+                  <PencilIcon className="size-10" />
                   <p className="text-xl font-bold italic">o.. ¡Hazlo Tuyo!</p>
-                </>
+                </span>
               )}
             </span>
           </div>
