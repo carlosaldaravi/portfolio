@@ -71,7 +71,7 @@ const SVG = ({ type, size, className, fill }) => {
         className={`cursor-pointer transition-all duration-300 ease-in-out ${
           size ? size : "h-8 w-8"
         } ${mouseIn ? "opacity-100" : "opacity-60"} ${className}`}
-        enable-background="new 0 0 72 72"
+        enableBackground="new 0 0 72 72"
         viewBox="0 0 72 72"
         fill="currentColor"
         id="twitter-x"
