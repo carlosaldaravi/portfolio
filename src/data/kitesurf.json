@@ -449,16 +449,9 @@
             {
               "id": "gear-1",
               "name": "Rebel SLS",
-              "sizes": ["7m", "8m", "9m"],
-              "img": "/images/equipment/rebel-2024.webp",
-              "url": "https://www.duotonesports.com/es/products/duotone-rebel-sls-2024-44240-3010"
-            },
-            {
-              "id": "gear-2",
-              "name": "Evo DLAB",
-              "sizes": ["10m", "11m"],
-              "img": "/images/equipment/evo.webp",
-              "url": "https://www.duotonesports.com/es/kiteboarding/kites/evo-d/lab/"
+              "sizes": ["7m", "8m", "9m", "10m", "12m"],
+              "img": "/images/equipment/rebel-2025.webp",
+              "url": "https://www.duotonesports.com/es/products/duotone-kite-rebel-sls-concept-blue-2025-44250-3030"
             }
           ]
         },
@@ -468,28 +461,28 @@
             {
               "id": "gear-3",
               "name": "Clickbar 12m + 12m",
-              "img": "/images/equipment/clickbar-2024.webp",
-              "url": "https://www.duotonesports.com/es/products/duotone-click-bar-quad-control-2024-44240-3202?color=S&variant=46975515394372"
+              "img": "/images/equipment/clickbar-2025.webp",
+              "url": "https://www.duotonesports.com/es/products/duotone-click-bar-quad-control-2025-44250-3202"
             },
             {
               "id": "gear-4",
               "name": "Clickbar 22m + 2m",
-              "img": "/images/equipment/clickbar-2024.webp",
-              "url": "https://www.duotonesports.com/es/products/trust-bar-quad-control-44230-3201?color=S"
+              "img": "/images/equipment/clickbar-2025.webp",
+              "url": "https://www.duotonesports.com/es/products/duotone-click-bar-quad-control-2025-44250-3202"
             }
           ]
         },
         {
           "id": "gear-5",
           "name": "Jaime SLS 133cm",
-          "img": "/images/equipment/jaime-2024.webp",
-          "url": "https://www.duotonesports.com/es/products/duotone-jaime-sls-2024-44240-3421"
+          "img": "/images/equipment/jaime-2025.webp",
+          "url": "https://www.duotonesports.com/es/products/duotone-twintip-jaime-sls-2025-44250-3421"
         },
         {
           "id": "gear-6",
-          "name": "Seek Amp",
-          "img": "/images/equipment/wetsuit.webp",
-          "url": "https://www.ion-products.com/en/products/seek-amp-4-3-front-zip-48232-4467?refinements%5Bsubcategory.value%5D%5B0%5D=Semidry&refinements%5Bentry.value%5D%5B0%5D=Frontzip&variant=42569169961160"
+          "name": "Seek Amp 4/3 Front Zip",
+          "img": "/images/equipment/wetsuit-2025.webp",
+          "url": "https://www.ion-products.com/en/products/ion-iow-wetsuit-seek-amp-4-3-front-zip-men-2025-48252-4467?variant=48944471802180"
         },
         {
           "id": "gear-7",
