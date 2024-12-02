@@ -313,12 +313,12 @@
             { "size": "8m" },
             { "wind": "20 - 30" }
           ],
-          "img": "/images/spots/leucate.jpeg",
+          "img": "/images/spots/hermanus.jpg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/leucate.jpeg);",
-                "backgroundPosition": "20% 100%;"
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/hermanus.jpg);",
+                "backgroundPosition": "80% 48%;"
               }
             }
           },
