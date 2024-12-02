@@ -4,7 +4,11 @@ import ButtonSlider from "@/components/UI/button-slider";
 import Arrow from "@/components/UI/arrow";
 import SectionTitle from "@/components/UI/section-title";
 import SectionPagination from "@/components/UI/section-pagination";
-import { ArrowSmallLeftIcon, ArrowSmallRightIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowSmallLeftIcon,
+  ArrowSmallRightIcon,
+} from "@heroicons/react/24/outline";
+import { useIntl } from "react-intl";
 
 const KiteSectionsSelector = ({
   sections,
@@ -12,6 +16,8 @@ const KiteSectionsSelector = ({
   onSelectSection,
   onChangeSection,
 }) => {
+  const intl = useIntl();
+  const [sectionTitle, setSectionTitle] = useState();
   const [indexSection, setIndexSection] = useState();
   const [actualSection, setActualSection] = useState(sectionSelected);
   const { isMobile } = useTools();
@@ -25,7 +31,8 @@ const KiteSectionsSelector = ({
       (section) => section.name === actualSection.name
     );
     setIndexSection(index);
-  }, [actualSection, sections]);
+    setSectionTitle(intl.formatMessage({ id: actualSection.title }));
+  }, [actualSection, sections, intl]);
 
   return (
     <div>
@@ -46,7 +53,7 @@ const KiteSectionsSelector = ({
           />
         )}
         <SectionTitle
-          title={actualSection.title}
+          title={sectionTitle}
           className="mt-24 mb-12 sm:my-24 section-title-small-vars"
         />
         {isMobile ? (

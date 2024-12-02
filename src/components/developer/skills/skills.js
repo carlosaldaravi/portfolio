@@ -1,14 +1,19 @@
-import { FormattedMessage } from "react-intl";
+import { useIntl } from "react-intl";
 import CardsSection from "@/components/UI/cards-section";
-import Skill from "./skill";
 import SectionTitle from "@/components/UI/section-title";
+import Skill from "./skill";
 
 const Skills = ({ skills }) => {
+  const intl = useIntl();
+  const sectionTitle = intl.formatMessage({ id: "page.developer.skills" });
+  const sectionDescription = intl.formatMessage({
+    id: "page.developer.skills.description",
+  });
   return (
     <div className="">
       <SectionTitle
-        title="page.developer.skills"
-        description="page.developer.skills.description"
+        title={sectionTitle}
+        description={sectionDescription}
         className="mt-24 section-title-big-vars"
       />
 

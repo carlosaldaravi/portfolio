@@ -66,7 +66,7 @@
   "page.developer.makeYours": "o.. ¡Hazlo tuyo!",
   "page.developer.duotone": "Echa un vistazo a los actuales riders del equipo Duotone. Puedes filtrar por especialidad.",
   "page.developer.experience": "Experiencia",
-  "page.developer.experience.description": "6 años como desarrollador web",
+  "page.developer.experience.description": "{numOfYears} años como desarrollador web",
   "page.developer.experience.now": "Actualidad",
   "page.developer.experience.place.remote": "En remoto",
   "page.developer.experience.place.onsite": "Presencial",

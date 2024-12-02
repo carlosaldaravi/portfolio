@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { FormattedMessage } from "react-intl";
 import { THEMES_TYPES } from "@/types/themes";
 import ThemeContext from "@/store/theme-context";
 
@@ -17,11 +16,11 @@ const SectionTitle = ({ title, className, description }) => {
       <h3
         className={`section-title uppercase transition-all duration-300 ${className} ${styleTitle}`}
       >
-        <FormattedMessage id={title} />
+        {title}
       </h3>
       {description && (
         <p className="text-center text-xl sm:text-2xl mt-8 font-thin">
-          <FormattedMessage id={description} />
+          {description}
         </p>
       )}
     </div>
