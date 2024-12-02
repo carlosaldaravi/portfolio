@@ -39,11 +39,11 @@
             { "size": "7m" },
             { "wind": "30 - 60" }
           ],
-          "img": "/world-record.jpeg",
+          "img": "/images/world-record.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/world-record.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/world-record.jpeg);",
                 "backgroundPosition": "48% 50%;"
               }
             }
@@ -60,11 +60,11 @@
             { "size": "9m" },
             { "wind": "20 - 35" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
@@ -81,11 +81,11 @@
             { "size": "9m" },
             { "wind": "10 - 30" }
           ],
-          "img": "/elmedano.jpeg",
+          "img": "/images/spots/elmedano.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/elmedano.jpeg);",
                 "backgroundPosition": "50% 15%;"
               }
             }
@@ -102,11 +102,11 @@
             { "size": "9m" },
             { "wind": "20 - 35" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
@@ -123,11 +123,11 @@
             { "size": "9m" },
             { "wind": "25 - 45" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
@@ -144,11 +144,11 @@
             { "size": "9m" },
             { "wind": "20 - 40" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
@@ -165,11 +165,11 @@
             { "size": "10m" },
             { "wind": "10 - 20" }
           ],
-          "img": "/santapola.jpg_large",
+          "img": "/images/spots/santapola.jpg_large",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/santapola.jpg_large);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/santapola.jpg_large);",
                 "backgroundPosition": "30% 58%;"
               }
             }
@@ -186,11 +186,11 @@
             { "size": "9m" },
             { "wind": "0 - 40" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
@@ -207,11 +207,11 @@
             { "size": "9m" },
             { "wind": "15 - 25" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
@@ -228,11 +228,11 @@
             { "size": "13m" },
             { "wind": "11 - 22" }
           ],
-          "img": "/elmedano.jpeg",
+          "img": "/images/spots/elmedano.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/elmedano.jpeg);",
                 "backgroundPosition": "50% 15%;"
               }
             }
@@ -249,11 +249,11 @@
             { "size": "9m" },
             { "wind": "25 - 40" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
@@ -271,11 +271,11 @@
             { "size": "13m" },
             { "wind": "8 - 18" }
           ],
-          "img": "/elmedano.jpeg",
+          "img": "/images/spots/elmedano.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/elmedano.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/elmedano.jpeg);",
                 "backgroundPosition": "50% 15%;"
               }
             }
@@ -292,16 +292,37 @@
             { "size": "9m" },
             { "wind": "20 - 35" }
           ],
-          "img": "/tarifa.jpeg",
+          "img": "/images/spots/tarifa.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/tarifa.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
                 "backgroundPosition": "20% 65%;"
               }
             }
           },
           "youtubeEmbedId": "fNR0erdMT04",
+          "best": false
+        },
+        {
+          "texts": [
+            { "hangtime": "20" },
+            { "date": "26/10/2024" },
+            { "spot": "Hermanus" },
+            { "kite": "Rebel" },
+            { "size": "8m" },
+            { "wind": "20 - 30" }
+          ],
+          "img": "/images/spots/leucate.jpeg",
+          "style": {
+            "kiteCard": {
+              "&::before": {
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/leucate.jpeg);",
+                "backgroundPosition": "20% 100%;"
+              }
+            }
+          },
+          "youtubeEmbedId": "QHBIGtWig1U",
           "best": false
         },
         {
@@ -313,11 +334,11 @@
             { "size": "8m" },
             { "wind": "35 - 50" }
           ],
-          "img": "/leucate.jpeg",
+          "img": "/images/spots/leucate.jpeg",
           "style": {
             "kiteCard": {
               "&::before": {
-                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/leucate.jpeg);",
+                "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/leucate.jpeg);",
                 "backgroundPosition": "20% 100%;"
               }
             }
@@ -348,7 +369,7 @@
         },
         {
           "name": "Surfr.",
-          "img": "/surfr.png",
+          "img": "/images/logos/surfr.png",
           "url": "https://www.thesurfr.app/"
         },
         {
@@ -365,7 +386,7 @@
         {
           "id": "news-6",
           "title": "El Campeonato de España de Big Air certifica el cambio generacional",
-          "img": "/as-2023.png",
+          "img": "/images/news/as-2023.png",
           "video": "",
           "date": "25/09/2023",
           "source": "as.com",
@@ -374,7 +395,7 @@
         {
           "id": "news-5",
           "title": "Forajidos: Carlos Aldaravi e Isaac Hernández forajidos del kitesurf y del hydrofoil",
-          "img": "/ser-2022.png",
+          "img": "/images/news/ser-2022.png",
           "video": "",
           "date": "21-01-2022",
           "source": "Cadena ser",
@@ -383,7 +404,7 @@
         {
           "id": "news-4",
           "title": "Entrevista en el programa Zapeando de La Sexta",
-          "img": "/zapeando.png",
+          "img": "/images/news/zapeando.png",
           "video": "PReoZonSpa4",
           "date": "26-08-2021",
           "source": "La sexta",
@@ -392,7 +413,7 @@
         {
           "id": "news-3",
           "title": "El kitesurfista Carlos Aldaravi cruza la playa de Valdevaqueros, en Cádiz, volando durante más de un minuto",
-          "img": "/antena3-2021.png",
+          "img": "/images/news/antena3-2021.png",
           "video": "",
           "date": "15-08-2021",
           "source": "Antena 3",
@@ -401,7 +422,7 @@
         {
           "id": "news-2",
           "title": "Inhumano Carlos Aldaravi: cruza toda una playa de Tarifa volando durante más de un minuto",
-          "img": "/as-2021.png",
+          "img": "/images/news/as-2021.png",
           "video": "",
           "date": "12/08/2021",
           "source": "as.com",
@@ -410,7 +431,7 @@
         {
           "id": "news-1",
           "title": "Un kitesurfista español se cruza la playa de valdevaqueros entera... ¡volando!",
-          "img": "/as-2019.png",
+          "img": "/images/news/as-2019.png",
           "video": "",
           "date": "31/05/2019",
           "source": "as.com",
@@ -429,14 +450,14 @@
               "id": "gear-1",
               "name": "Rebel SLS",
               "sizes": ["7m", "8m", "9m"],
-              "img": "/rebel-2024.webp",
+              "img": "/images/equipment/rebel-2024.webp",
               "url": "https://www.duotonesports.com/es/products/duotone-rebel-sls-2024-44240-3010"
             },
             {
               "id": "gear-2",
               "name": "Evo DLAB",
               "sizes": ["10m", "11m"],
-              "img": "/evo.webp",
+              "img": "/images/equipment/evo.webp",
               "url": "https://www.duotonesports.com/es/kiteboarding/kites/evo-d/lab/"
             }
           ]
@@ -447,13 +468,13 @@
             {
               "id": "gear-3",
               "name": "Clickbar 12m + 12m",
-              "img": "/clickbar-2024.webp",
+              "img": "/images/equipment/clickbar-2024.webp",
               "url": "https://www.duotonesports.com/es/products/duotone-click-bar-quad-control-2024-44240-3202?color=S&variant=46975515394372"
             },
             {
               "id": "gear-4",
               "name": "Clickbar 22m + 2m",
-              "img": "/clickbar-2024.webp",
+              "img": "/images/equipment/clickbar-2024.webp",
               "url": "https://www.duotonesports.com/es/products/trust-bar-quad-control-44230-3201?color=S"
             }
           ]
@@ -461,19 +482,19 @@
         {
           "id": "gear-5",
           "name": "Jaime SLS 133cm",
-          "img": "/jaime-2024.webp",
+          "img": "/images/equipment/jaime-2024.webp",
           "url": "https://www.duotonesports.com/es/products/duotone-jaime-sls-2024-44240-3421"
         },
         {
           "id": "gear-6",
           "name": "Seek Amp",
-          "img": "/wetsuit.webp",
+          "img": "/images/equipment/wetsuit.webp",
           "url": "https://www.ion-products.com/en/products/seek-amp-4-3-front-zip-48232-4467?refinements%5Bsubcategory.value%5D%5B0%5D=Semidry&refinements%5Bentry.value%5D%5B0%5D=Frontzip&variant=42569169961160"
         },
         {
           "id": "gear-7",
           "name": "Riot Curv 14",
-          "img": "/harness.webp",
+          "img": "/images/equipment/harness.webp",
           "url": "https://www.ion-products.com/en/products/riot-curv-48232-4709?variant=42569106784456"
         }
       ]

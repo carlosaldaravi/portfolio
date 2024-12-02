@@ -58,7 +58,7 @@ const AboutHeader = () => {
       {/* {!isMobile && (
         <div className={`${classes.right}`}>
           <Image
-            src="/yo-dev.png"
+            src="/images/yo-dev.png"
             alt="me"
             width={200}
             height={200}

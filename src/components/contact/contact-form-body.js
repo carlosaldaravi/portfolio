@@ -57,7 +57,7 @@ const ContactFormBody = () => {
           <FormattedMessage id="page.contact.description" />
         </h3>
         <Image
-          src="/yo-contact.png"
+          src="/images/yo-contact.png"
           alt="img"
           width={600}
           height={800}

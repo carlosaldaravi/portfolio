@@ -19,7 +19,7 @@ const RankingHeader = () => {
       <div className="h-28 flex flex-col justify-center items-center">
         {/* <span className="text-center tracking-xs text-4xl">Surfr.</span>*/}
         <Image
-          src="/surfr.png"
+          src="/images/logos/surfr.png"
           height={100}
           width={100}
           alt="surfr logo"

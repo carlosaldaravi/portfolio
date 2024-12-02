@@ -70,7 +70,7 @@ const Header = () => {
       >
         <Image
           title={`Logo ${MY_NAME}`}
-          src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
+          src={theme === "dark" ? "/images/logos/logo-blanco.png" : "/images/logos/logo-negro.png"}
           alt="logo"
           width={60}
           height={80}

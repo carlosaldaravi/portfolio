@@ -195,11 +195,11 @@ export default ProjectOFF;
 //     { "size": "8m" },
 //     { "wind": "35 - 50" }
 //   ],
-//   "img": "/mistycliffs.jpeg",
+//   "img": "/images/spots/mistycliffs.jpeg",
 //   "style": {
 //     "kiteCard": {
 //       "&::before": {
-//         "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/mistycliffs.jpeg);",
+//         "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/mistycliffs.jpeg);",
 //         "backgroundPosition": "100% 90%;"
 //       }
 //     }

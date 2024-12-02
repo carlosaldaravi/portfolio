@@ -27,7 +27,7 @@ const Developer = ({ data }) => {
         <title>Carlos Aldaravi Porfolio</title>
         <meta name="description" content={meta} />
       </Head>
-      <KiterCard me={data.me} src="/yo-dev.png" />
+      <KiterCard me={data.me} src="/images/yo-dev.png" />
       <Experience experience={data.experience} />
       <Projects projects={data.projects} />
       <Stack stack={data.stack} />

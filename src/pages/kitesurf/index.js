@@ -17,9 +17,9 @@ const KiteSurf = ({ sections, me }) => {
   const { isMobile } = useTools();
   const tracker = useTracker();
 
-  const videoUrl = isMobile ? "/video-short.mp4" : "/video.MP4";
-  const videoUrlWebm = isMobile ? "/video-short.webm" : "/video.webm";
-  const videoPoster = "/video-poster.png";
+  const videoUrl = isMobile ? "/videos/video-short.mp4" : "/videos/video.MP4";
+  const videoUrlWebm = isMobile ? "/videos/video-short.webm" : "/videos/video.webm";
+  const videoPoster = "/images/video-poster.png";
 
   useEffect(() => {
     tracker.page(TRACKING_TYPES.page.kitesurfer);
@@ -55,7 +55,7 @@ const KiteSurf = ({ sections, me }) => {
       />
 
       <div className="relative z-10">
-        <KiterCard me={me} src="/yo-kite.png" />
+        <KiterCard me={me} src="/images/yo-kite.png" />
         <KiteSectionsSelector
           sections={sections}
           sectionSelected={sectionSelected}

@@ -2,7 +2,7 @@
   {
     "name": "page.home.engineer",
     "to": "/developer",
-    "avatar": "/yo-dev.png",
+    "avatar": "/images/yo-dev.png",
     "customClass": "image-dev",
     "rrss": [
       {
@@ -25,7 +25,7 @@
   {
     "name": "kitesurfer",
     "to": "/kitesurf",
-    "avatar": "/yo-kite.png",
+    "avatar": "/images/yo-kite.png",
     "customClass": "image-kite",
     "rrss": [
       {

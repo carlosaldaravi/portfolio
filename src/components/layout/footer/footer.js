@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="tracking-xxs text-lg sm:text-xl mr-10 sm:mr-24 font-bold">
           <div className="flex items-center justify-between gap-8">
             {/* <Image
-              src={theme === "dark" ? "/logo-blanco.png" : "/logo-negro.png"}
+              src={theme === "dark" ? "/images/logos/logo-blanco.png" : "/images/logos/logo-negro.png"}
               alt="logo"
               width={60}
               height={80}

@@ -42,7 +42,7 @@
       "id": "project-5",
       "name": "Surfr. Leaderboard",
       "logo": "surfr.png",
-      "img": "/surfr-project.png",
+      "img": "/images/projects/surfr-project.png",
       "year": "2023",
       "github": {
         "url": "https://github.com/carlosaldaravi/surfr-leaderboard",
@@ -56,8 +56,8 @@
     {
       "id": "project-4",
       "name": "Duotone Team",
-      "logo": "/duotone-logo.png",
-      "img": "/duotone-team.png",
+      "logo": "/images/logos/duotone-logo.png",
+      "img": "/images/projects/duotone-team.png",
       "year": "2023",
       "github": {
         "url": "https://github.com/carlosaldaravi/duotone-team",
@@ -71,8 +71,8 @@
     {
       "id": "project-3",
       "name": "Trainsegrity",
-      "logo": "/trainsegrity-logo.png",
-      "img": "/trainsegrity-project.png",
+      "logo": "/images/logos/trainsegrity-logo.png",
+      "img": "/images/projects/trainsegrity-project.png",
       "year": "2022",
       "github": { "url": "", "private": true },
       "url": "https://trainsegrity.vercel.app/login",
@@ -91,8 +91,8 @@
     {
       "id": "project-2",
       "name": "Ocean Platform",
-      "logo": "/ocean-logo.png",
-      "img": "/ocean-project.png",
+      "logo": "/images/logos/ocean-logo.png",
+      "img": "/images/projects/ocean-project.png",
       "year": "2020",
       "github": {
         "url": "https://github.com/carlosaldaravi/ocean-backend",
@@ -115,8 +115,8 @@
     {
       "id": "project-1",
       "name": "Kwee",
-      "logo": "/kwee.svg",
-      "img": "/kwee-project.png",
+      "logo": "/images/kwee.svg",
+      "img": "/images/projects/kwee-project.png",
       "year": "2019",
       "github": { "url": "", "private": true },
       "url": "https://kwee.ovh/home",
