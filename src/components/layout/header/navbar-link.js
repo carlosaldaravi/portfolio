@@ -51,7 +51,7 @@ const NavbarLink = ({ src, title, name }) => {
       <span
         className={`${
           route === src
-            ? `px-12 border-b-2 font-extrabold ${activeStyle}`
+            ? `px-12 font-extrabold ${activeStyle}`
             : ` ${
                 theme === THEMES_TYPES.dark
                   ? "border-light-primary"
