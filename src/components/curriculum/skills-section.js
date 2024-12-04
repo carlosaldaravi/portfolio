@@ -13,52 +13,70 @@ const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
     }));
   };
 
+  const handleRemoveSection = (field) => {
+    setSkills((prev) => {
+      const updatedInfo = { ...prev };
+      delete updatedInfo[field];
+      return updatedInfo;
+    });
+  };
+
   return (
     <>
-      <SidebarSection
-        title={<FormattedMessage id="page.curriculum.sidebar.personalSkills" />}
-      >
-        <Bubbles>
-          {skills.personalSkills.map((skill) => (
-            <Bubble
-              key={skill.id}
-              name={skill.skill}
-              color={skill.color}
-              size={skill.size}
-              top={skill.top}
-              left={skill.left}
-              head={skill.head || false}
-              isGeneratingPDF={isGeneratingPDF}
-              isEditable={isEditable}
-              onChangeText={(newName) =>
-                handleSkillChange("personalSkills", skill.id, newName)
-              }
-            />
-          ))}
-        </Bubbles>
-      </SidebarSection>
-      <SidebarSection
-        title={<FormattedMessage id="page.curriculum.sidebar.programming" />}
-      >
-        <Bubbles>
-          {skills.programmingSkills.map((skill) => (
-            <Bubble
-              key={skill.id}
-              name={skill.skill}
-              color={skill.color}
-              size={skill.size}
-              top={skill.top}
-              left={skill.left}
-              head={skill.head || false}
-              isGeneratingPDF={isGeneratingPDF}
-              isEditable={isEditable}
-              onChangeText={(newName) =>
-                handleSkillChange("personalSkills", skill.id, newName)
-              }
-            />
-          ))}
-        </Bubbles>
-      </SidebarSection>
+      {skills.personalSkills && (
+        <SidebarSection
+          title={
+            <FormattedMessage id="page.curriculum.sidebar.personalSkills" />
+          }
+          isEditable={isEditable}
+          onRemoveSection={() => handleRemoveSection("personalSkills")}
+        >
+          <Bubbles>
+            {skills.personalSkills.map((skill) => (
+              <Bubble
+                key={skill.id}
+                name={skill.skill}
+                color={skill.color}
+                size={skill.size}
+                top={skill.top}
+                left={skill.left}
+                head={skill.head || false}
+                isGeneratingPDF={isGeneratingPDF}
+                isEditable={isEditable}
+                onChangeText={(newName) =>
+                  handleSkillChange("personalSkills", skill.id, newName)
+                }
+              />
+            ))}
+          </Bubbles>
+        </SidebarSection>
+      )}
+      {skills.programmingSkills && (
+        <SidebarSection
+          title={<FormattedMessage id="page.curriculum.sidebar.programming" />}
+          isEditable={isEditable}
+          onRemoveSection={() => handleRemoveSection("programmingSkills")}
+        >
+          <Bubbles>
+            {skills.programmingSkills.map((skill) => (
+              <Bubble
+                key={skill.id}
+                name={skill.skill}
+                color={skill.color}
+                size={skill.size}
+                top={skill.top}
+                left={skill.left}
+                head={skill.head || false}
+                isGeneratingPDF={isGeneratingPDF}
+                isEditable={isEditable}
+                onChangeText={(newName) =>
+                  handleSkillChange("personalSkills", skill.id, newName)
+                }
+              />
+            ))}
+          </Bubbles>
+        </SidebarSection>
+      )}
     </>
   );
 };
