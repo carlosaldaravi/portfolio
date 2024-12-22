@@ -1,3 +1,4 @@
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
 const Bubble = ({
@@ -10,6 +11,7 @@ const Bubble = ({
   isGeneratingPDF = false,
   isEditable = false,
   onChangeText,
+  onRemoveBubble,
 }) => {
   const [editableText, setEditableText] = useState(name);
 
@@ -43,11 +45,16 @@ const Bubble = ({
 
   return (
     <div
-      className={`bubble bg-${color} ${
+      className={`bubble relative bg-${color} ${
         head ? "bubble-head" : "bubble-dynamic"
       }`}
       style={isGeneratingPDF ? pdfStyle : webStyle}
     >
+      {isEditable && (
+        <button onClick={() => onRemoveBubble(name)} className="ml-2">
+          <XMarkIcon className="absolute -top-2 w-8 h-8 font-bold bg-white rounded-full" />
+        </button>
+      )}
       <div
         className="bubble-content"
         style={

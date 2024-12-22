@@ -21,6 +21,8 @@ const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
     });
   };
 
+  const handleRemoveBubble = (name) => {};
+
   return (
     <>
       {skills.personalSkills && (
@@ -45,6 +47,16 @@ const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
                 isEditable={isEditable}
                 onChangeText={(newName) =>
                   handleSkillChange("personalSkills", skill.id, newName)
+                }
+                onRemoveBubble={(name) =>
+                  setSkills((prev) => {
+                    return {
+                      ...prev,
+                      personalSkills: prev.personalSkills.filter(
+                        (s) => s.skill != name
+                      ),
+                    };
+                  })
                 }
               />
             ))}
@@ -71,6 +83,16 @@ const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
                 isEditable={isEditable}
                 onChangeText={(newName) =>
                   handleSkillChange("personalSkills", skill.id, newName)
+                }
+                onRemoveBubble={(name) =>
+                  setSkills((prev) => {
+                    return {
+                      ...prev,
+                      programmingSkills: prev.programmingSkills.filter(
+                        (s) => s.skill != name
+                      ),
+                    };
+                  })
                 }
               />
             ))}
