@@ -55,25 +55,25 @@ const HonorAndAward = ({
         </EditableSection>
       ))}
       {isEditable && (
-        <div className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer">
+        <div
+          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
+          onClick={() =>
+            setHonorsAndAwards([
+              ...honorsAndAwards,
+              {
+                id: `award-${honorsAndAwards.length + 1}`,
+                date: "",
+                title: intl.formatMessage({
+                  id: "page.curriculum.body.honorsAndAwards.award",
+                }),
+                place: "",
+                description: "",
+              },
+            ])
+          }
+        >
           <span>
-            <PlusIcon
-              className="w-12 h-12 stroke-green-600"
-              onClick={() =>
-                setHonorsAndAwards([
-                  ...honorsAndAwards,
-                  {
-                    id: `award-${honorsAndAwards.length + 1}`,
-                    date: "",
-                    title: intl.formatMessage({
-                      id: "page.curriculum.body.honorsAndAwards.award",
-                    }),
-                    place: "",
-                    description: "",
-                  },
-                ])
-              }
-            />
+            <PlusIcon className="w-12 h-12 stroke-green-600" />
           </span>
         </div>
       )}

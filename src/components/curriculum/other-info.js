@@ -31,20 +31,20 @@ const OtherInfo = ({ titleId, isEditable, otherInfo, setOtherInfo }) => {
         </EditableSection>
       ))}
       {isEditable && (
-        <div className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer">
+        <div
+          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
+          onClick={() =>
+            setOtherInfo([
+              ...otherInfo,
+              {
+                id: `info-${otherInfo.length + 1}`,
+                text: "",
+              },
+            ])
+          }
+        >
           <span>
-            <PlusIcon
-              className="w-12 h-12 stroke-green-600"
-              onClick={() =>
-                setOtherInfo([
-                  ...otherInfo,
-                  {
-                    id: `info-${otherInfo.length + 1}`,
-                    text: "",
-                  },
-                ])
-              }
-            />
+            <PlusIcon className="w-12 h-12 stroke-green-600" />
           </span>
         </div>
       )}

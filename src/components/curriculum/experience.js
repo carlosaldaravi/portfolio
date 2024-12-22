@@ -46,24 +46,24 @@ const Experience = ({ titleId, isEditable, experiences, setExperiences }) => {
         </EditableSection>
       ))}
       {isEditable && (
-        <div className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer">
+        <div
+          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
+          onClick={() =>
+            setExperiences([
+              ...experiences,
+              {
+                id: `experience-${experiences.length + 1}`,
+                date: "",
+                title: "",
+                place: "",
+                text: "",
+                order: experiences.length + 1,
+              },
+            ])
+          }
+        >
           <span>
-            <PlusIcon
-              className="w-12 h-12 stroke-green-600"
-              onClick={() =>
-                setExperiences([
-                  ...experiences,
-                  {
-                    id: `experience-${experiences.length + 1}`,
-                    date: "",
-                    title: "",
-                    place: "",
-                    text: "",
-                    order: experiences.length + 1,
-                  },
-                ])
-              }
-            />
+            <PlusIcon className="w-12 h-12 stroke-green-600" />
           </span>
         </div>
       )}

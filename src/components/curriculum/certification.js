@@ -53,23 +53,23 @@ const Certification = ({
         </EditableSection>
       ))}
       {isEditable && (
-        <div className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer">
+        <div
+          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
+          onClick={() =>
+            setCertifications([
+              ...certifications,
+              {
+                id: `cert-${certifications.length + 1}`,
+                date: "",
+                title: "",
+                place: "",
+                hours: "",
+              },
+            ])
+          }
+        >
           <span>
-            <PlusIcon
-              className="w-12 h-12 stroke-green-600"
-              onClick={() =>
-                setCertifications([
-                  ...certifications,
-                  {
-                    id: `cert-${certifications.length + 1}`,
-                    date: "",
-                    title: "",
-                    place: "",
-                    hours: "",
-                  },
-                ])
-              }
-            />
+            <PlusIcon className="w-12 h-12 stroke-green-600" />
           </span>
         </div>
       )}
