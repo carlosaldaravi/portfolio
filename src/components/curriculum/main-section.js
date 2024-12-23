@@ -208,75 +208,73 @@ const MainSection = ({ isEditable }) => {
   };
 
   return (
-    <>
-      <div className="main__right__body">
-        {sections.map(({ id, title }) => (
-          <div key={`section-${id}`} className="section">
-            <EditableSection
-              isEditable={isEditable}
-              bigSection={true}
-              onRemove={() => handleOnRemoveSection(id)}
-            >
-              {id === "section-experience" && (
-                <Experience
-                  title={title}
-                  isEditable={isEditable}
-                  experiences={experiences}
-                  setExperiences={setExperiences}
-                  onChangeTitle={(sectionId, newTitle) =>
-                    handleChangeSectionTitle(sectionId, newTitle)
-                  }
-                />
-              )}
-              {id === "section-education" && (
-                <Education
-                  title={title}
-                  isEditable={isEditable}
-                  educations={educations}
-                  setEducations={setEducations}
-                  onChangeTitle={(sectionId, newTitle) =>
-                    handleChangeSectionTitle(sectionId, newTitle)
-                  }
-                />
-              )}
-              {id === "section-certifications" && (
-                <Certification
-                  title={title}
-                  isEditable={isEditable}
-                  certifications={certifications}
-                  setCertifications={setCertifications}
-                  onChangeTitle={(sectionId, newTitle) =>
-                    handleChangeSectionTitle(sectionId, newTitle)
-                  }
-                />
-              )}
-              {id === "section-honorsAndAwards" && (
-                <HonorAndAward
-                  title={title}
-                  isEditable={isEditable}
-                  honorsAndAwards={honorsAndAwards}
-                  setHonorsAndAwards={setHonorsAndAwards}
-                  onChangeTitle={(sectionId, newTitle) =>
-                    handleChangeSectionTitle(sectionId, newTitle)
-                  }
-                />
-              )}
-              {id === "section-otherInfo" && (
-                <OtherInfo
-                  title={title}
-                  isEditable={isEditable}
-                  otherInfo={otherInfo}
-                  setOtherInfo={setOtherInfo}
-                  onChangeTitle={(sectionId, newTitle) =>
-                    handleChangeSectionTitle(sectionId, newTitle)
-                  }
-                />
-              )}
-            </EditableSection>
-          </div>
-        ))}
-      </div>
-    </>
+    <div className="main__right__body">
+      {sections.map(({ id, title }) => (
+        <div key={`section-${id}`} className="section">
+          <EditableSection
+            isEditable={isEditable}
+            bigSection={true}
+            onRemove={() => handleOnRemoveSection(id)}
+          >
+            {id === "section-experience" && (
+              <Experience
+                title={title}
+                isEditable={isEditable}
+                experiences={experiences}
+                setExperiences={setExperiences}
+                onChangeTitle={(sectionId, newTitle) =>
+                  handleChangeSectionTitle(sectionId, newTitle)
+                }
+              />
+            )}
+            {id === "section-education" && (
+              <Education
+                title={title}
+                isEditable={isEditable}
+                educations={educations}
+                setEducations={setEducations}
+                onChangeTitle={(sectionId, newTitle) =>
+                  handleChangeSectionTitle(sectionId, newTitle)
+                }
+              />
+            )}
+            {id === "section-certifications" && (
+              <Certification
+                title={title}
+                isEditable={isEditable}
+                certifications={certifications}
+                setCertifications={setCertifications}
+                onChangeTitle={(sectionId, newTitle) =>
+                  handleChangeSectionTitle(sectionId, newTitle)
+                }
+              />
+            )}
+            {id === "section-honorsAndAwards" && (
+              <HonorAndAward
+                title={title}
+                isEditable={isEditable}
+                honorsAndAwards={honorsAndAwards}
+                setHonorsAndAwards={setHonorsAndAwards}
+                onChangeTitle={(sectionId, newTitle) =>
+                  handleChangeSectionTitle(sectionId, newTitle)
+                }
+              />
+            )}
+            {id === "section-otherInfo" && (
+              <OtherInfo
+                title={title}
+                isEditable={isEditable}
+                otherInfo={otherInfo}
+                setOtherInfo={setOtherInfo}
+                onChangeTitle={(sectionId, newTitle) =>
+                  handleChangeSectionTitle(sectionId, newTitle)
+                }
+              />
+            )}
+          </EditableSection>
+        </div>
+      ))}
+    </div>
   );
 };
 
