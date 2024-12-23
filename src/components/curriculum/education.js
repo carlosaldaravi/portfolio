@@ -4,7 +4,13 @@ import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
-const Education = ({ titleId, isEditable, educations, setEducations }) => {
+const Education = ({
+  title,
+  isEditable,
+  educations,
+  setEducations,
+  onChangeTitle,
+}) => {
   const handleEducationChange = (updatedEducation) => {
     setEducations((prevEducations) =>
       prevEducations.map((edu) =>
@@ -34,7 +40,13 @@ const Education = ({ titleId, isEditable, educations, setEducations }) => {
   };
 
   return (
-    <CurriculumSection titleId={titleId}>
+    <CurriculumSection
+      title={title}
+      isEditable={isEditable}
+      onChangeSectionTitle={(newTitle) => {
+        onChangeTitle("education", newTitle);
+      }}
+    >
       {educations.map((edu) => (
         <EditableSection
           key={edu.id}

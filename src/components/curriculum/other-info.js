@@ -3,7 +3,13 @@ import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
-const OtherInfo = ({ titleId, isEditable, otherInfo, setOtherInfo }) => {
+const OtherInfo = ({
+  title,
+  isEditable,
+  otherInfo,
+  setOtherInfo,
+  onChangeTitle,
+}) => {
   const handleInfoChange = (id, text) => {
     setOtherInfo((prevOtherInfo) =>
       prevOtherInfo.map((info) => (info.id === id ? { ...info, text } : info))
@@ -15,7 +21,13 @@ const OtherInfo = ({ titleId, isEditable, otherInfo, setOtherInfo }) => {
   };
 
   return (
-    <CurriculumSection titleId={titleId}>
+    <CurriculumSection
+      title={title}
+      isEditable={isEditable}
+      onChangeSectionTitle={(newTitle) => {
+        onChangeTitle("otherInfo", newTitle);
+      }}
+    >
       {otherInfo.map((info) => (
         <EditableSection
           key={info.id}

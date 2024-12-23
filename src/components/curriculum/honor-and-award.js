@@ -6,10 +6,11 @@ import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
 
 const HonorAndAward = ({
-  titleId,
+  title,
   isEditable,
   honorsAndAwards,
   setHonorsAndAwards,
+  onChangeTitle,
 }) => {
   const intl = useIntl();
   const handleHonorChange = (updatedHonor) => {
@@ -33,7 +34,13 @@ const HonorAndAward = ({
   };
 
   return (
-    <CurriculumSection titleId={titleId}>
+    <CurriculumSection
+      title={title}
+      isEditable={isEditable}
+      onChangeSectionTitle={(newTitle) => {
+        onChangeTitle("honorsAndAwards", newTitle);
+      }}
+    >
       {honorsAndAwards.map((honor) => (
         <EditableSection
           key={honor.id}

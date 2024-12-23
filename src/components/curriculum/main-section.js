@@ -1,7 +1,6 @@
 import { useIntl } from "react-intl";
 import { useState } from "react";
 import EditableSection from "./editable-section";
-import sectionsData from "@/data/sections-data";
 import Experience from "./experience";
 import Education from "./education";
 import Certification from "./certification";
@@ -10,7 +9,36 @@ import OtherInfo from "./other-info";
 
 const MainSection = ({ isEditable }) => {
   const intl = useIntl();
-  const [sections, setSections] = useState(sectionsData);
+  const [sections, setSections] = useState([
+    {
+      id: "section-experience",
+      title: intl.formatMessage({ id: "page.developer.experience" }),
+    },
+    {
+      id: "section-education",
+      title: intl.formatMessage({
+        id: "page.curriculum.body.education.title",
+      }),
+    },
+    {
+      id: "section-certifications",
+      title: intl.formatMessage({
+        id: "page.curriculum.body.certifications",
+      }),
+    },
+    {
+      id: "section-honorsAndAwards",
+      title: intl.formatMessage({
+        id: "page.curriculum.body.honorsAndAwards.title",
+      }),
+    },
+    {
+      id: "section-otherInfo",
+      title: intl.formatMessage({
+        id: "page.curriculum.body.otherInfo.title",
+      }),
+    },
+  ]);
 
   const [experiences, setExperiences] = useState([
     {
@@ -165,57 +193,82 @@ const MainSection = ({ isEditable }) => {
     },
   ]);
 
-  const handleOnRemoveSection = (titleId) => {
-    setSections(sections.filter((s) => s.titleId !== titleId));
+  const handleChangeSectionTitle = (sectionId, newTitle) => {
+    setSections((prevSections) =>
+      prevSections.map((section) =>
+        section.id === "section-" + sectionId
+          ? { ...section, title: newTitle }
+          : section
+      )
+    );
+  };
+
+  const handleOnRemoveSection = (id) => {
+    setSections(sections.filter((s) => s.id !== id));
   };
 
   return (
     <>
       <div className="main__right__body">
-        {sections.map(({ titleId, Component }) => (
-          <div key={titleId} className="section">
+        {sections.map(({ id, title }) => (
+          <div key={`section-${id}`} className="section">
             <EditableSection
               isEditable={isEditable}
               bigSection={true}
-              onRemove={() => handleOnRemoveSection(titleId)}
+              onRemove={() => handleOnRemoveSection(id)}
             >
-              {titleId === "page.developer.experience" ? (
+              {id === "section-experience" ? (
                 <Experience
-                  titleId={titleId}
+                  title={title}
                   isEditable={isEditable}
                   experiences={experiences}
                   setExperiences={setExperiences}
+                  onChangeTitle={(sectionId, newTitle) =>
+                    handleChangeSectionTitle(sectionId, newTitle)
+                  }
                 />
-              ) : titleId === "page.curriculum.body.education.title" ? (
+              ) : id === "section-education" ? (
                 <Education
-                  titleId={titleId}
+                  title={title}
                   isEditable={isEditable}
                   educations={educations}
                   setEducations={setEducations}
+                  onChangeTitle={(sectionId, newTitle) =>
+                    handleChangeSectionTitle(sectionId, newTitle)
+                  }
                 />
-              ) : titleId === "page.curriculum.body.certifications" ? (
+              ) : id === "section-certifications" ? (
                 <Certification
-                  titleId={titleId}
+                  title={title}
                   isEditable={isEditable}
                   certifications={certifications}
                   setCertifications={setCertifications}
+                  onChangeTitle={(sectionId, newTitle) =>
+                    handleChangeSectionTitle(sectionId, newTitle)
+                  }
                 />
-              ) : titleId === "page.curriculum.body.honorsAndAwards.title" ? (
+              ) : id === "section-honorsAndAwards" ? (
                 <HonorAndAward
-                  titleId={titleId}
+                  title={title}
                   isEditable={isEditable}
                   honorsAndAwards={honorsAndAwards}
                   setHonorsAndAwards={setHonorsAndAwards}
+                  onChangeTitle={(sectionId, newTitle) =>
+                    handleChangeSectionTitle(sectionId, newTitle)
+                  }
                 />
-              ) : titleId === "page.curriculum.body.otherInfo.title" ? (
+              ) : id === "section-otherInfo" ? (
                 <OtherInfo
-                  titleId={titleId}
+                  title={title}
                   isEditable={isEditable}
                   otherInfo={otherInfo}
                   setOtherInfo={setOtherInfo}
+                  onChangeTitle={(sectionId, newTitle) =>
+                    handleChangeSectionTitle(sectionId, newTitle)
+                  }
                 />
               ) : (
-                <Component titleId={titleId} isEditable={isEditable} />
+                <></>
               )}
             </EditableSection>
           </div>

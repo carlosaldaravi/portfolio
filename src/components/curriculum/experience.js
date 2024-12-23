@@ -4,7 +4,13 @@ import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
-const Experience = ({ titleId, isEditable, experiences, setExperiences }) => {
+const Experience = ({
+  title,
+  isEditable,
+  experiences,
+  setExperiences,
+  onChangeTitle,
+}) => {
   const handleEvents = (updatedEvent) => {
     setExperiences((prevExperiences) =>
       prevExperiences.map((ex) =>
@@ -24,27 +30,34 @@ const Experience = ({ titleId, isEditable, experiences, setExperiences }) => {
   };
 
   return (
-    <CurriculumSection titleId={titleId}>
-      {experiences.map((exp) => (
-        <EditableSection
-          key={exp.title + "-" + exp.place}
-          isEditable={isEditable}
-          bigSection={false}
-          onRemove={() => handleOnRemoveSection(exp.date)}
-        >
-          <TimeLineEvent
-            item={exp}
-            onChange={(event) => handleEvents(event)}
+    <CurriculumSection
+      title={title}
+      isEditable={isEditable}
+      onChangeSectionTitle={(newTitle) => {
+        onChangeTitle("experience", newTitle);
+      }}
+    >
+      {experiences &&
+        experiences.map((exp) => (
+          <EditableSection
+            key={exp.title + "-" + exp.place}
             isEditable={isEditable}
+            bigSection={false}
+            onRemove={() => handleOnRemoveSection(exp.date)}
           >
-            <PrettyParagraph
-              text={exp.text}
-              onChangeText={(text) => handleTextChange(exp.id, text)}
+            <TimeLineEvent
+              item={exp}
+              onChange={(event) => handleEvents(event)}
               isEditable={isEditable}
-            />
-          </TimeLineEvent>
-        </EditableSection>
-      ))}
+            >
+              <PrettyParagraph
+                text={exp.text}
+                onChangeText={(text) => handleTextChange(exp.id, text)}
+                isEditable={isEditable}
+              />
+            </TimeLineEvent>
+          </EditableSection>
+        ))}
       {isEditable && (
         <div
           className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"

@@ -5,10 +5,11 @@ import TimeLineEvent from "./time-line-event";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
 const Certification = ({
-  titleId,
+  title,
   isEditable,
   certifications,
   setCertifications,
+  onChangeTitle,
 }) => {
   const handleCertificationChange = (updatedCertification) => {
     setCertifications((prevCertifications) =>
@@ -31,7 +32,13 @@ const Certification = ({
   };
 
   return (
-    <CurriculumSection titleId={titleId}>
+    <CurriculumSection
+      title={title}
+      isEditable={isEditable}
+      onChangeSectionTitle={(newTitle) => {
+        onChangeTitle("certifications", newTitle);
+      }}
+    >
       {certifications.map((cert) => (
         <EditableSection
           key={cert.id}
