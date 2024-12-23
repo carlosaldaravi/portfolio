@@ -8,7 +8,7 @@ const SidebarSection = ({
   children,
 }) => {
   return (
-    <section className="body__info">
+    <section className="body__info section">
       <div className="flex justify-end">
         {isEditable ? (
           <input
