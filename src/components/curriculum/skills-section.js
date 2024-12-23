@@ -27,16 +27,40 @@ const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
   };
 
   const handleRemoveBubble = (sectionId, skillId) => {
-    setSkills(
-      skills.map((skill) =>
-        skill.id === sectionId
-          ? {
-              ...skill,
-              data: skill.data.filter((item) => item.id !== skillId),
-            }
-          : skill
-      )
-    );
+    setTimeout(() => {
+      setSkills(
+        skills.map((skill) =>
+          skill.id === sectionId
+            ? {
+                ...skill,
+                data: recalculateBubblePositions(
+                  sectionId,
+                  skill.data.filter((item) => item.id !== skillId)
+                ),
+              }
+            : skill
+        )
+      );
+    }, 200);
+  };
+
+  const recalculateBubblePositions = (sectionId, bubbles) => {
+    const center =
+      sectionId === "personal-skill" ? { x: 28, y: 28 } : { x: 33, y: 30 };
+    const radius = sectionId === "personal-skill" ? 48 : 40;
+
+    const angleStep =
+      (2 * Math.PI) / bubbles.filter((bubble) => !bubble.head).length;
+
+    return bubbles.map((bubble, index) => {
+      if (bubble.head) return bubble;
+      const angle = index * angleStep;
+      return {
+        ...bubble,
+        top: `${center.y + radius * Math.sin(angle)}%`,
+        left: `${center.x + radius * Math.cos(angle)}%`,
+      };
+    });
   };
 
   const handleRemoveSection = (id) => {

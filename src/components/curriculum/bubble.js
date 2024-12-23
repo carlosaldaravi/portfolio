@@ -13,6 +13,7 @@ const Bubble = ({
   onChangeText,
   onRemoveBubble,
 }) => {
+  const [isExploding, setIsExploding] = useState(false);
   const [editableText, setEditableText] = useState(name);
 
   const handleBlur = () => {
@@ -21,18 +22,17 @@ const Bubble = ({
     }
   };
 
-  const pdfPositions = {
-    React: { top: "12%", left: "15%" },
-    Teamwork: { top: "27%", left: "52%" },
+  const handleRemoveBubble = () => {
+    setIsExploding(true);
+    setTimeout(onRemoveBubble, 400);
   };
 
   const pdfStyle = {
     width: size,
     height: size,
-    top: pdfPositions[name]?.top || top || "auto",
-    left: pdfPositions[name]?.left || left || "auto",
+    top: top || "auto",
+    left: left || "auto",
     position: "absolute",
-    animation: "none",
   };
 
   const webStyle = {
@@ -45,13 +45,18 @@ const Bubble = ({
 
   return (
     <div
-      className={`bubble relative bg-${color} ${
-        head ? "bubble-head" : "bubble-dynamic"
+      className={`bubble relative ${
+        isExploding
+          ? "bubble-exploding"
+          : `${head ? "bubble-head" : "bubble-dynamic"}`
       }`}
-      style={isGeneratingPDF ? pdfStyle : webStyle}
+      style={{
+        backgroundColor: isExploding ? "red" : color,
+        ...(isGeneratingPDF ? pdfStyle : webStyle),
+      }}
     >
       {isEditable && (
-        <button onClick={onRemoveBubble} className="ml-2">
+        <button onClick={handleRemoveBubble} className="ml-2">
           <XMarkIcon className="absolute -top-2 w-8 h-8 font-bold bg-white rounded-full" />
         </button>
       )}

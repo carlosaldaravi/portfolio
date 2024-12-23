@@ -145,6 +145,12 @@
     padding: 1rem;
     opacity: 0.8;
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    transition: all 1s ease;
+}
+
+.bubble-exploding {
+    animation: explode 1s ease forwards !important;
+    background-color: red !important;
 }
 
 .bubble-content {
