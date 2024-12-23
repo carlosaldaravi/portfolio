@@ -51,7 +51,7 @@ const Bubble = ({
       style={isGeneratingPDF ? pdfStyle : webStyle}
     >
       {isEditable && (
-        <button onClick={() => onRemoveBubble(name)} className="ml-2">
+        <button onClick={onRemoveBubble} className="ml-2">
           <XMarkIcon className="absolute -top-2 w-8 h-8 font-bold bg-white rounded-full" />
         </button>
       )}
