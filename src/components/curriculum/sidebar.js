@@ -6,13 +6,33 @@ import SkillsSection from "./skills-section";
 
 const Sidebar = ({ isEditable, isGeneratingPDF }) => {
   const intl = useIntl();
-  const [personalInfo, setPersonalInfo] = useState({
-    website: "https://carlosaldaravi.com",
-    address: "Elche, Alicante",
-    skype: "carlosaldaravi.skype",
-    email: "carlosaldaravi@gmail.com",
-    github: "github.com/carlosaldaravi",
-  });
+  const [personalInfo, setPersonalInfo] = useState([
+    {
+      id: "p-info-website",
+      title: intl.formatMessage({ id: "page.curriculum.sidebar.website" }),
+      text: "https://carlosaldaravi.com",
+    },
+    {
+      id: "p-info-address",
+      title: intl.formatMessage({ id: "page.curriculum.sidebar.address" }),
+      text: "Elche, Alicante",
+    },
+    {
+      id: "p-info-skype",
+      title: "skype",
+      text: "carlosaldaravi.skype",
+    },
+    {
+      id: "p-info-email",
+      title: "email",
+      text: "carlosaldaravi@gmail.com",
+    },
+    {
+      id: "p-info-github",
+      title: "github",
+      text: "github.com/carlosaldaravi",
+    },
+  ]);
 
   const [languages, setLanguages] = useState([
     {

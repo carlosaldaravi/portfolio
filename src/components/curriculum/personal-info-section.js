@@ -1,109 +1,41 @@
-import { PlusIcon } from "@heroicons/react/24/outline";
 import SidebarSection from "./sidebar-section";
 
 const PersonalInfoSection = ({ personalInfo, setPersonalInfo, isEditable }) => {
-  const handleChange = (field, value) => {
-    setPersonalInfo((prev) => ({ ...prev, [field]: value }));
+  const handleChange = (field, id, value) => {
+    setPersonalInfo((prev) =>
+      prev.map((info) => (info.id === id ? { ...info, [field]: value } : info))
+    );
   };
 
-  const handleRemoveSection = (field) => {
+  const handleRemoveSection = (id) => {
     setPersonalInfo((prev) => {
-      const updatedInfo = { ...prev };
-      delete updatedInfo[field];
-      return updatedInfo;
+      prev.filter((info) => info.id !== id);
     });
   };
 
   return (
     <>
-      {personalInfo.website && (
+      {personalInfo.map((info) => (
         <SidebarSection
-          title="Website"
+          key={info.id}
+          title={info.title}
           isEditable={isEditable}
-          onRemoveSection={() => handleRemoveSection("website")}
+          onChangeTitle={(newTitle) => {
+            handleChange("title", info.id, newTitle);
+          }}
+          onRemoveSection={() => handleRemoveSection(info.id)}
         >
           {isEditable ? (
             <input
-              value={personalInfo.website}
-              onChange={(e) => handleChange("website", e.target.value)}
+              className="input_cv_edit"
+              value={info.text}
+              onChange={(e) => handleChange("text", info.id, e.target.value)}
             />
           ) : (
-            <a href={personalInfo.website} target="_blank" rel="noreferrer">
-              {personalInfo.website}
-            </a>
+            <p>{info.text}</p>
           )}
         </SidebarSection>
-      )}
-      {personalInfo.address && (
-        <SidebarSection
-          title="Address"
-          isEditable={isEditable}
-          onRemoveSection={() => handleRemoveSection("address")}
-        >
-          {isEditable ? (
-            <input
-              value={personalInfo.address}
-              onChange={(e) => handleChange("address", e.target.value)}
-            />
-          ) : (
-            <p>{personalInfo.address}</p>
-          )}
-        </SidebarSection>
-      )}
-      {personalInfo.skype && (
-        <SidebarSection
-          title="Skype"
-          isEditable={isEditable}
-          onRemoveSection={() => handleRemoveSection("skype")}
-        >
-          {isEditable ? (
-            <input
-              value={personalInfo.skype}
-              onChange={(e) => handleChange("skype", e.target.value)}
-            />
-          ) : (
-            <p>{personalInfo.skype}</p>
-          )}
-        </SidebarSection>
-      )}
-      {personalInfo.email && (
-        <SidebarSection
-          title="Email"
-          isEditable={isEditable}
-          onRemoveSection={() => handleRemoveSection("email")}
-        >
-          {isEditable ? (
-            <input
-              value={personalInfo.email}
-              onChange={(e) => handleChange("email", e.target.value)}
-            />
-          ) : (
-            <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
-          )}
-        </SidebarSection>
-      )}
-      {personalInfo.github && (
-        <SidebarSection
-          title="GitHub"
-          isEditable={isEditable}
-          onRemoveSection={() => handleRemoveSection("github")}
-        >
-          {isEditable ? (
-            <input
-              value={personalInfo.github}
-              onChange={(e) => handleChange("github", e.target.value)}
-            />
-          ) : (
-            <a
-              href={`https://${personalInfo.github}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {personalInfo.github}
-            </a>
-          )}
-        </SidebarSection>
-      )}
+      ))}
     </>
   );
 };
