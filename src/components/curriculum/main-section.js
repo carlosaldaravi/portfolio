@@ -217,7 +217,7 @@ const MainSection = ({ isEditable }) => {
               bigSection={true}
               onRemove={() => handleOnRemoveSection(id)}
             >
-              {id === "section-experience" ? (
+              {id === "section-experience" && (
                 <Experience
                   title={title}
                   isEditable={isEditable}
@@ -227,7 +227,8 @@ const MainSection = ({ isEditable }) => {
                     handleChangeSectionTitle(sectionId, newTitle)
                   }
                 />
-              ) : id === "section-education" ? (
+              )}
+              {id === "section-education" && (
                 <Education
                   title={title}
                   isEditable={isEditable}
@@ -237,7 +238,8 @@ const MainSection = ({ isEditable }) => {
                     handleChangeSectionTitle(sectionId, newTitle)
                   }
                 />
-              ) : id === "section-certifications" ? (
+              )}
+              {id === "section-certifications" && (
                 <Certification
                   title={title}
                   isEditable={isEditable}
@@ -247,7 +249,8 @@ const MainSection = ({ isEditable }) => {
                     handleChangeSectionTitle(sectionId, newTitle)
                   }
                 />
-              ) : id === "section-honorsAndAwards" ? (
+              )}
+              {id === "section-honorsAndAwards" && (
                 <HonorAndAward
                   title={title}
                   isEditable={isEditable}
@@ -257,7 +260,8 @@ const MainSection = ({ isEditable }) => {
                     handleChangeSectionTitle(sectionId, newTitle)
                   }
                 />
-              ) : id === "section-otherInfo" ? (
+              )}
+              {id === "section-otherInfo" && (
                 <OtherInfo
                   title={title}
                   isEditable={isEditable}
@@ -267,8 +271,6 @@ const MainSection = ({ isEditable }) => {
                     handleChangeSectionTitle(sectionId, newTitle)
                   }
                 />
-              ) : (
-                <></>
               )}
             </EditableSection>
           </div>
