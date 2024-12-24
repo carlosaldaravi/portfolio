@@ -45,7 +45,7 @@ const MainSection = ({ isEditable }) => {
       id: "experience-1",
       order: 1,
       date: "08/2023 - " + intl.formatMessage({ id: "present" }),
-      title: "Teach Lead",
+      title: "Tech Lead",
       place: "EVM Group",
       text: intl.formatMessage({ id: "page.developer.experience.evm" }),
     },
