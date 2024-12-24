@@ -11,7 +11,7 @@ const RowTextKiterCard = ({ textLeft, textRight }) => {
     theme === THEMES_TYPES.dark ? "text-light-text" : "text-dark-text";
 
   return (
-    <div className="flex">
+    <div className="w-full flex justify-between md:justify-start md:gap-10">
       <span
         className={`uppercase tracking-xxs sm:tracking-xxs w-40 sm:w-96 text-xl sm:text-xl my-4 self-center ${colorText}}`}
       >
