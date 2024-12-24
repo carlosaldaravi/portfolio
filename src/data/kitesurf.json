@@ -17,10 +17,6 @@
       "value": "page.kitesurf.hangtimeRecordValue"
     },
     {
-      "id": "page.kitesurf.homeSpot",
-      "value": "page.kitesurf.homeSpotValue"
-    },
-    {
       "id": "page.kitesurf.currentSpot",
       "value": "page.kitesurf.currentSpotValue"
     }

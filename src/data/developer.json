@@ -31,9 +31,18 @@
       "name": "languages",
       "color": "#9acd32",
       "data": [
-        { "name": "spanish", "progress": 100 },
-        { "name": "catalonian", "progress": 75 },
-        { "name": "english", "progress": 65 }
+        {
+          "name": "spanish",
+          "progress": 100
+        },
+        {
+          "name": "catalonian",
+          "progress": 75
+        },
+        {
+          "name": "english",
+          "progress": 65
+        }
       ]
     }
   ],
@@ -50,7 +59,11 @@
       },
       "url": "https://surfr-leaderboard.vercel.app/",
       "rol": "frontend",
-      "stack": ["javascript", "react", "tailwind"],
+      "stack": [
+        "javascript",
+        "react",
+        "tailwind"
+      ],
       "description": "page.developer.surfr"
     },
     {
@@ -65,7 +78,12 @@
       },
       "url": "https://duotone-team.netlify.app/",
       "rol": "frontend",
-      "stack": ["javascript", "astro", "svelte", "tailwind"],
+      "stack": [
+        "javascript",
+        "astro",
+        "svelte",
+        "tailwind"
+      ],
       "description": "page.developer.duotone"
     },
     {
@@ -74,7 +92,10 @@
       "logo": "/images/logos/trainsegrity-logo.png",
       "img": "/images/projects/trainsegrity-project.png",
       "year": "2022",
-      "github": { "url": "", "private": true },
+      "github": {
+        "url": "",
+        "private": true
+      },
       "url": "https://trainsegrity.vercel.app/login",
       "rol": "fullstack",
       "stack": [
@@ -111,32 +132,82 @@
       ],
       "description": "page.developer.oceanProject"
     },
-
     {
       "id": "project-1",
       "name": "Kwee",
       "logo": "/images/kwee.svg",
       "img": "/images/projects/kwee-project.png",
       "year": "2019",
-      "github": { "url": "", "private": true },
+      "github": {
+        "url": "",
+        "private": true
+      },
       "url": "https://kwee.ovh/home",
       "rol": "backend",
-      "stack": ["javascript", "nodejs", "mongodb"],
+      "stack": [
+        "javascript",
+        "nodejs",
+        "mongodb"
+      ],
       "description": "page.developer.kweeProject"
     }
   ],
   "stack": [
-    { "id": "stack-1", "name": "React", "svg": "react" },
-    { "id": "stack-2", "name": "Vue", "svg": "vuejs" },
-    { "id": "stack-3", "name": "Angular", "svg": "angular" },
-    { "id": "stack-4", "name": "Astro", "svg": "astro" },
-    { "id": "stack-6", "name": "Talwind", "svg": "tailwind" },
-    { "id": "stack-7", "name": "PHP", "svg": "php" },
-    { "id": "stack-8", "name": "Node", "svg": "nodejs" },
-    { "id": "stack-10", "name": "Postgressql", "svg": "postgresql" },
-    { "id": "stack-11", "name": "Mysql", "svg": "mysql" },
-    { "id": "stack-12", "name": "Mongodb", "svg": "mongodb" },
-    { "id": "stack-13", "name": "GitHub", "svg": "github" }
+    {
+      "id": "stack-1",
+      "name": "React",
+      "svg": "react"
+    },
+    {
+      "id": "stack-2",
+      "name": "Angular",
+      "svg": "angular"
+    },
+    {
+      "id": "stack-3",
+      "name": "Vue",
+      "svg": "vuejs"
+    },
+    {
+      "id": "stack-4",
+      "name": "Astro",
+      "svg": "astro"
+    },
+    {
+      "id": "stack-6",
+      "name": "Talwind",
+      "svg": "tailwind"
+    },
+    {
+      "id": "stack-7",
+      "name": "PHP",
+      "svg": "php"
+    },
+    {
+      "id": "stack-8",
+      "name": "Node",
+      "svg": "nodejs"
+    },
+    {
+      "id": "stack-10",
+      "name": "Postgressql",
+      "svg": "postgresql"
+    },
+    {
+      "id": "stack-11",
+      "name": "Mysql",
+      "svg": "mysql"
+    },
+    {
+      "id": "stack-12",
+      "name": "Mongodb",
+      "svg": "mongodb"
+    },
+    {
+      "id": "stack-13",
+      "name": "GitHub",
+      "svg": "github"
+    }
   ],
   "curriculum": {
     "fileName": "curriculum.pdf"
@@ -144,8 +215,19 @@
   "experience": [
     {
       "id": "experience-5",
-      "startDate": "01/08/2023",
+      "startDate": "01/01/2023",
       "endDate": null,
+      "company": "page.developer.experience.freelance.name",
+      "rol": "Full-Stack Developer",
+      "description": "page.developer.experience.freelance",
+      "achievement": [],
+      "place": "page.developer.experience.place.remote",
+      "now": "page.developer.experience.now"
+    },
+    {
+      "id": "experience-4",
+      "startDate": "01/08/2023",
+      "endDate": "31/12/2024",
       "company": "page.developer.experience.evm.name",
       "rol": "Tech Lead",
       "description": "page.developer.experience.evm",
@@ -154,17 +236,6 @@
         "page.developer.experience.evm.achievement2",
         "page.developer.experience.evm.achievement3"
       ],
-      "place": "page.developer.experience.place.remote",
-      "now": "page.developer.experience.now"
-    },
-    {
-      "id": "experience-4",
-      "startDate": "01/01/2023",
-      "endDate": null,
-      "company": "page.developer.experience.freelance.name",
-      "rol": "Full-Stack Developer",
-      "description": "page.developer.experience.freelance",
-      "achievement": [],
       "place": "page.developer.experience.place.remote",
       "now": "page.developer.experience.now"
     },
