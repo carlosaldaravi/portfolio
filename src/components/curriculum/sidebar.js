@@ -204,7 +204,7 @@ const Sidebar = ({ isEditable, isGeneratingPDF }) => {
           skill: "GIT",
           size: "4.8rem",
           top: "4%",
-          left: "8%",
+          left: "7%",
         },
       ],
     },
