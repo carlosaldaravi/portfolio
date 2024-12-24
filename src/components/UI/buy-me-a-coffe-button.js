@@ -1,10 +1,16 @@
 import Image from "next/image";
-import { useIntl } from "react-intl";
+import useTracker from "@/hooks/useTracker";
+import { TRACKING_TYPES } from "@/types/track";
 
 const BuyMeACoffeeButton = () => {
-  const intl = useIntl();
+  const tracker = useTracker();
   return (
-    <div className="buy-me-a-coffee">
+    <div
+      className="buy-me-a-coffee"
+      onClick={tracker.track(TRACKING_TYPES.event.buyMeACoffee, {
+        project: project.name,
+      })}
+    >
       <a
         href="https://buymeacoffee.com/carlosaldaravi"
         target="_blank"
