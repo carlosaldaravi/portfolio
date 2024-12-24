@@ -7,9 +7,7 @@ const BuyMeACoffeeButton = () => {
   return (
     <div
       className="buy-me-a-coffee"
-      onClick={tracker.track(TRACKING_TYPES.event.buyMeACoffee, {
-        project: project.name,
-      })}
+      onClick={tracker.track(TRACKING_TYPES.event.buyMeACoffee)}
     >
       <a
         href="https://buymeacoffee.com/carlosaldaravi"
