@@ -266,3 +266,19 @@
     border-color: inherit;
     opacity: 1;
 }
+
+.buy-me-a-coffee {
+    margin-top: 2rem;
+    text-align: center;
+    .coffee-button {
+        display: inline-block;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    .coffee-button:hover {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+}

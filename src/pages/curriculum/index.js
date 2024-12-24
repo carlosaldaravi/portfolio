@@ -7,6 +7,7 @@ import Sidebar from "@/components/curriculum/sidebar";
 import Header from "@/components/curriculum/header";
 import MainSection from "@/components/curriculum/main-section";
 import PDFButtons from "@/components/curriculum/pdf-buttons";
+import BuyMeACoffeeButton from "@/components/UI/buy-me-a-coffe-button";
 
 const Curriculum = () => {
   const [name, setName] = useState("Carlos");
@@ -78,6 +79,7 @@ const Curriculum = () => {
           <Footer name={name} surname={surname} />
         </div>
       </div>
+      <BuyMeACoffeeButton />
     </Page>
   );
 };
