@@ -8,9 +8,7 @@ const PersonalInfoSection = ({ personalInfo, setPersonalInfo, isEditable }) => {
   };
 
   const handleRemoveSection = (id) => {
-    setPersonalInfo((prev) => {
-      prev.filter((info) => info.id !== id);
-    });
+    setPersonalInfo((prev) => prev.filter((info) => info.id !== id));
   };
 
   return (
