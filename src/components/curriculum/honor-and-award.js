@@ -38,7 +38,7 @@ const HonorAndAward = ({
       title={title}
       isEditable={isEditable}
       onChangeSectionTitle={(newTitle) => {
-        onChangeTitle("honorsAndAwards", newTitle);
+        onChangeTitle("honors-and-awards", newTitle);
       }}
     >
       {honorsAndAwards.map((honor) => (
@@ -55,7 +55,7 @@ const HonorAndAward = ({
           >
             <PrettyParagraph
               text={honor.description}
-              onChangeText={(text) => handleTextChange(info.id, text)}
+              onChangeText={(text) => handleTextChange(honor.id, text)}
               isEditable={isEditable}
             />
           </TimeLineEvent>

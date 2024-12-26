@@ -2,6 +2,7 @@ export const personalInfoData = [
   {
     id: "p-info-website",
     titleId: "page.curriculum.sidebar.website",
+    title: "",
     text: "https://carlosaldaravi.com",
     titleEdited: false,
     textEdited: false,
@@ -9,6 +10,7 @@ export const personalInfoData = [
   {
     id: "p-info-address",
     titleId: "page.curriculum.sidebar.address",
+    title: "",
     text: "Elche, Alicante",
     titleEdited: false,
     textEdited: false,
@@ -16,6 +18,7 @@ export const personalInfoData = [
   {
     id: "p-info-skype",
     titleId: "page.curriculum.sidebar.skype",
+    title: "",
     text: "carlosaldaravi.skype",
     titleEdited: false,
     textEdited: false,
@@ -23,6 +26,7 @@ export const personalInfoData = [
   {
     id: "p-info-email",
     titleId: "page.curriculum.sidebar.email",
+    title: "",
     text: "carlosaldaravi@gmail.com",
     titleEdited: false,
     textEdited: false,
@@ -30,6 +34,7 @@ export const personalInfoData = [
   {
     id: "p-info-github",
     titleId: "page.curriculum.sidebar.github",
+    title: "",
     text: "github.com/carlosaldaravi",
     titleEdited: false,
     textEdited: false,

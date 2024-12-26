@@ -25,7 +25,7 @@ const OtherInfo = ({
       title={title}
       isEditable={isEditable}
       onChangeSectionTitle={(newTitle) => {
-        onChangeTitle("otherInfo", newTitle);
+        onChangeTitle("other-info", newTitle);
       }}
     >
       {otherInfo.map((info) => (

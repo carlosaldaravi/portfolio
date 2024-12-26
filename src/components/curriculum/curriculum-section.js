@@ -6,14 +6,16 @@ const CurriculumSection = ({
   onChangeSectionTitle,
   children,
 }) => {
-  const [editableTitle, setEditableTitle] = useState(title);
-  const firstThree = title.substring(0, 3);
-  const theRest = title.substring(3);
+  const [manualTitle, setManualTitle] = useState(null);
+  const editableTitle = manualTitle !== null ? manualTitle : title;
 
-  const handleChangeSectionTitle = (value) => {
-    setEditableTitle(value);
+  const handleChangeTitle = (value) => {
+    setManualTitle(value);
     onChangeSectionTitle(value);
   };
+
+  const firstThree = editableTitle.substring(0, 3);
+  const theRest = editableTitle.substring(3);
 
   return (
     <section className="body__section">
@@ -21,8 +23,8 @@ const CurriculumSection = ({
         <input
           type="text"
           value={editableTitle}
-          onChange={(e) => handleChangeSectionTitle(e.target.value)}
-          placeholder={title}
+          onChange={(e) => handleChangeTitle(e.target.value)}
+          className="input_cv_edit"
         />
       ) : (
         <h2 className="body__section__title">

@@ -1,44 +1,30 @@
 import { useIntl } from "react-intl";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import EditableSection from "./editable-section";
 import Experience from "./experience";
 import Education from "./education";
 import Certification from "./certification";
 import HonorAndAward from "./honor-and-award";
 import OtherInfo from "./other-info";
+import sectionsData from "@/data/sections-data";
 
 const MainSection = ({ isEditable }) => {
   const intl = useIntl();
-  const [sections, setSections] = useState([
-    {
-      id: "section-experience",
-      title: intl.formatMessage({ id: "page.developer.experience" }),
-    },
-    {
-      id: "section-education",
-      title: intl.formatMessage({
-        id: "page.curriculum.body.education.title",
-      }),
-    },
-    {
-      id: "section-certifications",
-      title: intl.formatMessage({
-        id: "page.curriculum.body.certifications",
-      }),
-    },
-    {
-      id: "section-honorsAndAwards",
-      title: intl.formatMessage({
-        id: "page.curriculum.body.honorsAndAwards.title",
-      }),
-    },
-    {
-      id: "section-otherInfo",
-      title: intl.formatMessage({
-        id: "page.curriculum.body.otherInfo.title",
-      }),
-    },
-  ]);
+  const [sections, setSections] = useState(
+    sectionsData.map((section) => ({
+      ...section,
+      title: intl.formatMessage({ id: section.titleId }),
+    }))
+  );
+
+  const translatedSections = useMemo(() => {
+    return sections.map((section) => ({
+      ...section,
+      displayTitle: section.titleEdited
+        ? section.title
+        : intl.formatMessage({ id: section.titleId }),
+    }));
+  }, [sections, intl]);
 
   const [experiences, setExperiences] = useState([
     {
@@ -197,7 +183,7 @@ const MainSection = ({ isEditable }) => {
     setSections((prevSections) =>
       prevSections.map((section) =>
         section.id === "section-" + sectionId
-          ? { ...section, title: newTitle }
+          ? { ...section, title: newTitle, titleEdited: true }
           : section
       )
     );
@@ -209,7 +195,7 @@ const MainSection = ({ isEditable }) => {
 
   return (
     <div className="main__right__body">
-      {sections.map(({ id, title }) => (
+      {translatedSections.map(({ id, displayTitle }) => (
         <div key={`section-${id}`} className="section">
           <EditableSection
             isEditable={isEditable}
@@ -218,7 +204,7 @@ const MainSection = ({ isEditable }) => {
           >
             {id === "section-experience" && (
               <Experience
-                title={title}
+                title={displayTitle}
                 isEditable={isEditable}
                 experiences={experiences}
                 setExperiences={setExperiences}
@@ -229,7 +215,7 @@ const MainSection = ({ isEditable }) => {
             )}
             {id === "section-education" && (
               <Education
-                title={title}
+                title={displayTitle}
                 isEditable={isEditable}
                 educations={educations}
                 setEducations={setEducations}
@@ -240,7 +226,7 @@ const MainSection = ({ isEditable }) => {
             )}
             {id === "section-certifications" && (
               <Certification
-                title={title}
+                title={displayTitle}
                 isEditable={isEditable}
                 certifications={certifications}
                 setCertifications={setCertifications}
@@ -249,9 +235,9 @@ const MainSection = ({ isEditable }) => {
                 }
               />
             )}
-            {id === "section-honorsAndAwards" && (
+            {id === "section-honors-and-awards" && (
               <HonorAndAward
-                title={title}
+                title={displayTitle}
                 isEditable={isEditable}
                 honorsAndAwards={honorsAndAwards}
                 setHonorsAndAwards={setHonorsAndAwards}
@@ -260,9 +246,9 @@ const MainSection = ({ isEditable }) => {
                 }
               />
             )}
-            {id === "section-otherInfo" && (
+            {id === "section-other-info" && (
               <OtherInfo
-                title={title}
+                title={displayTitle}
                 isEditable={isEditable}
                 otherInfo={otherInfo}
                 setOtherInfo={setOtherInfo}

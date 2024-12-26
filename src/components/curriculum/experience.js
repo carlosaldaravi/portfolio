@@ -37,47 +37,44 @@ const Experience = ({
         onChangeTitle("experience", newTitle);
       }}
     >
-      {experiences &&
-        experiences.map((exp) => (
-          <EditableSection
-            key={exp.title + "-" + exp.place}
+      {experiences.map((exp) => (
+        <EditableSection
+          key={exp.id}
+          isEditable={isEditable}
+          bigSection={false}
+          onRemove={() => handleOnRemoveSection(exp.date)}
+        >
+          <TimeLineEvent
+            item={exp}
             isEditable={isEditable}
-            bigSection={false}
-            onRemove={() => handleOnRemoveSection(exp.date)}
+            onChange={(event) => handleEvents(event)}
           >
-            <TimeLineEvent
-              item={exp}
-              onChange={(event) => handleEvents(event)}
+            <PrettyParagraph
+              text={exp.text}
               isEditable={isEditable}
-            >
-              <PrettyParagraph
-                text={exp.text}
-                onChangeText={(text) => handleTextChange(exp.id, text)}
-                isEditable={isEditable}
-              />
-            </TimeLineEvent>
-          </EditableSection>
-        ))}
+              onChangeText={(text) => handleTextChange(exp.id, text)}
+            />
+          </TimeLineEvent>
+        </EditableSection>
+      ))}
       {isEditable && (
         <div
           className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
           onClick={() =>
-            setExperiences([
-              ...experiences,
+            setExperiences((prev) => [
+              ...prev,
               {
-                id: `experience-${experiences.length + 1}`,
+                id: `experience-${prev.length + 1}`,
                 date: "",
                 title: "",
                 place: "",
                 text: "",
-                order: experiences.length + 1,
+                order: prev.length + 1,
               },
             ])
           }
         >
-          <span>
-            <PlusIcon className="w-12 h-12 stroke-green-600" />
-          </span>
+          <PlusIcon className="w-12 h-12 stroke-green-600" />
         </div>
       )}
     </CurriculumSection>

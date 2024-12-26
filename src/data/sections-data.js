@@ -8,26 +8,36 @@ const sectionsData = [
   {
     id: "section-experience",
     titleId: "page.developer.experience",
+    title: "",
+    titleEdited: false,
     Component: Experience,
   },
   {
     id: "section-education",
     titleId: "page.curriculum.body.education.title",
+    title: "",
+    titleEdited: false,
     Component: Education,
   },
   {
     id: "section-certifications",
     titleId: "page.curriculum.body.certifications",
+    title: "",
+    titleEdited: false,
     Component: Certification,
   },
   {
-    id: "section-honorsAndAwards",
+    id: "section-honors-and-awards",
     titleId: "page.curriculum.body.honorsAndAwards.title",
+    title: "",
+    titleEdited: false,
     Component: HonorAndAward,
   },
   {
-    id: "section-otherInfo",
+    id: "section-other-info",
     titleId: "page.curriculum.body.otherInfo.title",
+    title: "",
+    titleEdited: false,
     Component: OtherInfo,
   },
 ];
