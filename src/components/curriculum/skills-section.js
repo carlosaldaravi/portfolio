@@ -1,44 +1,69 @@
-import Bubbles from "./bubbles";
+import { useMemo, useState } from "react";
+import { useIntl } from "react-intl";
+import { personalSkillsData } from "@/data/sidebar";
 import Bubble from "./bubble";
+import Bubbles from "./bubbles";
 import SidebarSection from "./sidebar-section";
 
-const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
+const SkillsSection = ({ isEditable, isGeneratingPDF }) => {
+  const intl = useIntl();
+  const [skills, setSkills] = useState(personalSkillsData);
+
+  const translatedSkills = useMemo(() => {
+    return skills.map((section) => ({
+      ...section,
+      displayTitle: section.titleEdited
+        ? section.title
+        : intl.formatMessage({ id: section.titleId }),
+      data: section.data.map((item) => ({
+        ...item,
+        displaySkill: item.skillEdited
+          ? item.skill
+          : intl.formatMessage({ id: item.skill }),
+      })),
+    }));
+  }, [skills, intl]);
+
   const handleSkillChange = (sectionId, skillId, newName) => {
-    setSkills(
-      skills.map((skill) =>
-        skill.id === sectionId
+    setSkills((prev) =>
+      prev.map((section) =>
+        section.id === sectionId
           ? {
-              ...skill,
-              data: skill.data.map((item) =>
-                item.id === skillId ? { ...item, skill: newName } : item
+              ...section,
+              data: section.data.map((item) =>
+                item.id === skillId
+                  ? { ...item, skill: newName, skillEdited: true }
+                  : item
               ),
             }
-          : skill
+          : section
       )
     );
   };
 
-  const handleChangeTitle = (id, value) => {
+  const handleChangeTitle = (id, newTitle) => {
     setSkills((prev) =>
-      prev.map((skill) =>
-        skill.id === id ? { ...skill, title: value } : skill
+      prev.map((section) =>
+        section.id === id
+          ? { ...section, title: newTitle, titleEdited: true }
+          : section
       )
     );
   };
 
   const handleRemoveBubble = (sectionId, skillId) => {
     setTimeout(() => {
-      setSkills(
-        skills.map((skill) =>
-          skill.id === sectionId
+      setSkills((prev) =>
+        prev.map((section) =>
+          section.id === sectionId
             ? {
-                ...skill,
+                ...section,
                 data: recalculateBubblePositions(
                   sectionId,
-                  skill.data.filter((item) => item.id !== skillId)
+                  section.data.filter((item) => item.id !== skillId)
                 ),
               }
-            : skill
+            : section
         )
       );
     }, 200);
@@ -64,37 +89,35 @@ const SkillsSection = ({ skills, setSkills, isEditable, isGeneratingPDF }) => {
   };
 
   const handleRemoveSection = (id) => {
-    setSkills((prev) => prev.filter((skill) => skill.id !== id));
+    setSkills((prev) => prev.filter((section) => section.id !== id));
   };
 
   return (
     <>
-      {skills.map((skill) => (
+      {translatedSkills.map((section) => (
         <SidebarSection
-          key={skill.id}
-          title={skill.title}
+          key={section.id}
+          title={section.displayTitle}
           isEditable={isEditable}
-          onChangeTitle={(newTitle) => {
-            handleChangeTitle(skill.id, newTitle);
-          }}
-          onRemoveSection={() => handleRemoveSection(skill.id)}
+          onChangeTitle={(newTitle) => handleChangeTitle(section.id, newTitle)}
+          onRemoveSection={() => handleRemoveSection(section.id)}
         >
           <Bubbles>
-            {skill.data.map((sk) => (
+            {section.data.map((bubble) => (
               <Bubble
-                key={sk.id}
-                name={sk.skill}
-                color={sk.color}
-                size={sk.size}
-                top={sk.top}
-                left={sk.left}
-                head={sk.head || false}
+                key={bubble.id}
+                name={bubble.displaySkill}
+                color={bubble.color}
+                size={bubble.size}
+                top={bubble.top}
+                left={bubble.left}
+                head={bubble.head || false}
                 isGeneratingPDF={isGeneratingPDF}
                 isEditable={isEditable}
                 onChangeText={(newName) =>
-                  handleSkillChange(skill.id, sk.id, newName)
+                  handleSkillChange(section.id, bubble.id, newName)
                 }
-                onRemoveBubble={() => handleRemoveBubble(skill.id, sk.id)}
+                onRemoveBubble={() => handleRemoveBubble(section.id, bubble.id)}
               />
             ))}
           </Bubbles>

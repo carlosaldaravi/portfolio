@@ -1,9 +1,22 @@
+import { useMemo, useState } from "react";
 import { useIntl } from "react-intl";
-import StarsSection from "./stars-section";
 import { PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { personalLanguagesData } from "@/data/sidebar";
+import StarsSection from "./stars-section";
 
-const LanguagesSection = ({ languages, setLanguages, isEditable }) => {
+const LanguagesSection = ({ isEditable }) => {
   const intl = useIntl();
+  const [languages, setLanguages] = useState(personalLanguagesData);
+
+  const translatedLanguages = useMemo(() => {
+    return languages.map((lang) => ({
+      ...lang,
+      displayTitle: lang.languageEdited
+        ? lang.language
+        : intl.formatMessage({ id: lang.languageId }),
+    }));
+  }, [languages, intl]);
+
   const handleLanguageChange = (id, starsFilled) => {
     setLanguages((prev) =>
       [
@@ -16,15 +29,21 @@ const LanguagesSection = ({ languages, setLanguages, isEditable }) => {
 
   const handleLanguageNameChange = (id, language) => {
     setLanguages((prev) =>
-      prev.map((lang) => (lang.id === id ? { ...lang, language } : lang))
+      prev.map((lang) =>
+        lang.id === id ? { ...lang, language, languageEdited: true } : lang
+      )
     );
   };
 
   const handleAddLanguage = () => {
     const newLanguage = {
-      id: `lang-${languages.length + 1}-${Math.random(10)}`,
+      id: `lang-${languages.length + 1}-${Math.random()
+        .toString(36)
+        .substr(2, 5)}`,
+      languageId: "language",
       language: intl.formatMessage({ id: "language" }),
       starsFilled: 1,
+      languageEdited: false,
     };
     setLanguages((prev) => [...prev, newLanguage]);
   };
@@ -35,21 +54,21 @@ const LanguagesSection = ({ languages, setLanguages, isEditable }) => {
 
   return (
     <div>
-      {languages.map((lang) => (
+      {translatedLanguages.map((lang) => (
         <div key={lang.id} className="flex items-center space-x-2">
           {isEditable ? (
             <div className="flex">
               <input
                 type="text"
-                value={lang.language}
+                value={lang.displayTitle}
                 onChange={(e) =>
                   handleLanguageNameChange(lang.id, e.target.value)
                 }
                 className="input_cv_edit"
-                placeholder="Language Name"
+                placeholder={lang.displayTitle}
               />
               <StarsSection
-                language={lang.language}
+                language={lang.displayTitle}
                 starsFilled={lang.starsFilled}
                 isEditable={isEditable}
                 onChange={(stars) => handleLanguageChange(lang.id, stars)}
@@ -57,7 +76,7 @@ const LanguagesSection = ({ languages, setLanguages, isEditable }) => {
             </div>
           ) : (
             <StarsSection
-              language={lang.language}
+              language={lang.displayTitle}
               starsFilled={lang.starsFilled}
               isEditable={isEditable}
               onChange={(stars) => handleLanguageChange(lang.id, stars)}

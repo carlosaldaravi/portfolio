@@ -13,13 +13,20 @@ const Bubble = ({
   onChangeText,
   onRemoveBubble,
 }) => {
-  const [isExploding, setIsExploding] = useState(false);
   const [editableText, setEditableText] = useState(name);
+  const [isManuallyEdited, setIsManuallyEdited] = useState(false);
+  const [isExploding, setIsExploding] = useState(false);
 
   const handleBlur = () => {
     if (onChangeText) {
       onChangeText(editableText);
+      setIsManuallyEdited(true);
     }
+  };
+
+  const handleChange = (e) => {
+    setEditableText(e.target.value);
+    setIsManuallyEdited(true);
   };
 
   const handleRemoveBubble = () => {
@@ -42,6 +49,10 @@ const Bubble = ({
     left: left,
     position: "absolute",
   };
+
+  if (!isManuallyEdited && editableText !== name) {
+    setEditableText(name);
+  }
 
   return (
     <div
@@ -76,7 +87,7 @@ const Bubble = ({
           <input
             type="text"
             value={editableText}
-            onChange={(e) => setEditableText(e.target.value)}
+            onChange={handleChange}
             onBlur={handleBlur}
             className="bubble_cv_edit"
           />
