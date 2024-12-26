@@ -11,12 +11,12 @@ const TextKiterCard = ({ me }) => {
       return (
         <Link
           href={`/curriculum`}
-          className="cursor-pointer flex items-center gap-4"
+          className="flex items-center gap-6 px-10 py-3 bg-gradient-to-r from-blue-900 to-blue-500 text-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
         >
-          <h3 className="text-4xl">
-            <FormattedMessage id="show" /> PDF
+          <h3 className="text-3xl font-semibold">
+            <FormattedMessage id="show" />
           </h3>
-          <span className="self-center size-12">
+          <span className="self-center size-9">
             <SVG type={iconName} size={48} />
           </span>
         </Link>
@@ -30,7 +30,7 @@ const TextKiterCard = ({ me }) => {
       <div className="text-center text-4xl sm:text-6xl tracking-xs mb-2">
         {MY_NAME}
       </div>
-      <div className="mx-auto w-max block">
+      <div className="mx-auto w-full block">
         {me.map((data) => (
           <RowTextKiterCard
             key={data.id}

@@ -32,4 +32,5 @@ export const SVG_TYPES = {
   developer: "developer",
   star: "star",
   document: "document",
+  documentText: "documentText",
 };
