@@ -9,11 +9,23 @@ const Header = ({
   isEditable,
 }) => {
   const intl = useIntl();
+  const professionId = "page.developer.fullstack";
   const [profession, setProfession] = useState(
     intl.formatMessage({
-      id: "page.developer.fullstack",
+      id: professionId,
     })
   );
+  const [isManuallyEdited, setIsManuallyEdited] = useState(false);
+
+  const displayedProfession = isManuallyEdited
+    ? profession
+    : intl.formatMessage({ id: professionId });
+
+  const handleProfessionChange = (value) => {
+    setProfession(value);
+    setIsManuallyEdited(true);
+  };
+
   return (
     <div className="main__right__header">
       <h1 className="header__title">
@@ -45,12 +57,12 @@ const Header = ({
         <input
           type="text"
           className="header__subtitle input_cv_edit"
-          value={profession}
-          size={profession.length || 1}
-          onChange={(e) => setProfession(e.target.value)}
+          value={displayedProfession}
+          size={displayedProfession.length || 1}
+          onChange={(e) => handleProfessionChange(e.target.value)}
         />
       ) : (
-        <h2 className="header__subtitle">{profession}</h2>
+        <h2 className="header__subtitle">{displayedProfession}</h2>
       )}
     </div>
   );
