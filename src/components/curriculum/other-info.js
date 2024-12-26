@@ -12,7 +12,9 @@ const OtherInfo = ({
 }) => {
   const handleInfoChange = (id, text) => {
     setOtherInfo((prevOtherInfo) =>
-      prevOtherInfo.map((info) => (info.id === id ? { ...info, text } : info))
+      prevOtherInfo.map((info) =>
+        info.id === id ? { ...info, text, textEdited: true } : info
+      )
     );
   };
 
@@ -46,11 +48,13 @@ const OtherInfo = ({
         <div
           className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
           onClick={() =>
-            setOtherInfo([
-              ...otherInfo,
+            setOtherInfo((prev) => [
+              ...prev,
               {
-                id: `info-${otherInfo.length + 1}`,
+                id: `info-${prev.length + 1}`,
+                textId: "",
                 text: "",
+                textEdited: false,
               },
             ])
           }

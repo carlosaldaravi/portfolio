@@ -1,10 +1,15 @@
 import { useState } from "react";
 
 const PrettyParagraph = ({ text = "", onChangeText, isEditable }) => {
-  const [editableText, setEditableText] = useState(text);
+  const [manualText, setManualText] = useState(null);
+  const editableText = manualText !== null ? manualText : text;
 
   const handleBlur = () => {
     onChangeText(editableText);
+  };
+
+  const handleChange = (e) => {
+    setManualText(e.target.value);
   };
 
   return (
@@ -17,7 +22,7 @@ const PrettyParagraph = ({ text = "", onChangeText, isEditable }) => {
           className="text-pretty input_cv_edit"
           rows={4}
           cols={50}
-          onChange={(e) => setEditableText(e.target.value)}
+          onChange={handleChange}
           onBlur={handleBlur}
         />
       )}

@@ -28,7 +28,7 @@ const HonorAndAward = ({
   const handleTextChange = (id, text) => {
     setHonorsAndAwards((prevHonors) =>
       prevHonors.map((honor) =>
-        honor.id === id ? { ...honor, description: text } : honor
+        honor.id === id ? { ...honor, text: text, textEdited: true } : honor
       )
     );
   };
@@ -54,7 +54,7 @@ const HonorAndAward = ({
             isEditable={isEditable}
           >
             <PrettyParagraph
-              text={honor.description}
+              text={honor.text}
               onChangeText={(text) => handleTextChange(honor.id, text)}
               isEditable={isEditable}
             />
@@ -65,16 +65,18 @@ const HonorAndAward = ({
         <div
           className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
           onClick={() =>
-            setHonorsAndAwards([
-              ...honorsAndAwards,
+            setHonorsAndAwards((prev) => [
+              ...prev,
               {
-                id: `award-${honorsAndAwards.length + 1}`,
+                id: `award-${prev.length + 1}`,
                 date: "",
-                title: intl.formatMessage({
-                  id: "page.curriculum.body.honorsAndAwards.award",
-                }),
+                titleId: "page.curriculum.body.honorsAndAwards.award",
+                title: "",
+                titleEdited: false,
                 place: "",
-                description: "",
+                textId: "",
+                text: "",
+                textEdited: false,
               },
             ])
           }

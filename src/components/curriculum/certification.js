@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import CurriculumSection from "./curriculum-section";
 import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
@@ -11,6 +12,7 @@ const Certification = ({
   setCertifications,
   onChangeTitle,
 }) => {
+  const intl = useIntl();
   const handleCertificationChange = (updatedCertification) => {
     setCertifications((prevCertifications) =>
       prevCertifications.map((cert) =>
@@ -52,7 +54,7 @@ const Certification = ({
             isEditable={isEditable}
           >
             <PrettyParagraph
-              text={cert.hours}
+              text={cert.hours + intl.formatMessage({ id: "hours" })}
               onChangeText={(text) => handleCertificationText(cert.id, text)}
               isEditable={isEditable}
             />
@@ -63,14 +65,15 @@ const Certification = ({
         <div
           className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
           onClick={() =>
-            setCertifications([
-              ...certifications,
+            setCertifications((prev) => [
+              ...prev,
               {
-                id: `cert-${certifications.length + 1}`,
+                id: `cert-${prev.length + 1}`,
                 date: "",
                 title: "",
                 place: "",
                 hours: "",
+                hoursEdited: false,
               },
             ])
           }

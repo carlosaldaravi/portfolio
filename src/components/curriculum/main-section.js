@@ -6,17 +6,18 @@ import Education from "./education";
 import Certification from "./certification";
 import HonorAndAward from "./honor-and-award";
 import OtherInfo from "./other-info";
-import sectionsData from "@/data/sections-data";
+import {
+  certificationsData,
+  educationsData,
+  experiencesData,
+  honorsAndAwardsData,
+  otherInfoData,
+  sectionsData,
+} from "@/data/sections-data";
 
 const MainSection = ({ isEditable }) => {
   const intl = useIntl();
-  const [sections, setSections] = useState(
-    sectionsData.map((section) => ({
-      ...section,
-      title: intl.formatMessage({ id: section.titleId }),
-    }))
-  );
-
+  const [sections, setSections] = useState(sectionsData);
   const translatedSections = useMemo(() => {
     return sections.map((section) => ({
       ...section,
@@ -26,158 +27,90 @@ const MainSection = ({ isEditable }) => {
     }));
   }, [sections, intl]);
 
-  const [experiences, setExperiences] = useState([
-    {
-      id: "experience-1",
-      order: 1,
-      date: "08/2023 - " + intl.formatMessage({ id: "present" }),
-      title: "Tech Lead",
-      place: "EVM Group",
-      text: intl.formatMessage({ id: "page.developer.experience.evm" }),
-    },
-    {
-      id: "experience-2",
-      order: 2,
-      date: "01/2023 - " + intl.formatMessage({ id: "present" }),
-      title: "Full-Stack Developer",
-      place: "Freelance",
-      text: intl.formatMessage({ id: "page.developer.experience.freelance" }),
-    },
-    {
-      id: "experience-3",
-      order: 3,
-      date: "04/2021 - 01/2023",
-      title: "Full-Stack Developer",
-      place: "Inbenta",
-      text: intl.formatMessage({ id: "page.developer.experience.inbenta" }),
-    },
-    {
-      id: "experience-4",
-      order: 4,
-      date: "08/2020 - 04/2021",
-      title: "Backend Developer",
-      place: "Z1",
-      text: intl.formatMessage({ id: "page.developer.experience.z1" }),
-    },
-    {
-      id: "experience-5",
-      order: 5,
-      date: "07/2018 - 07/2020",
-      title: "Full-Stack Developer",
-      place: "Conwork",
-      text: intl.formatMessage({ id: "page.developer.experience.conwork" }),
-    },
-  ]);
+  const [experiences, setExperiences] = useState(experiencesData);
+  const translatedExperiences = useMemo(() => {
+    return experiences.map((exp) => ({
+      ...exp,
+      date:
+        exp.dateEdited || exp.id !== "experience-1"
+          ? exp.date
+          : exp.date + intl.formatMessage({ id: "present" }),
+      title: exp.titleEdited
+        ? exp.title
+        : exp.titleId !== ""
+        ? intl.formatMessage({ id: exp.titleId })
+        : "",
+      place: exp.placeEdited ? exp.place : exp.place,
+      text: exp.textEdited
+        ? exp.text
+        : exp.textId !== ""
+        ? intl.formatMessage({ id: exp.textId })
+        : "",
+    }));
+  }, [experiences, intl]);
 
-  const [educations, setEducations] = useState([
-    {
-      id: "education-1",
-      date: "2015 - 2019",
-      title: intl.formatMessage({ id: "page.home.engineer" }),
-      place: "University of Alicante",
-      text1: intl.formatMessage({ id: "page.curriculum.body.education.text1" }),
-      text2: intl.formatMessage({ id: "page.curriculum.body.education.text2" }),
-      gpa: "7,8/10",
-    },
-  ]);
+  const [educations, setEducations] = useState(educationsData);
+  const translatedEducations = useMemo(() => {
+    return educations.map((edu) => ({
+      ...edu,
+      title: edu.titleEdited
+        ? edu.title
+        : edu.titleId !== ""
+        ? intl.formatMessage({ id: edu.titleId })
+        : "",
+      place: edu.placeEdited
+        ? edu.place
+        : edu.placeId !== ""
+        ? intl.formatMessage({ id: edu.placeId })
+        : "",
+      text1: edu.text1Edited
+        ? edu.text1
+        : edu.text1Id !== ""
+        ? intl.formatMessage({ id: edu.text1Id })
+        : "",
+      text2: edu.text2Edited
+        ? edu.text2
+        : edu.text2Id !== ""
+        ? intl.formatMessage({ id: edu.text2Id })
+        : "",
+    }));
+  }, [educations, intl]);
 
-  const [certifications, setCertifications] = useState([
-    {
-      id: "cert-1",
-      date: "04/2023",
-      title: "Next.js and React - The Complete Guide",
-      place: "Udemy",
-      hours: "25 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-2",
-      date: "02/2023",
-      title: "React - The Complete Guide (incl Hooks, React Router, Redux)",
-      place: "Udemy",
-      hours: "58.5 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-3",
-      date: "12/2022",
-      title: "Mastering React",
-      place: "CodewithMosh",
-      hours: "13 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-4",
-      date: "12/2020",
-      title: "Professional Git y Github course",
-      place: "Platzi",
-      hours: "6 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-5",
-      date: "03/2020",
-      title: "NestJS: Zero to Hero - Modern TypeScript back-end development",
-      place: "Platzi",
-      hours: "6.5 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-6",
-      date: "01/2019",
-      title: "Angular: real time applications with Sockets and REST",
-      place: "Udemy",
-      hours: "8 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-7",
-      date: "11/2018",
-      title: "TypeScript",
-      place: "Udemy",
-      hours: "6.5 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-8",
-      date: "11/2018",
-      title: "Node: from 0 to expert",
-      place: "Udemy",
-      hours: "11.5 " + intl.formatMessage({ id: "hours" }),
-    },
-    {
-      id: "cert-9",
-      date: "08/2018",
-      title: "Git + GitHub",
-      place: "Udemy",
-      hours: "7 " + intl.formatMessage({ id: "hours" }),
-    },
-  ]);
+  const [certifications, setCertifications] = useState(certificationsData);
+  const translatedCertifications = useMemo(() => {
+    return certifications.map((cert) => ({
+      ...cert,
+    }));
+  }, [certifications]);
 
-  const [otherInfo, setOtherInfo] = useState([
-    {
-      id: "info-1",
-      text: intl.formatMessage({ id: "page.curriculum.body.otherInfo.text" }),
-    },
-  ]);
+  const [honorsAndAwards, setHonorsAndAwards] = useState(honorsAndAwardsData);
+  const translatedHonorsAndAwards = useMemo(() => {
+    return honorsAndAwards.map((honor) => ({
+      ...honor,
+      title: honor.titleEdited
+        ? honor.title
+        : honor.titleId !== ""
+        ? intl.formatMessage({ id: honor.titleId })
+        : "",
+      text: honor.textEdited
+        ? honor.text
+        : honor.textId !== ""
+        ? intl.formatMessage({ id: honor.textId })
+        : "",
+    }));
+  }, [honorsAndAwards, intl]);
 
-  const [honorsAndAwards, setHonorsAndAwards] = useState([
-    {
-      id: "award-1",
-      date: "10/2017",
-      title: intl.formatMessage({
-        id: "page.curriculum.body.honorsAndAwards.award",
-      }),
-      place: "Hackaton",
-      description: intl.formatMessage({
-        id: "page.curriculum.body.honorsAndAwards.award1",
-      }),
-    },
-    {
-      id: "award-2",
-      date: "03/2017",
-      title: intl.formatMessage({
-        id: "page.curriculum.body.honorsAndAwards.award",
-      }),
-      place: "Hack for good",
-      description: intl.formatMessage({
-        id: "page.curriculum.body.honorsAndAwards.award2",
-      }),
-    },
-  ]);
+  const [otherInfo, setOtherInfo] = useState(otherInfoData);
+  const translatedOtherInfo = useMemo(() => {
+    return otherInfo.map((info) => ({
+      ...info,
+      text: info.textEdited
+        ? info.text
+        : info.textId !== ""
+        ? intl.formatMessage({ id: info.textId })
+        : "",
+    }));
+  }, [otherInfo, intl]);
 
   const handleChangeSectionTitle = (sectionId, newTitle) => {
     setSections((prevSections) =>
@@ -206,7 +139,7 @@ const MainSection = ({ isEditable }) => {
               <Experience
                 title={displayTitle}
                 isEditable={isEditable}
-                experiences={experiences}
+                experiences={translatedExperiences}
                 setExperiences={setExperiences}
                 onChangeTitle={(sectionId, newTitle) =>
                   handleChangeSectionTitle(sectionId, newTitle)
@@ -217,7 +150,7 @@ const MainSection = ({ isEditable }) => {
               <Education
                 title={displayTitle}
                 isEditable={isEditable}
-                educations={educations}
+                educations={translatedEducations}
                 setEducations={setEducations}
                 onChangeTitle={(sectionId, newTitle) =>
                   handleChangeSectionTitle(sectionId, newTitle)
@@ -228,7 +161,7 @@ const MainSection = ({ isEditable }) => {
               <Certification
                 title={displayTitle}
                 isEditable={isEditable}
-                certifications={certifications}
+                certifications={translatedCertifications}
                 setCertifications={setCertifications}
                 onChangeTitle={(sectionId, newTitle) =>
                   handleChangeSectionTitle(sectionId, newTitle)
@@ -239,7 +172,7 @@ const MainSection = ({ isEditable }) => {
               <HonorAndAward
                 title={displayTitle}
                 isEditable={isEditable}
-                honorsAndAwards={honorsAndAwards}
+                honorsAndAwards={translatedHonorsAndAwards}
                 setHonorsAndAwards={setHonorsAndAwards}
                 onChangeTitle={(sectionId, newTitle) =>
                   handleChangeSectionTitle(sectionId, newTitle)
@@ -250,7 +183,7 @@ const MainSection = ({ isEditable }) => {
               <OtherInfo
                 title={displayTitle}
                 isEditable={isEditable}
-                otherInfo={otherInfo}
+                otherInfo={translatedOtherInfo}
                 setOtherInfo={setOtherInfo}
                 onChangeTitle={(sectionId, newTitle) =>
                   handleChangeSectionTitle(sectionId, newTitle)

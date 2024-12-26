@@ -19,13 +19,13 @@ const Experience = ({
     );
   };
 
-  const handleOnRemoveSection = (date) => {
-    setExperiences(experiences.filter((ev) => ev.date !== date));
+  const handleOnRemoveSection = (id) => {
+    setExperiences((prev) => prev.filter((ev) => ev.id !== id));
   };
 
   const handleTextChange = (id, text) => {
-    setExperiences((prevExperiences) =>
-      prevExperiences.map((ex) => (ex.id === id ? { ...ex, text } : ex))
+    setExperiences((prev) =>
+      prev.map((ex) => (ex.id === id ? { ...ex, text, textEdited: true } : ex))
     );
   };
 
@@ -42,7 +42,7 @@ const Experience = ({
           key={exp.id}
           isEditable={isEditable}
           bigSection={false}
-          onRemove={() => handleOnRemoveSection(exp.date)}
+          onRemove={() => handleOnRemoveSection(exp.id)}
         >
           <TimeLineEvent
             item={exp}
@@ -66,9 +66,16 @@ const Experience = ({
               {
                 id: `experience-${prev.length + 1}`,
                 date: "",
+                dateEdited: false,
+                titleId: "",
                 title: "",
+                titleEdited: false,
+                placeId: "",
                 place: "",
+                placeEdited: false,
+                textId: "",
                 text: "",
+                textEdited: false,
                 order: prev.length + 1,
               },
             ])
