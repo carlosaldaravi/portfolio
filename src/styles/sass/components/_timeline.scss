@@ -9,10 +9,10 @@ $accent-color: rgb(161, 98, 7);
 .timeline {
   margin: 4em auto;
   position: relative;
-  
+
   &:before {
     background-color: $dark-secondary;
-    content: '';
+    content: "";
     margin-left: -1px;
     position: absolute;
     top: 0;
@@ -27,17 +27,16 @@ $accent-color: rgb(161, 98, 7);
   transition: color 0.2s ease-in 0.1s;
 
   &:hover {
-    
     color: $accent-color;
-  
+
     .timeline-event-icon {
-      @include rotate (-45deg);
+      @include rotate(-45deg);
       background-color: $accent-color;
     }
-    
+
     .timeline-event-thumbnail {
       @include box-shadow(inset 40em 0 0 0 $accent-color);
-    //   color: $dark-secondary;
+      //   color: $dark-secondary;
     }
   }
 }
@@ -48,12 +47,11 @@ $accent-color: rgb(161, 98, 7);
   top: -1.875em;
   left: 4em;
   max-width: 690px;
-  
-  
+
   strong {
     font-weight: 700;
   }
-  
+
   p:not(.timeline-event-thumbnail) {
     padding-bottom: 1.2em;
   }
@@ -61,8 +59,8 @@ $accent-color: rgb(161, 98, 7);
 
 .timeline-event-icon {
   @include transition(transform 0.2s ease-in);
-  @include rotate (45deg);
-  
+  @include rotate(45deg);
+
   background-color: $light-secondary;
   outline: 10px solid $dark-secondary;
   display: block;
@@ -77,11 +75,23 @@ $accent-color: rgb(161, 98, 7);
 .timeline-event-thumbnail {
   @include transition(box-shadow 0.3s ease-out 0.1s);
   color: $light-secondary;
-  
+
   background-color: $dark-secondary;
   @include box-shadow(inset 0 0 0 0em $accent-color);
   display: inline-block;
   margin-bottom: 1.2em;
   padding: 0.25em 1em 0.2em 1em;
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .timeline-event-copy {
+    max-width: calc(100% - 4em);
+  }
+}
+
+@media (max-width: 468px) {
+  .timeline-event-copy {
+    max-width: calc(100% - 2em);
+  }
 }

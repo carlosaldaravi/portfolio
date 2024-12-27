@@ -30,7 +30,7 @@ const TextKiterCard = ({ me }) => {
       <div className="text-center text-4xl sm:text-6xl tracking-xs mb-2">
         {MY_NAME}
       </div>
-      <div className="mx-auto w-full block">
+      <div className="mx-auto w-full md:w-max block">
         {me.map((data) => (
           <RowTextKiterCard
             key={data.id}
