@@ -48,6 +48,30 @@
   ],
   "projects": [
     {
+      "id": "project-6",
+      "name": "Padeldoor",
+      "logo": "logo-padeldoor-vertical.png",
+      "img": "/images/projects/padeldoor-project.png",
+      "year": "2025",
+      "github": {
+        "url": "https://github.com/carlosaldaravi/padeldoor",
+        "private": true
+      },
+      "url": "https://padeldoor.app/",
+      "rol": "fullstack",
+      "stack": [
+        "react",
+        "expo",
+        "nextjs",
+        "laravel",
+        "php",
+        "tailwind",
+        "mysql",
+        "googleCloudPlatform"
+      ],
+      "description": "page.developer.padeldoor"
+    },
+    {
       "id": "project-5",
       "name": "Surfr. Leaderboard",
       "logo": "surfr.png",

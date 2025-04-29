@@ -33,4 +33,8 @@ export const SVG_TYPES = {
   star: "star",
   document: "document",
   documentText: "documentText",
+  laravel: "laravel",
+  reactNative: "reactNative",
+  expo: "expo",
+  googleCloudPlatform: "googleCloudPlatform",
 };
