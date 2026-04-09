@@ -32,7 +32,7 @@ const MainSection = ({ isEditable }) => {
     return experiences.map((exp) => ({
       ...exp,
       date:
-        exp.dateEdited || exp.id !== "experience-1"
+        exp.dateEdited || !exp.date.endsWith("- ")
           ? exp.date
           : exp.date + intl.formatMessage({ id: "present" }),
       title: exp.titleEdited
