@@ -238,6 +238,21 @@
   },
   "experience": [
     {
+      "id": "experience-6",
+      "startDate": "01/04/2026",
+      "endDate": null,
+      "company": "page.developer.experience.padeldoor.name",
+      "rol": "CEO & Founder",
+      "description": "page.developer.experience.padeldoor",
+      "achievement": [
+        "page.developer.experience.padeldoor.achievement1",
+        "page.developer.experience.padeldoor.achievement2",
+        "page.developer.experience.padeldoor.achievement3"
+      ],
+      "place": "page.developer.experience.place.remote",
+      "now": "page.developer.experience.now"
+    },
+    {
       "id": "experience-5",
       "startDate": "01/01/2023",
       "endDate": null,
