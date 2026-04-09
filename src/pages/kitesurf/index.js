@@ -9,6 +9,9 @@ import { useTools } from "@/hooks/useTools";
 import BackgroundVideo from "@/components/UI/background-video";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
+import Head from "next/head";
+import { useIntl } from "react-intl";
+import { useRouter } from "next/router";
 
 const KiteSurf = ({ sections, me }) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
@@ -16,6 +19,8 @@ const KiteSurf = ({ sections, me }) => {
   const [direction, setDirection] = useState("");
   const { isMobile } = useTools();
   const tracker = useTracker();
+  const intl = useIntl();
+  const { locale } = useRouter();
 
   const videoUrl = isMobile ? "/videos/video-short.mp4" : "/videos/video.MP4";
   const videoUrlWebm = isMobile ? "/videos/video-short.webm" : "/videos/video.webm";
@@ -48,6 +53,21 @@ const KiteSurf = ({ sections, me }) => {
 
   return (
     <Page className="relative kitesurf__page__container">
+      <Head>
+        <title>Carlos Aldaravi - Kitesurf</title>
+        <meta name="description" content={intl.formatMessage({ id: "page.home.meta" })} />
+        <meta property="og:title" content="Carlos Aldaravi - Kitesurf" />
+        <meta property="og:description" content={intl.formatMessage({ id: "page.home.meta" })} />
+        <meta property="og:url" content="https://carlosaldaravi.com/kitesurf" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://carlosaldaravi.com/images/yo-kite.png" />
+        <meta property="og:locale" content={locale} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Carlos Aldaravi - Kitesurf" />
+        <meta name="twitter:description" content={intl.formatMessage({ id: "page.home.meta" })} />
+        <meta name="twitter:image" content="https://carlosaldaravi.com/images/yo-kite.png" />
+        <link rel="canonical" href="https://carlosaldaravi.com/kitesurf" />
+      </Head>
       <BackgroundVideo
         src={videoUrl}
         srcWebm={videoUrlWebm}

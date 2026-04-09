@@ -10,11 +10,15 @@ import { TRACKING_TYPES } from "@/types/track";
 import Experience from "@/components/developer/experience/experience";
 import Head from "next/head";
 import { useIntl } from "react-intl";
+import { useRouter } from "next/router";
 
 const Developer = ({ data }) => {
   const tracker = useTracker();
   const intl = useIntl();
+  const { locale } = useRouter();
   const meta = intl.formatMessage({ id: "page.home.meta" });
+  const title = "Carlos Aldaravi - Portfolio";
+  const url = "https://carlosaldaravi.com";
 
   useEffect(() => {
     tracker.page(TRACKING_TYPES.page.developer);
@@ -24,8 +28,19 @@ const Developer = ({ data }) => {
   return (
     <Page className="p-0">
       <Head>
-        <title>Carlos Aldaravi Porfolio</title>
+        <title>{title}</title>
         <meta name="description" content={meta} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={meta} />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${url}/images/yo-dev.png`} />
+        <meta property="og:locale" content={locale} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={meta} />
+        <meta name="twitter:image" content={`${url}/images/yo-dev.png`} />
+        <link rel="canonical" href={url} />
       </Head>
       <KiterCard me={data.me} src="/images/yo-dev.png" />
       <Experience experience={data.experience} />

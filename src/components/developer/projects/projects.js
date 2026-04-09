@@ -9,7 +9,7 @@ const Projects = ({ projects }) => {
   return (
     <ProjectsHeader
       projectHovered={projectHovered}
-      onSelectColor={(num) => setColorNumSelected(num)}
+      onSelectColor={() => {}}
     >
       <Section className="flex justify-center flex-col items-center lg:max-w-6xl">
         {projects.map((project, i) => (

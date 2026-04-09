@@ -24,10 +24,10 @@ export function LanguageContextProvider(props) {
   const changeLanguageHandler = (nextLanguage) => {
     if (
       Object.keys(LANGUAGES_TYPES).some(
-        (type) => LANGUAGES_TYPES[type] === nextTheme
+        (type) => LANGUAGES_TYPES[type] === nextLanguage
       )
     ) {
-      setCookie(COOKIE_NAME, locale);
+      setCookie(COOKIE_NAME, nextLanguage);
       setLanguage(nextLanguage);
     }
   };

@@ -8,6 +8,7 @@ import Header from "@/components/curriculum/header";
 import MainSection from "@/components/curriculum/main-section";
 import PDFButtons from "@/components/curriculum/pdf-buttons";
 import BuyMeACoffeeButton from "@/components/UI/buy-me-a-coffe-button";
+import Head from "next/head";
 
 const Curriculum = () => {
   const [name, setName] = useState("Carlos");
@@ -58,6 +59,16 @@ const Curriculum = () => {
 
   return (
     <Page className="p-0">
+      <Head>
+        <title>Carlos Aldaravi - CV</title>
+        <meta name="description" content="Curriculum Vitae de Carlos Aldaravi. Descarga o edita mi CV online." />
+        <meta property="og:title" content="Carlos Aldaravi - CV" />
+        <meta property="og:description" content="Curriculum Vitae de Carlos Aldaravi. Descarga o edita mi CV online." />
+        <meta property="og:url" content="https://carlosaldaravi.com/curriculum" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <link rel="canonical" href="https://carlosaldaravi.com/curriculum" />
+      </Head>
       <div ref={resumeRef} className="relative main">
         {!isGeneratingPDF && (
           <PDFButtons
