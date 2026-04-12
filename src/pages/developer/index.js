@@ -10,12 +10,9 @@ import { TRACKING_TYPES } from "@/types/track";
 import Experience from "@/components/developer/experience/experience";
 import Head from "next/head";
 import { useIntl } from "react-intl";
-import { useRouter } from "next/router";
-
 const Developer = ({ data }) => {
   const tracker = useTracker();
   const intl = useIntl();
-  const { locale } = useRouter();
   const description = intl.formatMessage({ id: "page.home.meta" });
   const title = "Carlos Aldaravi - Developer";
   const url = "https://carlosaldaravi.com/developer";
@@ -35,11 +32,9 @@ const Developer = ({ data }) => {
         <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://carlosaldaravi.com/images/yo-dev.png" />
-        <meta property="og:locale" content={locale} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <link rel="canonical" href={url} />
       </Head>
       <KiterCard me={data.me} src="/images/yo-dev.png" />
       <Experience experience={data.experience} />

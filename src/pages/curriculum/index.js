@@ -67,7 +67,6 @@ const Curriculum = () => {
         <meta property="og:url" content="https://carlosaldaravi.com/curriculum" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
-        <link rel="canonical" href="https://carlosaldaravi.com/curriculum" />
       </Head>
       <div ref={resumeRef} className="relative main">
         {!isGeneratingPDF && (

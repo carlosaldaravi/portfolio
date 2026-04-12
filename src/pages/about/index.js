@@ -6,12 +6,9 @@ import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
 import Head from "next/head";
 import { useIntl } from "react-intl";
-import { useRouter } from "next/router";
-
 const About = () => {
   const tracker = useTracker();
   const intl = useIntl();
-  const { locale } = useRouter();
   const description = intl.formatMessage({ id: "page.about.description" });
   const title = "Carlos Aldaravi - About";
   const url = "https://carlosaldaravi.com/about";
@@ -57,11 +54,9 @@ const About = () => {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
-        <meta property="og:locale" content={locale} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <link rel="canonical" href={url} />
       </Head>
       <AboutHeader />
       <OverlayCards cards={cards} />
