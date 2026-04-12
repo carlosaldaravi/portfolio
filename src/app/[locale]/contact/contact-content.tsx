@@ -2,18 +2,12 @@
 
 import Page from "@/components/UI/page";
 import ContactForm from "@/components/contact/contact-form";
-import useTracker from "@/hooks/useTracker";
+import usePageTracking from "@/hooks/usePageTracking";
 import { TRACKING_TYPES } from "@/types/track";
-import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 
 export default function ContactContent() {
-  const tracker = useTracker();
-
-  useEffect(() => {
-    tracker.page(TRACKING_TYPES.page.contact);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  usePageTracking(TRACKING_TYPES.page.contact);
 
   return (
     <Page>

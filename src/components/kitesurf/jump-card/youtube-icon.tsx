@@ -1,4 +1,4 @@
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";
 
@@ -7,7 +7,7 @@ interface YoutubeIconProps {
 }
 
 const YoutubeIcon = ({ onPlay }: YoutubeIconProps) => {
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
 
   return (
     <button

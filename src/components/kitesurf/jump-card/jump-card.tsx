@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import ThemeContext from "@/store/theme-context";
 import classes from "./jump-card.module.css";
 import YoutubeIcon from "./youtube-icon";
@@ -49,7 +49,7 @@ const JumpCard = ({
   const [showBackSide, setShowBackSide] = useState(false);
   const [showFrontSide, setShowFrontSide] = useState(false);
   const themeCtx = useContext(ThemeContext);
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
   const tracker = useTracker();
 
   const theme = themeCtx.theme;

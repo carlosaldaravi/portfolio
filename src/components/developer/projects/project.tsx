@@ -6,7 +6,7 @@ import { useContext } from "react";
 import ThemeContext from "@/store/theme-context";
 import Button from "@/components/UI/button";
 import Link from "next/link";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import { getBgSecondaryColor } from "@/tools/theme";
 import classes from "./project.module.css";
 import useTracker from "@/hooks/useTracker";
@@ -35,7 +35,7 @@ const Project = ({ project, index }: ProjectProps) => {
   const themeCtx = useContext(ThemeContext);
   const theme = themeCtx.theme;
   const bgSecondaryColor = getBgSecondaryColor(theme);
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
   const tracker = useTracker();
 
   return (

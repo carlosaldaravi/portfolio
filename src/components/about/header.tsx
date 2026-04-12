@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import classes from "./header.module.css";
 
 const AboutHeader = () => {
@@ -12,7 +12,7 @@ const AboutHeader = () => {
   const [switcherDescription, setSwitcherDescription] = useState("");
 
   const intl = useIntl();
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
 
   const sequence = [700, originalDescription, 3000, switcherDescription];
 

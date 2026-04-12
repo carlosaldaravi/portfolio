@@ -68,9 +68,7 @@ const Certification = ({
         >
           <TimeLineEvent
             item={cert}
-            onChange={(updated) =>
-              handleCertificationChange(updated as CertificationData)
-            }
+            onChange={handleCertificationChange}
             isEditable={isEditable}
           >
             <PrettyParagraph

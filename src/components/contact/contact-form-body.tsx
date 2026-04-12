@@ -7,6 +7,7 @@ import Input from "@/components/UI/input";
 import useForm from "@/hooks/useForm";
 import validate from "@/tools/validateForm";
 import useFetch from "@/hooks/useFetch";
+import { TIMEOUTS } from "@/constants/ui";
 import Image from "next/image";
 import yoContactImg from "../../../public/images/yo-contact.png";
 
@@ -39,14 +40,14 @@ const ContactFormBody = () => {
       clearValues();
       setTimeout(() => {
         setIsFormSubmitted(false);
-      }, 3000);
+      }, TIMEOUTS.FORM_SUCCESS);
     }
     if (errors) {
       setIsFormSubmitted(false);
       setResponseError(errors[0]);
       setTimeout(() => {
         setResponseError("");
-      }, 7000);
+      }, TIMEOUTS.FORM_ERROR);
     }
     setIsLoading(false);
   }

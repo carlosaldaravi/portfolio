@@ -1,12 +1,13 @@
 import { FormattedMessage } from "react-intl";
 import { FormValues, FormErrors } from "@/hooks/useForm";
+import { FORM_VALIDATION } from "@/constants/ui";
 
 const validateForm = (values: FormValues): FormErrors => {
   const errors: FormErrors = {};
 
   if (!values.name) {
     errors.name = <FormattedMessage id="page.contact.form.name.required" />;
-  } else if (typeof values.name === "string" && values.name.length < 3) {
+  } else if (typeof values.name === "string" && values.name.length < FORM_VALIDATION.MIN_NAME_LENGTH) {
     errors.name = <FormattedMessage id="page.contact.form.name.length" />;
   }
 
@@ -23,7 +24,7 @@ const validateForm = (values: FormValues): FormErrors => {
     errors.message = (
       <FormattedMessage id="page.contact.form.message.required" />
     );
-  } else if (typeof values.message === "string" && values.message.length < 10) {
+  } else if (typeof values.message === "string" && values.message.length < FORM_VALIDATION.MIN_MESSAGE_LENGTH) {
     errors.message = <FormattedMessage id="page.contact.form.message.length" />;
   }
 

@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { getBgSecondaryColor } from "@/tools/theme";
 import ThemeContext from "@/store/theme-context";
 import Link from "next/link";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 
 export interface GearItem {
   id: string;
@@ -23,7 +23,7 @@ const GearCard = ({ gear }: GearCardProps) => {
   const themeCtx = useContext(ThemeContext);
   const theme = themeCtx.theme;
   const bgSecondaryColor = getBgSecondaryColor(theme);
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
 
   return (
     <Link

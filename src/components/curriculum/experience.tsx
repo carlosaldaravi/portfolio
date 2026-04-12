@@ -72,7 +72,7 @@ const Experience = ({
           <TimeLineEvent
             item={exp}
             isEditable={isEditable}
-            onChange={(event) => handleEvents(event as ExperienceData)}
+            onChange={handleEvents}
           >
             <PrettyParagraph
               text={exp.text}

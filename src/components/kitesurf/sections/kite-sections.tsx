@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SWIPE_THRESHOLD } from "@/constants/ui";
 import NewsCards from "@/components/kitesurf/news-cards/news-cards";
 import Sponsors from "@/components/kitesurf/sponsors";
 import JumpsCards from "@/components/kitesurf/jump-card/jumps-cards";
@@ -41,9 +42,9 @@ const KiteSections = ({ sectionSelected, direction, onChangeSection }: KiteSecti
     const { data } = await get<RankingApiItem[]>();
 
     if (data) {
-      const dataAux = data.slice(0, 10);
+      const topRanking = data.slice(0, 10);
       setRanking(
-        dataAux.map((item: RankingApiItem, i: number) => {
+        topRanking.map((item: RankingApiItem, i: number) => {
           return {
             name: item.user.name,
             height: Number(item.value).toFixed(1),
@@ -76,15 +77,34 @@ const KiteSections = ({ sectionSelected, direction, onChangeSection }: KiteSecti
 
   useEffect(() => {
     if (touchEnd !== 0) {
-      if (touchStart - touchEnd > 100) {
+      if (touchStart - touchEnd > SWIPE_THRESHOLD) {
         onChangeSection(1); // to the next section
         touchEndHandler();
-      } else if (touchEnd - touchStart > 100) {
+      } else if (touchEnd - touchStart > SWIPE_THRESHOLD) {
         onChangeSection(-1); // to the previous section
         touchEndHandler();
       }
     }
   }, [touchStart, touchEnd, onChangeSection]);
+
+  const renderSectionContent = () => {
+    switch (sectionSelected.name) {
+      case "bestJumps":
+        return <JumpsCards jumps={sectionSelected.data as Jump[]} />;
+      case "sponsors":
+        return <Sponsors sponsors={sectionSelected.data as Sponsor[]} />;
+      case "news":
+        return <NewsCards news={sectionSelected.data as NewsItem[]} />;
+      case "gear":
+        return <Gear gear={sectionSelected.data as GearGroupItem[]} />;
+      case "ranking":
+        return <Ranking ranking={ranking} />;
+      default:
+        return null;
+    }
+  };
+
+  const content = renderSectionContent();
 
   return (
     <div
@@ -93,52 +113,13 @@ const KiteSections = ({ sectionSelected, direction, onChangeSection }: KiteSecti
       onTouchMove={touchMoveHandler}
       onTouchEnd={touchEndHandler}
     >
-      {sectionSelected.name === "bestJumps" && (
+      {content && (
         <KiteSectionTransition
-          name="bestJumps"
+          name={sectionSelected.name}
           sectionSelected={sectionSelected}
           direction={direction}
         >
-          <JumpsCards
-            jumps={sectionSelected.data as Jump[]}
-          />
-        </KiteSectionTransition>
-      )}
-
-      {sectionSelected.name === "sponsors" && (
-        <KiteSectionTransition
-          name="sponsors"
-          sectionSelected={sectionSelected}
-          direction={direction}
-        >
-          <Sponsors sponsors={sectionSelected.data as Sponsor[]} />
-        </KiteSectionTransition>
-      )}
-      {sectionSelected.name === "news" && (
-        <KiteSectionTransition
-          name="news"
-          sectionSelected={sectionSelected}
-          direction={direction}
-        >
-          <NewsCards news={sectionSelected.data as NewsItem[]} />
-        </KiteSectionTransition>
-      )}
-      {sectionSelected.name === "gear" && (
-        <KiteSectionTransition
-          name="gear"
-          sectionSelected={sectionSelected}
-          direction={direction}
-        >
-          <Gear gear={sectionSelected.data as GearGroupItem[]} />
-        </KiteSectionTransition>
-      )}
-      {sectionSelected.name === "ranking" && (
-        <KiteSectionTransition
-          name="ranking"
-          sectionSelected={sectionSelected}
-          direction={direction}
-        >
-          <Ranking ranking={ranking} />
+          {content}
         </KiteSectionTransition>
       )}
     </div>

@@ -17,19 +17,19 @@ interface ManualValues {
   place: string | null;
 }
 
-interface TimeLineEventProps {
-  item: TimeLineItem;
-  onChange: (updatedItem: TimeLineItem) => void;
+interface TimeLineEventProps<T extends TimeLineItem> {
+  item: T;
+  onChange: (updatedItem: T) => void;
   isEditable: boolean;
   children: ReactNode;
 }
 
-const TimeLineEvent = ({
+const TimeLineEvent = <T extends TimeLineItem>({
   item,
   onChange,
   isEditable,
   children,
-}: TimeLineEventProps) => {
+}: TimeLineEventProps<T>) => {
   const [manualValues, setManualValues] = useState<ManualValues>({
     date: null,
     title: null,

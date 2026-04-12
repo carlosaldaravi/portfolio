@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import SVG from "@/components/svg";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 
 export interface RRSSItem {
   name: string;
@@ -13,7 +13,7 @@ interface ItemRRSSProps {
 }
 
 const ItemRRSS = ({ rrss }: ItemRRSSProps) => {
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
   const rrssHandler = (e: MouseEvent<HTMLLIElement>, url: string) => {
     e.preventDefault();
     isMobile

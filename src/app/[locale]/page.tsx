@@ -1,43 +1,26 @@
-import path from "path";
-import fs from "fs/promises";
 import type { Metadata } from "next";
 import HomeContent from "./home-content";
+import { loadMessages, createPageMetadata } from "@/lib/metadata";
+import { loadJsonData } from "@/lib/data";
+import type { PageParams } from "@/types/common";
+import type { DeveloperData } from "@/types/developer";
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+}: PageParams): Promise<Metadata> {
   const { locale } = await params;
-  // Load messages for metadata
-  const messages = locale === "en"
-    ? (await import("@/lang/en.json")).default
-    : (await import("@/lang/es.json")).default;
+  const messages = await loadMessages(locale);
 
-  const meta = messages["page.home.meta"] ?? "";
-  const title = "Carlos Aldaravi - Portfolio";
-
-  return {
-    title,
-    description: meta,
-    openGraph: {
-      title,
-      description: meta,
-      images: ["https://carlosaldaravi.com/images/yo-dev.png"],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description: meta,
-      images: ["https://carlosaldaravi.com/images/yo-dev.png"],
-    },
-  };
+  return createPageMetadata(messages, {
+    titleSuffix: "Portfolio",
+    descriptionKey: "page.home.meta",
+    imagePath: "/images/yo-dev.png",
+    twitterCard: "summary_large_image",
+  });
 }
 
 export default async function HomePage() {
-  const dataFilePath = path.join(process.cwd(), "src/data", "developer.json");
-  const jsonData = await fs.readFile(dataFilePath, "utf-8");
-  const data = JSON.parse(jsonData);
+  const data = await loadJsonData<DeveloperData>("developer.json");
 
   return <HomeContent data={data} />;
 }

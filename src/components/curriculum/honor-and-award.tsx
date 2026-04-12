@@ -71,7 +71,7 @@ const HonorAndAward = ({
         >
           <TimeLineEvent
             item={honor}
-            onChange={(updated) => handleHonorChange(updated as HonorAndAwardData)}
+            onChange={handleHonorChange}
             isEditable={isEditable}
           >
             <PrettyParagraph

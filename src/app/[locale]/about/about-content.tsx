@@ -3,17 +3,11 @@
 import OverlayCards from "@/components/about/overlay-cards";
 import AboutHeader from "@/components/about/header";
 import Page from "@/components/UI/page";
-import { useEffect } from "react";
-import useTracker from "@/hooks/useTracker";
+import usePageTracking from "@/hooks/usePageTracking";
 import { TRACKING_TYPES } from "@/types/track";
 
 export default function AboutContent() {
-  const tracker = useTracker();
-
-  useEffect(() => {
-    tracker.page(TRACKING_TYPES.page.about);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  usePageTracking(TRACKING_TYPES.page.about);
 
   const cards = [
     {

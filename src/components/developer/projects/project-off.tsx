@@ -3,7 +3,7 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import Popup from "@/components/layout/popup";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 
 interface ProjectData {
   name: string;
@@ -26,7 +26,7 @@ const ProjectOFF = ({ project, colorNum, onHover }: ProjectOFFProps) => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [color, setColor] = useState("1");
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
 
   const handleOpenPopup = () => {
     setPopupOpen(true);

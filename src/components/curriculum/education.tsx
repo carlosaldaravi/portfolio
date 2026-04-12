@@ -85,9 +85,7 @@ const Education = ({
         >
           <TimeLineEvent
             item={edu}
-            onChange={(updatedEdu) =>
-              handleEducationChange(updatedEdu as EducationData)
-            }
+            onChange={handleEducationChange}
             isEditable={isEditable}
           >
             <PrettyParagraph

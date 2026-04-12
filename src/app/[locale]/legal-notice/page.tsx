@@ -2,18 +2,12 @@
 
 import Page from "@/components/UI/page";
 import Section from "@/components/UI/section";
-import useTracker from "@/hooks/useTracker";
+import usePageTracking from "@/hooks/usePageTracking";
 import { TRACKING_TYPES } from "@/types/track";
-import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 
 export default function LegalNoticePage() {
-  const tracker = useTracker();
-
-  useEffect(() => {
-    tracker.page(TRACKING_TYPES.page.legalNotice);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  usePageTracking(TRACKING_TYPES.page.legalNotice);
 
   return (
     <Page>

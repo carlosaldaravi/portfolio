@@ -1,21 +1,16 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import KiteSectionsSelector from "@/components/kitesurf/sections/kite-sections-selector";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import KiteSections from "@/components/kitesurf/sections/kite-sections";
 import Page from "@/components/UI/page";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import BackgroundVideo from "@/components/UI/background-video";
-import useTracker from "@/hooks/useTracker";
+import usePageTracking from "@/hooks/usePageTracking";
 import { TRACKING_TYPES } from "@/types/track";
 import type { MeData } from "@/components/kitesurf/kiter-info/text-kiter-card";
-
-interface SectionData {
-  name: string;
-  title: string;
-  data: unknown[];
-}
+import type { SectionData } from "@/types/kitesurf";
 
 interface KitesurfContentProps {
   sections: SectionData[];
@@ -26,17 +21,13 @@ export default function KitesurfContent({ sections, me }: KitesurfContentProps) 
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
   const [direction, setDirection] = useState("");
-  const { isMobile } = useTools();
-  const tracker = useTracker();
+  const { isMobile } = useResponsive();
 
   const videoUrl = isMobile ? "/videos/video-short.mp4" : "/videos/video.MP4";
   const videoUrlWebm = isMobile ? "/videos/video-short.webm" : "/videos/video.webm";
   const videoPoster = "/images/video-poster.png";
 
-  useEffect(() => {
-    tracker.page(TRACKING_TYPES.page.kitesurfer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  usePageTracking(TRACKING_TYPES.page.kitesurfer);
 
   const changeSectionHandler = (oper: number) => {
     oper === 1 ? setDirection("left") : setDirection("right");

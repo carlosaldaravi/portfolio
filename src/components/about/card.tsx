@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import classes from "./card.module.css";
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ interface CardProps {
 
 const Card = ({ card }: CardProps) => {
   const [showArrows, setShowArrows] = useState(true);
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
   const infoRef = useRef<HTMLDivElement>(null);
 
   const resetScroll = () => {

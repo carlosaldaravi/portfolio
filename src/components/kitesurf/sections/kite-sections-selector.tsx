@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import ButtonSlider from "@/components/UI/button-slider";
 import Arrow from "@/components/UI/arrow";
 import SectionTitle from "@/components/UI/section-title";
@@ -29,7 +29,7 @@ const KiteSectionsSelector = ({
   const [sectionTitle, setSectionTitle] = useState<string | undefined>();
   const [indexSection, setIndexSection] = useState<number>(0);
   const [actualSection, setActualSection] = useState<KiteSection>(sectionSelected);
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
 
   useEffect(() => {
     setActualSection(sectionSelected);

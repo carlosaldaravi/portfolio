@@ -1,41 +1,24 @@
-import path from "path";
-import fs from "fs/promises";
 import type { Metadata } from "next";
 import DeveloperContent from "./developer-content";
-
-interface PageParams {
-  params: Promise<{ locale: string }>;
-}
+import { loadMessages, createPageMetadata } from "@/lib/metadata";
+import { loadJsonData } from "@/lib/data";
+import type { PageParams } from "@/types/common";
+import type { DeveloperData } from "@/types/developer";
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { locale } = await params;
-  const messages = locale === "en"
-    ? (await import("@/lang/en.json")).default
-    : (await import("@/lang/es.json")).default;
+  const messages = await loadMessages(locale);
 
-  const description = messages["page.home.meta"] || "";
-  const title = "Carlos Aldaravi - Developer";
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      images: ["https://carlosaldaravi.com/images/yo-dev.png"],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-  };
+  return createPageMetadata(messages, {
+    titleSuffix: "Developer",
+    descriptionKey: "page.home.meta",
+    imagePath: "/images/yo-dev.png",
+    twitterCard: "summary_large_image",
+  });
 }
 
 export default async function DeveloperPage() {
-  const dataFilePath = path.join(process.cwd(), "src/data", "developer.json");
-  const jsonData = await fs.readFile(dataFilePath, "utf-8");
-  const data = JSON.parse(jsonData);
+  const data = await loadJsonData<DeveloperData>("developer.json");
 
   return <DeveloperContent data={data} />;
 }

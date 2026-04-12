@@ -7,7 +7,7 @@ import ThemeContext from "@/store/theme-context";
 import HeaderNavbar from "./header-navbar";
 import { getBgColor, getShadowColor } from "@/tools/theme";
 import Image from "next/image";
-import { useTools } from "@/hooks/useTools";
+import { useResponsive } from "@/hooks/useResponsive";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
 import { MY_NAME } from "@/constants/constants";
@@ -18,22 +18,19 @@ const Header = () => {
   const { locale, locales, pathname, cleanPathname } = useLocaleRouter();
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const themeCtx = useContext(ThemeContext);
-  const { isMobile } = useTools();
+  const { isMobile } = useResponsive();
   const tracker = useTracker();
 
   const theme = themeCtx.theme;
   const route = cleanPathname;
 
-  const headerClasses = `${
-    hasScrolled
-      ? `shadow-lg ${getShadowColor(theme)} ${
-          route === "/kitesurf" && "bg-opacity-80"
-        }`
-      : "bg-opacity-0"
-  } ${getBgColor(theme)}
-   ${route === "/" ? "justify-end" : "justify-between"}`;
+  const scrolledClasses = hasScrolled
+    ? `shadow-lg ${getShadowColor(theme)} ${route === "/kitesurf" ? "bg-opacity-80" : ""}`
+    : "bg-opacity-0";
+  const justifyClass = route === "/" ? "justify-end" : "justify-between";
+  const headerClasses = `${scrolledClasses} ${getBgColor(theme)} ${justifyClass}`;
 
-  const setCookieHandler = (l: string) => {
+  const handleSetCookie = (l: string) => {
     setCookie("NEXT_LOCALE", l);
   };
 
@@ -51,13 +48,13 @@ const Header = () => {
     };
   }, []);
 
-  const selectLanguageHandler = (l: string) => {
+  const handleSelectLanguage = (l: string) => {
     const event =
       l === "es"
         ? TRACKING_TYPES.event.esLanguageClick
         : TRACKING_TYPES.event.enLanguageClick;
     tracker.track(event);
-    setCookieHandler(l);
+    handleSetCookie(l);
   };
 
   return (
@@ -92,7 +89,7 @@ const Header = () => {
             <Link
               key={`locale-${l}`}
               href={buildLocalePath(pathname, l)}
-              onClick={() => selectLanguageHandler(l)}
+              onClick={() => handleSelectLanguage(l)}
               aria-label={`Switch language to ${l === "es" ? "Spanish" : "English"}`}
             >
               <SVG type={SVG_TYPES[l as keyof typeof SVG_TYPES]} />
