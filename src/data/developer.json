@@ -137,7 +137,7 @@
       "id": "project-2",
       "name": "Ocean Platform",
       "logo": "/images/logos/ocean-logo.png",
-      "img": "/images/projects/ocean-project.png",
+      "img": "/images/projects/ocean-project.webp",
       "year": "2020",
       "github": {
         "url": "https://github.com/carlosaldaravi/ocean-backend",
