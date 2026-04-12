@@ -1,25 +1,20 @@
 import Link from "next/link";
-import { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { FORMSPARK_URL } from "@/env/constants";
 import { ArrowPathIcon, CheckIcon } from "@heroicons/react/24/outline";
 import Input from "@/components/UI/input";
 import useForm from "@/hooks/useForm";
 import validate from "@/tools/validateForm";
-import useFetch from "@/hooks/useFetch";
-import { TIMEOUTS } from "@/constants/ui";
 import Image from "next/image";
 import yoContactImg from "../../../public/images/yo-contact.png";
+import useContactSubmit from "./hooks/useContactSubmit";
 
 const ContactFormBody = () => {
-  const [responseError, setResponseError] = useState("");
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const { post } = useFetch(FORMSPARK_URL);
   const { values, errors, handleChange, handleSubmit, clearValues } = useForm(
-    submit,
+    handleFormSubmit,
     validate
   );
+  const { isLoading, isFormSubmitted, responseError, submit } =
+    useContactSubmit(values, clearValues);
 
   const intl = useIntl();
   const name = intl.formatMessage({ id: "page.contact.name" });
@@ -29,27 +24,8 @@ const ContactFormBody = () => {
   const privacyPolicy = intl.formatMessage({ id: "page.privacyPolicy" });
   const legalNotice = intl.formatMessage({ id: "page.legalNotice" });
 
-  async function submit() {
-    setIsLoading(true);
-    const { data, errors } = await post({
-      ...values,
-    });
-    if (data) {
-      setIsFormSubmitted(true);
-      setResponseError("");
-      clearValues();
-      setTimeout(() => {
-        setIsFormSubmitted(false);
-      }, TIMEOUTS.FORM_SUCCESS);
-    }
-    if (errors) {
-      setIsFormSubmitted(false);
-      setResponseError(errors[0]);
-      setTimeout(() => {
-        setResponseError("");
-      }, TIMEOUTS.FORM_ERROR);
-    }
-    setIsLoading(false);
+  function handleFormSubmit() {
+    submit();
   }
 
   return (

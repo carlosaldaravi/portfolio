@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import Popup from "@/components/layout/popup";
 import { useResponsive } from "@/hooks/useResponsive";
+import useProjectCard from "./hooks/useProjectCard";
 
 interface ProjectData {
   name: string;
@@ -22,36 +22,16 @@ interface ProjectOFFProps {
 }
 
 const ProjectOFF = ({ project, colorNum, onHover }: ProjectOFFProps) => {
-  const [infoPositionStyle, setInfoPositionStyle] = useState<string>();
-  const [isPopupOpen, setPopupOpen] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [color, setColor] = useState("1");
   const { isMobile } = useResponsive();
-
-  const handleOpenPopup = () => {
-    setPopupOpen(true);
-  };
-
-  const closePopupHandler = () => {
-    setPopupOpen(false);
-  };
-  const hoverInHandler = () => {
-    onHover(true);
-    setHovered(true);
-  };
-  const hoverOutHandler = () => {
-    setHovered(false);
-  };
-
-  useEffect(() => {
-    setColor(colorNum);
-  }, [colorNum]);
-
-  useEffect(() => {
-    hovered
-      ? setInfoPositionStyle("lg:-top-12")
-      : setInfoPositionStyle("lg:top-40");
-  }, [hovered]);
+  const {
+    isPopupOpen,
+    color,
+    infoPositionStyle,
+    handleOpenPopup,
+    closePopupHandler,
+    hoverInHandler,
+    hoverOutHandler,
+  } = useProjectCard({ colorNum, onHover });
 
   return (
     <div>

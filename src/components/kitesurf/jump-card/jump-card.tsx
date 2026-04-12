@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { useResponsive } from "@/hooks/useResponsive";
+import { useContext } from "react";
 import ThemeContext from "@/store/theme-context";
 import classes from "./jump-card.module.css";
 import YoutubeIcon from "./youtube-icon";
@@ -7,8 +6,7 @@ import BackSideCard from "./back-side-car";
 import HeaderJumpCard from "./header-jump-card";
 import FrontSideCard from "./front-side-card";
 import { THEMES_TYPES } from "@/types/themes";
-import useTracker from "@/hooks/useTracker";
-import { TRACKING_TYPES } from "@/types/track";
+import useJumpCardState from "./hooks/useJumpCardState";
 
 export interface JumpTextEntry {
   [key: string]: string | number;
@@ -45,55 +43,19 @@ const JumpCard = ({
   onSetCardHovered,
   onRemoveCardHovered,
 }: JumpCardProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [showBackSide, setShowBackSide] = useState(false);
-  const [showFrontSide, setShowFrontSide] = useState(false);
+  const {
+    isExpanded,
+    showBackSide,
+    showFrontSide,
+    onPlayHandler,
+    onBackHandler,
+    onHoverInHandler,
+    onHoverOutHandler,
+    isMobile,
+  } = useJumpCardState({ jump, cardHovered, onSetCardHovered, onRemoveCardHovered });
+
   const themeCtx = useContext(ThemeContext);
-  const { isMobile } = useResponsive();
-  const tracker = useTracker();
-
   const theme = themeCtx.theme;
-
-  const onPlayHandler = () => {
-    setShowBackSide(true);
-    setShowFrontSide(false);
-
-    tracker.track(
-      TRACKING_TYPES.event.youtubeIconClick,
-      jump.texts.reduce((result: Record<string, string | number>, currentObject: JumpTextEntry) => {
-        return Object.assign(result, currentObject);
-      }, {})
-    );
-  };
-
-  const onBackHandler = () => {
-    setShowFrontSide(true);
-    setShowBackSide(false);
-  };
-
-  const onHoverInHandler = () => {
-    if (!isMobile && !showBackSide) {
-      setShowFrontSide(true);
-      onSetCardHovered();
-    }
-  };
-
-  const onHoverOutHandler = () => {
-    if (!isMobile && !showBackSide) {
-      setShowFrontSide(false);
-    }
-    if (!isMobile && cardHovered) {
-      onRemoveCardHovered();
-    }
-  };
-
-  useEffect(() => {
-    if (showFrontSide || showBackSide) {
-      setIsExpanded(true);
-    } else {
-      setIsExpanded(false);
-    }
-  }, [showFrontSide, showBackSide]);
 
   return (
     <div

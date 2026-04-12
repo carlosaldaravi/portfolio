@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { SWIPE_THRESHOLD } from "@/constants/ui";
+import React, { useCallback } from "react";
 import NewsCards from "@/components/kitesurf/news-cards/news-cards";
 import Sponsors from "@/components/kitesurf/sponsors";
 import JumpsCards from "@/components/kitesurf/jump-card/jumps-cards";
 import Gear from "@/components/kitesurf/gear/gear";
 import Ranking from "@/components/kitesurf/ranking/ranking";
 import KiteSectionTransition from "./kite-sections-transition";
-import useFetch from "@/hooks/useFetch";
-import { API_GET_RANKING } from "@/env/constants";
-import { leaderboard } from "@/data/leaderboard";
-import { Kiter } from "@/components/kitesurf/ranking/ranking-kiter";
+import useSwipeDetection from "@/hooks/useSwipeDetection";
+import useRanking from "./hooks/useRanking";
 import { Jump } from "@/components/kitesurf/jump-card/jump-card";
 import { Sponsor } from "@/components/kitesurf/sponsors";
 import { NewsItem } from "@/components/kitesurf/news-cards/news-card";
@@ -27,65 +24,19 @@ interface KiteSectionsProps {
   onChangeSection: (direction: number) => void;
 }
 
-interface RankingApiItem {
-  user: { name: string };
-  value: number;
-}
-
 const KiteSections = ({ sectionSelected, direction, onChangeSection }: KiteSectionsProps) => {
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-  const [ranking, setRanking] = useState<Kiter[] | undefined>();
-  const { get } = useFetch(API_GET_RANKING);
+  const { ranking } = useRanking();
 
-  const getRanking = async () => {
-    const { data } = await get<RankingApiItem[]>();
+  const onSwipeLeft = useCallback(() => {
+    onChangeSection(1);
+  }, [onChangeSection]);
 
-    if (data) {
-      const topRanking = data.slice(0, 10);
-      setRanking(
-        topRanking.map((item: RankingApiItem, i: number) => {
-          return {
-            name: item.user.name,
-            height: Number(item.value).toFixed(1),
-            position: i + 1,
-          };
-        })
-      );
-    } else {
-      setRanking(leaderboard);
-    }
-  };
+  const onSwipeRight = useCallback(() => {
+    onChangeSection(-1);
+  }, [onChangeSection]);
 
-  const touchStartHandler = (e: React.TouchEvent) => {
-    setTouchStart(e.touches[0].clientX);
-  };
-
-  const touchMoveHandler = (e: React.TouchEvent) => {
-    setTouchEnd(e.touches[0].clientX);
-  };
-
-  const touchEndHandler = () => {
-    setTouchStart(0);
-    setTouchEnd(0);
-  };
-
-  useEffect(() => {
-    getRanking();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    if (touchEnd !== 0) {
-      if (touchStart - touchEnd > SWIPE_THRESHOLD) {
-        onChangeSection(1); // to the next section
-        touchEndHandler();
-      } else if (touchEnd - touchStart > SWIPE_THRESHOLD) {
-        onChangeSection(-1); // to the previous section
-        touchEndHandler();
-      }
-    }
-  }, [touchStart, touchEnd, onChangeSection]);
+  const { touchStartHandler, touchMoveHandler, touchEndHandler } =
+    useSwipeDetection({ onSwipeLeft, onSwipeRight });
 
   const renderSectionContent = () => {
     switch (sectionSelected.name) {
