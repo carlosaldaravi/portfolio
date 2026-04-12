@@ -42,6 +42,8 @@ const Sponsors = ({ sponsors }: SponsorsProps) => {
                   alt={sponsor.name}
                   width={200}
                   height={150}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
                 />
               </Link>
             );

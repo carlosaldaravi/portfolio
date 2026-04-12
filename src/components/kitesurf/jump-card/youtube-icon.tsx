@@ -10,15 +10,15 @@ const YoutubeIcon = ({ onPlay }: YoutubeIconProps) => {
   const { isMobile } = useTools();
 
   return (
-    <div
-      className={`absolute left-5 sm:left-14 cursor-pointer z-30 ${
+    <button
+      className={`absolute left-5 sm:left-14 cursor-pointer z-30 bg-transparent border-none p-0 ${
         !isMobile ? "clickHere" : "animate-bounce"
       }`}
       onClick={onPlay}
-      onTouchStart={onPlay}
+      aria-label="Play video"
     >
       <SVG type={SVG_TYPES.youtube} />
-    </div>
+    </button>
   );
 };
 

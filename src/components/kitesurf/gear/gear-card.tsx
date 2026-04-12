@@ -40,6 +40,8 @@ const GearCard = ({ gear }: GearCardProps) => {
         alt="kite"
         height={800}
         width={600}
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
         className={`w-auto transform transition-all duration-300 ${
           hovered && "-translate-y-14 -rotate-20"
         }`}

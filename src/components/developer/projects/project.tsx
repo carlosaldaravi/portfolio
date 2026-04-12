@@ -61,6 +61,8 @@ const Project = ({ project, index }: ProjectProps) => {
           width={1200}
           height={800}
           style={{ objectFit: "cover" }}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
         />
 
         <div

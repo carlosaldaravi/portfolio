@@ -21,6 +21,8 @@ const BuyMeACoffeeButton = () => {
           width={500}
           height={200}
           style={{ width: "100%", height: "auto" }}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
         />
       </a>
     </div>

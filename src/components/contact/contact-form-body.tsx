@@ -8,6 +8,7 @@ import useForm from "@/hooks/useForm";
 import validate from "@/tools/validateForm";
 import useFetch from "@/hooks/useFetch";
 import Image from "next/image";
+import yoContactImg from "../../../public/images/yo-contact.png";
 
 const ContactFormBody = () => {
   const [responseError, setResponseError] = useState("");
@@ -57,11 +58,12 @@ const ContactFormBody = () => {
           <FormattedMessage id="page.contact.description" />
         </h3>
         <Image
-          src="/images/yo-contact.png"
+          src={yoContactImg}
           alt="img"
           width={600}
           height={800}
           className="p-6 w-full"
+          placeholder="blur"
         />
       </div>
       <div className="sm:ml-4 lg:ml-0 mx-auto w-full">

@@ -76,6 +76,8 @@ const Header = () => {
           width={60}
           height={80}
           className="h-auto w-24 sm:w-32"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
         />
       </Link>
       <div className="flex-grow">{route !== "/" && <HeaderNavbar />}</div>
@@ -93,6 +95,7 @@ const Header = () => {
               locale={l}
               shallow={true}
               onClick={() => selectLanguageHandler(l)}
+              aria-label={`Switch language to ${l === "es" ? "Spanish" : "English"}`}
             >
               <SVG type={SVG_TYPES[l as keyof typeof SVG_TYPES]} onClick={setCookieHandler} />
             </Link>

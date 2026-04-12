@@ -30,6 +30,8 @@ const AvatarSwitch = ({ src, customClass, hover }: AvatarSwitchProps) => {
               height={800}
               object-fit="cover"
               object-position="top"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
               className={`object-cover transition duration-1000 ease-in-out grayscale ${
                 hover &&
                 `grayscale-0 ${

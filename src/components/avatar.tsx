@@ -15,6 +15,8 @@ const Avatar = ({ src, alt }: AvatarProps) => {
         width={600}
         height={800}
         className={`${classes.avatar}`}
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
       />
     </div>
   );

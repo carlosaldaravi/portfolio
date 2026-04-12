@@ -1,4 +1,5 @@
 import Image from "next/image";
+import surfrLogo from "../../../../public/images/logos/surfr.png";
 import { useContext } from "react";
 import { TrophyIcon } from "@heroicons/react/24/outline";
 import { FormattedMessage } from "react-intl";
@@ -19,11 +20,12 @@ const RankingHeader = () => {
       <div className="h-28 flex flex-col justify-center items-center">
         {/* <span className="text-center tracking-xs text-4xl">Surfr.</span>*/}
         <Image
-          src="/images/logos/surfr.png"
+          src={surfrLogo}
           height={100}
           width={100}
           alt="surfr logo"
           className="w-44"
+          placeholder="blur"
         />
         <span className="text-center uppercase text-xl tracking-xxs">
           <FormattedMessage id="page.kitesurf.ranking.header" />

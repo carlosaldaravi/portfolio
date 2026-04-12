@@ -46,6 +46,7 @@ const Popup = ({ isOpen, onClose, title, text, stack, rol }: PopupProps) => {
               <div className="popup-card-container">
                 <button
                   onClick={onClose}
+                  aria-label="Close"
                   className={`absolute right-3 top-2 z-50`}
                 >
                   <XMarkIcon className="h-8 w-8" />

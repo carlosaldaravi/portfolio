@@ -35,7 +35,7 @@ const ToggleButton = () => {
       className={`self-center relative inline-flex h-9 w-16 cursor-pointer rounded-full border-2 transition-colors duration-200 ease-in-out
         ${enabled ? "bg-gray-900" : "bg-gray-200"}`}
     >
-      <span className="sr-only">Use setting</span>
+      <span className="sr-only">Toggle dark mode</span>
       <span
         className={`pointer-events-none relative inline-block h-7 w-7 transform rounded-full shadow transition duration-200 ease-in-out ${
           theme === THEMES_TYPES.dark ? "bg-dark-primary" : "bg-light-secondary"

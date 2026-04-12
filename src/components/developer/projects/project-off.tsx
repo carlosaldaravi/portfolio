@@ -55,10 +55,15 @@ const ProjectOFF = ({ project, colorNum, onHover }: ProjectOFFProps) => {
 
   return (
     <div>
-      <InformationCircleIcon
-        className={`lg:relative cursor-pointer mx-auto h-14 w-14 project-button-info project-button-info-${color} ${infoPositionStyle}`}
+      <button
+        className="bg-transparent border-none p-0 cursor-pointer mx-auto block"
         onClick={handleOpenPopup}
-      />
+        aria-label="View project details"
+      >
+        <InformationCircleIcon
+          className={`lg:relative h-14 w-14 project-button-info project-button-info-${color} ${infoPositionStyle}`}
+        />
+      </button>
       <Popup
         isOpen={isPopupOpen}
         onClose={closePopupHandler}
@@ -77,7 +82,7 @@ const ProjectOFF = ({ project, colorNum, onHover }: ProjectOFFProps) => {
           <div className="item__image">
             <div className="image-switch__outer">
               <div className="image-switch__inner">
-                <Image src={project.img} alt="image" width={800} height={800} />
+                <Image src={project.img} alt="image" width={800} height={800} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg==" />
               </div>
             </div>
           </div>
@@ -102,6 +107,8 @@ const ProjectOFF = ({ project, colorNum, onHover }: ProjectOFFProps) => {
                 width={200}
                 height={200}
                 className="h-16 w-16"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg=="
               />
             </span>
             <div className={`flap level1 level1Color${color} flip-right`}>

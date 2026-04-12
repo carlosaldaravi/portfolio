@@ -21,9 +21,9 @@ const BackSideCar = ({ jump, onBack }: BackSideCardProps) => {
           jump.best ? "text-yellow-300" : "text-gray-100"
         }`}
       >
-        <span onClick={onBack} onTouchStart={onBack}>
+        <button onClick={onBack} aria-label="Go back" className="bg-transparent border-none p-0 cursor-pointer">
           <SVG type={SVG_TYPES.backArrow} />
-        </span>
+        </button>
         {hangtime} <FormattedMessage id="seconds" />
       </div>
       <YoutubeEmbed
