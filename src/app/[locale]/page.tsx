@@ -21,6 +21,7 @@ export async function generateMetadata({
 
 export default async function HomePage() {
   const data = await loadJsonData<DeveloperData>("developer.json");
+  const kiteData = await loadJsonData<{ me: { id: string; value: string }[] }>("kitesurf.json");
 
-  return <HomeContent data={data} />;
+  return <HomeContent data={data} kiteMe={kiteData.me} />;
 }

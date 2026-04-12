@@ -15,9 +15,10 @@ import type { SectionData } from "@/types/kitesurf";
 interface KitesurfContentProps {
   sections: SectionData[];
   me: MeData[];
+  devMe: MeData[];
 }
 
-export default function KitesurfContent({ sections, me }: KitesurfContentProps) {
+export default function KitesurfContent({ sections, me, devMe }: KitesurfContentProps) {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
   const [direction, setDirection] = useState("");
@@ -58,7 +59,16 @@ export default function KitesurfContent({ sections, me }: KitesurfContentProps) 
       />
 
       <div className="relative z-10">
-        <KiterCard me={me} src="/images/yo-kite.png" />
+        <KiterCard
+          me={me}
+          src="/images/yo-kite.png"
+          flipTarget={{
+            me: devMe,
+            src: "/images/yo-dev.png",
+            href: "/developer",
+            label: "Developer",
+          }}
+        />
         <KiteSectionsSelector
           sections={sections}
           sectionSelected={sectionSelected}

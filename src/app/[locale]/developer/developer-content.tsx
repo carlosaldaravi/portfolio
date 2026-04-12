@@ -8,17 +8,28 @@ import usePageTracking from "@/hooks/usePageTracking";
 import { TRACKING_TYPES } from "@/types/track";
 import Experience from "@/components/developer/experience/experience";
 import type { DeveloperData } from "@/types/developer";
+import type { MeData } from "@/components/kitesurf/kiter-info/kiter-card";
 
 interface DeveloperContentProps {
   data: DeveloperData;
+  kiteMe: MeData[];
 }
 
-export default function DeveloperContent({ data }: DeveloperContentProps) {
+export default function DeveloperContent({ data, kiteMe }: DeveloperContentProps) {
   usePageTracking(TRACKING_TYPES.page.developer);
 
   return (
     <Page className="p-0">
-      <KiterCard me={data.me} src="/images/yo-dev.png" />
+      <KiterCard
+        me={data.me}
+        src="/images/yo-dev.png"
+        flipTarget={{
+          me: kiteMe,
+          src: "/images/yo-kite.png",
+          href: "/kitesurf",
+          label: "Kitesurfer",
+        }}
+      />
       <Experience experience={data.experience} />
       <Projects projects={data.projects} />
       <Stack stack={data.stack} />

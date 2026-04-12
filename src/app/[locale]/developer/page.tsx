@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 
 export default async function DeveloperPage() {
   const data = await loadJsonData<DeveloperData>("developer.json");
+  const kiteData = await loadJsonData<{ me: { id: string; value: string }[] }>("kitesurf.json");
 
-  return <DeveloperContent data={data} />;
+  return <DeveloperContent data={data} kiteMe={kiteData.me} />;
 }
