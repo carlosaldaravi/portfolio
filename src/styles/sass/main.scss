@@ -1,23 +1,22 @@
-@import "./base/base";
-@import "./base/animations";
+@use "./base/base";
+@use "./base/animations";
 
-@import "./abstracts/functions";
-@import "./abstracts/mixins";
-@import "./abstracts/variables";
+@use "./abstracts/functions";
+@use "./abstracts/mixins";
+@use "./abstracts/variables";
 
-@import "./components/youtube-btn";
-@import "./components/news-card";
-@import "./components/skills";
-@import "./components/project";
-@import "./components/section-title";
-@import "./components/footer";
-@import "./components/popup";
-@import "./components/download-button";
-@import "./components/contact-form";
-@import "./components/input";
-@import "./components/timeline";
+@use "./components/youtube-btn";
+@use "./components/news-card";
+@use "./components/skills";
+@use "./components/project";
+@use "./components/section-title";
+@use "./components/footer";
+@use "./components/popup";
+@use "./components/download-button";
+@use "./components/contact-form";
+@use "./components/input";
+@use "./components/timeline";
 
-@import "./pages/home";
-@import "./pages/kitesurf";
-@import "./pages/curriculum";
-@import "./components/animated-box";
+@use "./pages/home";
+@use "./pages/kitesurf";
+@use "./pages/curriculum";

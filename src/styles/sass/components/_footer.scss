@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .dark-footer {
   background-color: $secondary-dark-color;
   color: $primary-light-color;

@@ -1,44 +1,19 @@
 import { ReactNode } from "react";
-// import { useState } from "react";
-// import { FormattedMessage } from "react-intl";
-// import { useTools } from "@/hooks/useTools";
-// import ColorOptions from "./color-options";
 import { useIntl } from "react-intl";
 import SectionTitle from "@/components/UI/section-title";
 
 interface ProjectsHeaderProps {
   children: ReactNode;
-  projectHovered: boolean;
-  onSelectColor: (color: string) => void;
 }
 
-const ProjectsHeader = ({ children, projectHovered, onSelectColor }: ProjectsHeaderProps) => {
+const ProjectsHeader = ({ children }: ProjectsHeaderProps) => {
   const intl = useIntl();
   const sectionTitle = intl.formatMessage({ id: "page.developer.projects" });
-  // const [colorSelected, setColorSelected] = useState("#55cccc");
-  // const { isMobile } = useTools();
-
-  // const onColorSelectedHandler = (hexaColor) => {
-  //   setColorSelected(hexaColor);
-  //   if (hexaColor === "#55cccc") {
-  //     onSelectColor("1");
-  //   } else if (hexaColor === "#e95555") {
-  //     onSelectColor("2");
-  //   } else if (hexaColor === "#3b91f4") {
-  //     onSelectColor("3");
-  //   } else if (hexaColor === "#a57455") {
-  //     onSelectColor("4");
-  //   }
-  // };
 
   return (
     <div className="">
       <SectionTitle title={sectionTitle} className="section-title-big-vars" />
       <div className="flex flex-col">
-        {/* <ColorOptions
-          colorSelected={colorSelected}
-          onColorSelected={(color) => onColorSelectedHandler(color)}
-        /> */}
         {children}
       </div>
     </div>

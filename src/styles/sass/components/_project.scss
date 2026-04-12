@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $easeTime: 0.2s;
 $blockSize: 50px;
 $colorText: #345;
@@ -15,7 +17,7 @@ $colorTextLightest: #789;
   // padding: $blockSize $blockSize/4 0 $blockSize/4;
   display: grid;
   grid: auto-flow $blockSize * 6 / repeat(auto-fit, minmax($blockSize * 5, $blockSize * 5));
-  grid-gap: $blockSize/4;
+  grid-gap: math.div($blockSize, 4);
   justify-content: center;
   align-content: center;
   justify-items: center;

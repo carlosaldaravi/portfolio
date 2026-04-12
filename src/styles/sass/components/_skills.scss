@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .skills:before {
   content: "";
   text-transform: uppercase;

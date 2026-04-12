@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ProjectsHeader from "./header";
 import Proyect from "./project";
 import Section from "@/components/UI/section";
@@ -23,13 +22,8 @@ interface ProjectsProps {
 }
 
 const Projects = ({ projects }: ProjectsProps) => {
-  const [projectHovered, setProjectHovered] = useState(false);
-
   return (
-    <ProjectsHeader
-      projectHovered={projectHovered}
-      onSelectColor={() => {}}
-    >
+    <ProjectsHeader>
       <Section className="flex justify-center flex-col items-center lg:max-w-6xl">
         {projects.map((project, i) => (
           <Proyect key={project.id} project={project} index={i} />

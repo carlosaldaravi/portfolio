@@ -45,7 +45,6 @@ import { Astro } from "./tech/Astro";
 import { NextJS } from "./tech/NextJS";
 import { Svelte } from "./tech/Svelte";
 import { Laravel } from "./tech/Laravel";
-import { ReactNative } from "./tech/ReactNative";
 import { Expo } from "./tech/Expo";
 import { GoogleCloudPlatform } from "./tech/GoogleCloudPlatform";
 
@@ -165,9 +164,6 @@ const SVG = ({ type, size, className = "", fill, onClick }: SvgProps) => {
   }
   if (type === SVG_TYPES.laravel) {
     return <Laravel size={size} />;
-  }
-  if (type === SVG_TYPES.reactNative) {
-    return <ReactNative />;
   }
   if (type === SVG_TYPES.googleCloudPlatform) {
     return <GoogleCloudPlatform size={size} />;
