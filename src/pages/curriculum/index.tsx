@@ -23,16 +23,17 @@ const Curriculum = () => {
     import("html2pdf.js").then((html2pdfModule) => {
       const html2pdf = html2pdfModule.default;
       const element = resumeRef.current;
+      if (!element) return;
       const opt = {
-        margin: [0, 0, 0, 0],
+        margin: [0, 0, 0, 0] as [number, number, number, number],
         filename: `CV-${name}-${surname}.pdf`,
-        image: { type: "jpeg", quality: 0.98 },
+        image: { type: "jpeg" as const, quality: 0.98 },
         html2canvas: {
           scale: 2,
           dpi: 192,
           letterRendering: true,
         },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        jsPDF: { unit: "mm" as const, format: "a4" as const, orientation: "portrait" as const },
       };
 
       html2pdf()
@@ -79,8 +80,8 @@ const Curriculum = () => {
           <Header
             name={name}
             surname={surname}
-            onChangeName={(newName) => setName(newName)}
-            onChangeSurname={(newSurname) => setSurname(newSurname)}
+            onChangeName={(newName: string) => setName(newName)}
+            onChangeSurname={(newSurname: string) => setSurname(newSurname)}
             isEditable={isEditable}
           />
           <MainSection isEditable={isEditable} />

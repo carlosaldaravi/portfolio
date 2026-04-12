@@ -6,7 +6,7 @@ export const useTools = () => {
   useEffect(() => {
     setIsMobile(window.innerWidth < 640);
 
-    const handleResize = (event) => {
+    const handleResize = (event: MediaQueryListEvent) => {
       event.matches ? setIsMobile(true) : setIsMobile(false);
     };
 

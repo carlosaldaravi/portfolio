@@ -11,8 +11,9 @@ import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
 import Head from "next/head";
 import { useIntl } from "react-intl";
+import type { InferGetStaticPropsType } from "next";
 
-const KiteSurf = ({ sections, me }) => {
+const KiteSurf = ({ sections, me }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
   const [direction, setDirection] = useState("");
@@ -30,7 +31,7 @@ const KiteSurf = ({ sections, me }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const changeSectionHandler = (oper) => {
+  const changeSectionHandler = (oper: number) => {
     oper === 1 ? setDirection("left") : setDirection("right");
     let nextIndex = actualSectionIndex + oper;
     if (nextIndex === sections.length) {
@@ -45,7 +46,7 @@ const KiteSurf = ({ sections, me }) => {
     setSectionSelected(sections[nextIndex]);
   };
 
-  const setSectionHandler = (i) => {
+  const setSectionHandler = (i: number) => {
     setActualSectionIndex(i);
     setSectionSelected(sections[i]);
   };
@@ -74,13 +75,13 @@ const KiteSurf = ({ sections, me }) => {
         <KiteSectionsSelector
           sections={sections}
           sectionSelected={sectionSelected}
-          onChangeSection={(oper) => changeSectionHandler(oper)}
-          onSelectSection={(i) => setSectionHandler(i)}
+          onChangeSection={(oper: number) => changeSectionHandler(oper)}
+          onSelectSection={(i: number) => setSectionHandler(i)}
         />
         <KiteSections
           sectionSelected={sectionSelected}
           direction={direction}
-          onChangeSection={(oper) => changeSectionHandler(oper)}
+          onChangeSection={(oper: number) => changeSectionHandler(oper)}
         />
       </div>
     </Page>
@@ -89,9 +90,9 @@ const KiteSurf = ({ sections, me }) => {
 
 export async function getStaticProps() {
   const dataFilePath = path.join(process.cwd(), "src/data", "kitesurf.json");
-  const jsonData = await fs.readFile(dataFilePath);
+  const jsonData = await fs.readFile(dataFilePath, "utf-8");
   const data = JSON.parse(jsonData);
-  const sections = data.sections.filter((section) => section.data.length > 0);
+  const sections = data.sections.filter((section: { data: unknown[] }) => section.data.length > 0);
 
   return {
     props: { sections, me: data.me },

@@ -7,10 +7,11 @@ import { useRouter } from "next/router";
 import { ThemeContextProvider } from "@/store/theme-context";
 import { LanguageContextProvider } from "@/store/language-context";
 import Layout from "@/components/layout/layout";
+import type { AppProps } from "next/app";
 
 const BASE_URL = "https://carlosaldaravi.com";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   const { locale, asPath } = useRouter();
   const canonicalUrl = locale === "es"
     ? `${BASE_URL}${asPath}`

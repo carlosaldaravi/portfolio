@@ -1,17 +1,18 @@
 import { FormattedMessage } from "react-intl";
+import { FormValues, FormErrors } from "@/hooks/useForm";
 
-const validateForm = (values) => {
-  let errors = {};
+const validateForm = (values: FormValues): FormErrors => {
+  const errors: FormErrors = {};
 
   if (!values.name) {
     errors.name = <FormattedMessage id="page.contact.form.name.required" />;
-  } else if (values.name.length < 3) {
+  } else if (typeof values.name === "string" && values.name.length < 3) {
     errors.name = <FormattedMessage id="page.contact.form.name.length" />;
   }
 
   if (!values.email) {
     errors.email = <FormattedMessage id="page.contact.form.email.required" />;
-  } else {
+  } else if (typeof values.email === "string") {
     const re = /\S+@\S+\.\S+/;
     if (!re.test(values.email)) {
       errors.email = <FormattedMessage id="page.contact.form.email.valid" />;
@@ -22,9 +23,10 @@ const validateForm = (values) => {
     errors.message = (
       <FormattedMessage id="page.contact.form.message.required" />
     );
-  } else if (values.message.length < 10) {
+  } else if (typeof values.message === "string" && values.message.length < 10) {
     errors.message = <FormattedMessage id="page.contact.form.message.length" />;
   }
+
   if (!values.privacy || values.privacy === "false") {
     errors.privacy = (
       <FormattedMessage id="page.contact.form.privacy.required" />

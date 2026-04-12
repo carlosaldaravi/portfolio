@@ -30,11 +30,18 @@
     "sharp": "^0.33.5",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
+  "overrides": {
+    "@types/react": "$@types/react",
+    "@types/react-dom": "$@types/react-dom"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@tailwindcss/forms": "^0.5.9",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.3",

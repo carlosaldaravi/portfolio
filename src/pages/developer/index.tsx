@@ -10,7 +10,9 @@ import { TRACKING_TYPES } from "@/types/track";
 import Experience from "@/components/developer/experience/experience";
 import Head from "next/head";
 import { useIntl } from "react-intl";
-const Developer = ({ data }) => {
+import type { InferGetStaticPropsType } from "next";
+
+const Developer = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const tracker = useTracker();
   const intl = useIntl();
   const description = intl.formatMessage({ id: "page.home.meta" });
@@ -44,7 +46,7 @@ const Developer = ({ data }) => {
 
 export async function getStaticProps() {
   const dataFilePath = path.join(process.cwd(), "src/data", "developer.json");
-  const jsonData = await fs.readFile(dataFilePath);
+  const jsonData = await fs.readFile(dataFilePath, "utf-8");
   const data = JSON.parse(jsonData);
 
   return {

@@ -7,8 +7,9 @@ import useTracker from "@/hooks/useTracker";
 import { useIntl } from "react-intl";
 import { useEffect } from "react";
 import { TRACKING_TYPES } from "@/types/track";
+import type { InferGetStaticPropsType } from "next";
 
-export default function Home({ roles }) {
+export default function Home({ roles }: InferGetStaticPropsType<typeof getStaticProps>) {
   const intl = useIntl();
   const meta = intl.formatMessage({ id: "page.home.meta" });
   const tracker = useTracker();
@@ -32,7 +33,7 @@ export default function Home({ roles }) {
 
 export async function getStaticProps() {
   const dataFilePath = path.join(process.cwd(), "src/data", "roles.json");
-  const jsonData = await fs.readFile(dataFilePath);
+  const jsonData = await fs.readFile(dataFilePath, "utf-8");
   const data = JSON.parse(jsonData);
   return {
     props: { roles: data },

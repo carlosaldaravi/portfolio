@@ -25,4 +25,4 @@ export const TRACKING_TYPES = {
     privacyPolicy: "Privacy Policy",
     legalNotice: "Legal Notice",
   },
-};
+} as const;

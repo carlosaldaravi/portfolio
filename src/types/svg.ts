@@ -37,4 +37,6 @@ export const SVG_TYPES = {
   reactNative: "reactNative",
   expo: "expo",
   googleCloudPlatform: "googleCloudPlatform",
-};
+} as const;
+
+export type SvgType = (typeof SVG_TYPES)[keyof typeof SVG_TYPES];

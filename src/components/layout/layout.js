@@ -1,10 +1,10 @@
 import Footer from "./footer/footer";
 import Header from "./header/header";
 
-const Layout = ({ children, onChangeTheme }) => {
+const Layout = ({ children }) => {
   return (
     <>
-      <Header onChangeTheme={onChangeTheme} />
+      <Header />
       <main>{children}</main>
       <Footer />
     </>

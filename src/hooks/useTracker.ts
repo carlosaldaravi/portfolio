@@ -6,7 +6,7 @@ const useTracker = () => {
     writeKey: SEGMENT_KEY,
   });
 
-  const track = (event, payload = {}) => {
+  const track = (event: string, payload: Record<string, unknown> = {}) => {
     try {
       if (process.env.NODE_ENV === "development") return;
       analytics.track(event, payload);
@@ -14,7 +14,8 @@ const useTracker = () => {
       console.log("Error while tracking: ", error);
     }
   };
-  const page = (event) => {
+
+  const page = (event: string) => {
     try {
       if (process.env.NODE_ENV === "development") return;
       analytics.page(event);
@@ -22,6 +23,7 @@ const useTracker = () => {
       console.log("Error while tracking: ", error);
     }
   };
+
   return { track, page };
 };
 
