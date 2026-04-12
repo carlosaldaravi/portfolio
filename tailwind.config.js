@@ -15,7 +15,7 @@ module.exports = {
       wide: ".725em",
       wider: "1.4em",
       widest: "2.1em",
-      widest: "3.25em",
+      "ultra-wide": "3.25em",
     },
     minWidth: {
       xs: "1rem",

@@ -1,4 +1,3 @@
-import { createUseStyles } from "react-jss";
 import { useContext, useState } from "react";
 import { useIntl } from "react-intl";
 import SkillItem from "./skill-item";
@@ -20,37 +19,6 @@ interface SkillProps {
   skill: SkillData;
 }
 
-const useStyles = (name: string, color: string) =>
-  createUseStyles({
-    skills: {
-      background: `
-        linear-gradient(
-          0deg,
-            ${color} 0 0.5rem,
-            #2e2e2e 0 calc(100% - 0.5rem),
-            ${color} 0 100%
-        )`,
-      "&::before": {
-        content: `"${name}"`
-      },
-      "&:hover:before": {
-        "background-color": color,
-      },
-      "&:hover:after": {
-        "border-top-color": color,
-      },
-      "&li": {
-        "&:hover": {
-          "&span": {
-            "&:after": {
-              background: color,
-            },
-          },
-        },
-      },
-    },
-  });
-
 const Skill = ({ skill }: SkillProps) => {
   const [isHover, setIsHover] = useState(false);
   const themeCtx = useContext(ThemeContext);
@@ -59,12 +27,15 @@ const Skill = ({ skill }: SkillProps) => {
 
   const theme = themeCtx.theme;
 
-  const classes = useStyles(name, skill.color)();
-
   return (
     <div className="relative mb-20 mx-auto min-w-lg lg:min-w-md">
       <ul
-        className={`skills skills1 pt-0 px-[2.5rem] pb-[2rem] ${classes.skills} ${theme === "dark" ? "skills-dark" : "skills-light"}`}
+        className={`skills skills1 pt-0 px-[2.5rem] pb-[2rem] ${theme === "dark" ? "skills-dark" : "skills-light"}`}
+        style={{
+          '--skill-color': skill.color,
+          '--skill-name': `"${name}"`,
+          background: `linear-gradient(0deg, ${skill.color} 0 0.5rem, #2e2e2e 0 calc(100% - 0.5rem), ${skill.color} 0 100%)`,
+        } as React.CSSProperties}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >

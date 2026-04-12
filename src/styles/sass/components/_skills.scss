@@ -1,12 +1,12 @@
 @use "../abstracts" as *;
 
+// --- Skill card (ul.skills) uses CSS variables: --skill-color, --skill-name ---
+
 .skills:before {
-  content: "";
+  content: var(--skill-name, "");
   text-transform: uppercase;
   position: absolute;
   top: -3rem;
-  // height: 2rem;
-  // color: $primary-dark-color;
   background-color: #2e2e2e;
   width: 100%;
   left: 0;
@@ -48,12 +48,16 @@ ul.skills-light:after {
 
 ul.skills:hover:before {
   transition: $transitionAll;
+  background-color: var(--skill-color);
   background-position: 0 50%;
 }
 ul.skills:hover:after {
+  border-top-color: var(--skill-color);
   top: -0.6rem;
   transition: $transitionAll;
 }
+
+// --- SkillItem uses CSS variables: --item-color, --item-progress ---
 
 // progress bar text
 .skillItem {
@@ -65,11 +69,15 @@ ul.skills:hover:after {
   font-size: 1rem;
 }
 
-// progress bar
+// progress bar background with colored fill
 .skillItem:before {
   content: "";
   position: absolute;
-  background: #1c1c1c;
+  background: linear-gradient(
+    90deg,
+    #2292dd40 calc(calc(var(--item-progress) * 1%) + 4px),
+    #1c1c1c calc(calc(var(--item-progress) * 1%) + 4px)
+  );
   height: 0.8rem;
   width: 100%;
   left: 0;
@@ -79,7 +87,7 @@ ul.skills:hover:after {
   border-color: #111 #323232 #323232 #111;
 }
 
-// progress bar hovered
+// progress bar colored overlay
 .skillItem:after {
   content: "";
   height: 0.5rem;
@@ -89,6 +97,13 @@ ul.skills:hover:after {
   width: 0%;
   bottom: 1.5px;
   transition: all 1s ease 0s;
+  background: var(--item-color);
+  box-shadow: 0px 0px 10px 1px var(--item-color);
+}
+
+// when card is hovered, show progress bar width
+.skillItem--active:after {
+  width: calc(calc(var(--item-progress) * 1%) - 1px);
 }
 
 ul.skills li:hover {
@@ -98,6 +113,17 @@ ul.skills li:hover {
 
 ul.skills li span {
   font-weight: 500;
+}
+
+// spanSkill dynamic color
+.spanSkill--dynamic {
+  color: var(--item-color);
+}
+
+// spanSkill dynamic content (progress number)
+.spanSkill--dynamic:after {
+  content: counter(item-progress);
+  counter-reset: item-progress var(--item-progress);
 }
 
 // percent arrow to left
@@ -119,9 +145,21 @@ ul.skills li:hover span:before,
   opacity: 1;
 }
 
+// arrow indicator when hovered
+.spanSkill--arrow:before {
+  right: calc(calc(calc(100 - var(--item-progress)) * 1%) - 1rem) !important;
+  border-right-color: var(--item-color) !important;
+}
+
+// progress number box when hovered
+.spanSkill--arrow:after {
+  content: counter(item-progress);
+  counter-reset: item-progress var(--item-progress);
+  right: calc(calc(calc(100 - var(--item-progress)) * 1%) - 4rem);
+}
+
 // box with progress when hover
 .spanSkill:after {
-  content: "";
   position: absolute;
   right: -3rem;
   top: 2.4rem;
@@ -133,6 +171,13 @@ ul.skills li:hover span:before,
   font-weight: bold;
   pointer-events: none;
 }
+
+// hover state for span: show colored bg
+.spanSkill--hover:after {
+  background: var(--item-color);
+  color: #222;
+}
+
 // box with progress when hover
 ul.skills li:hover span:after,
 .profile-skills + ul.skills li span:after {

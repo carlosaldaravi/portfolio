@@ -44,7 +44,9 @@
   top: 0;
   left: 0;
   opacity: 0.3;
-  background-size: "cover";
+  background-size: cover;
+  background-image: var(--card-bg-image, none);
+  background-position: var(--card-bg-position, center);
 }
 
 .webkit {

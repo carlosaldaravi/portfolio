@@ -1,5 +1,4 @@
 import { MY_NAME } from "@/constants/constants";
-import { format } from "@formkit/tempo";
 import { useIntl } from "react-intl";
 
 interface FooterProps {
@@ -9,7 +8,7 @@ interface FooterProps {
 
 const Footer = ({ name, surname }: FooterProps) => {
   const intl = useIntl();
-  const date = format(new Date(), "full", intl.locale);
+  const date = new Date().toLocaleDateString(intl.locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   return (
     <footer className="main__right__footer">
       <p className="italic">{date}</p>

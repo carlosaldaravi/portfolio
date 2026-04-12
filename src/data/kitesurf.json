@@ -40,7 +40,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/world-record.jpeg);",
-                "backgroundPosition": "48% 50%;"
+                "backgroundPosition": "48% 50%"
               }
             }
           },
@@ -61,7 +61,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -82,7 +82,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/elmedano.jpeg);",
-                "backgroundPosition": "50% 15%;"
+                "backgroundPosition": "50% 15%"
               }
             }
           },
@@ -103,7 +103,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -124,7 +124,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -145,7 +145,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -166,7 +166,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/santapola.jpg_large);",
-                "backgroundPosition": "30% 58%;"
+                "backgroundPosition": "30% 58%"
               }
             }
           },
@@ -187,7 +187,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -208,7 +208,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -229,7 +229,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/elmedano.jpeg);",
-                "backgroundPosition": "50% 15%;"
+                "backgroundPosition": "50% 15%"
               }
             }
           },
@@ -250,7 +250,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -272,7 +272,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/elmedano.jpeg);",
-                "backgroundPosition": "50% 15%;"
+                "backgroundPosition": "50% 15%"
               }
             }
           },
@@ -293,7 +293,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/tarifa.jpeg);",
-                "backgroundPosition": "20% 65%;"
+                "backgroundPosition": "20% 65%"
               }
             }
           },
@@ -314,7 +314,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/hermanus.jpg);",
-                "backgroundPosition": "80% 48%;"
+                "backgroundPosition": "80% 48%"
               }
             }
           },
@@ -335,7 +335,7 @@
             "kiteCard": {
               "&::before": {
                 "backgroundImage": "linear-gradient(to right bottom, hsla(238, 22%, 34%, 0.3), rgba(43, 40, 59, 0.6)), url(/images/spots/leucate.jpeg);",
-                "backgroundPosition": "20% 100%;"
+                "backgroundPosition": "20% 100%"
               }
             }
           },

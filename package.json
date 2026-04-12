@@ -10,22 +10,16 @@
     "lint": "eslint src/"
   },
   "dependencies": {
-    "@formkit/tempo": "^0.1.2",
     "@headlessui/react": "^2.1.10",
     "@heroicons/react": "^2.1.5",
     "@segment/analytics-next": "^1.75.0",
     "cookies-next": "^6.1.1",
-    "framer-motion": "^11.11.9",
-    "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.14.0",
-    "jspdf": "^4.2.1",
     "next": "^16.2.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-intl": "^6.8.0",
-    "react-jss": "^10.10.0",
     "react-type-animation": "^3.2.0",
-    "react-use-downloader": "^1.2.8",
     "sass": "^1.80.3",
     "sharp": "^0.33.5",
     "tailwind-scrollbar-hide": "^1.1.7"

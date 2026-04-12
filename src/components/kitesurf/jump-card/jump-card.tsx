@@ -6,7 +6,6 @@ import YoutubeIcon from "./youtube-icon";
 import BackSideCard from "./back-side-car";
 import HeaderJumpCard from "./header-jump-card";
 import FrontSideCard from "./front-side-card";
-import { createUseStyles } from "react-jss";
 import { THEMES_TYPES } from "@/types/themes";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
@@ -15,8 +14,15 @@ export interface JumpTextEntry {
   [key: string]: string | number;
 }
 
+interface JumpStyleBeforeProps {
+  backgroundImage?: string;
+  backgroundPosition?: string;
+}
+
 export interface JumpStyle {
-  kiteCard: Record<string, string | number>;
+  kiteCard: {
+    "&::before"?: JumpStyleBeforeProps;
+  };
 }
 
 export interface Jump {
@@ -33,8 +39,6 @@ interface JumpCardProps {
   onRemoveCardHovered: () => void;
 }
 
-const useStyles = (style: JumpStyle) => createUseStyles(style);
-
 const JumpCard = ({
   jump,
   cardHovered,
@@ -45,7 +49,6 @@ const JumpCard = ({
   const [showBackSide, setShowBackSide] = useState(false);
   const [showFrontSide, setShowFrontSide] = useState(false);
   const themeCtx = useContext(ThemeContext);
-  const styles = useStyles(jump.style)();
   const { isMobile } = useTools();
   const tracker = useTracker();
 
@@ -96,13 +99,17 @@ const JumpCard = ({
     <div
       className={`kite-card mt-4 sm:mt-0 flex min-h-[140px] items-center justify-center h-max border transform duration-700 ease-out transition-card rounded-xl ${
         classes.kiteCard
-      } ${styles.kiteCard} ${
+      } ${
         theme === THEMES_TYPES.dark
           ? classes.kiteCardDark
           : classes.kiteCardLight
       } ${jump.best ? classes.bestJump : ""} ${
         cardHovered && !isExpanded ? "blur-xxs opacity-40" : ""
       } `}
+      style={{
+        '--card-bg-image': jump.style.kiteCard?.["&::before"]?.backgroundImage ?? 'none',
+        '--card-bg-position': jump.style.kiteCard?.["&::before"]?.backgroundPosition ?? 'center',
+      } as React.CSSProperties}
       onMouseEnter={onHoverInHandler}
       onMouseLeave={onHoverOutHandler}
     >
