@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { getCookie, setCookie } from "cookies-next";
 import { THEMES_TYPES, Theme } from "@/types/themes";

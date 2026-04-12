@@ -1,9 +1,10 @@
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 import { LANGUAGES_TYPES } from "@/types/languages";
 
 export const Es = () => {
-  const { locale } = useRouter();
+  const params = useParams();
+  const locale = typeof params?.locale === "string" ? params.locale : "es";
   const [mouseIn, setMouseIn] = useState(false);
 
   const onMouseEnterHandler = () => {

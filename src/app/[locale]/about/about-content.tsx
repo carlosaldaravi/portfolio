@@ -1,16 +1,14 @@
+"use client";
+
 import OverlayCards from "@/components/about/overlay-cards";
 import AboutHeader from "@/components/about/header";
 import Page from "@/components/UI/page";
 import { useEffect } from "react";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
-import Head from "next/head";
-import { useIntl } from "react-intl";
-const About = () => {
+
+export default function AboutContent() {
   const tracker = useTracker();
-  const intl = useIntl();
-  const description = intl.formatMessage({ id: "page.about.description" });
-  const title = "Carlos Aldaravi - About";
 
   useEffect(() => {
     tracker.page(TRACKING_TYPES.page.about);
@@ -46,19 +44,8 @@ const About = () => {
 
   return (
     <Page>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-      </Head>
       <AboutHeader />
       <OverlayCards cards={cards} />
     </Page>
   );
-};
-
-export default About;
+}

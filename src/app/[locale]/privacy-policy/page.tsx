@@ -1,3 +1,5 @@
+"use client";
+
 import Page from "@/components/UI/page";
 import Section from "@/components/UI/section";
 import useTracker from "@/hooks/useTracker";
@@ -5,7 +7,7 @@ import { TRACKING_TYPES } from "@/types/track";
 import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 
-const PrivacyPolicy = () => {
+export default function PrivacyPolicyPage() {
   const tracker = useTracker();
 
   useEffect(() => {
@@ -70,6 +72,4 @@ const PrivacyPolicy = () => {
       </Section>
     </Page>
   );
-};
-
-export default PrivacyPolicy;
+}

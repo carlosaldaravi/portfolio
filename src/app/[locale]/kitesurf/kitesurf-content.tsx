@@ -1,6 +1,6 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import path from "path";
-import fs from "fs/promises";
 import KiteSectionsSelector from "@/components/kitesurf/sections/kite-sections-selector";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import KiteSections from "@/components/kitesurf/sections/kite-sections";
@@ -9,18 +9,25 @@ import { useTools } from "@/hooks/useTools";
 import BackgroundVideo from "@/components/UI/background-video";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
-import Head from "next/head";
-import { useIntl } from "react-intl";
-import type { InferGetStaticPropsType } from "next";
+import type { MeData } from "@/components/kitesurf/kiter-info/text-kiter-card";
 
-const KiteSurf = ({ sections, me }: InferGetStaticPropsType<typeof getStaticProps>) => {
+interface SectionData {
+  name: string;
+  title: string;
+  data: unknown[];
+}
+
+interface KitesurfContentProps {
+  sections: SectionData[];
+  me: MeData[];
+}
+
+export default function KitesurfContent({ sections, me }: KitesurfContentProps) {
   const [sectionSelected, setSectionSelected] = useState(sections[0]);
   const [actualSectionIndex, setActualSectionIndex] = useState(0);
   const [direction, setDirection] = useState("");
   const { isMobile } = useTools();
   const tracker = useTracker();
-  const intl = useIntl();
-  const description = intl.formatMessage({ id: "page.home.meta" });
 
   const videoUrl = isMobile ? "/videos/video-short.mp4" : "/videos/video.MP4";
   const videoUrlWebm = isMobile ? "/videos/video-short.webm" : "/videos/video.webm";
@@ -53,17 +60,6 @@ const KiteSurf = ({ sections, me }: InferGetStaticPropsType<typeof getStaticProp
 
   return (
     <Page className="relative kitesurf__page__container">
-      <Head>
-        <title>Carlos Aldaravi - Kitesurf</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content="Carlos Aldaravi - Kitesurf" />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://carlosaldaravi.com/images/yo-kite.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Carlos Aldaravi - Kitesurf" />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://carlosaldaravi.com/images/yo-kite.png" />
-      </Head>
       <BackgroundVideo
         src={videoUrl}
         srcWebm={videoUrlWebm}
@@ -86,17 +82,4 @@ const KiteSurf = ({ sections, me }: InferGetStaticPropsType<typeof getStaticProp
       </div>
     </Page>
   );
-};
-
-export async function getStaticProps() {
-  const dataFilePath = path.join(process.cwd(), "src/data", "kitesurf.json");
-  const jsonData = await fs.readFile(dataFilePath, "utf-8");
-  const data = JSON.parse(jsonData);
-  const sections = data.sections.filter((section: { data: unknown[] }) => section.data.length > 0);
-
-  return {
-    props: { sections, me: data.me },
-  };
 }
-
-export default KiteSurf;

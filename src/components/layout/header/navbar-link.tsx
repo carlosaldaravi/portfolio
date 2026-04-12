@@ -1,5 +1,4 @@
 import { ReactNode, useContext } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import ThemeContext from "@/store/theme-context";
 import { THEMES_TYPES } from "@/types/themes";
@@ -8,6 +7,7 @@ import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
+import { useLocaleRouter } from "@/hooks/useLocaleRouter";
 
 interface NavbarLinkProps {
   src: string;
@@ -18,9 +18,9 @@ interface NavbarLinkProps {
 const NavbarLink = ({ src, title, name }: NavbarLinkProps) => {
   const { isMobile } = useTools();
   const themeCtx = useContext(ThemeContext);
-  const router = useRouter();
+  const { cleanPathname } = useLocaleRouter();
   const tracker = useTracker();
-  const route = router.route;
+  const route = cleanPathname;
 
   const theme = themeCtx.theme;
   const activeStyle =

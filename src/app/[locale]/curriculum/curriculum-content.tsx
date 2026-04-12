@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 import { TRACKING_TYPES } from "@/types/track";
 import useTracker from "@/hooks/useTracker";
@@ -8,9 +10,8 @@ import Header from "@/components/curriculum/header";
 import MainSection from "@/components/curriculum/main-section";
 import PDFButtons from "@/components/curriculum/pdf-buttons";
 import BuyMeACoffeeButton from "@/components/UI/buy-me-a-coffe-button";
-import Head from "next/head";
 
-const Curriculum = () => {
+export default function CurriculumContent() {
   const [name, setName] = useState("Carlos");
   const [surname, setSurname] = useState("Aldaravi");
   const [isEditable, setIsEditable] = useState(false);
@@ -60,13 +61,6 @@ const Curriculum = () => {
 
   return (
     <Page className="p-0">
-      <Head>
-        <title>Carlos Aldaravi - CV</title>
-        <meta name="description" content="Curriculum Vitae de Carlos Aldaravi. Descarga o edita mi CV online." />
-        <meta property="og:title" content="Carlos Aldaravi - CV" />
-        <meta property="og:description" content="Curriculum Vitae de Carlos Aldaravi. Descarga o edita mi CV online." />
-        <meta name="twitter:card" content="summary" />
-      </Head>
       <div ref={resumeRef} className="relative main">
         {!isGeneratingPDF && (
           <PDFButtons
@@ -91,6 +85,4 @@ const Curriculum = () => {
       <BuyMeACoffeeButton />
     </Page>
   );
-};
-
-export default Curriculum;
+}

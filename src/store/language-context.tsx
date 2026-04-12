@@ -1,9 +1,10 @@
+"use client";
+
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { getCookie, setCookie } from "cookies-next";
 import { IntlProvider } from "react-intl";
 import en from "@/lang/en.json";
 import es from "@/lang/es.json";
-import { useRouter } from "next/router";
 import { LANGUAGES_TYPES, Language } from "@/types/languages";
 
 const COOKIE_NAME = "NEXT_LOCALE";
@@ -12,6 +13,13 @@ const messages: Record<string, Record<string, string>> = {
   en,
   es,
 };
+
+function getLocaleFromPath(): string {
+  if (typeof window === "undefined") return "es";
+  const path = window.location.pathname;
+  if (path.startsWith("/en/") || path === "/en") return "en";
+  return "es";
+}
 
 interface LanguageContextType {
   language: Language | null;
@@ -25,7 +33,7 @@ const LanguageContext = createContext<LanguageContextType>({
 
 export function LanguageContextProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language | null>(null);
-  const { locale = "es" } = useRouter();
+  const locale = getLocaleFromPath();
 
   const changeLanguageHandler = (nextLanguage: Language) => {
     if (

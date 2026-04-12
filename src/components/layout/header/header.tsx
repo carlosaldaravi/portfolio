@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { SVG_TYPES } from "@/types/svg";
-import type { Language } from "@/types/languages";
 import SVG from "@/components/svg";
 import ToggleButton from "@/components/UI/toggle-button";
 import ThemeContext from "@/store/theme-context";
-import LanguageContext from "@/store/language-context";
 import HeaderNavbar from "./header-navbar";
 import { getBgColor, getShadowColor } from "@/tools/theme";
 import Image from "next/image";
@@ -14,16 +11,18 @@ import { useTools } from "@/hooks/useTools";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
 import { MY_NAME } from "@/constants/constants";
+import { useLocaleRouter, buildLocalePath } from "@/hooks/useLocaleRouter";
+import { setCookie } from "cookies-next";
 
 const Header = () => {
-  const { locales, locale, route } = useRouter();
+  const { locale, locales, pathname, cleanPathname } = useLocaleRouter();
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const themeCtx = useContext(ThemeContext);
-  const languageCtx = useContext(LanguageContext);
   const { isMobile } = useTools();
   const tracker = useTracker();
 
   const theme = themeCtx.theme;
+  const route = cleanPathname;
 
   const headerClasses = `${
     hasScrolled
@@ -34,8 +33,8 @@ const Header = () => {
   } ${getBgColor(theme)}
    ${route === "/" ? "justify-end" : "justify-between"}`;
 
-  const setCookieHandler = () => {
-    if (locale) languageCtx.onChangeLanguage(locale as Language);
+  const setCookieHandler = (l: string) => {
+    setCookie("NEXT_LOCALE", l);
   };
 
   useEffect(() => {
@@ -58,6 +57,7 @@ const Header = () => {
         ? TRACKING_TYPES.event.esLanguageClick
         : TRACKING_TYPES.event.enLanguageClick;
     tracker.track(event);
+    setCookieHandler(l);
   };
 
   return (
@@ -88,16 +88,14 @@ const Header = () => {
           </div>
         )}
         <div className="flex gap-2 ml-5 mr-2 sm:ml-12">
-          {locales?.map((l) => (
+          {locales.map((l) => (
             <Link
               key={`locale-${l}`}
-              href={route}
-              locale={l}
-              shallow={true}
+              href={buildLocalePath(pathname, l)}
               onClick={() => selectLanguageHandler(l)}
               aria-label={`Switch language to ${l === "es" ? "Spanish" : "English"}`}
             >
-              <SVG type={SVG_TYPES[l as keyof typeof SVG_TYPES]} onClick={setCookieHandler} />
+              <SVG type={SVG_TYPES[l as keyof typeof SVG_TYPES]} />
             </Link>
           ))}
         </div>
