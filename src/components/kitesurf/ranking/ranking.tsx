@@ -1,0 +1,32 @@
+import Section from "@/components/UI/section";
+import RankingKiter from "./ranking-kiter";
+import RankingHeader from "./ranking-header";
+import { FormattedMessage } from "react-intl";
+import { Kiter } from "./ranking-kiter";
+
+interface RankingProps {
+  ranking: Kiter[] | undefined;
+}
+
+const Ranking = ({ ranking }: RankingProps) => {
+  return (
+    <Section className="flex justify-center">
+      <div className="w-full rounded-xl overflow-hidden">
+        <RankingHeader />
+        <div className=" bg-gray-500 bg-opacity-80">
+          {ranking &&
+            ranking.map((kiter) => (
+              <RankingKiter key={kiter.name} kiter={kiter} />
+            ))}
+          {!ranking && (
+            <div className="text-center p-4 text-red-300 italic sm:text-xl">
+              <FormattedMessage id="page.kitesurf.ranking.noData" />
+            </div>
+          )}
+        </div>
+      </div>
+    </Section>
+  );
+};
+
+export default Ranking;
