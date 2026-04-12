@@ -21,6 +21,8 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta property="og:site_name" content="Carlos Aldaravi" />
         <meta property="og:locale" content={locale === "es" ? "es_ES" : "en_US"} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hrefLang="es" href={`${BASE_URL}${asPath}`} />
         <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en${asPath}`} />

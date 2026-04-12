@@ -15,7 +15,6 @@ const Developer = ({ data }) => {
   const intl = useIntl();
   const description = intl.formatMessage({ id: "page.home.meta" });
   const title = "Carlos Aldaravi - Developer";
-  const url = "https://carlosaldaravi.com/developer";
 
   useEffect(() => {
     tracker.page(TRACKING_TYPES.page.developer);
@@ -29,8 +28,6 @@ const Developer = ({ data }) => {
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content={url} />
-        <meta property="og:type" content="website" />
         <meta property="og:image" content="https://carlosaldaravi.com/images/yo-dev.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />

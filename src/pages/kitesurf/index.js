@@ -19,6 +19,7 @@ const KiteSurf = ({ sections, me }) => {
   const { isMobile } = useTools();
   const tracker = useTracker();
   const intl = useIntl();
+  const description = intl.formatMessage({ id: "page.home.meta" });
 
   const videoUrl = isMobile ? "/videos/video-short.mp4" : "/videos/video.MP4";
   const videoUrlWebm = isMobile ? "/videos/video-short.webm" : "/videos/video.webm";
@@ -53,15 +54,13 @@ const KiteSurf = ({ sections, me }) => {
     <Page className="relative kitesurf__page__container">
       <Head>
         <title>Carlos Aldaravi - Kitesurf</title>
-        <meta name="description" content={intl.formatMessage({ id: "page.home.meta" })} />
+        <meta name="description" content={description} />
         <meta property="og:title" content="Carlos Aldaravi - Kitesurf" />
-        <meta property="og:description" content={intl.formatMessage({ id: "page.home.meta" })} />
-        <meta property="og:url" content="https://carlosaldaravi.com/kitesurf" />
-        <meta property="og:type" content="website" />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content="https://carlosaldaravi.com/images/yo-kite.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Carlos Aldaravi - Kitesurf" />
-        <meta name="twitter:description" content={intl.formatMessage({ id: "page.home.meta" })} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="https://carlosaldaravi.com/images/yo-kite.png" />
       </Head>
       <BackgroundVideo

@@ -64,8 +64,6 @@ const Curriculum = () => {
         <meta name="description" content="Curriculum Vitae de Carlos Aldaravi. Descarga o edita mi CV online." />
         <meta property="og:title" content="Carlos Aldaravi - CV" />
         <meta property="og:description" content="Curriculum Vitae de Carlos Aldaravi. Descarga o edita mi CV online." />
-        <meta property="og:url" content="https://carlosaldaravi.com/curriculum" />
-        <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
       </Head>
       <div ref={resumeRef} className="relative main">
