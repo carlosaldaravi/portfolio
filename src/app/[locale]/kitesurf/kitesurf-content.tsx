@@ -9,7 +9,7 @@ import { useResponsive } from "@/hooks/useResponsive";
 import BackgroundVideo from "@/components/UI/background-video";
 import usePageTracking from "@/hooks/usePageTracking";
 import { TRACKING_TYPES } from "@/types/track";
-import type { MeData } from "@/components/kitesurf/kiter-info/text-kiter-card";
+import type { MeData } from "@/components/kitesurf/kiter-info/kiter-card";
 import type { SectionData } from "@/types/kitesurf";
 
 interface KitesurfContentProps {
