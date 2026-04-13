@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import Image from "next/image";
 import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";

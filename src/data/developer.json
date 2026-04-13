@@ -48,6 +48,25 @@
   ],
   "projects": [
     {
+      "id": "project-8",
+      "name": "Soro Pro Center",
+      "logo": "/images/logos/soro-center-logo.svg",
+      "img": "/images/projects/soro-center-project.png",
+      "year": "2026",
+      "github": {
+        "url": "https://github.com/carlosaldaravi/soro-center",
+        "private": false
+      },
+      "url": "https://www.soroprocenter.es/",
+      "rol": "fullstack",
+      "stack": [
+        "typescript",
+        "astro",
+        "tailwind"
+      ],
+      "description": "page.developer.sorocenter"
+    },
+    {
       "id": "project-7",
       "name": "VLM",
       "logo": "/images/logos/vlm-logo.png",
@@ -55,7 +74,7 @@
       "year": "2026",
       "github": {
         "url": "https://github.com/carlosaldaravi/vlm",
-        "private": false
+        "private": true
       },
       "url": "https://vlm.es/",
       "rol": "fullstack",
