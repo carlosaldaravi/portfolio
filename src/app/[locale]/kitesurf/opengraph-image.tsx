@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Carlos Aldaravi - Portfolio";
+export const alt = "Carlos Aldaravi - Kitesurf";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default function OGImage() {
               textTransform: "uppercase",
             }}
           >
-            Software Developer
+            Rider de Duotone
           </div>
           <div
             style={{

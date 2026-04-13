@@ -47,7 +47,7 @@ export default function TwitterImage() {
               textTransform: "uppercase",
             }}
           >
-            Developer & Kitesurfer
+            Software Developer
           </div>
           <div
             style={{
