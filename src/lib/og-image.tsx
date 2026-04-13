@@ -3,7 +3,7 @@ import { readFile } from "fs/promises";
 import { join } from "path";
 
 export async function createOGImage(subtitle: string) {
-  const logoData = await readFile(join(process.cwd(), "public/images/logos/logo-og.png"));
+  const logoData = await readFile(join(process.cwd(), "public/images/logos/logo-blanco.png"));
   const logoBase64 = `data:image/png;base64,${logoData.toString("base64")}`;
 
   return new ImageResponse(
@@ -23,8 +23,8 @@ export async function createOGImage(subtitle: string) {
         <img
           src={logoBase64}
           alt="CA"
-          width={120}
-          height={120}
+          width={200}
+          height={141}
           style={{ marginBottom: "24px" }}
         />
 
