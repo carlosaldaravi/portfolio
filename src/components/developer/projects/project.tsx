@@ -37,6 +37,10 @@ const Project = ({ project, index }: ProjectProps) => {
   const bgSecondaryColor = getBgSecondaryColor(theme);
   const { isMobile } = useResponsive();
   const tracker = useTracker();
+  const intl = useIntl();
+  const privateRepoLabel = intl.formatMessage({
+    id: "page.developer.privateRepo",
+  });
 
   return (
     <div className={`reveal m-8 sm:my-12`}>
@@ -100,24 +104,36 @@ const Project = ({ project, index }: ProjectProps) => {
                   <FormattedMessage id="join" />
                 </Button>
               </Link>
-              <Link
-                className="w-full"
-                href={project.github.url}
-                target={!isMobile ? "_blank" : ""}
-                onClick={() =>
-                  tracker.track(TRACKING_TYPES.event.githubProjectClick, {
-                    project: project.name,
-                  })
-                }
-              >
-                <Button
+              {project.github.private ? (
+                <div
                   className="w-full"
-                  icon={SVG_TYPES.github}
-                  disabled={project.github.private}
+                  title={privateRepoLabel}
+                  aria-label={privateRepoLabel}
                 >
-                  GitHub
-                </Button>
-              </Link>
+                  <Button
+                    className="w-full"
+                    icon={SVG_TYPES.github}
+                    disabled
+                  >
+                    GitHub
+                  </Button>
+                </div>
+              ) : (
+                <Link
+                  className="w-full"
+                  href={project.github.url}
+                  target={!isMobile ? "_blank" : ""}
+                  onClick={() =>
+                    tracker.track(TRACKING_TYPES.event.githubProjectClick, {
+                      project: project.name,
+                    })
+                  }
+                >
+                  <Button className="w-full" icon={SVG_TYPES.github}>
+                    GitHub
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
