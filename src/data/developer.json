@@ -55,7 +55,7 @@
       "year": "2026",
       "github": {
         "url": "https://github.com/carlosaldaravi/soro-center",
-        "private": false
+        "private": true
       },
       "url": "https://www.soroprocenter.es/",
       "rol": "fullstack",
