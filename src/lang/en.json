@@ -66,7 +66,7 @@
   "page.developer.makeYours": "or.. Make it Yours!",
   "page.developer.duotone": "Check the current Duotone team riders. You can filter by specialty",
   "page.developer.experience": "Experience",
-  "page.developer.experience.description": "Web developer since {numOfYears} years ago",
+  "page.developer.experience.description": "Software developer since {numOfYears} years ago",
   "page.developer.experience.now": "Now",
   "page.developer.experience.actual": "01/2023 - Now",
   "page.developer.experience.place.remote": "Remote",
