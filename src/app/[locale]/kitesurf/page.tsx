@@ -13,7 +13,6 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return createPageMetadata(messages, {
     titleSuffix: "Kitesurf",
     descriptionKey: "page.home.meta",
-    imagePath: "/images/yo-kite.png",
     twitterCard: "summary_large_image",
   });
 }

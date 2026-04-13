@@ -12,7 +12,6 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return createPageMetadata(messages, {
     titleSuffix: "Developer",
     descriptionKey: "page.home.meta",
-    imagePath: "/images/yo-dev.png",
     twitterCard: "summary_large_image",
   });
 }

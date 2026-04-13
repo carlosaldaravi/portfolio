@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 interface PageMetadataConfig {
   titleSuffix: string;
   descriptionKey: string;
-  imagePath?: string;
   twitterCard?: "summary" | "summary_large_image";
 }
 
@@ -25,13 +24,11 @@ export function createPageMetadata(
     openGraph: {
       title,
       description,
-      ...(config.imagePath && { images: [{ url: `https://carlosaldaravi.com${config.imagePath}` }] }),
     },
     twitter: {
       card: config.twitterCard || "summary",
       title,
       description,
-      ...(config.imagePath && { images: [`https://carlosaldaravi.com${config.imagePath}`] }),
     },
   };
 }
