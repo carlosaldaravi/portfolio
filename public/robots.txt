@@ -1,5 +1,0 @@
-# public/robots.txt
-User-agent: *
-Disallow:
-
-Sitemap: https://carlosaldaravi.com/sitemap.xml
