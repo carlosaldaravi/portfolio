@@ -1,26 +1,20 @@
-"use client";
+import type { Metadata } from "next";
+import LegalNoticeContent from "./legal-notice-content";
+import { loadMessages, createPageMetadata } from "@/lib/metadata";
+import type { PageParams } from "@/types/common";
 
-import Page from "@/components/UI/page";
-import Section from "@/components/UI/section";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
-import { FormattedMessage } from "react-intl";
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await loadMessages(locale);
+
+  return createPageMetadata(messages, {
+    titleSuffix: messages["page.legalNotice"] || "Legal Notice",
+    descriptionKey: "page.legalNotice.meta",
+    path: "/legal-notice",
+    locale,
+  });
+}
 
 export default function LegalNoticePage() {
-  usePageTracking(TRACKING_TYPES.page.legalNotice);
-
-  return (
-    <Page>
-      <Section>
-        <h1 className="my-12 text-center">
-          <FormattedMessage id="page.legalNotice" />
-        </h1>
-        <div className="my-8">
-          <p className="text-xl sm:text-2xl text-center sm:text-start">
-            <FormattedMessage id="page.legalNotice.text" />
-          </p>
-        </div>
-      </Section>
-    </Page>
-  );
+  return <LegalNoticeContent />;
 }

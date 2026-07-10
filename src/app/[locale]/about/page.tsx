@@ -9,7 +9,9 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 
   return createPageMetadata(messages, {
     titleSuffix: "About",
-    descriptionKey: "page.about.description",
+    descriptionKey: "page.about.meta",
+    path: "/about",
+    locale,
   });
 }
 

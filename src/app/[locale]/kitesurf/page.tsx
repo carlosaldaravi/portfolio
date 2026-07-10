@@ -12,7 +12,9 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 
   return createPageMetadata(messages, {
     titleSuffix: "Kitesurf",
-    descriptionKey: "page.home.meta",
+    descriptionKey: "page.kitesurf.meta",
+    path: "/kitesurf",
+    locale,
     twitterCard: "summary_large_image",
   });
 }

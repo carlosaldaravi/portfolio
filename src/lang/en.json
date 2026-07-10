@@ -202,5 +202,12 @@
   "page.curriculum.sidebar.personalSkills.adaptability": "Adaptability",
   "page.curriculum.sidebar.personalSkills.fastLearning": "Quick Learning",
   "page.curriculum.sidebar.personalSkills.problemSolving": "Problem Solving",
-  "page.curriculum.buymeacoffee": "Buy me a coffee"
+  "page.curriculum.buymeacoffee": "Buy me a coffee",
+  "page.developer.meta": "Carlos Aldaravi, full-stack software developer and CEO of Padeldoor. Experience, projects and tech stack: React, Next.js, Node.js, NestJS and more.",
+  "page.kitesurf.meta": "Carlos Aldaravi, kitesurfer specialized in big air and hangtime. Discover my records, gear, sponsors and ranking on the Surfr app.",
+  "page.about.meta": "Meet Carlos Aldaravi: multimedia engineer, web developer, kitesurfer, instructor and passionate about padel and cinema.",
+  "page.contact.meta": "Get in touch with Carlos Aldaravi for software development projects, collaborations or any inquiry. I reply fast.",
+  "page.curriculum.meta": "Curriculum Vitae of Carlos Aldaravi, full-stack software developer. Check my experience and education or download my CV as PDF.",
+  "page.legalNotice.meta": "Legal notice of Carlos Aldaravi's website: site owner information and terms of use.",
+  "page.privacyPolicy.meta": "Privacy policy of Carlos Aldaravi's website: what data is collected, for what purpose and what your rights are."
 }

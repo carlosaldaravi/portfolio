@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
 import CurriculumContent from "./curriculum-content";
+import { loadMessages, createPageMetadata } from "@/lib/metadata";
+import type { PageParams } from "@/types/common";
 
-const description = "Curriculum Vitae de Carlos Aldaravi. Descarga o edita mi CV online.";
-const title = "Carlos Aldaravi - CV";
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await loadMessages(locale);
 
-export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: {
-    title,
-    description,
-  },
-  twitter: {
-    card: "summary",
-    title,
-    description,
-  },
-};
+  return createPageMetadata(messages, {
+    titleSuffix: "CV",
+    descriptionKey: "page.curriculum.meta",
+    path: "/curriculum",
+    locale,
+  });
+}
 
 export default function CurriculumPage() {
   return <CurriculumContent />;

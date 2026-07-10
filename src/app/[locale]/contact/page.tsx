@@ -9,7 +9,9 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 
   return createPageMetadata(messages, {
     titleSuffix: "Contact",
-    descriptionKey: "page.contact.description",
+    descriptionKey: "page.contact.meta",
+    path: "/contact",
+    locale,
   });
 }
 

@@ -14,6 +14,8 @@ export async function generateMetadata({
   return createPageMetadata(messages, {
     titleSuffix: "Portfolio",
     descriptionKey: "page.home.meta",
+    path: "/",
+    locale,
     twitterCard: "summary_large_image",
   });
 }
