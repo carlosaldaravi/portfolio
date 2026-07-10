@@ -7,30 +7,6 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.buymeacoffee.com",
       },
-      {
-        protocol: "https",
-        hostname: "demos.creative-tim.com",
-      },
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-      {
-        protocol: "https",
-        hostname: "tailwindui.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "source.unsplash.com",
-      },
-      {
-        protocol: "http",
-        hostname: "placehold.it",
-      },
     ],
   },
 };
