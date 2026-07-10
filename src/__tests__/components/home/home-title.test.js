@@ -1,4 +1,3 @@
-import "@testing-library/jest-dom/extend-expect";
 import { useRouter } from "next/router";
 import { IntlProvider } from "react-intl";
 import { render, screen } from "@testing-library/react";

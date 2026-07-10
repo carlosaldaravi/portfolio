@@ -1,4 +1,3 @@
-import "@testing-library/jest-dom/extend-expect";
 import { ThemeContextProvider } from "@/store/theme-context";
 import { useRouter } from "next/router";
 import { IntlProvider } from "react-intl";
