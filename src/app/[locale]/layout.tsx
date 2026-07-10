@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import Providers from "./providers";
 import Layout from "@/components/layout/layout";
 import Analytics from "@/components/analytics";
+import { BASE_URL } from "@/lib/metadata";
 
 import en from "@/lang/en.json";
 import es from "@/lang/es.json";
@@ -12,8 +13,6 @@ const roboto = Roboto({
   weight: ["400", "500", "700", "900"],
   display: "swap",
 });
-
-const BASE_URL = "https://carlosaldaravi.com";
 
 const messages: Record<string, Record<string, string>> = { en, es };
 
@@ -30,14 +29,6 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(BASE_URL),
-    alternates: {
-      canonical: locale === "es" ? BASE_URL : `${BASE_URL}/en`,
-      languages: {
-        es: BASE_URL,
-        en: `${BASE_URL}/en`,
-        "x-default": BASE_URL,
-      },
-    },
     openGraph: {
       siteName: "Carlos Aldaravi",
       locale: locale === "es" ? "es_ES" : "en_US",
@@ -46,9 +37,9 @@ export async function generateMetadata({
   };
 }
 
-const jsonLd = {
-  "@context": "https://schema.org",
+const personJsonLd = {
   "@type": "Person",
+  "@id": `${BASE_URL}/#person`,
   name: "Carlos Aldaravi",
   url: BASE_URL,
   jobTitle: "CEO & Full-Stack Developer",
@@ -69,6 +60,21 @@ const jsonLd = {
     "https://www.tiktok.com/@carlosaldaravi",
     "https://www.youtube.com/@CarlosAldaravi/videos",
     "https://twitter.com/carlosaldaravi",
+  ],
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    personJsonLd,
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      name: "Carlos Aldaravi",
+      url: BASE_URL,
+      inLanguage: ["es", "en"],
+      publisher: { "@id": `${BASE_URL}/#person` },
+    },
   ],
 };
 
