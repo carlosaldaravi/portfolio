@@ -11,7 +11,7 @@ export default function ContactContent() {
 
   return (
     <Page>
-      <h1 className="text-center my-8 sm:hidden">
+      <h1 className="text-center my-8 sm:sr-only">
         <FormattedMessage id="page.contact" />
       </h1>
       <ContactForm />

@@ -21,6 +21,14 @@
   margin-inline: 7rem;
   font-size: 2rem;
 }
+/* Section titles render as h2 for heading hierarchy but keep the old h3 sizing */
+h2.section-title {
+  font-size: 2.25rem;
+}
+h2.section-title.section-title-small-vars {
+  font-size: 2rem;
+}
+
 .section-title {
   text-align: center;
   padding: 0 1em;
@@ -40,6 +48,12 @@
 }
 
 @media (max-width: 639px) {
+  h2.section-title {
+    font-size: 1.875rem;
+  }
+  h2.section-title.section-title-small-vars {
+    font-size: 1.4rem;
+  }
   .section-title-small-vars {
     --b: 0px;
     --w: 0px;

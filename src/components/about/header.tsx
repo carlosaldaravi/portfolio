@@ -36,9 +36,9 @@ const AboutHeader = () => {
   return (
     <div className={`${classes.wrapper} about__wrapper__header mx-auto`}>
       <div className="header__title pl-2 sm:ml-10 sm:mt-12 self-center sm:self-start">
-        <h2 className={`${classes.header} `}>
+        <h1 className={`${classes.header} text-4xl sm:text-5xl`}>
           <span className={`${classes.header__title__text}`}>{title}</span>
-        </h2>
+        </h1>
         {
           <p
             key={description}

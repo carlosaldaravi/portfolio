@@ -19,11 +19,11 @@ const SectionTitle = ({ title, className = "", description }: SectionTitleProps)
       : "section-title-light text-dark-text";
   return (
     <div className="my-16 sm:my-32">
-      <h3
+      <h2
         className={`section-title uppercase transition-all duration-300 ${className} ${styleTitle}`}
       >
         {title}
-      </h3>
+      </h2>
       {description && (
         <p className="text-center text-xl sm:text-2xl mt-8 font-thin">
           {description}

@@ -126,7 +126,10 @@ const KiterCard = ({ me, src, flipTarget }: KiterCardProps) => {
     ? "bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/[0.12]"
     : "bg-gradient-to-br from-black/[0.04] to-black/[0.01] border border-black/[0.08]";
 
-  const renderCardFace = (faceMe: MeData[], isFront: boolean) => (
+  const renderCardFace = (faceMe: MeData[], isFront: boolean) => {
+    // The front face carries the page's h1; the hidden back face must not duplicate it
+    const HeadingTag = isFront ? "h1" : "h2";
+    return (
     <div
       className={`${isFront ? "" : "absolute inset-0"} rounded-2xl overflow-hidden`}
       style={{
@@ -159,13 +162,13 @@ const KiterCard = ({ me, src, flipTarget }: KiterCardProps) => {
       )}
 
       <div className="relative z-10 p-6 sm:p-10">
-        <h2
+        <HeadingTag
           className={`text-center text-4xl sm:text-6xl tracking-xs mb-6 sm:mb-8 ${
             isDark ? "text-white" : "text-gray-900"
           }`}
         >
           {MY_NAME}
-        </h2>
+        </HeadingTag>
 
         <div className="mx-auto w-fit flex flex-col gap-4 sm:gap-5">
           {faceMe.map((data) => (
@@ -202,7 +205,8 @@ const KiterCard = ({ me, src, flipTarget }: KiterCardProps) => {
         }`}
       />
     </div>
-  );
+    );
+  };
 
   return (
     <Section className="mt-16 animate-appear-1">
