@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { BASE_URL } from "@/lib/metadata";
+import { localeUrl } from "@/lib/metadata";
 
 interface Route {
   path: string;
@@ -18,31 +18,26 @@ const routes: Route[] = [
   { path: "/privacy-policy", priority: 0.1, changeFrequency: "yearly" },
 ];
 
-function url(path: string, locale?: "en"): string {
-  const suffix = path === "/" ? "" : path;
-  return locale ? `${BASE_URL}/${locale}${suffix}` : `${BASE_URL}${suffix}`;
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return routes.flatMap(({ path, priority, changeFrequency }) => {
     const languages = {
-      es: url(path),
-      en: url(path, "en"),
-      "x-default": url(path),
+      es: localeUrl("es", path),
+      en: localeUrl("en", path),
+      "x-default": localeUrl("es", path),
     };
 
     return [
       {
-        url: url(path),
+        url: localeUrl("es", path),
         lastModified,
         changeFrequency,
         priority,
         alternates: { languages },
       },
       {
-        url: url(path, "en"),
+        url: localeUrl("en", path),
         lastModified,
         changeFrequency,
         priority: Math.max(priority - 0.1, 0.1),

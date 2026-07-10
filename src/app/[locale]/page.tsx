@@ -17,6 +17,7 @@ export async function generateMetadata({
     path: "/",
     locale,
     twitterCard: "summary_large_image",
+    hasOwnOgImage: true,
   });
 }
 

@@ -9,6 +9,9 @@ interface PageMetadataConfig {
   path: string;
   locale: string;
   twitterCard?: "summary" | "summary_large_image";
+  /** Segments with their own opengraph-image.tsx must skip the config
+   *  fallback image, which would otherwise take precedence over it */
+  hasOwnOgImage?: boolean;
 }
 
 export async function loadMessages(locale: string): Promise<Record<string, string>> {
@@ -17,7 +20,7 @@ export async function loadMessages(locale: string): Promise<Record<string, strin
     : (await import("@/lang/es.json")).default;
 }
 
-function localeUrl(locale: string, path: string): string {
+export function localeUrl(locale: string, path: string): string {
   const suffix = path === "/" ? "" : path;
   return locale === "es" ? `${BASE_URL}${suffix}` : `${BASE_URL}/${locale}${suffix}`;
 }
@@ -45,6 +48,21 @@ export function createPageMetadata(
       title,
       description,
       url: canonical,
+      siteName: "Carlos Aldaravi",
+      locale: config.locale === "es" ? "es_ES" : "en_US",
+      type: "website",
+      ...(config.hasOwnOgImage
+        ? {}
+        : {
+            images: [
+              {
+                url: localeUrl(config.locale, "/opengraph-image"),
+                width: 1200,
+                height: 630,
+                alt: title,
+              },
+            ],
+          }),
     },
     twitter: {
       card: config.twitterCard || "summary",

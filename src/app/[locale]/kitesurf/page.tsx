@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     path: "/kitesurf",
     locale,
     twitterCard: "summary_large_image",
+    hasOwnOgImage: true,
   });
 }
 
