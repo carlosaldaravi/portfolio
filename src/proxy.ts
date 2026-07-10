@@ -15,6 +15,16 @@ function getLocaleFromPath(pathname: string): string | null {
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Default locale must live at the root URL only: 301 /es/* -> /* to avoid
+  // duplicate content. Persist the locale so the bare path doesn't bounce to /en.
+  if (pathname === `/${defaultLocale}` || pathname.startsWith(`/${defaultLocale}/`)) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.slice(`/${defaultLocale}`.length) || "/";
+    const response = NextResponse.redirect(url, 301);
+    response.cookies.set("NEXT_LOCALE", defaultLocale, { path: "/" });
+    return response;
+  }
+
   // If path already has a locale prefix, let it through
   const pathnameLocale = getLocaleFromPath(pathname);
   if (pathnameLocale) {
