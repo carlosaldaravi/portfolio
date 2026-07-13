@@ -5,6 +5,7 @@ import Section from "@/components/UI/section";
 import usePageTracking from "@/hooks/usePageTracking";
 import { TRACKING_TYPES } from "@/types/track";
 import { FormattedMessage } from "react-intl";
+import Link from "next/link";
 
 export default function PrivacyPolicyContent() {
   usePageTracking(TRACKING_TYPES.page.privacyPolicy);
@@ -61,6 +62,27 @@ export default function PrivacyPolicyContent() {
           </h3>
           <p className="text-xl">
             <FormattedMessage id="page.privacyPolicy.changes" />
+          </p>
+        </div>
+        <div className="my-8">
+          <h3>
+            <FormattedMessage id="page.privacyPolicy.cookies.title" />
+          </h3>
+          <p className="text-xl">
+            <FormattedMessage
+              id="page.privacyPolicy.cookies"
+              values={{
+                cookiePolicyLink: (
+                  <Link
+                    key="cookie-policy-link"
+                    href="/cookie-policy"
+                    className="underline font-semibold"
+                  >
+                    <FormattedMessage id="page.cookiePolicy" />
+                  </Link>
+                ),
+              }}
+            />
           </p>
         </div>
       </Section>

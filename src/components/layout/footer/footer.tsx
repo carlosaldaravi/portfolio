@@ -5,9 +5,11 @@ import { THEMES_TYPES } from "@/types/themes";
 import Link from "next/link";
 import { FormattedMessage } from "react-intl";
 import Image from "next/image";
+import { useCookieConsent } from "@/store/cookie-consent-context";
 
 const Footer = () => {
   const themeCtx = useContext(ThemeContext);
+  const { openSettings } = useCookieConsent();
 
   const theme = themeCtx.theme;
   const bgFooter = theme === THEMES_TYPES.dark ? "dark-footer" : "light-footer";
@@ -49,6 +51,15 @@ const Footer = () => {
             <FormattedMessage id="page.contact" />
           </span>
         </Link>
+
+        <button
+          onClick={openSettings}
+          className="flex justify-center ml-10 sm:ml-24 mt-2 sm:mt-0"
+        >
+          <span className="tracking-xxs text-lg sm:text-2xl">
+            <FormattedMessage id="footer.cookieSettings" />
+          </span>
+        </button>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@
 
 import { IntlProvider } from "react-intl";
 import { ThemeContextProvider } from "@/store/theme-context";
+import { CookieConsentContextProvider } from "@/store/cookie-consent-context";
 
 interface ProvidersProps {
   locale: string;
@@ -12,7 +13,9 @@ interface ProvidersProps {
 export default function Providers({ locale, messages, children }: ProvidersProps) {
   return (
     <IntlProvider locale={locale} messages={messages}>
-      <ThemeContextProvider>{children}</ThemeContextProvider>
+      <ThemeContextProvider>
+        <CookieConsentContextProvider>{children}</CookieConsentContextProvider>
+      </ThemeContextProvider>
     </IntlProvider>
   );
 }

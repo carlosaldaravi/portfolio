@@ -24,5 +24,6 @@ export const TRACKING_TYPES = {
     developer: "Developer",
     privacyPolicy: "Privacy Policy",
     legalNotice: "Legal Notice",
+    cookiePolicy: "Cookie Policy",
   },
 } as const;

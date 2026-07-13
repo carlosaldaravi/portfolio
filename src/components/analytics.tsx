@@ -1,11 +1,13 @@
 "use client";
 
 import Script from "next/script";
+import { useCookieConsent } from "@/store/cookie-consent-context";
 
 export default function Analytics() {
   const analyticsId = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+  const { consent } = useCookieConsent();
 
-  if (!analyticsId) return null;
+  if (!analyticsId || !consent?.analytics) return null;
 
   return (
     <>

@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import Providers from "./providers";
 import Layout from "@/components/layout/layout";
 import Analytics from "@/components/analytics";
+import CookieConsentBanner from "@/components/layout/cookie-consent/cookie-consent-banner";
 import { BASE_URL } from "@/lib/metadata";
 
 import en from "@/lang/en.json";
@@ -100,9 +101,10 @@ export default async function LocaleLayout({
       <body>
         <Providers locale={locale} messages={localeMessages}>
           <Layout>{children}</Layout>
+          <Analytics />
+          <CookieConsentBanner />
         </Providers>
         <div id="popup" />
-        <Analytics />
       </body>
     </html>
   );
