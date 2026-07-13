@@ -46,7 +46,7 @@ const experiencesData = [
   {
     id: "experience-1",
     order: 1,
-    date: "01/2026 - ",
+    date: "01/2025 - ",
     dateEdited: false,
     titleId: "",
     title: "CEO & Founder",
