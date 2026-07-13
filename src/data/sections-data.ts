@@ -60,7 +60,7 @@ const experiencesData = [
   {
     id: "experience-2",
     order: 2,
-    date: "01/2023 - ",
+    date: "01/2023 - 05/2026",
     dateEdited: false,
     titleId: "page.developer.experience.fullStackDeveloper",
     title: "Full-Stack Developer",
