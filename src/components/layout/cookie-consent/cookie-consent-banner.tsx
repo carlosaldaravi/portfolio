@@ -1,11 +1,11 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import Link from "next/link";
 import ThemeContext from "@/store/theme-context";
 import { useCookieConsent } from "@/store/cookie-consent-context";
 import { getBgColor, getTextColor } from "@/tools/theme";
+import CookiePolicyLink from "./cookie-policy-link";
 
 const buttonClass =
   "px-5 py-2 rounded border border-current text-sm sm:text-base font-semibold whitespace-nowrap";
@@ -29,6 +29,13 @@ const CookieConsentBanner = () => {
   );
 
   const isOpen = isBannerVisible || isSettingsOpen;
+
+  useEffect(() => {
+    if (isOpen) {
+      setAnalyticsChecked(consent?.analytics ?? false);
+    }
+  }, [isOpen, consent?.analytics]);
+
   if (!isOpen) return null;
 
   const expanded = showDetails || isSettingsOpen;
@@ -57,13 +64,9 @@ const CookieConsentBanner = () => {
             id="cookieConsent.description"
             values={{
               cookiePolicyLink: (
-                <Link
-                  key="cookie-policy-link"
-                  href="/cookie-policy"
-                  className="underline font-semibold"
-                >
+                <CookiePolicyLink key="cookie-policy-link">
                   <FormattedMessage id="cookieConsent.policyLinkText" />
-                </Link>
+                </CookiePolicyLink>
               ),
             }}
           />
