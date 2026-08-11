@@ -43,7 +43,7 @@ const MainSection = ({ isEditable }: MainSectionProps) => {
   // The locale is a route segment, so a language change remounts this tree —
   // capturing the arrays on first render is safe.
   const experienceTransform = useCallback(
-    (exp: { date: string; dateEdited: boolean }, formatMessage: (d: { id: string }) => string) => ({
+    (exp: ReturnType<typeof getExperiencesData>[number], formatMessage: (d: { id: string }) => string) => ({
       date:
         exp.dateEdited || !exp.date.endsWith("- ")
           ? exp.date
