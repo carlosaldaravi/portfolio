@@ -237,5 +237,6 @@
   "cookieConsent.rejectAll": "Reject all",
   "cookieConsent.acceptAll": "Accept all",
   "cookieConsent.savePreferences": "Save preferences",
-  "cookieConsent.close": "Close"
+  "cookieConsent.close": "Close",
+  "page.developer.visitProject": "Visit {name}"
 }
