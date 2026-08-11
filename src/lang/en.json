@@ -183,7 +183,6 @@
   "page.curriculum.sidebar.programming": "Programming",
   "page.curriculum.sidebar.skills": "Skills",
   "page.curriculum.sidebar.address": "Address",
-  "page.curriculum.sidebar.skype": "Skype",
   "page.curriculum.sidebar.email": "Email",
   "page.curriculum.sidebar.github": "GitHub",
   "page.curriculum.body.education.title": "education",
@@ -201,7 +200,6 @@
   "page.curriculum.sidebar.personalSkills.responsability": "Responsability",
   "page.curriculum.sidebar.personalSkills.commitment": "Commitment",
   "page.curriculum.sidebar.personalSkills.proactivity": "Proactivity",
-  "page.curriculum.sidebar.personalSkills.ambitious": "Ambitious",
   "page.curriculum.sidebar.personalSkills.adaptability": "Adaptability",
   "page.curriculum.sidebar.personalSkills.fastLearning": "Quick Learning",
   "page.curriculum.sidebar.personalSkills.problemSolving": "Problem Solving",
@@ -238,5 +236,6 @@
   "cookieConsent.acceptAll": "Accept all",
   "cookieConsent.savePreferences": "Save preferences",
   "cookieConsent.close": "Close",
-  "page.developer.visitProject": "Visit {name}"
+  "page.developer.visitProject": "Visit {name}",
+  "page.curriculum.sidebar.linkedin": "LinkedIn"
 }

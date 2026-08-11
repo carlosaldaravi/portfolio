@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useIntl } from "react-intl";
 
 interface HeaderProps {
   name: string;
   surname: string;
+  profession: string;
   onChangeName: (name: string) => void;
   onChangeSurname: (surname: string) => void;
   isEditable: boolean;
@@ -12,27 +12,20 @@ interface HeaderProps {
 const Header = ({
   name,
   surname,
+  profession: initialProfession,
   onChangeName,
   onChangeSurname,
   isEditable,
 }: HeaderProps) => {
-  const intl = useIntl();
-  const professionId = "page.developer.fullstack";
-  const [profession, setProfession] = useState(
-    intl.formatMessage({
-      id: professionId,
-    })
-  );
-  const [isManuallyEdited, setIsManuallyEdited] = useState(false);
-
-  const displayedProfession = isManuallyEdited
-    ? profession
-    : intl.formatMessage({ id: professionId });
+  // The profession comes from the CV config (already localized). Edit mode
+  // keeps a local override.
+  const [profession, setProfession] = useState(initialProfession);
 
   const handleProfessionChange = (value: string) => {
     setProfession(value);
-    setIsManuallyEdited(true);
   };
+
+  const displayedProfession = profession;
 
   return (
     <div className="main__right__header">

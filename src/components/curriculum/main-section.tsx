@@ -5,14 +5,15 @@ import Education from "./education";
 import Certification from "./certification";
 import HonorAndAward from "./honor-and-award";
 import OtherInfo from "./other-info";
+import { useIntl } from "react-intl";
+import { sectionsData } from "@/data/sections-data";
 import {
-  certificationsData,
-  educationsData,
-  experiencesData,
-  honorsAndAwardsData,
-  otherInfoData,
-  sectionsData,
-} from "@/data/sections-data";
+  getCertificationsData,
+  getEducationsData,
+  getExperiencesData,
+  getHonorsAndAwardsData,
+  getOtherInfoData,
+} from "@/data/cv.data";
 import { useTranslatedData } from "./hooks/useTranslatedData";
 
 interface MainSectionProps {
@@ -37,8 +38,12 @@ const HONOR_FIELDS = [
 const OTHER_INFO_FIELDS = [{ idKey: "textId", valueKey: "text", editedKey: "textEdited" }];
 
 const MainSection = ({ isEditable }: MainSectionProps) => {
+  const { locale } = useIntl();
+  // Content resolved from the single source of truth for the active locale.
+  // The locale is a route segment, so a language change remounts this tree —
+  // capturing the arrays on first render is safe.
   const experienceTransform = useCallback(
-    (exp: typeof experiencesData[number], formatMessage: (d: { id: string }) => string) => ({
+    (exp: { date: string; dateEdited: boolean }, formatMessage: (d: { id: string }) => string) => ({
       date:
         exp.dateEdited || !exp.date.endsWith("- ")
           ? exp.date
@@ -48,11 +53,11 @@ const MainSection = ({ isEditable }: MainSectionProps) => {
   );
 
   const [translatedSections, setSections] = useTranslatedData<typeof sectionsData[number], typeof sectionsData[number] & { displayTitle: string }>(sectionsData, SECTION_FIELDS);
-  const [translatedExperiences, setExperiences] = useTranslatedData(experiencesData, EXPERIENCE_FIELDS, experienceTransform);
-  const [translatedEducations, setEducations] = useTranslatedData(educationsData, EDUCATION_FIELDS);
-  const [translatedCertifications, setCertifications] = useTranslatedData(certificationsData, []);
-  const [translatedHonorsAndAwards, setHonorsAndAwards] = useTranslatedData(honorsAndAwardsData, HONOR_FIELDS);
-  const [translatedOtherInfo, setOtherInfo] = useTranslatedData(otherInfoData, OTHER_INFO_FIELDS);
+  const [translatedExperiences, setExperiences] = useTranslatedData(getExperiencesData(locale), EXPERIENCE_FIELDS, experienceTransform);
+  const [translatedEducations, setEducations] = useTranslatedData(getEducationsData(locale), EDUCATION_FIELDS);
+  const [translatedCertifications, setCertifications] = useTranslatedData(getCertificationsData(), []);
+  const [translatedHonorsAndAwards, setHonorsAndAwards] = useTranslatedData(getHonorsAndAwardsData(locale), HONOR_FIELDS);
+  const [translatedOtherInfo, setOtherInfo] = useTranslatedData(getOtherInfoData(locale), OTHER_INFO_FIELDS);
 
   const handleChangeSectionTitle = (sectionId: string, newTitle: string) => {
     setSections((prev) =>

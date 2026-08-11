@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useIntl } from "react-intl";
+import { getIdentity } from "@/data/cv.data";
 import { TRACKING_TYPES } from "@/types/track";
 import useTracker from "@/hooks/useTracker";
 import Page from "@/components/UI/page";
@@ -12,8 +14,10 @@ import PDFButtons from "@/components/curriculum/pdf-buttons";
 import BuyMeACoffeeButton from "@/components/UI/buy-me-a-coffe-button";
 
 export default function CurriculumContent() {
-  const [name, setName] = useState("Carlos");
-  const [surname, setSurname] = useState("Aldaravi");
+  const { locale } = useIntl();
+  const identity = getIdentity(locale);
+  const [name, setName] = useState(identity.name);
+  const [surname, setSurname] = useState(identity.surname);
   const [isEditable, setIsEditable] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const resumeRef = useRef(null);
@@ -74,6 +78,7 @@ export default function CurriculumContent() {
           <Header
             name={name}
             surname={surname}
+            profession={identity.profession}
             onChangeName={(newName: string) => setName(newName)}
             onChangeSurname={(newSurname: string) => setSurname(newSurname)}
             isEditable={isEditable}

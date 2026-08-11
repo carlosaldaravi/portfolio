@@ -1,4 +1,3 @@
-import { MY_NAME } from "@/constants/constants";
 import { useIntl } from "react-intl";
 
 interface FooterProps {
