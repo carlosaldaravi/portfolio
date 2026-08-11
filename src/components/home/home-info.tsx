@@ -8,7 +8,7 @@ interface RrssSocial {
   url: string;
 }
 
-interface Role {
+export interface Role {
   name: string;
   to: string;
   avatar: string;
