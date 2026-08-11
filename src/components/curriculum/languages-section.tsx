@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useIntl } from "react-intl";
 import { PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { getPersonalLanguagesData } from "@/data/cv.data";
+import { usePersistentState } from "./hooks/usePersistentState";
 import StarsSection from "./stars-section";
 
 interface LanguageData {
@@ -22,7 +23,7 @@ interface LanguagesSectionProps {
 
 const LanguagesSection = ({ isEditable }: LanguagesSectionProps) => {
   const intl = useIntl();
-  const [languages, setLanguages] = useState<LanguageData[]>(getPersonalLanguagesData);
+  const [languages, setLanguages] = usePersistentState<LanguageData[]>("languages", getPersonalLanguagesData);
 
   const translatedLanguages: TranslatedLanguage[] = useMemo(() => {
     return languages.map((lang) => ({

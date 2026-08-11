@@ -12,16 +12,26 @@ import Header from "@/components/curriculum/header";
 import MainSection from "@/components/curriculum/main-section";
 import PDFButtons from "@/components/curriculum/pdf-buttons";
 import BuyMeACoffeeButton from "@/components/UI/buy-me-a-coffe-button";
+import {
+  usePersistentState,
+  clearPersistedCv,
+} from "@/components/curriculum/hooks/usePersistentState";
 
 export default function CurriculumContent() {
   const { locale } = useIntl();
   const identity = getIdentity(locale);
-  const [name, setName] = useState(identity.name);
-  const [surname, setSurname] = useState(identity.surname);
+  const [name, setName] = usePersistentState(`name:${locale}`, identity.name);
+  const [surname, setSurname] = usePersistentState(`surname:${locale}`, identity.surname);
+  const [profession, setProfession] = usePersistentState(`profession:${locale}`, identity.profession);
   const [isEditable, setIsEditable] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const resumeRef = useRef(null);
   const tracker = useTracker();
+
+  const handleReset = () => {
+    clearPersistedCv();
+    window.location.reload();
+  };
 
   const downloadResumeAsPDF = () => {
     setIsGeneratingPDF(true);
@@ -71,6 +81,7 @@ export default function CurriculumContent() {
             isEditable={isEditable}
             onDownloadResumeAsPDF={downloadResumeAsPDF}
             onEditCV={handleEditCV}
+            onReset={handleReset}
           />
         )}
         <Sidebar isEditable={isEditable} isGeneratingPDF={isGeneratingPDF} />
@@ -78,9 +89,10 @@ export default function CurriculumContent() {
           <Header
             name={name}
             surname={surname}
-            profession={identity.profession}
+            profession={profession}
             onChangeName={(newName: string) => setName(newName)}
             onChangeSurname={(newSurname: string) => setSurname(newSurname)}
+            onChangeProfession={(newProfession: string) => setProfession(newProfession)}
             isEditable={isEditable}
           />
           <MainSection isEditable={isEditable} />

@@ -237,5 +237,6 @@
   "cookieConsent.savePreferences": "Guardar preferencias",
   "cookieConsent.close": "Cerrar",
   "page.developer.visitProject": "Visitar {name}",
-  "page.curriculum.sidebar.linkedin": "LinkedIn"
+  "page.curriculum.sidebar.linkedin": "LinkedIn",
+  "page.developer.reset": "Restablecer"
 }
