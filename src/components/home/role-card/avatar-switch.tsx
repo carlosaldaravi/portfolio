@@ -24,7 +24,7 @@ const AvatarSwitch = ({ src, customClass, hover }: AvatarSwitchProps) => {
           >
             <Image
               src={src}
-              alt="avatar"
+              alt="Carlos Aldaravi"
               priority={true}
               width={600}
               height={800}

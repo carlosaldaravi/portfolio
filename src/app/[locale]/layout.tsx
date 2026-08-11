@@ -38,46 +38,75 @@ export async function generateMetadata({
   };
 }
 
-const personJsonLd = {
-  "@type": "Person",
-  "@id": `${BASE_URL}/#person`,
-  name: "Carlos Aldaravi",
-  url: BASE_URL,
-  jobTitle: "CEO & Full-Stack Developer",
-  worksFor: [
-    {
-      "@type": "Organization",
-      name: "Padeldoor Software SL",
-      url: "https://padeldoor.app",
-    },
-    {
-      "@type": "Organization",
-      name: "Surfr.",
-    },
-  ],
-  sameAs: [
-    "https://github.com/carlosaldaravi",
-    "https://www.instagram.com/carlosaldaravi/",
-    "https://www.tiktok.com/@carlosaldaravi",
-    "https://www.youtube.com/@CarlosAldaravi/videos",
-    "https://twitter.com/carlosaldaravi",
-  ],
+const PERSON_DESCRIPTION: Record<string, string> = {
+  es: "Ingeniero multimedia y desarrollador full-stack, fundador y CEO de Padeldoor. También kitesurfista con un récord de tiempo de vuelo.",
+  en: "Multimedia engineer and full-stack developer, founder and CEO of Padeldoor. Also a kitesurfer with a hang-time record.",
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    personJsonLd,
-    {
-      "@type": "WebSite",
-      "@id": `${BASE_URL}/#website`,
-      name: "Carlos Aldaravi",
-      url: BASE_URL,
-      inLanguage: ["es", "en"],
-      publisher: { "@id": `${BASE_URL}/#person` },
+/** Person + WebSite graph. Built per locale so `description` matches the page
+ *  language; the rest of the entity data is language-agnostic. */
+function buildJsonLd(locale: string) {
+  const personJsonLd = {
+    "@type": "Person",
+    "@id": `${BASE_URL}/#person`,
+    name: "Carlos Aldaravi",
+    url: BASE_URL,
+    image: `${BASE_URL}/images/yo-dev.png`,
+    jobTitle: "CEO & Full-Stack Developer",
+    description: PERSON_DESCRIPTION[locale] ?? PERSON_DESCRIPTION.es,
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "Node.js",
+      "NestJS",
+      "Laravel",
+      "PHP",
+      "TypeScript",
+      "MySQL",
+      "Kitesurf",
+    ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Universidad de Alicante",
     },
-  ],
-};
+    worksFor: [
+      {
+        "@type": "Organization",
+        name: "Padeldoor Software SL",
+        url: "https://padeldoor.app",
+      },
+      {
+        "@type": "Organization",
+        name: "Surfr.",
+      },
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/carlos-aldaravi/",
+      "https://github.com/carlosaldaravi",
+      "https://www.instagram.com/carlosaldaravi/",
+      "https://www.tiktok.com/@carlosaldaravi",
+      "https://www.youtube.com/@CarlosAldaravi/videos",
+      "https://twitter.com/carlosaldaravi",
+    ],
+  };
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      personJsonLd,
+      {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        name: "Carlos Aldaravi",
+        url: BASE_URL,
+        inLanguage: ["es", "en"],
+        publisher: { "@id": `${BASE_URL}/#person` },
+      },
+    ],
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -95,7 +124,7 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(locale)) }}
         />
       </head>
       <body>

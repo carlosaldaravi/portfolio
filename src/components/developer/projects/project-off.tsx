@@ -62,7 +62,7 @@ const ProjectOFF = ({ project, colorNum, onHover }: ProjectOFFProps) => {
           <div className="item__image">
             <div className="image-switch__outer">
               <div className="image-switch__inner">
-                <Image src={project.img} alt="image" width={800} height={800} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg==" />
+                <Image src={project.img} alt={`${project.name} — captura del proyecto`} width={800} height={800} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F/PQAJpAN42RTZKQAAAABJRU5ErkJggg==" />
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ const ProjectOFF = ({ project, colorNum, onHover }: ProjectOFFProps) => {
             <span className="level0-text self-center mx-auto">
               <Image
                 src={project.logo}
-                alt="image"
+                alt={`Logo de ${project.name}`}
                 width={200}
                 height={200}
                 className="h-16 w-16"

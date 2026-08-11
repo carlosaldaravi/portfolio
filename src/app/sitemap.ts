@@ -19,8 +19,13 @@ const routes: Route[] = [
   { path: "/cookie-policy", priority: 0.1, changeFrequency: "yearly" },
 ];
 
+// Fixed content-update date, bumped by hand when the site content changes.
+// `new Date()` on every build would stamp all URLs as "modified now", which
+// Google learns to distrust as a freshness signal.
+const LAST_MODIFIED = new Date("2026-08-11T00:00:00Z");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const lastModified = LAST_MODIFIED;
 
   return routes.flatMap(({ path, priority, changeFrequency }) => {
     const languages = {

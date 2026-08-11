@@ -69,7 +69,7 @@ const Project = ({ project, index }: ProjectProps) => {
             index % 2 === 0 ? "sm:rounded-l-xl" : "sm:rounded-r-xl"
           }`}
           src={project.img}
-          alt="project image"
+          alt={`${project.name} — captura del proyecto`}
           width={1200}
           height={800}
           style={{ objectFit: "cover" }}

@@ -65,7 +65,10 @@ export function createPageMetadata(
           }),
     },
     twitter: {
-      card: config.twitterCard || "summary",
+      // Every route ships a 1200x630 OG image (own or the [locale] cascade),
+      // so the large card is the right default; "summary" would crop it to a
+      // small square.
+      card: config.twitterCard || "summary_large_image",
       title,
       description,
     },

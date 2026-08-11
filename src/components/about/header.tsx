@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import { useResponsive } from "@/hooks/useResponsive";
 import classes from "./header.module.css";
 
 const AboutHeader = () => {
-  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [originalDescription, setOriginalDescription] = useState("");
   const [switcherDescription, setSwitcherDescription] = useState("");
@@ -18,7 +17,6 @@ const AboutHeader = () => {
 
   useEffect(() => {
     if (intl) {
-      const titleUpdated = intl.formatMessage({ id: "page.about.title" });
       const descriptionUpdated = intl.formatMessage({
         id: "page.about.description",
       });
@@ -26,7 +24,6 @@ const AboutHeader = () => {
         id: "page.about.descriptionSwitcher",
       });
 
-      setTitle(titleUpdated);
       setDescription(descriptionUpdated);
       setOriginalDescription(descriptionUpdated);
       setSwitcherDescription(descriptionSwitcher);
@@ -37,7 +34,9 @@ const AboutHeader = () => {
     <div className={`${classes.wrapper} about__wrapper__header mx-auto`}>
       <div className="header__title pl-2 sm:ml-10 sm:mt-12 self-center sm:self-start">
         <h1 className={`${classes.header} text-4xl sm:text-5xl`}>
-          <span className={`${classes.header__title__text}`}>{title}</span>
+          <span className={`${classes.header__title__text}`}>
+            <FormattedMessage id="page.about.title" />
+          </span>
         </h1>
         {
           <p
