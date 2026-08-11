@@ -36,3 +36,7 @@ yarn.lock
 
 # claude code
 .claude/
+
+# TypeScript incremental build cache (should never be committed)
+tsconfig.tsbuildinfo
+*.tsbuildinfo
