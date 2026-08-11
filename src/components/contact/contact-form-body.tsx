@@ -36,7 +36,7 @@ const ContactFormBody = () => {
         </h3>
         <Image
           src={yoContactImg}
-          alt="img"
+          alt="Carlos Aldaravi"
           width={600}
           height={800}
           className="p-6 w-full"
