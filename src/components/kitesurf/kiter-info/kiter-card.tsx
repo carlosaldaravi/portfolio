@@ -110,6 +110,10 @@ const KiterCard = ({ me, src, flipTarget }: KiterCardProps) => {
       return (
         <Link
           href="/curriculum"
+          // Stop the click from bubbling to the card's onClick={handleFlip}:
+          // otherwise "Ver PDF" navigates to /curriculum AND triggers the
+          // role flip, which then navigates to /kitesurf.
+          onClick={(e) => e.stopPropagation()}
           className="inline-flex items-center gap-3 px-6 py-2.5 bg-gradient-to-r from-blue-900 to-blue-500 text-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
         >
           <span className="text-lg sm:text-xl font-semibold">
