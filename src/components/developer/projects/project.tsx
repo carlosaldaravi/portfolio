@@ -41,6 +41,14 @@ const Project = ({ project, index }: ProjectProps) => {
   const privateRepoLabel = intl.formatMessage({
     id: "page.developer.privateRepo",
   });
+  // Descriptive accessible name for the visit link: the visible button label
+  // ("Entrar"/"Join") is shared by every project, so on its own it tells
+  // screen readers and search engines nothing. "Visitar {name}" gives the
+  // link a meaningful name per project.
+  const visitProjectLabel = intl.formatMessage(
+    { id: "page.developer.visitProject" },
+    { name: project.name },
+  );
 
   return (
     <div className={`reveal m-8 sm:my-12`}>
@@ -94,6 +102,8 @@ const Project = ({ project, index }: ProjectProps) => {
                 className="w-full"
                 href={project.url}
                 target={!isMobile ? "_blank" : ""}
+                title={visitProjectLabel}
+                aria-label={visitProjectLabel}
                 onClick={() =>
                   tracker.track(TRACKING_TYPES.event.visitProjectClick, {
                     project: project.name,
