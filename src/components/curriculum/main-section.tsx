@@ -52,12 +52,14 @@ const MainSection = ({ isEditable }: MainSectionProps) => {
     []
   );
 
-  const [translatedSections, setSections] = useTranslatedData<typeof sectionsData[number], typeof sectionsData[number] & { displayTitle: string }>(sectionsData, SECTION_FIELDS);
-  const [translatedExperiences, setExperiences] = useTranslatedData(getExperiencesData(locale), EXPERIENCE_FIELDS, experienceTransform);
-  const [translatedEducations, setEducations] = useTranslatedData(getEducationsData(locale), EDUCATION_FIELDS);
-  const [translatedCertifications, setCertifications] = useTranslatedData(getCertificationsData(), []);
-  const [translatedHonorsAndAwards, setHonorsAndAwards] = useTranslatedData(getHonorsAndAwardsData(locale), HONOR_FIELDS);
-  const [translatedOtherInfo, setOtherInfo] = useTranslatedData(getOtherInfoData(locale), OTHER_INFO_FIELDS);
+  // `sections` is structural (holds Component refs) → not persisted (null key).
+  // The content arrays persist per locale so edits survive a reload.
+  const [translatedSections, setSections] = useTranslatedData<typeof sectionsData[number], typeof sectionsData[number] & { displayTitle: string }>(sectionsData, SECTION_FIELDS, undefined, null);
+  const [translatedExperiences, setExperiences] = useTranslatedData(getExperiencesData(locale), EXPERIENCE_FIELDS, experienceTransform, `experiences:${locale}`);
+  const [translatedEducations, setEducations] = useTranslatedData(getEducationsData(locale), EDUCATION_FIELDS, undefined, `educations:${locale}`);
+  const [translatedCertifications, setCertifications] = useTranslatedData(getCertificationsData(), [], undefined, `certifications:${locale}`);
+  const [translatedHonorsAndAwards, setHonorsAndAwards] = useTranslatedData(getHonorsAndAwardsData(locale), HONOR_FIELDS, undefined, `awards:${locale}`);
+  const [translatedOtherInfo, setOtherInfo] = useTranslatedData(getOtherInfoData(locale), OTHER_INFO_FIELDS, undefined, `otherInfo:${locale}`);
 
   const handleChangeSectionTitle = (sectionId: string, newTitle: string) => {
     setSections((prev) =>

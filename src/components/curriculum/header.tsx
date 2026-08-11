@@ -1,30 +1,24 @@
-import { useState } from "react";
-
 interface HeaderProps {
   name: string;
   surname: string;
   profession: string;
   onChangeName: (name: string) => void;
   onChangeSurname: (surname: string) => void;
+  onChangeProfession: (profession: string) => void;
   isEditable: boolean;
 }
 
 const Header = ({
   name,
   surname,
-  profession: initialProfession,
+  profession,
   onChangeName,
   onChangeSurname,
+  onChangeProfession,
   isEditable,
 }: HeaderProps) => {
-  // The profession comes from the CV config (already localized). Edit mode
-  // keeps a local override.
-  const [profession, setProfession] = useState(initialProfession);
-
-  const handleProfessionChange = (value: string) => {
-    setProfession(value);
-  };
-
+  // Fully controlled by the parent (which persists it). The profession comes
+  // from the CV config (already localized).
   const displayedProfession = profession;
 
   return (
@@ -60,7 +54,7 @@ const Header = ({
           className="header__subtitle input_cv_edit"
           value={displayedProfession}
           size={displayedProfession.length || 1}
-          onChange={(e) => handleProfessionChange(e.target.value)}
+          onChange={(e) => onChangeProfession(e.target.value)}
         />
       ) : (
         <h2 className="header__subtitle">{displayedProfession}</h2>

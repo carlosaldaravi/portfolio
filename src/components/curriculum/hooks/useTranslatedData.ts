@@ -1,5 +1,6 @@
-import { useState, useMemo, Dispatch, SetStateAction } from "react";
+import { useMemo, Dispatch, SetStateAction } from "react";
 import { useIntl } from "react-intl";
+import { usePersistentState } from "./usePersistentState";
 
 interface TranslatableField {
   idKey: string;
@@ -26,10 +27,12 @@ function translateField(
 export function useTranslatedData<T extends DataItem, R extends T = T>(
   initialData: T[],
   fields: TranslatableField[],
-  customTransform?: (item: T, formatMessage: (descriptor: { id: string }) => string) => Partial<R>
+  customTransform?: (item: T, formatMessage: (descriptor: { id: string }) => string) => Partial<R>,
+  /** localStorage key (without prefix) to persist edits; null = ephemeral. */
+  persistKey: string | null = null
 ): [R[], Dispatch<SetStateAction<T[]>>] {
   const intl = useIntl();
-  const [data, setData] = useState<T[]>(initialData);
+  const [data, setData] = usePersistentState<T[]>(persistKey, initialData);
 
   const translated = useMemo(() => {
     return data.map((item) => {

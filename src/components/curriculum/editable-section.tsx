@@ -22,17 +22,18 @@ const EditableSection = ({
             isEditable ? "border p-2 space-x-2 mr-1" : "space-x-4"
           }`}
         >
-          <div className="text-yellow-400">
+          <button
+            type="button"
+            aria-label="Remove section"
+            onClick={onRemove}
+            className={`absolute bg-white cursor-pointer border-none p-0 text-yellow-400 ${
+              bigSection ? "-top-6 -right-6" : "-top-4 -right-2"
+            }`}
+          >
             <XMarkIcon
-              title="Remove section"
-              className={`absolute bg-white cursor-pointer stroke-red-500 ${
-                bigSection
-                  ? "-top-6 -right-6 size-14"
-                  : "-top-4 -right-2 size-8"
-              }`}
-              onClick={onRemove}
+              className={`stroke-red-500 ${bigSection ? "size-14" : "size-8"}`}
             />
-          </div>
+          </button>
           <div>{children}</div>
         </div>
       ) : (

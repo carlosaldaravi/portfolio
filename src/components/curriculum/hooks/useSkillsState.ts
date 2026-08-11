@@ -1,6 +1,7 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useIntl } from "react-intl";
 import { getPersonalSkillsData } from "@/data/cv.data";
+import { usePersistentState } from "./usePersistentState";
 
 interface SkillItem {
   id: string;
@@ -40,7 +41,8 @@ interface UseSkillsStateReturn {
 
 const useSkillsState = (): UseSkillsStateReturn => {
   const intl = useIntl();
-  const [skills, setSkills] = useState<SkillSection[]>(
+  const [skills, setSkills] = usePersistentState<SkillSection[]>(
+    `skills:${intl.locale}`,
     () => getPersonalSkillsData(intl.locale) as SkillSection[]
   );
 

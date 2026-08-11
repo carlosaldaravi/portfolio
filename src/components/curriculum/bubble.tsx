@@ -26,20 +26,19 @@ const Bubble = ({
   onChangeText,
   onRemoveBubble,
 }: BubbleProps) => {
-  const [editableText, setEditableText] = useState(name);
-  const [isManuallyEdited, setIsManuallyEdited] = useState(false);
+  // Derived, not mirrored: show the local edit if any, otherwise the incoming
+  // `name`. This avoids syncing a prop into state (no setState in render or in
+  // an effect), so it always reflects the latest `name` until the user types.
+  const [editedText, setEditedText] = useState<string | null>(null);
   const [isExploding, setIsExploding] = useState(false);
+  const displayText = editedText ?? name;
 
   const handleBlur = () => {
-    if (onChangeText) {
-      onChangeText(editableText);
-      setIsManuallyEdited(true);
-    }
+    onChangeText?.(displayText);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEditableText(e.target.value);
-    setIsManuallyEdited(true);
+    setEditedText(e.target.value);
   };
 
   const handleRemoveBubble = () => {
@@ -62,10 +61,6 @@ const Bubble = ({
     left: left,
     position: "absolute",
   };
-
-  if (!isManuallyEdited && editableText !== name) {
-    setEditableText(name);
-  }
 
   return (
     <div
@@ -95,11 +90,11 @@ const Bubble = ({
         }
       >
         {!isEditable ? (
-          <>{editableText}</>
+          <>{displayText}</>
         ) : (
           <input
             type="text"
-            value={editableText}
+            value={displayText}
             onChange={handleChange}
             onBlur={handleBlur}
             className="bubble_cv_edit"
