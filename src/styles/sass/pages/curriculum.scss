@@ -24,6 +24,21 @@
     display: flex;
     color: black;
 
+    // The CV is a fixed A4 document (210mm ≈ 793px). On narrow screens scale
+    // it down with `zoom` so the whole page fits without horizontal scroll.
+    // `zoom` (unlike `transform: scale`) reflows layout, so it leaves no blank
+    // space below and keeps the absolutely-positioned action buttons in place.
+    // Screen-only media queries: the PDF is captured at full A4 size.
+    @media (max-width: 840px) {
+        zoom: 0.62;
+    }
+    @media (max-width: 600px) {
+        zoom: 0.46;
+    }
+    @media (max-width: 420px) {
+        zoom: 0.4;
+    }
+
     &__left {
         max-width: 32%;
         padding-right: 3rem;

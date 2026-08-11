@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useIntl } from "react-intl";
-import { personalInfoData } from "@/data/sidebar";
+import { getPersonalInfoData } from "@/data/cv.data";
 import SidebarSection from "./sidebar-section";
 
 interface PersonalInfo {
@@ -22,7 +22,7 @@ interface PersonalInfoSectionProps {
 
 const PersonalInfoSection = ({ isEditable }: PersonalInfoSectionProps) => {
   const intl = useIntl();
-  const [personalInfo, setPersonalInfo] = useState<PersonalInfo[]>(personalInfoData);
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfo[]>(getPersonalInfoData);
 
   const translatedInfo: TranslatedPersonalInfo[] = useMemo(() => {
     return personalInfo.map((info) => ({

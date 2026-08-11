@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useIntl } from "react-intl";
-import { personalSkillsData } from "@/data/sidebar";
+import { getPersonalSkillsData } from "@/data/cv.data";
 
 interface SkillItem {
   id: string;
@@ -40,7 +40,9 @@ interface UseSkillsStateReturn {
 
 const useSkillsState = (): UseSkillsStateReturn => {
   const intl = useIntl();
-  const [skills, setSkills] = useState<SkillSection[]>(personalSkillsData as SkillSection[]);
+  const [skills, setSkills] = useState<SkillSection[]>(
+    () => getPersonalSkillsData(intl.locale) as SkillSection[]
+  );
 
   const translatedSkills: TranslatedSkillSection[] = useMemo(() => {
     return skills.map((section) => ({
@@ -107,12 +109,16 @@ const useSkillsState = (): UseSkillsStateReturn => {
       sectionId === "personal-skill" ? { x: 28, y: 28 } : { x: 33, y: 30 };
     const radius = sectionId === "personal-skill" ? 48 : 40;
 
-    const angleStep =
-      (2 * Math.PI) / bubbles.filter((bubble) => !bubble.head).length;
+    const nonHeadCount = bubbles.filter((bubble) => !bubble.head).length;
+    const angleStep = (2 * Math.PI) / nonHeadCount;
 
-    return bubbles.map((bubble, index) => {
+    // Use a counter over non-head bubbles (not the array index, which includes
+    // the head) so the remaining bubbles are spread evenly around the circle.
+    let nonHeadIndex = 0;
+    return bubbles.map((bubble) => {
       if (bubble.head) return bubble;
-      const angle = index * angleStep;
+      const angle = nonHeadIndex * angleStep;
+      nonHeadIndex += 1;
       return {
         ...bubble,
         top: `${center.y + radius * Math.sin(angle)}%`,

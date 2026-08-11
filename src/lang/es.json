@@ -183,7 +183,6 @@
   "page.curriculum.sidebar.programming": "Programación",
   "page.curriculum.sidebar.skills": "Habilidades",
   "page.curriculum.sidebar.address": "Dirección",
-  "page.curriculum.sidebar.skype": "Skype",
   "page.curriculum.sidebar.email": "Email",
   "page.curriculum.sidebar.github": "GitHub",
   "page.curriculum.body.education.title": "Educación",
@@ -237,5 +236,6 @@
   "cookieConsent.acceptAll": "Aceptar todas",
   "cookieConsent.savePreferences": "Guardar preferencias",
   "cookieConsent.close": "Cerrar",
-  "page.developer.visitProject": "Visitar {name}"
+  "page.developer.visitProject": "Visitar {name}",
+  "page.curriculum.sidebar.linkedin": "LinkedIn"
 }

@@ -39,10 +39,16 @@ const Certification = ({
     );
   };
 
+  const hoursLabel = intl.formatMessage({ id: "hours" });
+
   const handleCertificationText = (id: string, text: string) => {
+    // The paragraph shows "<hours> <label>" but `hours` must store only the
+    // number — strip a trailing label so editing doesn't append it twice
+    // ("25 horashoras").
+    const cleaned = text.replace(new RegExp(`\\s*${hoursLabel}\\s*$`), "").trim();
     setCertifications((prevCertifications) =>
       prevCertifications.map((cert) =>
-        cert.id === id ? { ...cert, hours: text } : cert
+        cert.id === id ? { ...cert, hours: cleaned } : cert
       )
     );
   };
@@ -72,7 +78,7 @@ const Certification = ({
             isEditable={isEditable}
           >
             <PrettyParagraph
-              text={cert.hours + intl.formatMessage({ id: "hours" })}
+              text={`${cert.hours} ${hoursLabel}`}
               onChangeText={(text) => handleCertificationText(cert.id, text)}
               isEditable={isEditable}
             />
