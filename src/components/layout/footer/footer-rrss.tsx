@@ -1,12 +1,6 @@
 import RRSS from "@/components/UI/rrss";
 import { SVG_TYPES } from "@/types/svg";
-
-interface RRSSItem {
-  name: string;
-  svg: string;
-  url: string;
-}
-
+import type { RRSSItem } from "@/types/common";
 const FooterRRSS = () => {
   const rrss: RRSSItem[] = [
     {

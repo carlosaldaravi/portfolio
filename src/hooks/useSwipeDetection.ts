@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
 import { SWIPE_THRESHOLD } from "@/constants/ui";
 
 interface UseSwipeDetectionProps {
@@ -12,39 +12,40 @@ interface UseSwipeDetectionReturn {
   touchEndHandler: () => void;
 }
 
+/**
+ * Horizontal swipe detection for the kitesurf section slider.
+ *
+ * The touch coordinates live in refs, not state: they are transient input, and
+ * holding them in state re-rendered the whole section on every `touchmove`.
+ */
 const useSwipeDetection = ({
   onSwipeLeft,
   onSwipeRight,
 }: UseSwipeDetectionProps): UseSwipeDetectionReturn => {
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const touchStart = useRef(0);
+
+  // Clearing the origin also disarms the gesture: further moves are ignored
+  // until the next touchstart, so a single swipe fires exactly once.
+  const reset = () => {
+    touchStart.current = 0;
+  };
 
   const touchStartHandler = (e: React.TouchEvent) => {
-    setTouchStart(e.touches[0].clientX);
+    touchStart.current = e.touches[0].clientX;
   };
 
   const touchMoveHandler = (e: React.TouchEvent) => {
-    setTouchEnd(e.touches[0].clientX);
+    if (touchStart.current === 0) return;
+
+    const travelled = touchStart.current - e.touches[0].clientX;
+    if (Math.abs(travelled) <= SWIPE_THRESHOLD) return;
+
+    reset();
+    if (travelled > 0) onSwipeLeft();
+    else onSwipeRight();
   };
 
-  const touchEndHandler = () => {
-    setTouchStart(0);
-    setTouchEnd(0);
-  };
-
-  useEffect(() => {
-    if (touchEnd !== 0) {
-      if (touchStart - touchEnd > SWIPE_THRESHOLD) {
-        onSwipeLeft();
-        touchEndHandler();
-      } else if (touchEnd - touchStart > SWIPE_THRESHOLD) {
-        onSwipeRight();
-        touchEndHandler();
-      }
-    }
-  }, [touchStart, touchEnd, onSwipeLeft, onSwipeRight]);
-
-  return { touchStartHandler, touchMoveHandler, touchEndHandler };
+  return { touchStartHandler, touchMoveHandler, touchEndHandler: reset };
 };
 
 export default useSwipeDetection;

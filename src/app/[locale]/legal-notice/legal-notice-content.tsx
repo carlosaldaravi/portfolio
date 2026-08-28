@@ -2,13 +2,9 @@
 
 import Page from "@/components/UI/page";
 import Section from "@/components/UI/section";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
 import { FormattedMessage } from "react-intl";
 
 export default function LegalNoticeContent() {
-  usePageTracking(TRACKING_TYPES.page.legalNotice);
-
   return (
     <Page>
       <Section>

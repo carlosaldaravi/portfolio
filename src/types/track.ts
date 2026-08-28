@@ -14,16 +14,6 @@ export const TRACKING_TYPES = {
     kiteJumpsOrderClick: "Change kite jumps order",
     editCV: "Start to Edit CV",
     saveCV: "Finish to Edit CV",
-    buyMeACoffee: "Click toBuy me a coffee",
-  },
-  page: {
-    home: "Home",
-    about: "About",
-    contact: "Contact",
-    kitesurfer: "Kitesurfer",
-    developer: "Developer",
-    privacyPolicy: "Privacy Policy",
-    legalNotice: "Legal Notice",
-    cookiePolicy: "Cookie Policy",
+    buyMeACoffee: "Click to Buy me a coffee",
   },
 } as const;

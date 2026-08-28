@@ -1,54 +1,42 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const locales = ["es", "en"];
-const defaultLocale = "es";
-
-function getLocaleFromPath(pathname: string): string | null {
-  for (const locale of locales) {
-    if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
-      return locale;
-    }
-  }
-  return null;
-}
+import {
+  DEFAULT_LOCALE,
+  LOCALE_COOKIE,
+  getLocaleFromPath,
+  isLocale,
+  stripLocalePrefix,
+} from "@/lib/i18n";
 
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const pathnameLocale = getLocaleFromPath(pathname);
 
   // Default locale must live at the root URL only: 301 /es/* -> /* to avoid
   // duplicate content. Persist the locale so the bare path doesn't bounce to /en.
-  if (pathname === `/${defaultLocale}` || pathname.startsWith(`/${defaultLocale}/`)) {
+  if (pathnameLocale === DEFAULT_LOCALE) {
     const url = request.nextUrl.clone();
-    url.pathname = pathname.slice(`/${defaultLocale}`.length) || "/";
+    url.pathname = stripLocalePrefix(pathname);
     const response = NextResponse.redirect(url, 301);
-    response.cookies.set("NEXT_LOCALE", defaultLocale, { path: "/" });
+    response.cookies.set(LOCALE_COOKIE, DEFAULT_LOCALE, { path: "/" });
     return response;
   }
 
   // If path already has a locale prefix, let it through
-  const pathnameLocale = getLocaleFromPath(pathname);
   if (pathnameLocale) {
     return NextResponse.next();
   }
 
-  // Determine locale from cookie, fallback to default
-  const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
-  const locale =
-    cookieLocale && locales.includes(cookieLocale)
-      ? cookieLocale
-      : defaultLocale;
+  const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
+  const locale = isLocale(cookieLocale) ? cookieLocale : DEFAULT_LOCALE;
 
-  // For default locale "es": rewrite internally (keep clean URL)
-  if (locale === defaultLocale) {
-    const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname}`;
-    return NextResponse.rewrite(url);
-  }
-
-  // For non-default locale "en": redirect to /en/...
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(url);
+
+  // For the default locale, rewrite internally so the URL stays clean; any
+  // other locale is a real, prefixed URL and gets a redirect.
+  return locale === DEFAULT_LOCALE
+    ? NextResponse.rewrite(url)
+    : NextResponse.redirect(url);
 }
 
 export const config = {

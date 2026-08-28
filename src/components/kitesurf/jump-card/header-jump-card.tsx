@@ -1,27 +1,19 @@
-import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
 import { THEMES_TYPES } from "@/types/themes";
-import ThemeContext from "@/store/theme-context";
-import { Jump, JumpTextEntry } from "./jump-card";
+import { useTheme } from "@/store/theme-context";
+import { getJumpString } from "./jump-texts";
+import type { Jump } from "@/types/kitesurf";
 
 interface HeaderJumpCardProps {
   jump: Jump;
 }
 
 const HeaderJumpCard = ({ jump }: HeaderJumpCardProps) => {
-  const themeCtx = useContext(ThemeContext);
+  const { theme } = useTheme();
 
-  const theme = themeCtx.theme;
-
-  const { hangtime } = jump.texts.find(
-    (object: JumpTextEntry) => Object.keys(object)[0] === "hangtime"
-  ) as JumpTextEntry;
-  const { spot } = jump.texts.find(
-    (object: JumpTextEntry) => Object.keys(object)[0] === "spot"
-  ) as JumpTextEntry;
-  const { date } = jump.texts.find(
-    (object: JumpTextEntry) => Object.keys(object)[0] === "date"
-  ) as JumpTextEntry;
+  const hangtime = getJumpString(jump, "hangtime");
+  const spot = getJumpString(jump, "spot");
+  const date = getJumpString(jump, "date");
 
   return (
     <h3

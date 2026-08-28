@@ -1,6 +1,6 @@
-import CardsSection from "../../../components/UI/cards-section";
+import CardsSection from "@/components/UI/cards-section";
 import NewsCard from "./news-card";
-import { NewsItem } from "./news-card";
+import type { NewsItem } from "@/types/kitesurf";
 
 interface NewsCardsProps {
   news: NewsItem[];

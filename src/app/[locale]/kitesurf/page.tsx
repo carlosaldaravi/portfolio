@@ -1,29 +1,23 @@
-import type { Metadata } from "next";
 import KitesurfContent from "./kitesurf-content";
-import { loadMessages, createPageMetadata } from "@/lib/metadata";
+import { pageMetadata } from "@/lib/metadata";
 import { loadJsonData } from "@/lib/data";
-import type { PageParams } from "@/types/common";
-import type { KitesurfData, SectionData } from "@/types/kitesurf";
+import type { KitesurfData } from "@/types/kitesurf";
 import type { DeveloperData } from "@/types/developer";
 
-export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const { locale } = await params;
-  const messages = await loadMessages(locale);
-
-  return createPageMetadata(messages, {
-    titleSuffix: "Kitesurf",
-    descriptionKey: "page.kitesurf.meta",
-    path: "/kitesurf",
-    locale,
-    twitterCard: "summary_large_image",
-    hasOwnOgImage: true,
-  });
-}
+export const generateMetadata = pageMetadata({
+  titleSuffix: "Kitesurf",
+  descriptionKey: "page.kitesurf.meta",
+  path: "/kitesurf",
+  twitterCard: "summary_large_image",
+  hasOwnOgImage: true,
+});
 
 export default async function KitesurfPage() {
-  const data = await loadJsonData<KitesurfData>("kitesurf.json");
-  const devData = await loadJsonData<DeveloperData>("developer.json");
-  const sections = data.sections.filter((section: SectionData) => section.data.length > 0);
+  const [data, devData] = await Promise.all([
+    loadJsonData<KitesurfData>("kitesurf.json"),
+    loadJsonData<DeveloperData>("developer.json"),
+  ]);
+  const sections = data.sections.filter((section) => section.data.length > 0);
 
   return <KitesurfContent sections={sections} me={data.me} devMe={devData.me} />;
 }

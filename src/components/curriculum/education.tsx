@@ -3,7 +3,9 @@ import CurriculumSection from "./curriculum-section";
 import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import AddItemButton from "./add-item-button";
+import { patchById, removeById, replaceById } from "./item-list";
+import { useIntl } from "react-intl";
 
 interface EducationData {
   id: string;
@@ -40,32 +42,51 @@ const Education = ({
   setEducations,
   onChangeTitle,
 }: EducationProps) => {
+  const intl = useIntl();
+
   const handleEducationChange = (updatedEducation: EducationData) => {
-    setEducations((prevEducations) =>
-      prevEducations.map((edu) =>
-        edu.id === updatedEducation.id ? updatedEducation : edu
-      )
-    );
+    setEducations((prev) => replaceById(prev, updatedEducation));
   };
 
   const handleOnRemoveEducation = (id: string) => {
-    setEducations(educations.filter((edu) => edu.id !== id));
+    setEducations((prev) => removeById(prev, id));
   };
 
-  const handleText1Change = (id: string, text: string) => {
-    setEducations((prevEducations) =>
-      prevEducations.map((edu) =>
-        edu.id === id ? { ...edu, text1: text, text1Edited: true } : edu
-      )
-    );
+  const handleText1Change = (id: string, text1: string) => {
+    setEducations((prev) => patchById(prev, id, { text1, text1Edited: true }));
   };
 
-  const handleText2Change = (id: string, text: string) => {
-    setEducations((prevEducations) =>
-      prevEducations.map((edu) =>
-        edu.id === id ? { ...edu, text2: text, text2Edited: true } : edu
-      )
-    );
+  const handleText2Change = (id: string, text2: string) => {
+    setEducations((prev) => patchById(prev, id, { text2, text2Edited: true }));
+  };
+
+  const handleGpaChange = (id: string, gpa: string) => {
+    setEducations((prev) => patchById(prev, id, { gpa, gpaEdited: true }));
+  };
+
+  const handleAddEducation = () => {
+    setEducations((prev) => [
+      ...prev,
+      {
+        id: `education-${prev.length + 1}`,
+        date: "",
+        dateEdited: false,
+        titleId: "",
+        title: "",
+        titleEdited: false,
+        placeId: "",
+        place: "",
+        placeEdited: false,
+        text1Id: "",
+        text1: "",
+        text1Edited: false,
+        text2Id: "",
+        text2: "",
+        text2Edited: false,
+        gpa: "",
+        gpaEdited: false,
+      },
+    ]);
   };
 
   return (
@@ -104,15 +125,7 @@ const Education = ({
                 <input
                   type="text"
                   value={edu.gpa}
-                  onChange={(e) =>
-                    setEducations((prevEducations) =>
-                      prevEducations.map((ed) =>
-                        ed.id === edu.id
-                          ? { ...ed, gpa: e.target.value, gpaEdited: true }
-                          : ed
-                      )
-                    )
-                  }
+                  onChange={(e) => handleGpaChange(edu.id, e.target.value)}
                 />{" "}
               </p>
             ) : (
@@ -122,37 +135,10 @@ const Education = ({
         </EditableSection>
       ))}
       {isEditable && (
-        <div
-          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
-          onClick={() =>
-            setEducations((prev) => [
-              ...prev,
-              {
-                id: `education-${prev.length + 1}`,
-                date: "",
-                dateEdited: false,
-                titleId: "",
-                title: "",
-                titleEdited: false,
-                placeId: "",
-                place: "",
-                placeEdited: false,
-                text1Id: "",
-                text1: "",
-                text1Edited: false,
-                text2Id: "",
-                text2: "",
-                text2Edited: false,
-                gpa: "",
-                gpaEdited: false,
-              },
-            ])
-          }
-        >
-          <span>
-            <PlusIcon className="w-12 h-12 stroke-green-600" />
-          </span>
-        </div>
+        <AddItemButton
+          onAdd={handleAddEducation}
+          label={intl.formatMessage({ id: "addEntry" })}
+        />
       )}
     </CurriculumSection>
   );

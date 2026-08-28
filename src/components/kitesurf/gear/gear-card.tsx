@@ -1,18 +1,10 @@
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { getBgSecondaryColor } from "@/tools/theme";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import Link from "next/link";
 import { useResponsive } from "@/hooks/useResponsive";
-
-export interface GearItem {
-  id: string;
-  name: string;
-  url: string;
-  img: string;
-  className?: string;
-  sizes?: string[];
-}
+import type { GearItem } from "@/types/kitesurf";
 
 interface GearCardProps {
   gear: GearItem;
@@ -20,8 +12,7 @@ interface GearCardProps {
 
 const GearCard = ({ gear }: GearCardProps) => {
   const [hovered, setHovered] = useState(false);
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const bgSecondaryColor = getBgSecondaryColor(theme);
   const { isMobile } = useResponsive();
 

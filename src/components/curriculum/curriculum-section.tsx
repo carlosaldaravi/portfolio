@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 
 interface CurriculumSectionProps {
-  title: string;
+  title?: string;
   isEditable: boolean;
   onChangeSectionTitle: (value: string) => void;
   children: ReactNode;
@@ -14,7 +14,7 @@ const CurriculumSection = ({
   children,
 }: CurriculumSectionProps) => {
   const [manualTitle, setManualTitle] = useState<string | null>(null);
-  const editableTitle = manualTitle !== null ? manualTitle : title;
+  const editableTitle = manualTitle ?? title ?? "";
 
   const handleChangeTitle = (value: string) => {
     setManualTitle(value);

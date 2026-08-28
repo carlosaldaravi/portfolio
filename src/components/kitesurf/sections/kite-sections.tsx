@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import NewsCards from "@/components/kitesurf/news-cards/news-cards";
 import Sponsors from "@/components/kitesurf/sponsors";
 import JumpsCards from "@/components/kitesurf/jump-card/jumps-cards";
@@ -7,17 +7,13 @@ import Ranking from "@/components/kitesurf/ranking/ranking";
 import KiteSectionTransition from "./kite-sections-transition";
 import useSwipeDetection from "@/hooks/useSwipeDetection";
 import useRanking from "./hooks/useRanking";
-import { Jump } from "@/components/kitesurf/jump-card/jump-card";
-import { Sponsor } from "@/components/kitesurf/sponsors";
-import { NewsItem } from "@/components/kitesurf/news-cards/news-card";
-import { GearGroupItem } from "@/components/kitesurf/gear/gear";
-
-interface SectionData {
-  name: string;
-  title: string;
-  data: unknown[];
-}
-
+import type {
+  GearEntry,
+  Jump,
+  NewsItem,
+  SectionData,
+  Sponsor,
+} from "@/types/kitesurf";
 interface KiteSectionsProps {
   sectionSelected: SectionData;
   direction: string;
@@ -47,7 +43,7 @@ const KiteSections = ({ sectionSelected, direction, onChangeSection }: KiteSecti
       case "news":
         return <NewsCards news={sectionSelected.data as NewsItem[]} />;
       case "gear":
-        return <Gear gear={sectionSelected.data as GearGroupItem[]} />;
+        return <Gear gear={sectionSelected.data as GearEntry[]} />;
       case "ranking":
         return <Ranking ranking={ranking} />;
       default:

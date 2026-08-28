@@ -1,19 +1,11 @@
-import type { Metadata } from "next";
 import AboutContent from "./about-content";
-import { loadMessages, createPageMetadata } from "@/lib/metadata";
-import type { PageParams } from "@/types/common";
+import { pageMetadata } from "@/lib/metadata";
 
-export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const { locale } = await params;
-  const messages = await loadMessages(locale);
-
-  return createPageMetadata(messages, {
-    titleSuffix: "About",
-    descriptionKey: "page.about.meta",
-    path: "/about",
-    locale,
-  });
-}
+export const generateMetadata = pageMetadata({
+  titleSuffix: "About",
+  descriptionKey: "page.about.meta",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return <AboutContent />;

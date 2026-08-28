@@ -54,6 +54,12 @@ ffmpeg -i public/videos/video-short.webm -c:v libvpx-vp9 -b:v 600k public/videos
 
 Alternative: host videos on Cloudinary or similar CDN for adaptive streaming.
 
-## Analytics consolidation
+## Analytics consolidation — done
 
-Consider removing `@segment/analytics-next` (180KB) if Google Analytics covers the same needs. Both are currently active in the project.
+`@segment/analytics-next` was removed (~176KB of client JS). Google Analytics is
+now the only analytics stack: GA4 measures page views on its own from the
+`config` call in `components/analytics.tsx`, and the site's custom interactions
+go through `hooks/useTracker.ts` -> `lib/gtag.ts` as GA4 events.
+
+Segment's cookies (`ajs_*`) no longer exist, so they were dropped from the
+consent cleanup and from the cookie policy.

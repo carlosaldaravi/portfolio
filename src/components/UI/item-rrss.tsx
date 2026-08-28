@@ -1,13 +1,7 @@
 import { MouseEvent } from "react";
 import SVG from "@/components/svg";
 import { useResponsive } from "@/hooks/useResponsive";
-
-export interface RRSSItem {
-  name: string;
-  url: string;
-  svg: string;
-}
-
+import type { RRSSItem } from "@/types/common";
 interface ItemRRSSProps {
   rrss: RRSSItem;
 }

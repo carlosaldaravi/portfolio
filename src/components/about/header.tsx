@@ -1,33 +1,15 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { TypeAnimation } from "react-type-animation";
-import Image from "next/image";
-import { useResponsive } from "@/hooks/useResponsive";
 import classes from "./header.module.css";
 
 const AboutHeader = () => {
-  const [description, setDescription] = useState("");
-  const [originalDescription, setOriginalDescription] = useState("");
-  const [switcherDescription, setSwitcherDescription] = useState("");
-
   const intl = useIntl();
-  const { isMobile } = useResponsive();
 
-  const sequence = [700, originalDescription, 3000, switcherDescription];
-
-  useEffect(() => {
-    if (intl) {
-      const descriptionUpdated = intl.formatMessage({
-        id: "page.about.description",
-      });
-      const descriptionSwitcher = intl.formatMessage({
-        id: "page.about.descriptionSwitcher",
-      });
-
-      setDescription(descriptionUpdated);
-      setOriginalDescription(descriptionUpdated);
-      setSwitcherDescription(descriptionSwitcher);
-    }
+  const { description, sequence } = useMemo(() => {
+    const original = intl.formatMessage({ id: "page.about.description" });
+    const switcher = intl.formatMessage({ id: "page.about.descriptionSwitcher" });
+    return { description: original, sequence: [700, original, 3000, switcher] };
   }, [intl]);
 
   return (
@@ -54,17 +36,6 @@ const AboutHeader = () => {
           </p>
         }
       </div>
-      {/* {!isMobile && (
-        <div className={`${classes.right}`}>
-          <Image
-            src="/images/yo-dev.png"
-            alt="me"
-            width={200}
-            height={200}
-            className={`float-right translate-x-10 ${classes.imagen}`}
-          />
-        </div>
-      )} */}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useFetch from "@/hooks/useFetch";
 import { FORMSPARK_URL } from "@/env/constants";
 import { TIMEOUTS } from "@/constants/ui";
@@ -18,29 +18,36 @@ const useContactSubmit = (
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { post } = useFetch(FORMSPARK_URL);
+  const feedbackTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  async function submit() {
+  // The success/error notice hides itself on a timer; cancel it on unmount so
+  // it can't fire against a component that is already gone.
+  useEffect(() => () => clearTimeout(feedbackTimeout.current), []);
+
+  const submit = useCallback(async () => {
     setIsLoading(true);
-    const { data, errors } = await post({
-      ...values,
-    });
+    const { data, errors } = await post({ ...values });
+    clearTimeout(feedbackTimeout.current);
+
     if (data) {
       setIsFormSubmitted(true);
       setResponseError("");
       clearValues();
-      setTimeout(() => {
-        setIsFormSubmitted(false);
-      }, TIMEOUTS.FORM_SUCCESS);
+      feedbackTimeout.current = setTimeout(
+        () => setIsFormSubmitted(false),
+        TIMEOUTS.FORM_SUCCESS
+      );
     }
     if (errors) {
       setIsFormSubmitted(false);
       setResponseError(errors[0]);
-      setTimeout(() => {
-        setResponseError("");
-      }, TIMEOUTS.FORM_ERROR);
+      feedbackTimeout.current = setTimeout(
+        () => setResponseError(""),
+        TIMEOUTS.FORM_ERROR
+      );
     }
     setIsLoading(false);
-  }
+  }, [post, values, clearValues]);
 
   return { isLoading, isFormSubmitted, responseError, submit };
 };

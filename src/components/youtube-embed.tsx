@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface YoutubeEmbedProps {
   embedId: string;
   title: string;

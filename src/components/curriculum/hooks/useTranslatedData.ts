@@ -24,7 +24,7 @@ function translateField(
   return value ?? "";
 }
 
-export function useTranslatedData<T extends DataItem, R extends T = T>(
+export function useTranslatedData<T extends object, R extends T = T>(
   initialData: T[],
   fields: TranslatableField[],
   customTransform?: (item: T, formatMessage: (descriptor: { id: string }) => string) => Partial<R>,
@@ -36,10 +36,11 @@ export function useTranslatedData<T extends DataItem, R extends T = T>(
 
   const translated = useMemo(() => {
     return data.map((item) => {
+      const record = item as DataItem;
       const translatedFields: Record<string, string> = {};
       for (const field of fields) {
-        if (field.idKey in item || field.editedKey in item) {
-          translatedFields[field.valueKey] = translateField(item, field, intl.formatMessage);
+        if (field.idKey in record || field.editedKey in record) {
+          translatedFields[field.valueKey] = translateField(record, field, intl.formatMessage);
         }
       }
       const custom = customTransform ? customTransform(item, intl.formatMessage) : {};

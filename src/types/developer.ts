@@ -1,4 +1,4 @@
-import type { MeData } from "@/components/kitesurf/kiter-info/kiter-card";
+import type { MeData } from "./kitesurf";
 
 export interface ExperienceData {
   date: string;

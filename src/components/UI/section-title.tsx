@@ -1,6 +1,5 @@
-import { ReactNode, useContext } from "react";
-import { THEMES_TYPES } from "@/types/themes";
-import ThemeContext from "@/store/theme-context";
+import { ReactNode } from "react";
+import { useTheme } from "@/store/theme-context";
 
 interface SectionTitleProps {
   title: ReactNode;
@@ -9,12 +8,10 @@ interface SectionTitleProps {
 }
 
 const SectionTitle = ({ title, className = "", description }: SectionTitleProps) => {
-  const themeCtx = useContext(ThemeContext);
-
-  const theme = themeCtx.theme;
+  const { isDark } = useTheme();
 
   const styleTitle =
-    theme === THEMES_TYPES.dark
+    isDark
       ? "section-title-dark text-light-text"
       : "section-title-light text-dark-text";
   return (

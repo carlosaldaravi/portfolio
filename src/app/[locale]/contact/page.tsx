@@ -1,19 +1,11 @@
-import type { Metadata } from "next";
 import ContactContent from "./contact-content";
-import { loadMessages, createPageMetadata } from "@/lib/metadata";
-import type { PageParams } from "@/types/common";
+import { pageMetadata } from "@/lib/metadata";
 
-export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const { locale } = await params;
-  const messages = await loadMessages(locale);
-
-  return createPageMetadata(messages, {
-    titleSuffix: "Contact",
-    descriptionKey: "page.contact.meta",
-    path: "/contact",
-    locale,
-  });
-}
+export const generateMetadata = pageMetadata({
+  titleSuffix: "Contact",
+  descriptionKey: "page.contact.meta",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return <ContactContent />;

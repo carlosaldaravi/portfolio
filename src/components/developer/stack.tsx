@@ -2,13 +2,7 @@ import { useIntl } from "react-intl";
 import SectionTitle from "@/components/UI/section-title";
 import SVG from "../svg";
 import { SVG_TYPES } from "@/types/svg";
-
-interface StackItem {
-  id: string;
-  name: string;
-  svg: string;
-}
-
+import type { StackItem } from "@/types/developer";
 interface StackProps {
   stack: StackItem[];
 }

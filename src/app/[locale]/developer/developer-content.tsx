@@ -4,11 +4,9 @@ import Page from "@/components/UI/page";
 import Projects from "@/components/developer/projects/projects";
 import Stack from "@/components/developer/stack";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
 import Experience from "@/components/developer/experience/experience";
 import type { DeveloperData } from "@/types/developer";
-import type { MeData } from "@/components/kitesurf/kiter-info/kiter-card";
+import type { MeData } from "@/types/kitesurf";
 
 interface DeveloperContentProps {
   data: DeveloperData;
@@ -16,8 +14,6 @@ interface DeveloperContentProps {
 }
 
 export default function DeveloperContent({ data, kiteMe }: DeveloperContentProps) {
-  usePageTracking(TRACKING_TYPES.page.developer);
-
   return (
     <Page className="p-0">
       <KiterCard

@@ -2,8 +2,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import Image from "next/image";
 import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";
-import { useContext } from "react";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import Button from "@/components/UI/button";
 import Link from "next/link";
 import { useResponsive } from "@/hooks/useResponsive";
@@ -11,29 +10,15 @@ import { getBgSecondaryColor } from "@/tools/theme";
 import classes from "./project.module.css";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
-
-interface ProjectData {
-  id: string;
-  name: string;
-  description: string;
-  img: string;
-  url: string;
-  year: string;
-  stack: string[];
-  github: {
-    url: string;
-    private: boolean;
-  };
-}
+import type { Project } from "@/types/developer";
 
 interface ProjectProps {
-  project: ProjectData;
+  project: Project;
   index: number;
 }
 
 const Project = ({ project, index }: ProjectProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const bgSecondaryColor = getBgSecondaryColor(theme);
   const { isMobile } = useResponsive();
   const tracker = useTracker();

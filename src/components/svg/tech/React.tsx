@@ -1,14 +1,11 @@
-import { useContext } from "react";
-import ThemeContext from "@/store/theme-context";
-import { THEMES_TYPES } from "@/types/themes";
+import { useTheme } from "@/store/theme-context";
 
 interface ReactProps {
   size?: string;
 }
 
 export const React = ({ size }: ReactProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { isDark } = useTheme();
 
   return (
     <svg
@@ -17,11 +14,11 @@ export const React = ({ size }: ReactProps) => {
     >
       <circle
         r="2.05"
-        fill={theme === THEMES_TYPES.dark ? "#61dafb" : "black"}
+        fill={isDark ? "#61dafb" : "black"}
       />
       <g
         fill="none"
-        stroke={theme === THEMES_TYPES.dark ? "#61dafb" : "black"}
+        stroke={isDark ? "#61dafb" : "black"}
       >
         <ellipse rx="11" ry="4.2" />
         <ellipse rx="11" ry="4.2" transform="rotate(60)" />

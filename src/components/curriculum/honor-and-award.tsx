@@ -1,10 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
 import { useIntl } from "react-intl";
-import { PlusIcon } from "@heroicons/react/24/outline";
 import CurriculumSection from "./curriculum-section";
 import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
+import AddItemButton from "./add-item-button";
+import { patchById, removeById, replaceById } from "./item-list";
 
 interface HonorAndAwardData {
   id: string;
@@ -34,24 +35,34 @@ const HonorAndAward = ({
   onChangeTitle,
 }: HonorAndAwardProps) => {
   const intl = useIntl();
+
   const handleHonorChange = (updatedHonor: HonorAndAwardData) => {
-    setHonorsAndAwards((prevHonors) =>
-      prevHonors.map((honor) =>
-        honor.id === updatedHonor.id ? updatedHonor : honor
-      )
-    );
+    setHonorsAndAwards((prev) => replaceById(prev, updatedHonor));
   };
 
   const handleOnRemoveHonor = (id: string) => {
-    setHonorsAndAwards(honorsAndAwards.filter((honor) => honor.id !== id));
+    setHonorsAndAwards((prev) => removeById(prev, id));
   };
 
   const handleTextChange = (id: string, text: string) => {
-    setHonorsAndAwards((prevHonors) =>
-      prevHonors.map((honor) =>
-        honor.id === id ? { ...honor, text: text, textEdited: true } : honor
-      )
-    );
+    setHonorsAndAwards((prev) => patchById(prev, id, { text, textEdited: true }));
+  };
+
+  const handleAddHonor = () => {
+    setHonorsAndAwards((prev) => [
+      ...prev,
+      {
+        id: `award-${prev.length + 1}`,
+        date: "",
+        titleId: "page.curriculum.body.honorsAndAwards.award",
+        title: "",
+        titleEdited: false,
+        place: "",
+        textId: "",
+        text: "",
+        textEdited: false,
+      },
+    ]);
   };
 
   return (
@@ -83,29 +94,10 @@ const HonorAndAward = ({
         </EditableSection>
       ))}
       {isEditable && (
-        <div
-          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
-          onClick={() =>
-            setHonorsAndAwards((prev) => [
-              ...prev,
-              {
-                id: `award-${prev.length + 1}`,
-                date: "",
-                titleId: "page.curriculum.body.honorsAndAwards.award",
-                title: "",
-                titleEdited: false,
-                place: "",
-                textId: "",
-                text: "",
-                textEdited: false,
-              },
-            ])
-          }
-        >
-          <span>
-            <PlusIcon className="w-12 h-12 stroke-green-600" />
-          </span>
-        </div>
+        <AddItemButton
+          onAdd={handleAddHonor}
+          label={intl.formatMessage({ id: "addEntry" })}
+        />
       )}
     </CurriculumSection>
   );

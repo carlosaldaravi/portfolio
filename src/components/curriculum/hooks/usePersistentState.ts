@@ -22,6 +22,9 @@ export function usePersistentState<T>(
   const storageKey = key === null ? null : CV_STORAGE_PREFIX + key;
 
   useEffect(() => {
+    /* The stored value is read after mount on purpose — see the hydration note
+       above — so every setState in this effect is deliberate. */
+    /* eslint-disable react-hooks/set-state-in-effect */
     if (storageKey === null) {
       setLoaded(true);
       return;
@@ -33,6 +36,7 @@ export function usePersistentState<T>(
       /* ignore corrupt/unavailable storage */
     }
     setLoaded(true);
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [storageKey]);
 
   useEffect(() => {

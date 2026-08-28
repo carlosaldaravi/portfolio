@@ -6,7 +6,7 @@ import Certification from "./certification";
 import HonorAndAward from "./honor-and-award";
 import OtherInfo from "./other-info";
 import { useIntl } from "react-intl";
-import { sectionsData } from "@/data/sections-data";
+import { sectionsData, type CvSection } from "@/data/sections-data";
 import {
   getCertificationsData,
   getEducationsData,
@@ -20,7 +20,7 @@ interface MainSectionProps {
   isEditable: boolean;
 }
 
-const SECTION_FIELDS = [{ idKey: "titleId", valueKey: "displayTitle", editedKey: "titleEdited" }];
+const SECTION_FIELDS = [{ idKey: "titleId", valueKey: "title", editedKey: "titleEdited" }];
 const EXPERIENCE_FIELDS = [
   { idKey: "titleId", valueKey: "title", editedKey: "titleEdited" },
   { idKey: "textId", valueKey: "text", editedKey: "textEdited" },
@@ -54,7 +54,7 @@ const MainSection = ({ isEditable }: MainSectionProps) => {
 
   // `sections` is structural (holds Component refs) → not persisted (null key).
   // The content arrays persist per locale so edits survive a reload.
-  const [translatedSections, setSections] = useTranslatedData<typeof sectionsData[number], typeof sectionsData[number] & { displayTitle: string }>(sectionsData, SECTION_FIELDS, undefined, null);
+  const [translatedSections, setSections] = useTranslatedData<CvSection>(sectionsData, SECTION_FIELDS, undefined, null);
   const [translatedExperiences, setExperiences] = useTranslatedData(getExperiencesData(locale), EXPERIENCE_FIELDS, experienceTransform, `experiences:${locale}`);
   const [translatedEducations, setEducations] = useTranslatedData(getEducationsData(locale), EDUCATION_FIELDS, undefined, `educations:${locale}`);
   const [translatedCertifications, setCertifications] = useTranslatedData(getCertificationsData(), [], undefined, `certifications:${locale}`);
@@ -64,7 +64,9 @@ const MainSection = ({ isEditable }: MainSectionProps) => {
   const handleChangeSectionTitle = (sectionId: string, newTitle: string) => {
     setSections((prev) =>
       prev.map((s) =>
-        s.id === "section-" + sectionId ? { ...s, title: newTitle, titleEdited: true } : s
+        s.id === `section-${sectionId}`
+          ? { ...s, title: newTitle, titleEdited: true }
+          : s
       )
     );
   };
@@ -92,10 +94,10 @@ const MainSection = ({ isEditable }: MainSectionProps) => {
 
   return (
     <div className="main__right__body">
-      {translatedSections.map(({ id, displayTitle }) => (
-        <div key={`section-${id}`} className="section">
+      {translatedSections.map(({ id, title }) => (
+        <div key={id} className="section">
           <EditableSection isEditable={isEditable} bigSection={true} onRemove={() => handleOnRemoveSection(id)}>
-            {renderSectionContent(id, displayTitle as string)}
+            {renderSectionContent(id, title)}
           </EditableSection>
         </div>
       ))}

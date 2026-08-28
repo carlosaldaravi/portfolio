@@ -1,21 +1,7 @@
 import RoleCard from "./role-card/role-card";
 import HomeTitle from "./home-title";
 import Section from "@/components/UI/section";
-
-interface RrssSocial {
-  name: string;
-  svg: string;
-  url: string;
-}
-
-export interface Role {
-  name: string;
-  to: string;
-  avatar: string;
-  customClass: string;
-  rrss: RrssSocial[];
-}
-
+import type { Role } from "@/types/home";
 interface HomeInfoProps {
   roles: Role[];
 }

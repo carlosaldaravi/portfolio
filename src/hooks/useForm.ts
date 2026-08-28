@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent, FormEvent, ReactNode } from "react";
+import { useState, ChangeEvent, FormEvent, ReactNode } from "react";
 
 export interface FormValues {
   [key: string]: string | boolean;
@@ -10,22 +10,17 @@ export interface FormErrors {
 
 type ValidateFn = (values: FormValues) => FormErrors;
 
-const useForm = (callback: () => void, validate: ValidateFn) => {
+const useForm = (onValid: () => void, validate: ValidateFn) => {
   const [values, setValues] = useState<FormValues>({});
   const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [errors]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    if (event) event.preventDefault();
-    setErrors(validate(values));
-    setIsSubmitting(true);
+    event?.preventDefault();
+    const validationErrors = validate(values);
+    setErrors(validationErrors);
+    // Submitting is a direct consequence of a valid form, not something to
+    // rediscover in an effect once `errors` happens to settle empty.
+    if (Object.keys(validationErrors).length === 0) onValid();
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

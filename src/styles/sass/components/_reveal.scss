@@ -1,0 +1,7 @@
+// Scroll-reveal animation shared by the project cards (`project.tsx`) and the
+// experience timeline (`experience/company.tsx`).
+.reveal {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}

@@ -1,7 +1,6 @@
-import { ReactNode, useContext } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
-import ThemeContext from "@/store/theme-context";
-import { THEMES_TYPES } from "@/types/themes";
+import { useTheme } from "@/store/theme-context";
 import { useResponsive } from "@/hooks/useResponsive";
 import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";
@@ -17,14 +16,13 @@ interface NavbarLinkProps {
 
 const NavbarLink = ({ src, title, name }: NavbarLinkProps) => {
   const { isMobile } = useResponsive();
-  const themeCtx = useContext(ThemeContext);
+  const { isDark } = useTheme();
   const { cleanPathname } = useLocaleRouter();
   const tracker = useTracker();
   const route = cleanPathname;
 
-  const theme = themeCtx.theme;
-  const activeStyle =
-    theme === THEMES_TYPES.dark
+    const activeStyle =
+    isDark
       ? "border-light-primary text-light-primary"
       : "border-dark-primary text-dark-primary";
 
@@ -47,7 +45,7 @@ const NavbarLink = ({ src, title, name }: NavbarLinkProps) => {
         route === src
           ? `font-extrabold ${activeStyle}`
           : `opacity-60 hover:font-semibold ${
-              theme === THEMES_TYPES.dark
+              isDark
                 ? "text-light-secondary hover:text-light-primary"
                 : "text-dark-secondary hover:text-dark-primary"
             }`
@@ -59,7 +57,7 @@ const NavbarLink = ({ src, title, name }: NavbarLinkProps) => {
           route === src
             ? `px-12 font-extrabold ${activeStyle}`
             : ` ${
-                theme === THEMES_TYPES.dark
+                isDark
                   ? "border-light-primary"
                   : "border-dark-primary"
               }`

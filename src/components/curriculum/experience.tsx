@@ -3,7 +3,9 @@ import CurriculumSection from "./curriculum-section";
 import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import AddItemButton from "./add-item-button";
+import { patchById, removeById, replaceById } from "./item-list";
+import { useIntl } from "react-intl";
 
 interface ExperienceData {
   id: string;
@@ -36,22 +38,39 @@ const Experience = ({
   setExperiences,
   onChangeTitle,
 }: ExperienceProps) => {
+  const intl = useIntl();
+
   const handleEvents = (updatedEvent: ExperienceData) => {
-    setExperiences((prevExperiences) =>
-      prevExperiences.map((ex) =>
-        ex.id === updatedEvent.id ? updatedEvent : ex
-      )
-    );
+    setExperiences((prev) => replaceById(prev, updatedEvent));
   };
 
   const handleOnRemoveSection = (id: string) => {
-    setExperiences((prev) => prev.filter((ev) => ev.id !== id));
+    setExperiences((prev) => removeById(prev, id));
   };
 
   const handleTextChange = (id: string, text: string) => {
-    setExperiences((prev) =>
-      prev.map((ex) => (ex.id === id ? { ...ex, text, textEdited: true } : ex))
-    );
+    setExperiences((prev) => patchById(prev, id, { text, textEdited: true }));
+  };
+
+  const handleAddExperience = () => {
+    setExperiences((prev) => [
+      ...prev,
+      {
+        id: `experience-${prev.length + 1}`,
+        date: "",
+        dateEdited: false,
+        titleId: "",
+        title: "",
+        titleEdited: false,
+        placeId: "",
+        place: "",
+        placeEdited: false,
+        textId: "",
+        text: "",
+        textEdited: false,
+        order: prev.length + 1,
+      },
+    ]);
   };
 
   return (
@@ -83,31 +102,10 @@ const Experience = ({
         </EditableSection>
       ))}
       {isEditable && (
-        <div
-          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
-          onClick={() =>
-            setExperiences((prev) => [
-              ...prev,
-              {
-                id: `experience-${prev.length + 1}`,
-                date: "",
-                dateEdited: false,
-                titleId: "",
-                title: "",
-                titleEdited: false,
-                placeId: "",
-                place: "",
-                placeEdited: false,
-                textId: "",
-                text: "",
-                textEdited: false,
-                order: prev.length + 1,
-              },
-            ])
-          }
-        >
-          <PlusIcon className="w-12 h-12 stroke-green-600" />
-        </div>
+        <AddItemButton
+          onAdd={handleAddExperience}
+          label={intl.formatMessage({ id: "addEntry" })}
+        />
       )}
     </CurriculumSection>
   );

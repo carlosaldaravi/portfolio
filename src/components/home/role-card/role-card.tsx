@@ -1,19 +1,5 @@
 import ContentRoleCard from "./content-role-card";
-
-interface RrssSocial {
-  name: string;
-  svg: string;
-  url: string;
-}
-
-interface Role {
-  name: string;
-  to: string;
-  avatar: string;
-  customClass: string;
-  rrss: RrssSocial[];
-}
-
+import type { Role } from "@/types/home";
 interface RoleCardProps {
   roles: Role[];
 }

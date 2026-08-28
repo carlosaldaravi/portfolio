@@ -1,43 +1,26 @@
 import { useMemo } from "react";
-import { AnalyticsBrowser } from "@segment/analytics-next";
-import { SEGMENT_KEY } from "@/env/constants";
+import { sendEvent } from "@/lib/gtag";
 import { useCookieConsent } from "@/store/cookie-consent-context";
 
-let analyticsInstance: AnalyticsBrowser | null = null;
-
-const getAnalytics = () => {
-  if (!analyticsInstance) {
-    analyticsInstance = AnalyticsBrowser.load({ writeKey: SEGMENT_KEY });
-  }
-  return analyticsInstance;
-};
-
+/**
+ * Sends the site's custom interactions to GA4.
+ *
+ * Page views are not sent from here: GA4 measures them on its own from the
+ * `config` call in `components/analytics.tsx` plus its enhanced measurement of
+ * history changes, so emitting them again would double-count every visit.
+ */
 const useTracker = () => {
   const { consent } = useCookieConsent();
   const analyticsEnabled = consent?.analytics === true;
 
   return useMemo(() => {
     const track = (event: string, payload: Record<string, unknown> = {}) => {
-      try {
-        if (process.env.NODE_ENV === "development") return;
-        if (!analyticsEnabled) return;
-        getAnalytics().track(event, payload);
-      } catch (error) {
-        console.log("Error while tracking: ", error);
-      }
+      if (process.env.NODE_ENV === "development") return;
+      if (!analyticsEnabled) return;
+      sendEvent(event, payload);
     };
 
-    const page = (event: string) => {
-      try {
-        if (process.env.NODE_ENV === "development") return;
-        if (!analyticsEnabled) return;
-        getAnalytics().page(event);
-      } catch (error) {
-        console.log("Error while tracking: ", error);
-      }
-    };
-
-    return { track, page };
+    return { track };
   }, [analyticsEnabled]);
 };
 

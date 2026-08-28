@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { SVG_TYPES } from "@/types/svg";
 import SVG from "@/components/svg";
 import ToggleButton from "@/components/UI/toggle-button";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import HeaderNavbar from "./header-navbar";
 import { getBgColor, getShadowColor } from "@/tools/theme";
 import Image from "next/image";
@@ -11,28 +11,24 @@ import { useResponsive } from "@/hooks/useResponsive";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
 import { MY_NAME } from "@/constants/constants";
-import { useLocaleRouter, buildLocalePath } from "@/hooks/useLocaleRouter";
+import { useLocaleRouter } from "@/hooks/useLocaleRouter";
+import { LOCALE_COOKIE, localePath, type Locale } from "@/lib/i18n";
 import { setCookie } from "cookies-next";
 
 const Header = () => {
-  const { locale, locales, pathname, cleanPathname } = useLocaleRouter();
+  const { locales, pathname, cleanPathname } = useLocaleRouter();
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
-  const themeCtx = useContext(ThemeContext);
+  const { theme, isDark } = useTheme();
   const { isMobile } = useResponsive();
   const tracker = useTracker();
 
-  const theme = themeCtx.theme;
-  const route = cleanPathname;
+    const route = cleanPathname;
 
   const scrolledClasses = hasScrolled
     ? `shadow-lg ${getShadowColor(theme)} ${route === "/kitesurf" ? "bg-opacity-80" : ""}`
     : "bg-opacity-0";
   const justifyClass = route === "/" ? "justify-end" : "justify-between";
   const headerClasses = `${scrolledClasses} ${getBgColor(theme)} ${justifyClass}`;
-
-  const handleSetCookie = (l: string) => {
-    setCookie("NEXT_LOCALE", l);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,13 +44,13 @@ const Header = () => {
     };
   }, []);
 
-  const handleSelectLanguage = (l: string) => {
-    const event =
-      l === "es"
+  const handleSelectLanguage = (nextLocale: Locale) => {
+    tracker.track(
+      nextLocale === "es"
         ? TRACKING_TYPES.event.esLanguageClick
-        : TRACKING_TYPES.event.enLanguageClick;
-    tracker.track(event);
-    handleSetCookie(l);
+        : TRACKING_TYPES.event.enLanguageClick
+    );
+    setCookie(LOCALE_COOKIE, nextLocale);
   };
 
   return (
@@ -68,7 +64,7 @@ const Header = () => {
       >
         <Image
           title={`Logo ${MY_NAME}`}
-          src={theme === "dark" ? "/images/logos/logo-blanco.png" : "/images/logos/logo-negro.png"}
+          src={isDark ? "/images/logos/logo-blanco.png" : "/images/logos/logo-negro.png"}
           alt={`Logo ${MY_NAME}`}
           width={60}
           height={80}
@@ -88,11 +84,11 @@ const Header = () => {
           {locales.map((l) => (
             <Link
               key={`locale-${l}`}
-              href={buildLocalePath(pathname, l)}
+              href={localePath(l, pathname)}
               onClick={() => handleSelectLanguage(l)}
               aria-label={`Switch language to ${l === "es" ? "Spanish" : "English"}`}
             >
-              <SVG type={SVG_TYPES[l as keyof typeof SVG_TYPES]} />
+              <SVG type={SVG_TYPES[l]} />
             </Link>
           ))}
         </div>

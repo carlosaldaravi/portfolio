@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import { getBgOppositeColor } from "@/tools/theme";
 
 interface SectionPaginationProps {
@@ -9,8 +8,7 @@ interface SectionPaginationProps {
 }
 
 const SectionPagination = ({ list, actualIndex, onSelectSection }: SectionPaginationProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const bgColor = getBgOppositeColor(theme);
 
   return (

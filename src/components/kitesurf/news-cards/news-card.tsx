@@ -1,14 +1,6 @@
 import { FormattedMessage } from "react-intl";
 import Link from "next/link";
-
-export interface NewsItem {
-  id: string;
-  img: string;
-  url: string;
-  date: string;
-  title: string;
-  source: string;
-}
+import type { NewsItem } from "@/types/kitesurf";
 
 interface NewsCardProps {
   newsItem: NewsItem;

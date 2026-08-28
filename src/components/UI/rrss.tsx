@@ -1,5 +1,5 @@
 import ItemRRSS from "./item-rrss";
-import { RRSSItem } from "./item-rrss";
+import type { RRSSItem } from "@/types/common";
 
 interface RRSSProps {
   rrssList: RRSSItem[];

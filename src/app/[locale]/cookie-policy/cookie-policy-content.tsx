@@ -2,13 +2,10 @@
 
 import Page from "@/components/UI/page";
 import Section from "@/components/UI/section";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
 import { useCookieConsent } from "@/store/cookie-consent-context";
 import { FormattedMessage } from "react-intl";
 
 export default function CookiePolicyContent() {
-  usePageTracking(TRACKING_TYPES.page.cookiePolicy);
   const { openSettings } = useCookieConsent();
 
   return (
@@ -57,9 +54,6 @@ export default function CookiePolicyContent() {
           <ul className="mt-4 list-disc pl-6">
             <li className="text-xl">
               <FormattedMessage id="page.cookiePolicy.analytics.item1" />
-            </li>
-            <li className="text-xl">
-              <FormattedMessage id="page.cookiePolicy.analytics.item2" />
             </li>
           </ul>
         </div>

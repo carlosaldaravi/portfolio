@@ -3,12 +3,8 @@
 import OverlayCards from "@/components/about/overlay-cards";
 import AboutHeader from "@/components/about/header";
 import Page from "@/components/UI/page";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
 
 export default function AboutContent() {
-  usePageTracking(TRACKING_TYPES.page.about);
-
   const cards = [
     {
       name: "page.about.kitesurfCardTitle",

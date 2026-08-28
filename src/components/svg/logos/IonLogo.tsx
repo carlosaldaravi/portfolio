@@ -1,10 +1,8 @@
-import { useContext } from "react";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import { getOppositeColor } from "@/tools/theme";
 
 export const IonLogo = () => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const color = getOppositeColor(theme);
 
   return (

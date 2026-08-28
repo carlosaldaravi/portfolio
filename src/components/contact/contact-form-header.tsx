@@ -1,12 +1,4 @@
-import ThemeContext from "@/store/theme-context";
-import { useContext } from "react";
-import { getBgSecondaryColor } from "@/tools/theme";
-
 const ContactFormHeader = () => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
-  const bgSecondaryColor = getBgSecondaryColor(theme);
-
   return (
     <div
       className={`flex justify-between items-center h-12 w-full bg-gray-700`}

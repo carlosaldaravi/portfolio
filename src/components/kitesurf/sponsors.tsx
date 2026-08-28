@@ -1,28 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
-import { getBgOppositeColor } from '@/tools/theme';
-import { SVG_TYPES } from '@/types/svg';
-import ThemeContext from "@/store/theme-context";
+import { getBgOppositeColor } from "@/tools/theme";
+import { SVG_TYPES } from "@/types/svg";
+import { useTheme } from "@/store/theme-context";
 import Section from "@/components/UI/section";
 import SVG from "@/components/svg";
-
-export interface Sponsor {
-  name: string;
-  url: string;
-  img?: string;
-  svg?: string;
-  className?: string;
-}
+import type { Sponsor } from "@/types/kitesurf";
 
 interface SponsorsProps {
   sponsors: Sponsor[];
 }
 
 const Sponsors = ({ sponsors }: SponsorsProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
-  const bgSecondaryColor = getBgOppositeColor(theme);
+  const { theme } = useTheme();
+  const bgColor = getBgOppositeColor(theme);
 
   return (
     <Section className="w-full items-center grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-10 sm:gap-x-10">
@@ -37,7 +28,7 @@ const Sponsors = ({ sponsors }: SponsorsProps) => {
                 target="_blank"
               >
                 <Image
-                  className={`${sponsor.className} rounded-lg w-48 sm:w-56 lg:w-72 col-span-1 object-contain mx-auto ${bgSecondaryColor}`}
+                  className={`${sponsor.className} rounded-lg w-48 sm:w-56 lg:w-72 col-span-1 object-contain mx-auto ${bgColor}`}
                   src={sponsor.img}
                   alt={sponsor.name}
                   width={200}
@@ -60,6 +51,7 @@ const Sponsors = ({ sponsors }: SponsorsProps) => {
               </Link>
             );
           }
+          return null;
         })}
     </Section>
   );

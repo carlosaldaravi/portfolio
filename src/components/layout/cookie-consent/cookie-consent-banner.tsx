@@ -1,8 +1,8 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import { useCookieConsent } from "@/store/cookie-consent-context";
 import { getBgColor, getTextColor } from "@/tools/theme";
 import CookiePolicyLink from "./cookie-policy-link";
@@ -11,8 +11,7 @@ const buttonClass =
   "px-5 py-2 rounded border border-current text-sm sm:text-base font-semibold whitespace-nowrap";
 
 const CookieConsentBanner = () => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const {
     consent,
     isBannerVisible,
@@ -30,8 +29,11 @@ const CookieConsentBanner = () => {
 
   const isOpen = isBannerVisible || isSettingsOpen;
 
+  // Re-seed the checkbox from the saved consent each time the panel opens, so
+  // a cancelled edit doesn't leak into the next one.
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setAnalyticsChecked(consent?.analytics ?? false);
     }
   }, [isOpen, consent?.analytics]);

@@ -1,6 +1,5 @@
-import { ReactNode, useContext } from "react";
-import { THEMES_TYPES } from "@/types/themes";
-import ThemeContext from "@/store/theme-context";
+import { ReactNode } from "react";
+import { useTheme } from "@/store/theme-context";
 
 interface ArrowProps {
   className?: string;
@@ -10,12 +9,11 @@ interface ArrowProps {
 }
 
 const Arrow = ({ className = "", arrow, param, onChangeSection }: ArrowProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { isDark } = useTheme();
   return (
     <div
       className={`cursor-pointer rounded-full w-12 h-12 shadow-sm flex items-center justify-center ${className} ${
-        theme === THEMES_TYPES.dark ? "bg-dark-secondary" : "bg-light-secondary"
+        isDark ? "bg-dark-secondary" : "bg-light-secondary"
       }`}
       onClick={() => onChangeSection(param)}
     >

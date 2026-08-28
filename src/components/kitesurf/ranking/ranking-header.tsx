@@ -1,14 +1,12 @@
 import Image from "next/image";
 import surfrLogo from "../../../../public/images/logos/surfr.png";
-import { useContext } from "react";
 import { TrophyIcon } from "@heroicons/react/24/outline";
 import { FormattedMessage } from "react-intl";
 import { getBgSecondaryColor } from "@/tools/theme";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 
 const RankingHeader = () => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const bgSecondaryColor = getBgSecondaryColor(theme);
   return (
     <div

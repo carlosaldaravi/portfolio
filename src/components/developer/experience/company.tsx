@@ -1,25 +1,10 @@
-import { useContext } from "react";
-import ThemeContext from "@/store/theme-context";
 import { FormattedMessage } from "react-intl";
-
-interface ExperienceData {
-  startDate: string;
-  endDate: string;
-  now: string;
-  place: string;
-  rol: string;
-  company: string;
-  description: string;
-  achievement: string[];
-}
-
+import type { ExperienceData } from "@/types/developer";
 interface CompanyProps {
   experience: ExperienceData;
 }
 
 const Company = ({ experience }: CompanyProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
 
   return (
     <li className="reveal timeline-event">

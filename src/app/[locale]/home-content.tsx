@@ -1,9 +1,8 @@
 "use client";
 
 import Page from "@/components/UI/page";
-import HomeInfo, { type Role } from "@/components/home/home-info";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
+import HomeInfo from "@/components/home/home-info";
+import type { Role } from "@/types/home";
 
 interface HomeContentProps {
   roles: Role[];
@@ -14,8 +13,6 @@ interface HomeContentProps {
 // (experience, projects, stack) lives on /developer, so the two pages no
 // longer render identical content.
 export default function HomeContent({ roles }: HomeContentProps) {
-  usePageTracking(TRACKING_TYPES.page.home);
-
   return (
     <Page>
       <HomeInfo roles={roles} />

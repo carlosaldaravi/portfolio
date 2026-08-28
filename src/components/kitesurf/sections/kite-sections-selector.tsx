@@ -1,4 +1,3 @@
-import { ReactNode, useEffect, useState } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
 import ButtonSlider from "@/components/UI/button-slider";
 import Arrow from "@/components/UI/arrow";
@@ -6,15 +5,11 @@ import SectionTitle from "@/components/UI/section-title";
 import SectionPagination from "@/components/UI/section-pagination";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { useIntl } from "react-intl";
-
-interface KiteSection {
-  name: string;
-  title: string;
-}
+import type { SectionData } from "@/types/kitesurf";
 
 interface KiteSectionsSelectorProps {
-  sections: KiteSection[];
-  sectionSelected: KiteSection;
+  sections: SectionData[];
+  sectionSelected: SectionData;
   onSelectSection: (index: number) => void;
   onChangeSection: (direction: number) => void;
 }
@@ -26,22 +21,12 @@ const KiteSectionsSelector = ({
   onChangeSection,
 }: KiteSectionsSelectorProps) => {
   const intl = useIntl();
-  const [sectionTitle, setSectionTitle] = useState<string | undefined>();
-  const [indexSection, setIndexSection] = useState<number>(0);
-  const [actualSection, setActualSection] = useState<KiteSection>(sectionSelected);
   const { isMobile } = useResponsive();
 
-  useEffect(() => {
-    setActualSection(sectionSelected);
-  }, [sectionSelected]);
-
-  useEffect(() => {
-    const index = sections.findIndex(
-      (section) => section.name === actualSection.name
-    );
-    setIndexSection(index);
-    setSectionTitle(intl.formatMessage({ id: actualSection.title }));
-  }, [actualSection, sections, intl]);
+  const indexSection = sections.findIndex(
+    (section) => section.name === sectionSelected.name
+  );
+  const sectionTitle = intl.formatMessage({ id: sectionSelected.title });
 
   return (
     <div>

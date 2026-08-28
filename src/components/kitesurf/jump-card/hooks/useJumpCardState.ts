@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
 import useTracker from "@/hooks/useTracker";
 import { TRACKING_TYPES } from "@/types/track";
-import { Jump, JumpTextEntry } from "../jump-card";
+import type { Jump, JumpTextEntry } from "@/types/kitesurf";
 
 interface UseJumpCardStateProps {
   jump: Jump;
@@ -28,7 +28,6 @@ const useJumpCardState = ({
   onSetCardHovered,
   onRemoveCardHovered,
 }: UseJumpCardStateProps): UseJumpCardStateReturn => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const [showBackSide, setShowBackSide] = useState(false);
   const [showFrontSide, setShowFrontSide] = useState(false);
   const { isMobile } = useResponsive();
@@ -67,16 +66,8 @@ const useJumpCardState = ({
     }
   };
 
-  useEffect(() => {
-    if (showFrontSide || showBackSide) {
-      setIsExpanded(true);
-    } else {
-      setIsExpanded(false);
-    }
-  }, [showFrontSide, showBackSide]);
-
   return {
-    isExpanded,
+    isExpanded: showFrontSide || showBackSide,
     showBackSide,
     showFrontSide,
     onPlayHandler,

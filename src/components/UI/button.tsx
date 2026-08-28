@@ -1,5 +1,5 @@
-import { ReactNode, useContext } from "react";
-import ThemeContext from "@/store/theme-context";
+import { ReactNode } from "react";
+import { useTheme } from "@/store/theme-context";
 import { getBgColor } from "@/tools/theme";
 import SVG from "@/components/svg";
 
@@ -11,8 +11,7 @@ interface ButtonProps {
 }
 
 const Button = ({ children, className = "", icon, disabled }: ButtonProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme, isDark } = useTheme();
 
   const bgColor = getBgColor(theme);
 
@@ -22,7 +21,7 @@ const Button = ({ children, className = "", icon, disabled }: ButtonProps) => {
       className={`flex justify-center items-center gap-4 rounded-lg py-3 text-2xl font-semibold shadow-sm ${className} ${bgColor} ${
         disabled
           ? "opacity-50 cursor-not-allowed"
-          : theme === "dark"
+          : isDark
           ? "hover:brightness-110 "
           : "hover:brightness-90"
       }`}

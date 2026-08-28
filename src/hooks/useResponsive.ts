@@ -5,6 +5,9 @@ export const useResponsive = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // The viewport width only exists on the client: measuring it during render
+    // would make the server markup and the first client render disagree.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
 
     const handleResize = (event: MediaQueryListEvent) => {

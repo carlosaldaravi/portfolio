@@ -3,6 +3,7 @@ import { useIntl } from "react-intl";
 import { PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { getPersonalLanguagesData } from "@/data/cv.data";
 import { usePersistentState } from "./hooks/usePersistentState";
+import { patchById, removeById } from "./item-list";
 import StarsSection from "./stars-section";
 
 interface LanguageData {
@@ -36,37 +37,31 @@ const LanguagesSection = ({ isEditable }: LanguagesSectionProps) => {
 
   const handleLanguageChange = (id: string, starsFilled: number) => {
     setLanguages((prev) =>
-      [
-        ...prev.map((lang) =>
-          lang.id === id ? { ...lang, starsFilled } : lang
-        ),
-      ].sort((a, b) => b.starsFilled - a.starsFilled)
-    );
-  };
-
-  const handleLanguageNameChange = (id: string, language: string) => {
-    setLanguages((prev) =>
-      prev.map((lang) =>
-        lang.id === id ? { ...lang, language, languageEdited: true } : lang
+      patchById(prev, id, { starsFilled }).sort(
+        (a, b) => b.starsFilled - a.starsFilled
       )
     );
   };
 
+  const handleLanguageNameChange = (id: string, language: string) => {
+    setLanguages((prev) => patchById(prev, id, { language, languageEdited: true }));
+  };
+
   const handleAddLanguage = () => {
-    const newLanguage: LanguageData = {
-      id: `lang-${languages.length + 1}-${Math.random()
-        .toString(36)
-        .substr(2, 5)}`,
-      languageId: "language",
-      language: intl.formatMessage({ id: "language" }),
-      starsFilled: 1,
-      languageEdited: false,
-    };
-    setLanguages((prev) => [...prev, newLanguage]);
+    setLanguages((prev) => [
+      ...prev,
+      {
+        id: `lang-${prev.length + 1}-${Math.random().toString(36).slice(2, 7)}`,
+        languageId: "language",
+        language: intl.formatMessage({ id: "language" }),
+        starsFilled: 1,
+        languageEdited: false,
+      },
+    ]);
   };
 
   const handleRemoveLanguage = (id: string) => {
-    setLanguages((prev) => prev.filter((lang) => lang.id !== id));
+    setLanguages((prev) => removeById(prev, id));
   };
 
   return (

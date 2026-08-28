@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
-import ThemeContext from "@/store/theme-context";
-import { THEMES_TYPES } from "@/types/themes";
+import { useTheme } from "@/store/theme-context";
 
 interface ButtonSliderProps {
   className?: string;
@@ -11,12 +9,10 @@ interface ButtonSliderProps {
 }
 
 const ButtonSlider = ({ className = "", textId, param, onChangeSection }: ButtonSliderProps) => {
-  const themeCtx = useContext(ThemeContext);
-
-  const theme = themeCtx.theme;
+  const { isDark } = useTheme();
 
   const colorButton =
-    theme === THEMES_TYPES.dark
+    isDark
       ? "bg-dark-secondary text-light-text border-light-secondary"
       : "bg-light-secondary text-dark-text border-dark-secondary";
 

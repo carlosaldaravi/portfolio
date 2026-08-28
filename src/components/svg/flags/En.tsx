@@ -1,34 +1,10 @@
-import { useParams } from "next/navigation";
-import { useState } from "react";
-import { LANGUAGES_TYPES } from "@/types/languages";
+import { useFlagClassName } from "./useFlagClassName";
 
 export const En = () => {
-  const params = useParams();
-  const locale = typeof params?.locale === "string" ? params.locale : "es";
-  const [mouseIn, setMouseIn] = useState(false);
-
-  const onMouseEnterHandler = () => {
-    setMouseIn(true);
-  };
-  const onMouseLeaveHandler = () => {
-    setMouseIn(false);
-  };
+  const { className, handlers } = useFlagClassName("en");
 
   return (
-    <svg
-      className={`h-12 w-12 sm:h-14 sm:w-14 cursor-pointer transform duration-300 ${
-        locale === LANGUAGES_TYPES.en
-          ? "opacity-100"
-          : mouseIn
-          ? "opacity-100"
-          : "opacity-20"
-      }`}
-      viewBox="0 0 192.756 192.756"
-      onMouseEnter={onMouseEnterHandler}
-      onTouchStart={onMouseEnterHandler}
-      onMouseLeave={onMouseLeaveHandler}
-      onTouchEnd={onMouseLeaveHandler}
-    >
+    <svg className={className} {...handlers} viewBox="0 0 192.756 192.756">
       <path fill="none" d="M0 0h192.8v192.8H0V0z" clipRule="evenodd" />
       <path
         fill="#fff"

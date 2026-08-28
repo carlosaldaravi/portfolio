@@ -1,78 +1,44 @@
 "use client";
 
 import { useParams, usePathname } from "next/navigation";
+import {
+  DEFAULT_LOCALE,
+  LOCALES,
+  getLocaleFromPath,
+  stripLocalePrefix,
+  toLocale,
+  type Locale,
+} from "@/lib/i18n";
 
-const LOCALES = ["es", "en"] as const;
-const DEFAULT_LOCALE = "es";
+interface LocaleRouter {
+  /** Active locale, resolved from the route param and the URL. */
+  locale: Locale;
+  /** Every locale the site is published in. */
+  locales: readonly Locale[];
+  /** Full pathname, locale prefix included. */
+  pathname: string;
+  /** Pathname without the locale prefix — the "route" the UI reasons about. */
+  cleanPathname: string;
+}
 
 /**
- * Extracts the current locale and a clean pathname (without locale prefix).
- * Works in both App Router (via useParams) and Pages Router contexts.
+ * Resolves the current locale and a locale-free pathname for client components.
+ * The route param is authoritative; the URL is the fallback for the rewritten
+ * default locale, whose URLs carry no prefix.
  */
-export function useLocaleRouter() {
+export function useLocaleRouter(): LocaleRouter {
   const params = useParams();
-  const rawPathname = usePathname();
-  const pathname = rawPathname ?? "/";
+  const pathname = usePathname() ?? "/";
 
-  // Try to get locale from [locale] route param (App Router)
-  const paramLocale =
-    typeof params?.locale === "string" ? params.locale : null;
-
-  // Fallback: extract from pathname
-  const pathLocale = getLocaleFromPath(pathname);
-
-  const locale = paramLocale ?? pathLocale ?? DEFAULT_LOCALE;
-
-  // Strip locale prefix from pathname to get the "route"
-  const cleanPathname = stripLocalePrefix(pathname);
+  const paramLocale = typeof params?.locale === "string" ? params.locale : null;
+  const locale = paramLocale
+    ? toLocale(paramLocale)
+    : getLocaleFromPath(pathname) ?? DEFAULT_LOCALE;
 
   return {
     locale,
-    locales: LOCALES as unknown as string[],
+    locales: LOCALES,
     pathname,
-    cleanPathname,
+    cleanPathname: stripLocalePrefix(pathname),
   };
-}
-
-function getLocaleFromPath(pathname: string): string | null {
-  for (const l of LOCALES) {
-    if (pathname.startsWith(`/${l}/`) || pathname === `/${l}`) {
-      return l;
-    }
-  }
-  return null;
-}
-
-/**
- * Strips the locale prefix from a pathname.
- * "/en/developer" -> "/developer"
- * "/es/developer" -> "/developer"
- * "/developer" -> "/developer"
- */
-function stripLocalePrefix(pathname: string): string {
-  for (const l of LOCALES) {
-    if (pathname.startsWith(`/${l}/`)) {
-      return pathname.slice(`/${l}`.length);
-    }
-    if (pathname === `/${l}`) {
-      return "/";
-    }
-  }
-  return pathname;
-}
-
-/**
- * Builds a locale-aware path.
- * For "es" (default): returns clean path without prefix (middleware rewrites internally)
- * For "en": returns /en/path
- */
-export function buildLocalePath(
-  currentPathname: string,
-  targetLocale: string
-): string {
-  const clean = stripLocalePrefix(currentPathname);
-  if (targetLocale === DEFAULT_LOCALE) {
-    return clean;
-  }
-  return `/${targetLocale}${clean}`;
 }

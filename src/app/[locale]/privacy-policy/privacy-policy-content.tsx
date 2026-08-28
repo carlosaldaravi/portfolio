@@ -2,14 +2,10 @@
 
 import Page from "@/components/UI/page";
 import Section from "@/components/UI/section";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
 import { FormattedMessage } from "react-intl";
 import CookiePolicyLink from "@/components/layout/cookie-consent/cookie-policy-link";
 
 export default function PrivacyPolicyContent() {
-  usePageTracking(TRACKING_TYPES.page.privacyPolicy);
-
   return (
     <Page>
       <Section>

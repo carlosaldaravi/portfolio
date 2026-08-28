@@ -2,7 +2,9 @@ import { Dispatch, SetStateAction } from "react";
 import CurriculumSection from "./curriculum-section";
 import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import AddItemButton from "./add-item-button";
+import { patchById, removeById } from "./item-list";
+import { useIntl } from "react-intl";
 
 interface OtherInfoData {
   id: string;
@@ -26,16 +28,21 @@ const OtherInfo = ({
   setOtherInfo,
   onChangeTitle,
 }: OtherInfoProps) => {
+  const intl = useIntl();
+
   const handleInfoChange = (id: string, text: string) => {
-    setOtherInfo((prevOtherInfo) =>
-      prevOtherInfo.map((info) =>
-        info.id === id ? { ...info, text, textEdited: true } : info
-      )
-    );
+    setOtherInfo((prev) => patchById(prev, id, { text, textEdited: true }));
   };
 
   const handleOnRemoveInfo = (id: string) => {
-    setOtherInfo(otherInfo.filter((info) => info.id !== id));
+    setOtherInfo((prev) => removeById(prev, id));
+  };
+
+  const handleAddInfo = () => {
+    setOtherInfo((prev) => [
+      ...prev,
+      { id: `info-${prev.length + 1}`, textId: "", text: "", textEdited: false },
+    ]);
   };
 
   return (
@@ -61,24 +68,10 @@ const OtherInfo = ({
         </EditableSection>
       ))}
       {isEditable && (
-        <div
-          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
-          onClick={() =>
-            setOtherInfo((prev) => [
-              ...prev,
-              {
-                id: `info-${prev.length + 1}`,
-                textId: "",
-                text: "",
-                textEdited: false,
-              },
-            ])
-          }
-        >
-          <span>
-            <PlusIcon className="w-12 h-12 stroke-green-600" />
-          </span>
-        </div>
+        <AddItemButton
+          onAdd={handleAddInfo}
+          label={intl.formatMessage({ id: "addEntry" })}
+        />
       )}
     </CurriculumSection>
   );

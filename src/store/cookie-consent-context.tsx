@@ -16,24 +16,8 @@ function clearCookie(name: string) {
 
 function clearAnalyticsCookies() {
   const gaSuffix = process.env.NEXT_PUBLIC_ANALYTICS_ID?.replace(/^G-/, "");
-  const cookieNames = [
-    "_ga",
-    "_gid",
-    "ajs_anonymous_id",
-    "ajs_user_id",
-    "ajs_prior_session",
-    "ajs_group_id",
-    ...(gaSuffix ? [`_ga_${gaSuffix}`] : []),
-  ];
+  const cookieNames = ["_ga", "_gid", ...(gaSuffix ? [`_ga_${gaSuffix}`] : [])];
   cookieNames.forEach(clearCookie);
-
-  try {
-    ["ajs_anonymous_id", "ajs_user_id", "ajs_prior_session", "ajs_group_id"].forEach(
-      (key) => window.localStorage.removeItem(key)
-    );
-  } catch {
-    // localStorage may be unavailable (e.g. private browsing); nothing to clean up then
-  }
 }
 
 export interface CookieConsent {
@@ -73,6 +57,9 @@ export function CookieConsentContextProvider({ children }: { children: ReactNode
     if (typeof saved === "string") {
       try {
         const parsed = JSON.parse(saved);
+        // Read after mount: the cookie is not available while server-rendering,
+        // so resolving it during render would break hydration.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setConsent({ necessary: true, analytics: Boolean(parsed.analytics) });
       } catch {
         setConsent(null);

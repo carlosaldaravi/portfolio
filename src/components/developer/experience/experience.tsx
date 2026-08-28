@@ -2,19 +2,7 @@ import Company from "./company";
 import SectionTitle from "@/components/UI/section-title";
 import Section from "@/components/UI/section";
 import { useIntl } from "react-intl";
-
-interface ExperienceData {
-  date: string;
-  startDate: string;
-  endDate: string;
-  now: string;
-  place: string;
-  rol: string;
-  company: string;
-  description: string;
-  achievement: string[];
-}
-
+import type { ExperienceData } from "@/types/developer";
 interface ExperienceProps {
   experience: ExperienceData[];
 }

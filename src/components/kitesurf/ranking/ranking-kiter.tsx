@@ -1,20 +1,12 @@
-import { useContext } from "react";
 import { getBgSecondaryColor } from "@/tools/theme";
-import ThemeContext from "@/store/theme-context";
-
-export interface Kiter {
-  position: number;
-  name: string;
-  height: string;
-}
-
+import { useTheme } from "@/store/theme-context";
+import type { Kiter } from "@/types/kitesurf";
 interface RankingKiterProps {
   kiter: Kiter;
 }
 
 const RankingKiter = ({ kiter }: RankingKiterProps) => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const bgSecondaryColor = getBgSecondaryColor(theme);
   return (
     <div

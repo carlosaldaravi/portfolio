@@ -1,34 +1,11 @@
-import { useContext } from "react";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import classes from "./jump-card.module.css";
 import YoutubeIcon from "./youtube-icon";
 import BackSideCard from "./back-side-car";
 import HeaderJumpCard from "./header-jump-card";
 import FrontSideCard from "./front-side-card";
-import { THEMES_TYPES } from "@/types/themes";
 import useJumpCardState from "./hooks/useJumpCardState";
-
-export interface JumpTextEntry {
-  [key: string]: string | number;
-}
-
-interface JumpStyleBeforeProps {
-  backgroundImage?: string;
-  backgroundPosition?: string;
-}
-
-export interface JumpStyle {
-  kiteCard: {
-    "&::before"?: JumpStyleBeforeProps;
-  };
-}
-
-export interface Jump {
-  style: JumpStyle;
-  texts: JumpTextEntry[];
-  best: boolean;
-  youtubeEmbedId?: string;
-}
+import type { Jump } from "@/types/kitesurf";
 
 interface JumpCardProps {
   jump: Jump;
@@ -54,15 +31,14 @@ const JumpCard = ({
     isMobile,
   } = useJumpCardState({ jump, cardHovered, onSetCardHovered, onRemoveCardHovered });
 
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { isDark } = useTheme();
 
   return (
     <div
       className={`kite-card mt-4 sm:mt-0 flex min-h-[140px] items-center justify-center h-max border transform duration-700 ease-out transition-card rounded-xl ${
         classes.kiteCard
       } ${
-        theme === THEMES_TYPES.dark
+        isDark
           ? classes.kiteCardDark
           : classes.kiteCardLight
       } ${jump.best ? classes.bestJump : ""} ${

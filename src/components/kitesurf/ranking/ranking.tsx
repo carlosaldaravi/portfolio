@@ -2,7 +2,7 @@ import Section from "@/components/UI/section";
 import RankingKiter from "./ranking-kiter";
 import RankingHeader from "./ranking-header";
 import { FormattedMessage } from "react-intl";
-import { Kiter } from "./ranking-kiter";
+import type { Kiter } from "@/types/kitesurf";
 
 interface RankingProps {
   ranking: Kiter[] | undefined;

@@ -4,7 +4,8 @@ import CurriculumSection from "./curriculum-section";
 import EditableSection from "./editable-section";
 import PrettyParagraph from "./pretty-paragraph";
 import TimeLineEvent from "./time-line-event";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import AddItemButton from "./add-item-button";
+import { patchById, removeById, replaceById } from "./item-list";
 
 interface CertificationData {
   id: string;
@@ -31,30 +32,38 @@ const Certification = ({
   onChangeTitle,
 }: CertificationProps) => {
   const intl = useIntl();
-  const handleCertificationChange = (updatedCertification: CertificationData) => {
-    setCertifications((prevCertifications) =>
-      prevCertifications.map((cert) =>
-        cert.id === updatedCertification.id ? updatedCertification : cert
-      )
-    );
-  };
-
   const hoursLabel = intl.formatMessage({ id: "hours" });
+
+  const handleCertificationChange = (updatedCertification: CertificationData) => {
+    setCertifications((prev) => replaceById(prev, updatedCertification));
+  };
 
   const handleCertificationText = (id: string, text: string) => {
     // The paragraph shows "<hours> <label>" but `hours` must store only the
     // number — strip a trailing label so editing doesn't append it twice
-    // ("25 horashoras").
-    const cleaned = text.replace(new RegExp(`\\s*${hoursLabel}\\s*$`), "").trim();
-    setCertifications((prevCertifications) =>
-      prevCertifications.map((cert) =>
-        cert.id === id ? { ...cert, hours: cleaned } : cert
-      )
-    );
+    // ("25 horashoras"). The label comes from the translations, so escape it
+    // before it becomes a pattern.
+    const escapedLabel = hoursLabel.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const hours = text.replace(new RegExp(`\\s*${escapedLabel}\\s*$`), "").trim();
+    setCertifications((prev) => patchById(prev, id, { hours, hoursEdited: true }));
   };
 
   const handleOnRemoveCertification = (id: string) => {
-    setCertifications(certifications.filter((cert) => cert.id !== id));
+    setCertifications((prev) => removeById(prev, id));
+  };
+
+  const handleAddCertification = () => {
+    setCertifications((prev) => [
+      ...prev,
+      {
+        id: `cert-${prev.length + 1}`,
+        date: "",
+        title: "",
+        place: "",
+        hours: "",
+        hoursEdited: false,
+      },
+    ]);
   };
 
   return (
@@ -86,26 +95,10 @@ const Certification = ({
         </EditableSection>
       ))}
       {isEditable && (
-        <div
-          className="w-full h-12 flex justify-center items-center border border-dashed cursor-pointer"
-          onClick={() =>
-            setCertifications((prev) => [
-              ...prev,
-              {
-                id: `cert-${prev.length + 1}`,
-                date: "",
-                title: "",
-                place: "",
-                hours: "",
-                hoursEdited: false,
-              },
-            ])
-          }
-        >
-          <span>
-            <PlusIcon className="w-12 h-12 stroke-green-600" />
-          </span>
-        </div>
+        <AddItemButton
+          onAdd={handleAddCertification}
+          label={intl.formatMessage({ id: "addEntry" })}
+        />
       )}
     </CurriculumSection>
   );

@@ -1,22 +1,7 @@
 import ProjectsHeader from "./header";
 import Proyect from "./project";
 import Section from "@/components/UI/section";
-
-interface Project {
-  id: string;
-  name: string;
-  description: string;
-  img: string;
-  logo: string;
-  url: string;
-  year: string;
-  stack: string[];
-  github: {
-    url: string;
-    private: boolean;
-  };
-}
-
+import type { Project } from "@/types/developer";
 interface ProjectsProps {
   projects: Project[];
 }

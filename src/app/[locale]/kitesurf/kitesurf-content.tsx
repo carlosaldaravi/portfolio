@@ -1,16 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import KiteSectionsSelector from "@/components/kitesurf/sections/kite-sections-selector";
 import KiterCard from "@/components/kitesurf/kiter-info/kiter-card";
 import KiteSections from "@/components/kitesurf/sections/kite-sections";
 import Page from "@/components/UI/page";
 import { useResponsive } from "@/hooks/useResponsive";
 import BackgroundVideo from "@/components/UI/background-video";
-import usePageTracking from "@/hooks/usePageTracking";
-import { TRACKING_TYPES } from "@/types/track";
-import type { MeData } from "@/components/kitesurf/kiter-info/kiter-card";
-import type { SectionData } from "@/types/kitesurf";
+import type { MeData, SectionData } from "@/types/kitesurf";
 
 interface KitesurfContentProps {
   sections: SectionData[];
@@ -28,7 +25,6 @@ export default function KitesurfContent({ sections, me, devMe }: KitesurfContent
   const videoUrlWebm = isMobile ? "/videos/video-short.webm" : "/videos/video.webm";
   const videoPoster = "/images/video-poster.png";
 
-  usePageTracking(TRACKING_TYPES.page.kitesurfer);
 
   const changeSectionHandler = (oper: number) => {
     oper === 1 ? setDirection("left") : setDirection("right");

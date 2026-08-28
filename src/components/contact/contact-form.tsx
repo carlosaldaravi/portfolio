@@ -1,12 +1,10 @@
-import ThemeContext from "@/store/theme-context";
-import { useContext } from "react";
+import { useTheme } from "@/store/theme-context";
 import { getBgSecondaryColor } from "@/tools/theme";
 import ContactFormHeader from "./contact-form-header";
 import ContactFormBody from "./contact-form-body";
 
 const ContactForm = () => {
-  const themeCtx = useContext(ThemeContext);
-  const theme = themeCtx.theme;
+  const { theme } = useTheme();
   const bgSecondaryColor = getBgSecondaryColor(theme);
 
   return (

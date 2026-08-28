@@ -1,21 +1,16 @@
 "use client";
 
-import { useCallback, useContext, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FormattedMessage } from "react-intl";
 import { MY_NAME } from "@/constants/constants";
-import { THEMES_TYPES } from "@/types/themes";
-import ThemeContext from "@/store/theme-context";
+import { useTheme } from "@/store/theme-context";
 import SVG from "@/components/svg";
 import Link from "next/link";
 import Section from "@/components/UI/section";
 import { useLocaleRouter } from "@/hooks/useLocaleRouter";
-
-export interface MeData {
-  id: string;
-  value: string;
-}
+import type { MeData } from "@/types/kitesurf";
 
 interface FlipTarget {
   me: MeData[];
@@ -39,8 +34,7 @@ const KiterCard = ({ me, src, flipTarget }: KiterCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
-  const themeCtx = useContext(ThemeContext);
-  const isDark = themeCtx.theme === THEMES_TYPES.dark;
+  const { isDark } = useTheme();
   const router = useRouter();
   const { locale } = useLocaleRouter();
 

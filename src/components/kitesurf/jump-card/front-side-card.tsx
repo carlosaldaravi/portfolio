@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
-import ThemeContext from "@/store/theme-context";
-import { JumpTextEntry } from "./jump-card";
+import type { JumpTextEntry } from "@/types/kitesurf";
 
 interface FrontSideCardProps {
   texts: JumpTextEntry[];
@@ -9,9 +7,6 @@ interface FrontSideCardProps {
 }
 
 const FrontSideCard = ({ texts, index }: FrontSideCardProps) => {
-  const themeCtx = useContext(ThemeContext);
-
-  const theme = themeCtx.theme;
 
   return (
     <div className="flex flex-col items-center animate-appear">

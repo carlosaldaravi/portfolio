@@ -2,7 +2,8 @@ import { FormattedMessage } from "react-intl";
 import YoutubeEmbed from "@/components/youtube-embed";
 import SVG from "@/components/svg";
 import { SVG_TYPES } from "@/types/svg";
-import { Jump, JumpTextEntry } from "./jump-card";
+import { getJumpString } from "./jump-texts";
+import type { Jump } from "@/types/kitesurf";
 
 interface BackSideCardProps {
   jump: Jump;
@@ -10,9 +11,7 @@ interface BackSideCardProps {
 }
 
 const BackSideCar = ({ jump, onBack }: BackSideCardProps) => {
-  const { hangtime } = jump.texts.find(
-    (object: JumpTextEntry) => Object.keys(object)[0] === "hangtime"
-  ) as JumpTextEntry;
+  const hangtime = getJumpString(jump, "hangtime");
 
   return (
     <div className={`w-full z-10`}>
@@ -28,7 +27,7 @@ const BackSideCar = ({ jump, onBack }: BackSideCardProps) => {
       </div>
       <YoutubeEmbed
         embedId={jump.youtubeEmbedId || ""}
-        title={String(hangtime)}
+        title={hangtime}
         className={"rounded-xl"}
       />
     </div>

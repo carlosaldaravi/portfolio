@@ -20,6 +20,9 @@ export async function createOGImage(subtitle: string) {
           fontFamily: "sans-serif",
         }}
       >
+        {/* next/image cannot be used here: satori renders this tree to an
+            image on the server and only understands plain elements. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={logoBase64}
           alt="CA"
